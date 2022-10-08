@@ -1,4 +1,4 @@
-Team name:  
+Team name: \[\Pi\]  
 Application name:  
 
 
