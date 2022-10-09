@@ -4,9 +4,9 @@ Application name: Campus Meet
 
 # Team Overview
 
-1.  Daniel Melanson
-2.  Anthony Zalev
-3.  Veera Sivarajan
+1.  [Daniel Melanson](https://github.com/daniel-melanson)
+2.  [Anthony Zalev](https://github.com/AnthonyZalev)
+3.  [Veera Sivarajan](https://github.com/veera-sivarajan)
 
 
 # Innovative Idea
