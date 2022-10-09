@@ -18,5 +18,5 @@ Our application is unlike any existing application.
 
 # Important Concepts
 
-We plan to use this public API from 25Live to obtain data about buildings, rooms and scheduled events.  
+We plan to use [this](https://25live.collegenet.com/pro/umass#!/home/calendar) public API from 25Live to obtain data about buildings, rooms and scheduled events.  
 
