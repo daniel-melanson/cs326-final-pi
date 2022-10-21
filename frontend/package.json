@@ -1,0 +1,24 @@
+{
+  "author": "",
+  "description": "",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "campus-meet-frontend",
+  "scripts": {
+    "build": "",
+    "lint": "npm run lint:format && npm run lint:fix ",
+    "lint:fix": "eslint ./src --ext .ts,.html --quiet --fix",
+    "lint:format": "prettier  --loglevel warn --write \"./**/*.{ts,css,html}\" ",
+    "start": ""
+  },
+  "version": "1.0.0"
+}
