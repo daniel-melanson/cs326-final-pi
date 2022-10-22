@@ -12,7 +12,40 @@
     <script type="module" src="./index.ts" defer></script>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid justify-content-center">
+        <a class="navbar-brand" href="#">
+          <img
+            src="../node_modules/bootstrap-icons/icons/image.svg"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-bottom"
+          />
+          Campus Meet
+        </a>
+        <form class="col-3 d-flex" role="search">
+          <input type="search" class="form-control me-2" placeholder="Search" />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="nav-item mx-3">
+          <img
+            src="../node_modules/bootstrap-icons/icons/person-circle.svg"
+            alt="User Icon"
+          />
+        </div>
+      </div>
+    </nav>
+    <div class="container my-3">
+      <div class="row justify-content-center">
+        <filter-category>Building</filter-category>
+        <filter-category>Room</filter-category>
+        <filter-category>Capacity</filter-category>
+        <filter-category>Date</filter-category>
+        <filter-category>Sort By</filter-category>
+      </div>
+      <div class="row"></div>
+    </div>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
