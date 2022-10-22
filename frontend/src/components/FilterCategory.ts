@@ -3,7 +3,7 @@ export default class FilterCategory extends HTMLElement {
     this.outerHTML = `
         <button
           type="button"
-          class="col-2 mx-1 btn btn-outline-secondary"
+          class="col-2 mx-1 btn btn-outline-dark"
           data-bs-container="body"
           data-bs-toggle="popover"
           data-bs-placement="bottom"

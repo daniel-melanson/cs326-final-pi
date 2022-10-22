@@ -1,7 +1,13 @@
 {
   "author": "",
+  "dependencies": {
+    "bootstrap": "^5.2.2",
+    "bootstrap-icons": "^1.9.1",
+    "icons": "^1.0.0"
+  },
   "description": "",
   "devDependencies": {
+    "@types/bootstrap": "^5.2.5",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
     "eslint": "^8.25.0",
@@ -14,18 +20,12 @@
   "license": "MIT",
   "name": "campus-meet-frontend",
   "scripts": {
-    "serve": "parcel ./src/index.html --port 3000 --open",
     "build": "parcel build ./src/index.html --dist-dir ./dist",
     "lint": "npm run lint:format && npm run lint:fix ",
     "lint:fix": "eslint ./src --ext .ts,.html --quiet --fix",
-    "lint:format": "prettier  --loglevel warn --write \"./**/*.{ts,css,html}\" ",
+    "lint:format": "prettier --loglevel warn --write \"./**/*.{ts,css,html}\" ",
+    "serve": "parcel ./src/index.html --port 3000 --open",
     "start": ""
   },
-  "version": "1.0.0",
-  "dependencies": {
-    "@types/bootstrap": "^5.2.5",
-    "bootstrap": "^5.2.2",
-    "bootstrap-icons": "^1.9.1",
-    "icons": "^1.0.0"
-  }
+  "version": "1.0.0"
 }
