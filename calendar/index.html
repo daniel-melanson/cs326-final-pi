@@ -4,17 +4,18 @@
     <title>calendar</title>
     <style>
       .grid-container {
-          display: grid;
-          grid-template-columns: repeat(8, auto);
-          grid-template-rows: repeat(15, 1fr);
-          grid-gap: 1px;
-          width: 500px;
-          height: 500px;
+          display: inline-grid;
+          grid-template-columns: repeat(8, 150px);
+          grid-template-rows: repeat(15, 50px);
+          gap: 1px;
+          width: auto; 
+          height: auto; 
+          background-color: gray; 
       }
 
       .box {
-          background-color: black;
-          color: white;
+          background-color: white; 
+          color: black; 
           font-size: 5px;
       }
     </style>
