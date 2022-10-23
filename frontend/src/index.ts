@@ -1,5 +1,5 @@
 import bootstrap from "bootstrap";
-import FilterCategory from "./components/FilterCategory";
+
 
 const popoverTriggerList = document.querySelectorAll(
   '[data-bs-toggle="popover"]'
