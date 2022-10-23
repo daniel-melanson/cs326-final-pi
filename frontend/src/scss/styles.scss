@@ -7,5 +7,9 @@ $umass-dark-grey: #373a36;
 
 $primary: $umass-maroon;
 $secondary: $umass-grey;
+$dark: $umass-black;
 
-@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap.scss";
+
+$bootstrap-icons-font-dir: "../../node_modules/bootstrap-icons/font/fonts";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";

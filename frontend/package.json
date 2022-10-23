@@ -22,7 +22,7 @@
   "license": "MIT",
   "name": "campus-meet-frontend",
   "scripts": {
-    "build": "parcel build ./src/index.html --dist-dir ./dist",
+    "build": "parcel serve src/index.html --public-url / --dist-dir dist",
     "lint": "npm run lint:format && npm run lint:fix ",
     "lint:fix": "eslint ./src --ext .ts,.html --quiet --fix",
     "lint:format": "prettier --loglevel warn --write \"./**/*.{ts,css,html}\" ",
