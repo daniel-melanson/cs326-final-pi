@@ -8,9 +8,9 @@
     <script type="module" src="ts/main.ts"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-umass-maroon text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-umass-maroon">
       <div class="container-fluid justify-content-center">
-        <a class="navbar-brand text-light" href="#">
+        <a class="navbar-brand" href="#">
           <img
             src="../node_modules/bootstrap-icons/icons/image.svg"
             alt="Logo"
@@ -26,6 +26,7 @@
         </form>
         <div class="nav-item mx-3">
           <img
+            class="d-inline-block align-text-baseline"
             src="../node_modules/bootstrap-icons/icons/person-circle.svg"
             alt="User Icon"
           />
@@ -36,7 +37,7 @@
       <div class="row justify-content-center">
         <button
           type="button"
-          class="col-2 mx-1 btn btn-outline-dark"
+          class="col-2 mx-1 btn btn-outline-dark filter-category"
           data-bs-container="body"
           data-bs-toggle="popover"
           data-bs-placement="bottom"
@@ -48,9 +49,14 @@
               <div class="col px-2">
                 <div class="d-flex justify-content-end">
                   <div>
-                    <img
-                      src="../node_modules/bootstrap-icons/icons/building.svg"
-                    />
+                    <svg
+                      class="bi bi-exclamation-triangle text-success"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                      xmlns:href="node:bootstrap-icons/icons/building.svg"
+                    ></svg>
                   </div>
                 </div>
               </div>
@@ -152,6 +158,5 @@
       </div>
       <div class="row justify-content-center"></div>
     </div>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
