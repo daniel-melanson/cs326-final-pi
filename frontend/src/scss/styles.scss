@@ -1,29 +1,11 @@
+$umass-maroon: #881c1c;
+$umass-black: #212721;
+
+$umass-light-grey: #a2aaad;
+$umass-grey: #505759;
+$umass-dark-grey: #373a36;
+
+$primary: $umass-maroon;
+$secondary: $umass-grey;
+
 @import "~bootstrap/scss/bootstrap";
-
-:root {
-  --umass-maroon: #881c1c;
-  --umass-black: #212721;
-  --umass-light-grey: #a2aaad;
-  --umass-grey: #505759;
-  --umass-dark-grey: #373a36;
-}
-
-.bg-umass-maroon {
-  background-color: var(--umass-maroon);
-}
-
-.bg-umass-black {
-  background-color: var(--umass-black);
-}
-
-.bg-umass-light-grey {
-  background-color: var(--umass-light-grey);
-}
-
-.bg-umass-grey {
-  background-color: var(--umass-grey);
-}
-
-.bg-umass-dark-grey {
-  background-color: var(--umass-dark-grey);
-}
