@@ -1,43 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>calendar</title>
-    <style>
-      .grid-container {
-          /* display: inline-grid; */
-          display: grid;
-          grid-template-columns: repeat(8, 150px);
-          grid-template-rows: repeat(15, 50px);
-          gap: 1px;
-          background-color: gray; 
-          justify-content: center;
-      }
-
-      .box {
-          background-color: white; 
-          color: black; 
-          font-size: 5px;
-      }
-    </style>
-    <script>
-      function doIt() {
-          const numCols = 8;
-          const numRows = 15;
-          const calendar = document.getElementById("calendar");
-          for (let row = 0; row < numRows; ++row) {
-              for (let col = 0; col < numCols; ++col) {
-                  const divEle = document.createElement("div");
-                  divEle.classList.add("box");
-                  calendar.appendChild(divEle);
-              }
-          }
-      }
-    </script>
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body onLoad="doIt()">
-    <div class="grid-container" id="calendar">
+<div class="calendar-container">
 
+  <div class="header">
+    <ul class="weekdays">
+      <li>Sunday</li>
+      <li>Monday</li>
+      <li>Tuesday</li>
+      <li>Wednesday</li>
+      <li>Thursday</li>
+      <li>Friday</li>
+      <li>Saturday</li>
+    </ul>
+  </div>
+
+  <div class="timeslots-container">
+    <ul class="timeslots">
+      <li>7<sup>am</sup>
+      <li>8<sup>am</sup>
+      <li>9<sup>am</sup>
+      <li>10<sup>am</sup>
+      <li>11<sup>am</sup>
+      <li>Noon
+      <li>1<sup>pm</sup>
+      <li>2<sup>pm</sup>
+      <li>3<sup>pm</sup>
+      <li>4<sup>pm</sup>
+      <li>5<sup>pm</sup>
+      <li>6<sup>pm</sup>
+      <li>7<sup>pm</sup>
+      <li>8<sup>pm</sup>
+      <li>9<sup>pm</sup>
+    </ul>
+  </div>
+
+  <div class="event-container">
+
+    <!-- <div class="slot slot-1">
+         <div class="event-status"></div>
+         <span>event a</span>
     </div>
-  </body>
-</html>
 
+    <div class="slot slot-2">
+      <div class="event-status"></div>
+      <span>event b</span>
+    </div>
+
+    <div class="slot slot-3">
+      <div class="event-status"></div>
+      <span>event c</span>
+    </div>
+
+    <div class="slot slot-4">
+      <div class="event-status"></div>
+      <span>event d</span>
+    </div> -->
+
+  </div>
+</div>
