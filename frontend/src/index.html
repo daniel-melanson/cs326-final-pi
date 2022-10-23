@@ -4,43 +4,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CampusMeet</title>
-    <link
-      rel="stylesheet"
-      href="../node_modules/bootstrap/dist/css/bootstrap.css"
-    />
-    <link rel="stylesheet" href="./style/index.css" />
-    <script type="module" src="./index.ts" defer></script>
+    <link rel="stylesheet" href="scss/styles.scss" />
+    <script type="module" src="ts/main.ts"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-umass-maroon text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container-fluid justify-content-center">
-        <a class="navbar-brand text-light" href="#">
-          <img
-            src="../node_modules/bootstrap-icons/icons/image.svg"
-            alt="Logo"
-            width="30"
-            height="24"
-            class="d-inline-block align-text-bottom"
-          />
-          Campus Meet
+        <a class="navbar-brand" href="#">
+          <i class="bi-image"></i> Campus Meet
         </a>
         <form class="col-3 d-flex" role="search">
           <input type="search" class="form-control me-2" placeholder="Search" />
           <button class="btn btn-outline-light" type="submit">Search</button>
         </form>
-        <div class="nav-item mx-3">
-          <img
-            src="../node_modules/bootstrap-icons/icons/person-circle.svg"
-            alt="User Icon"
-          />
-        </div>
+        <a class="navbar-brand mx-3" href="#">
+          <i class="bi-person-circle"></i>
+        </a>
       </div>
     </nav>
-    <div class="container my-3">
-      <div class="row justify-content-center">
+    <div class="container">
+      <div class="row-fluid my-3 justify-content-center">
         <button
           type="button"
-          class="col-2 mx-1 btn btn-outline-dark"
+          class="col mx-1 btn btn-outline-dark filter-category"
           data-bs-container="body"
           data-bs-toggle="popover"
           data-bs-placement="bottom"
@@ -52,9 +38,7 @@
               <div class="col px-2">
                 <div class="d-flex justify-content-end">
                   <div>
-                    <img
-                      src="../../node_modules/bootstrap-icons/icons/building.svg"
-                    />
+                    <i class="bi-building"></i>
                   </div>
                 </div>
               </div>
@@ -63,7 +47,7 @@
         </button>
         <button
           type="button"
-          class="col-2 mx-1 btn btn-outline-dark"
+          class="col mx-1 btn btn-outline-dark"
           data-bs-container="body"
           data-bs-toggle="popover"
           data-bs-placement="bottom"
@@ -75,9 +59,7 @@
               <div class="col px-2">
                 <div class="d-flex justify-content-end">
                   <div>
-                    <img
-                      src="../../node_modules/bootstrap-icons/icons/caret-down.svg"
-                    />
+                    <i class="bi-caret-down"></i>
                   </div>
                 </div>
               </div>
@@ -86,7 +68,7 @@
         </button>
         <button
           type="button"
-          class="col-2 mx-1 btn btn-outline-dark"
+          class="col mx-1 btn btn-outline-dark"
           data-bs-container="body"
           data-bs-toggle="popover"
           data-bs-placement="bottom"
@@ -98,9 +80,7 @@
               <div class="col px-2">
                 <div class="d-flex justify-content-end">
                   <div>
-                    <img
-                      src="../../node_modules/bootstrap-icons/icons/caret-down.svg"
-                    />
+                    <i class="bi-caret-down"></i>
                   </div>
                 </div>
               </div>
@@ -109,7 +89,7 @@
         </button>
         <button
           type="button"
-          class="col-2 mx-1 btn btn-outline-dark"
+          class="col mx-1 btn btn-outline-dark"
           data-bs-container="body"
           data-bs-toggle="popover"
           data-bs-placement="bottom"
@@ -121,9 +101,7 @@
               <div class="col px-2">
                 <div class="d-flex justify-content-end">
                   <div>
-                    <img
-                      src="../../node_modules/bootstrap-icons/icons/calendar-date.svg"
-                    />
+                    <i class="bi-calendar-date"></i>
                   </div>
                 </div>
               </div>
@@ -132,7 +110,7 @@
         </button>
         <button
           type="button"
-          class="col-2 mx-1 btn btn-outline-dark"
+          class="col mx-1 btn btn-outline-dark"
           data-bs-container="body"
           data-bs-toggle="popover"
           data-bs-placement="bottom"
@@ -140,13 +118,32 @@
         >
           <div class="container px-0">
             <div class="row">
-              <div class="col px-2 text-start">Sort By</div>
+              <div class="col px-2 text-start">Duration</div>
               <div class="col px-2">
                 <div class="d-flex justify-content-end">
                   <div>
-                    <img
-                      src="../../node_modules/bootstrap-icons/icons/sort-down.svg"
-                    />
+                    <i class="bi-clock"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </button>
+        <button
+          type="button"
+          class="col mx-1 btn btn-outline-dark"
+          data-bs-container="body"
+          data-bs-toggle="popover"
+          data-bs-placement="bottom"
+          data-bs-content="Bottom popover"
+        >
+          <div class="container-fluid px-0">
+            <div class="row">
+              <div class="col px-2 text-start">Sort&nbsp;By</div>
+              <div class="col px-2">
+                <div class="d-flex justify-content-end">
+                  <div>
+                    <i class="bi-sort-down"></i>
                   </div>
                 </div>
               </div>
@@ -154,7 +151,31 @@
           </div>
         </button>
       </div>
+      <div class="row justify-content-center">
+        <div class="container">
+          <div class="row card mb-3">
+            <div class="col px-0">
+              <h5 class="container card-header">
+                <div class="row">
+                  <div class="col-8">Integrative Learning Center - S151</div>
+                  <div class="col-4 d-flex justify-content-end">
+                    <button type="button" class="btn btn-sm btn-primary">
+                      Book
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-primary ms-2"
+                    >
+                      View Calendar
+                    </button>
+                  </div>
+                </div>
+              </h5>
+              <div class="card-body"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

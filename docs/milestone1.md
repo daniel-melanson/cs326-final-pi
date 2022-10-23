@@ -1,5 +1,13 @@
 # Team &Pi;: Campus Meet - Milestone 1
 
+## Data Interactions
+
+Users will interact with the site through a few means. 
+
+- Searching and filtering for different room avaiablities. 
+- View rooms in tile or calendar mode
+- Booking rooms using our reserve system
+- Be notifed if there is a conflict
 ## Wireframe
 
 ### Initial Wireframe
