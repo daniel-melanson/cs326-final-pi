@@ -13,3 +13,17 @@ $dark: $umass-black;
 
 $bootstrap-icons-font-dir: "../../node_modules/bootstrap-icons/font/fonts";
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+.mapouter {
+  position: relative;
+  text-align: right;
+  height: 255px;
+  width: 255px;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 255px;
+  width: 255px;
+}
