@@ -29,8 +29,8 @@ function closeModal(id: string) {
 
 function confirmEvent(id : string){
     console.log(JSON.parse(id))
-    let event_title = document.getElementById(id + "event-name");
-    let event_description = document.getElementById(id + "message-text");
+    let event_title = document.getElementById(id + "event-name") as HTMLInputElement;
+    let event_description = document.getElementById(id + "message-text")  as HTMLInputElement;
     console.log(event_description?.value, event_title?.value);
     closeModal(id);
 }

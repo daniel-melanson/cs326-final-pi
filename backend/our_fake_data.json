@@ -4,6 +4,7 @@
         "room": "ILC151",
         "capacity" : "150",
         "description" : "some room description",
+        "date" : "11/11/2022",
         "availability" : {
             "1": {"start_time" : "10:00AM", "end_time": "12:00PM"},
             "2" :{"start_time" : "11:00AM", "end_time": "1:00PM"},
@@ -16,6 +17,7 @@
         "room": "ILCS12-",
         "capacity" : "120",
         "description" : "some room description thats different",
+        "date" : "11/11/2022",
         "availability" : {
             "1": {"start_time" : "10:00AM", "end_time": "12:00PM"},
             "2" :{"start_time" : "11:00AM", "end_time": "1:00PM"},
@@ -28,6 +30,7 @@
         "room": "ILC666",
         "capacity" : "666",
         "description" : "some room very special room thats different",
+        "date" : "11/11/2022",
         "availability" : {
             "1": {"start_time" : "10:66AM", "end_time": "12:66PM"},
             "2" :{"start_time" : "11:00AM", "end_time": "1:00PM"},
