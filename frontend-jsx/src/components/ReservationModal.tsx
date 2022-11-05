@@ -22,21 +22,34 @@ function triggerModal(id: string) {
 
 function closeModal(id: string) {
   const myModal = modals[id];
+  //myModal.hide();
   myModal.hide();
-  myModal.dispose();
+  myModal.toggle();
 }
 
 function confirmEvent(id : string){
-    //do stuff
-
+    console.log(JSON.parse(id))
+    let event_title = document.getElementById(id + "event-name");
+    let event_description = document.getElementById(id + "message-text");
+    console.log(event_description?.value, event_title?.value);
     closeModal(id);
 }
 export default function ReservationModal(props: DropDownButtonProps) {
-  let uniqueid =
-    JSON.stringify(props);
+  let id = {'room' : props.room, 'building': props.building, 'start':props.start_date, 'end' : props.end_date, 'date': props.date};
+
+  let uniqueid = JSON.stringify(id);
   setTimeout(() => triggerModal(uniqueid), 100);
   //setTimeout( () => closeModal(uniqueid), 2000);
-  let closeButtonId = uniqueid + "closeButton";
+  const closeButtonId = uniqueid + "closeButton";
+  const confirmButtonId = uniqueid + "confirmButton";
+  setTimeout(
+    () =>
+      document
+        .getElementById(confirmButtonId)
+        ?.addEventListener("click", () =>  confirmEvent(uniqueid)),
+    200
+  );
+
   setTimeout(
     () =>
       document
@@ -44,6 +57,7 @@ export default function ReservationModal(props: DropDownButtonProps) {
         ?.addEventListener("click", () => closeModal(uniqueid)),
     200
   );
+
 
   return (
     <div
