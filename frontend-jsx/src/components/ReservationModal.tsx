@@ -25,6 +25,7 @@ function closeModal(id:string){
 
 }
 export default function ReservationModal(props : DropDownButtonProps){
+    // set timeout. 
     return(
         <div class="modal fade" id={props.room + props.building + props.start_date + props.end_date} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
