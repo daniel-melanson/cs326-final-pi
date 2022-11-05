@@ -3,6 +3,7 @@ import Enact from "../Enact";
 interface DropDownButtonProps {
   name: string;
   options: string[];
+  icon: string;
 }
 
 export default function DropdownButton(props: DropDownButtonProps) {
@@ -21,12 +22,12 @@ export default function DropdownButton(props: DropDownButtonProps) {
           <div class="col px-2">
             <div class="d-flex justify-content-end">
               <div>
-                <i class="bi-building"></i>
+                <i class={"bi-" + props.icon}></i>
               </div>
             </div>
           </div>
         </div>
       </div>
     </button>
-  )
+  );
 }
