@@ -1,6 +1,10 @@
+import bootstrap from "bootstrap";
 import Enact from "../Enact";
+import $ from "jquery"
+import { Modal } from 'bootstrap';
 
 interface DropDownButtonProps {
+
     callback?: () => void;
 
     start_date: string;
@@ -10,9 +14,19 @@ interface DropDownButtonProps {
   }
 
 
+function triggerModal(id:string){
+    const element = document.getElementById(id) as HTMLElement;
+    const myModal = new Modal(element);
+    myModal.show();
+  
+}
+
+function closeModal(id:string){
+
+}
 export default function ReservationModal(props : DropDownButtonProps){
     return(
-        <div class="modal fade" id="exampleModal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
+        <div class="modal fade" id={props.room + props.building + props.start_date + props.end_date} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -25,6 +39,7 @@ export default function ReservationModal(props : DropDownButtonProps){
                     <form>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Recipient:</label>
+                        <input type="text" class="form-control" id="recipient-name"></input>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Message:</label>
