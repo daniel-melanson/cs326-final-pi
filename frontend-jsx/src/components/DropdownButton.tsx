@@ -1,12 +1,32 @@
-
 import Enact from "../Enact";
 
-interface DropdownButtonProps {
-  callback: () => void;
+interface DropDownButtonProps {
+  name: string;
+  options: string[];
 }
 
-export default function DropdownButton(props: DropdownButtonProps) {
+export default function DropdownButton(props: DropDownButtonProps) {
   return (
-    <div>Navbar</div>
+    <button
+      type="button"
+      class="col mx-1 btn btn-outline-dark filter-category"
+      data-bs-container="body"
+      data-bs-toggle="popover"
+      data-bs-placement="bottom"
+      data-bs-content={props.name}
+    >
+      <div class="container px-0">
+        <div class="row">
+          <div class="col px-2 text-start">{props.name}</div>
+          <div class="col px-2">
+            <div class="d-flex justify-content-end">
+              <div>
+                <i class="bi-building"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </button>
   )
 }
