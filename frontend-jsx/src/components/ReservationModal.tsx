@@ -7,11 +7,11 @@ interface DropDownButtonProps {
 
     callback?: () => void;
 
-    start_date: string;
-    end_date: string;
-    building : string;
-    room: string;
-  }
+  start_date: string;
+  end_date: string;
+  building: string;
+  room: string;
+}
 
 
 function triggerModal(id:string){
@@ -54,5 +54,5 @@ export default function ReservationModal(props : DropDownButtonProps){
                 </div>
             </div>
         </div>
-    )
+  );
 }
