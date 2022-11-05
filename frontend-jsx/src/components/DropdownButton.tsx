@@ -1,7 +1,11 @@
 
 import Enact from "../Enact";
 
-export default function DropdownButton() {
+interface DropdownButtonProps {
+  callback: () => void;
+}
+
+export default function DropdownButton(props: DropdownButtonProps) {
   return (
     <div>Navbar</div>
   )
