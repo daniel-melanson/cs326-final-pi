@@ -11,16 +11,18 @@ interface DropDownButtonProps {
   date: string;
 }
 
+const modals: Record<string, Modal> = {};
+
 function triggerModal(id: string) {
   const element = document.getElementById(id) as HTMLElement;
   const myModal = new Modal(element);
+  modals[id] = myModal;
   myModal.show();
 }
 
 function closeModal(id: string) {
-  const element = document.getElementById(id) as HTMLElement;
-  const myModal = new Modal(element);
-  console.log("destroy");
+  const myModal = modals[id];
+  myModal.hide();
   myModal.dispose();
 }
 
