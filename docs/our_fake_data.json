@@ -1,0 +1,38 @@
+{ "root":
+    [{ 
+        "building" : "ILC",
+        "room": "ILC151",
+        "capacity" : "150",
+        "description" : "some room description",
+        "availability" : {
+            "1": {"start_time" : "10:00AM", "end_time": "12:00PM"},
+            "2" :{"start_time" : "11:00AM", "end_time": "1:00PM"},
+            "3" :{"start_time" : "12:00PM", "end_time": "1:00PM"},
+            "4" :{"start_time" : "1:00PM", "end_time": "3:00PM"}
+        }
+    }, 
+    {
+        "building" : "ILC",
+        "room": "ILCS12-",
+        "capacity" : "120",
+        "description" : "some room description thats different",
+        "availability" : {
+            "1": {"start_time" : "10:00AM", "end_time": "12:00PM"},
+            "2" :{"start_time" : "11:00AM", "end_time": "1:00PM"},
+            "3" :{"start_time" : "12:00PM", "end_time": "1:00PM"},
+            "4" :{"start_time" : "1:00PM", "end_time": "3:00PM"}
+        }
+    },
+    {
+        "building" : "ILC",
+        "room": "ILC666",
+        "capacity" : "666",
+        "description" : "some room very special room thats different",
+        "availability" : {
+            "1": {"start_time" : "10:66AM", "end_time": "12:66PM"},
+            "2" :{"start_time" : "11:00AM", "end_time": "1:00PM"},
+            "3" :{"start_time" : "12:00PM", "end_time": "1:00PM"},
+            "4" :{"start_time" : "1:00PM", "end_time": "3:00PM"}
+        }
+    } ]
+}
