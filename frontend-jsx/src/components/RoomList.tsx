@@ -1,7 +1,6 @@
 import Enact from "../Enact";
 
 function Room() {
-
   return (
     <div class="row card mb-3">
       <div class="col px-0">
@@ -9,10 +8,7 @@ function Room() {
           <div class="row">
             <div class="col-8">Integrative Learning Center - S151</div>
             <div class="col-4 d-flex justify-content-end">
-              <button
-                type="button"
-                class="btn btn-sm btn-outline-primary ms-2"
-              >
+              <button type="button" class="btn btn-sm btn-outline-primary ms-2">
                 View Calendar
               </button>
             </div>
@@ -31,38 +27,30 @@ function Room() {
                 <br />
                 <i class="bi bi-boxes"></i> 300+ Seats
                 <br />
-                <i class="bi bi-text-paragraph"></i> Lecture hall.
-                Equipped with projectors.
+                <i class="bi bi-text-paragraph"></i> Lecture hall. Equipped with
+                projectors.
               </div>
               <div class="col card p-0">
                 <ul class="list-group list-group-flush">
-                  <li
-                    class="list-group-item d-flex justify-content-around"
-                  >
+                  <li class="list-group-item d-flex justify-content-around">
                     5:00pm-7:00pm
                     <button type="button" class="btn btn-sm btn-primary">
                       Book
                     </button>
                   </li>
-                  <li
-                    class="list-group-item d-flex justify-content-around"
-                  >
+                  <li class="list-group-item d-flex justify-content-around">
                     5:00pm-7:00pm
                     <button type="button" class="btn btn-sm btn-primary">
                       Book
                     </button>
                   </li>
-                  <li
-                    class="list-group-item d-flex justify-content-around"
-                  >
+                  <li class="list-group-item d-flex justify-content-around">
                     5:00pm-7:00pm
                     <button type="button" class="btn btn-sm btn-primary">
                       Book
                     </button>
                   </li>
-                  <li
-                    class="list-group-item d-flex justify-content-around"
-                  >
+                  <li class="list-group-item d-flex justify-content-around">
                     5:00pm-7:00pm
                     <button type="button" class="btn btn-sm btn-primary">
                       Book
@@ -95,7 +83,5 @@ function Room() {
 }
 
 export default function RoomList() {
-  return (
-    <div>RoomListings</div>
-  )
+  return <div>RoomListings</div>;
 }

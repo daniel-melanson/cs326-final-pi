@@ -28,5 +28,5 @@ export default function DropdownButton(props: DropDownButtonProps) {
         </div>
       </div>
     </button>
-  )
+  );
 }

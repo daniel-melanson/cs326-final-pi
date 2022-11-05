@@ -9,7 +9,9 @@ export default function Navbar() {
         </a>
         <form class="col-3 d-flex" role="search">
           <input type="search" class="form-control me-2" placeholder="Search" />
-          <button class="btn btn-outline-light" type="submit">Search</button>
+          <button class="btn btn-outline-light" type="submit">
+            Search
+          </button>
         </form>
         <a class="navbar-brand mx-3" href="#">
           <i class="bi-person-circle"></i>
