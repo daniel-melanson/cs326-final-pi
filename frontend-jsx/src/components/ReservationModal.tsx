@@ -1,6 +1,5 @@
 import bootstrap from "bootstrap";
 import Enact from "../Enact";
-import $ from "jquery"
 import { Modal } from 'bootstrap';
 
 interface DropDownButtonProps {
@@ -21,11 +20,20 @@ function triggerModal(id:string){
   
 }
 
-function closeModal(id:string){
-
+function closeModal(id: string){
+    const element = document.getElementById(id) as HTMLElement;
+    const myModal = new Modal(element);
+    console.log("destroy");
+    myModal.dispose();
 }
+
 export default function ReservationModal(props : DropDownButtonProps){
-    // set timeout. 
+    let uniqueid = props.room + props.building + props.start_date + props.end_date;
+    setTimeout( () => triggerModal(uniqueid), 100);
+    //setTimeout( () => closeModal(uniqueid), 2000);
+    let closeButtonId = uniqueid +'closeButton';
+    setTimeout( () => document.getElementById(closeButtonId)?.addEventListener('click', (() => closeModal(uniqueid))), 100);
+   
     return(
         <div class="modal fade" id={props.room + props.building + props.start_date + props.end_date} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -49,7 +57,7 @@ export default function ReservationModal(props : DropDownButtonProps){
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary"  id = {uniqueid+'closeButton'}>Close</button>
                     <button type="button" class="btn btn-primary">Send message</button>
                 </div>
                 </div>
