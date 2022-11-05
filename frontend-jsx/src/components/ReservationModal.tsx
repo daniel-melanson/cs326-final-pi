@@ -1,7 +1,7 @@
 import { Modal } from "bootstrap";
 import Enact from "../Enact";
 
-interface DropDownButtonProps {
+interface ModalReservationProps {
   callback?: () => void;
 
   start_date: string;
@@ -32,9 +32,11 @@ function confirmEvent(id : string){
     let event_title = document.getElementById(id + "event-name") as HTMLInputElement;
     let event_description = document.getElementById(id + "message-text")  as HTMLInputElement;
     console.log(event_description?.value, event_title?.value);
+
+    // combine event stuff + user info and send it over. 
     closeModal(id);
 }
-export default function ReservationModal(props: DropDownButtonProps) {
+export default function ReservationModal(props: ModalReservationProps) {
   let id = {'room' : props.room, 'building': props.building, 'start':props.start_date, 'end' : props.end_date, 'date': props.date};
 
   let uniqueid = JSON.stringify(id);
