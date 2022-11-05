@@ -9,8 +9,7 @@ interface RoomDetails {
 }
 
 function roomTimings(data: number[][]) {
-    /* let result = ""; */
-    const result = [];
+    let result = "";
     for (const time of data) {
         console.log(time);
         const startTime = time[0];
@@ -26,10 +25,9 @@ function roomTimings(data: number[][]) {
         button.innerHTML = "Book";
 
         list.appendChild(button);
-        result.push(list);
+        result += list.outerHTML;
     }
-    console.log(result);
-    return result.join(); 
+    return result;
 }
         
 function Room(data: RoomDetails) {
@@ -67,7 +65,6 @@ function Room(data: RoomDetails) {
                             </div>
                             <div class="col card p-0">
                                 <ul id="room-list" class="list-group list-group-flush">
-                                    {console.log(data["timings"])}
                                     {roomTimings(JSON.parse(data["timings"]))}
                                     {/* <li
                                         class="list-group-item d-flex justify-content-around"
@@ -130,7 +127,7 @@ function Room(data: RoomDetails) {
 export default function RoomList() {
     return (
         <Room
-            name    ="ILC"
+            name    ="LGRC"
             address ="amity street"
             timings ="[[5, 7], [13, 15], [22, 24]]"
         />
