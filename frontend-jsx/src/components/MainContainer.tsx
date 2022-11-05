@@ -4,7 +4,7 @@ import RoomList from "./RoomList";
 
 export default function MainContainer() {
   return (
-    <div>
+    <div class="container">
       <DropdownButtonRow />
       <RoomList />
     </div>
