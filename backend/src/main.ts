@@ -16,6 +16,4 @@ api.use("/events", events);
 app.use("/api", api);
 
 const EXPRESS_PORT = process.env.PORT;
-app.listen(EXPRESS_PORT, () =>
-  console.log("Server listening on port " + EXPRESS_PORT)
-);
+app.listen(EXPRESS_PORT, () => console.log("Server listening on port " + EXPRESS_PORT));
