@@ -23,6 +23,7 @@
   "name": "campus-meet-frontend",
   "scripts": {
     "build": "parcel build ./src/index.html --no-optimize --dist-dir ./dist/ --public-url /",
+    "build:prod": "parcel build ./src/index.html --dist-dir ./dist/ --public-url /",
     "lint": "npm run lint:format && npm run lint:fix ",
     "lint:fix": "eslint ./src --ext .ts,.html --quiet --fix",
     "lint:format": "prettier --loglevel warn --write \"./**/*.{ts,css,html}\" ",
