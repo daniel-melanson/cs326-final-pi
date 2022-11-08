@@ -16,4 +16,10 @@ export interface Event {
   title: string;
   start_time: string;
   end_time: string;
+  owner_id: string;
+}
+
+export interface User {
+  name: string;
+  id: string;
 }

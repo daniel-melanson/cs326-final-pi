@@ -1,5 +1,6 @@
 import { config } from "dotenv";
 import express from "express";
+import { rooms } from "./routes/rooms.route";
 import { buildings } from "./routes/buildings.route";
 import { events } from "./routes/events.route";
 
@@ -12,6 +13,7 @@ app.use("/", express.static("../frontend/dist/"));
 const api = express.Router();
 api.use("/buildings", buildings);
 api.use("/events", events);
+api.use("/rooms/", rooms);
 
 app.use("/api", api);
 
