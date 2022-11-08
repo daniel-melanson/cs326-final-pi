@@ -26,7 +26,8 @@
     "lint": "npm run lint:format && npm run lint:fix ",
     "lint:fix": "eslint ./src --ext .ts,.html --quiet --fix",
     "lint:format": "prettier --loglevel warn --write \"./**/*.{ts,css,html}\" ",
-    "serve": "parcel serve ./src/index.html --dist-dir ./dist/"
+    "serve": "parcel serve ./src/index.html --dist-dir ./dist/",
+    "watch": "parcel watch ./src/index.html --dist-dir ./dist/"
   },
   "version": "1.0.0"
 }

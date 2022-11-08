@@ -4,6 +4,7 @@ import { events } from "./routes/events.route";
 
 const app = express();
 app.use(express.json());
+app.use("/", express.static("../frontend/dist/"))
 
 const api = express.Router();
 api.use("/buildings", buildings);
