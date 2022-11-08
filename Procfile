@@ -1,3 +1,3 @@
-release: cd ./frontend && pwd && npm ci --no-fund --production=false && npm run build:prod && cd ../backend && npm ci --no-fund --production=false
+release: cd ./frontend && pwd && npm ci --no-fund --production=false && npm run build:prod && cd ../backend && npm ci --no-fund --production=false && npm run build
 
-web: cd backend && npm start
+web: node ./backend/dist/main.js
