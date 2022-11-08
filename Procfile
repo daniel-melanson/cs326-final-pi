@@ -1,3 +1,3 @@
-release: pushd ./frontend && pwd && npm ci --no-fund && npm run build:prod && popd && pushd ./backend && npm ci --no-fund && popd
+release: cd ./frontend && pwd && npm ci --no-fund && npm run build:prod && cd ../backend && npm ci --no-fund
 
 web: cd backend && npm start
