@@ -49,6 +49,7 @@ function generateData() {
 
     for (let j = 0; j < roomCount; j++) {
       const room: Room = {
+        description: faker.commerce.productDescription(),
         building_id: building.id,
         capacity: faker.datatype.number({ min: 10, max: 350 }),
         id: faker.datatype.uuid(),
