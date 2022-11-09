@@ -27,6 +27,7 @@
   "name": "campus-meet-backend",
   "scripts": {
     "build": "npx tsc -b",
+    "build:prod": "npm run build",
     "lint": "eslint --max-warnings 0 ./src/**/*.ts",
     "lint:fix": "eslint --fix ./src/**/*.ts",
     "start": "npm run build && node ./dist/main.js",
