@@ -1,3 +1,4 @@
+import { RESTfulBuilding } from "#types";
 import Enact from "../Enact";
 import DropdownButton, { DropdownOption } from "./DropdownButton";
 
@@ -11,62 +12,52 @@ export default function DropdownButtonRow() {
     today = new Date(today.setDate(today.getDate() + 1));
   }
 
-  // const [buildingList, setBuildingList] = Enact.useState<DropdownOption[]>([]);
-  // const [roomList, setRoomList] = Enact.useState<DropdownOption[]>([]);
+  const root = <div className="d-flex justify-content-center" />;
 
-  // Enact.useEffect(async () => {
-  //   const res = await fetch("/api/buildings");
-  //   const json: RESTfulBuilding[] = await res.json();
+  const children = [
+    <DropdownButton key="Building" icon="building" options={[]} />,
+    <DropdownButton key="Room" icon="caret-down" options={[]} />,
+    <DropdownButton
+      key="Capacity"
+      icon="caret-down"
+      options={[
+        ["10+", "10"],
+        ["25+", "25"],
+        ["50+", "50"],
+        ["100+", "100"],
+        ["200+", "200"],
+      ]}
+    />,
+    <DropdownButton key="Date" icon="calendar-date" options={dateOptions} />,
+    <DropdownButton
+      key="Duration"
+      icon="clock"
+      options={[
+        ["30+ Minutes", "30"],
+        ["1+ Hour", "60"],
+        ["2+ Hours", "120"],
+      ]}
+    />,
+    <DropdownButton
+      key="Sort By"
+      icon="sort-down"
+      options={[
+        ["Duration", "duration"],
+        ["Capacity", "capacity"],
+        ["Availability", "availability"],
+      ]}
+    />,
+  ];
+  root.append(...children);
 
-  //   setBuildingList(json.map((b) => [b.name, b.url]));
-  // }, []);
+  (async () => {
+    const res = await fetch("/api/buildings");
+    const json: RESTfulBuilding[] = await res.json();
+    const buildingOptions: DropdownOption[] = json.map((b) => [b.name, b.url]);
+    console.log(root.children[0]);
 
-  // const [building, setBuilding] = Enact.useState<DropdownOption | undefined>(undefined);
-  // const [room, setRoom] = Enact.useState<DropdownOption[]>([]);
+    root.replaceChild(<DropdownButton key="Building" icon="building" options={buildingOptions} />, root.children[0]);
+  })();
 
-  // Enact.useEffect(async () => {
-  //   if (!building) return;
-
-  //   const res = await fetch(building[1]);
-  //   const json: RESTfulBuilding = await res.json();
-
-  //   setRoomList(json.rooms.map((r) => [r.number, r.url]));
-  // }, [building]);
-
-  return (
-    <div className="d-flex justify-content-center">
-      <DropdownButton name="Building" icon="building" options={[]} />
-      <DropdownButton name="Room" icon="caret-down" options={[]} />
-      <DropdownButton
-        name="Capacity"
-        icon="caret-down"
-        options={[
-          ["10+", "10"],
-          ["25+", "25"],
-          ["50+", "50"],
-          ["100+", "100"],
-          ["200+", "200"],
-        ]}
-      />
-      <DropdownButton name="Date" icon="calendar-date" options={dateOptions} />
-      <DropdownButton
-        name="Duration"
-        icon="clock"
-        options={[
-          ["30+ Minutes", "30"],
-          ["1+ Hour", "60"],
-          ["2+ Hours", "120"],
-        ]}
-      />
-      <DropdownButton
-        name="Sort By"
-        icon="sort-down"
-        options={[
-          ["Duration", "duration"],
-          ["Capacity", "capacity"],
-          ["Availability", "availability"],
-        ]}
-      />
-    </div>
-  );
+  return root;
 }

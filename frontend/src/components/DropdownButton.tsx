@@ -3,7 +3,7 @@ import Enact from "../Enact";
 export type DropdownOption = [string, string];
 
 interface DropdownButtonProps {
-  name: string;
+  key: string;
   options: DropdownOption[];
   icon: string;
 }
@@ -18,7 +18,7 @@ export default function DropdownButton(props: DropdownButtonProps) {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        {props.name}
+        {props.key}
         <i className={`ps-4 bi-${props.icon}`} />
       </button>
       <ul className="dropdown-menu">

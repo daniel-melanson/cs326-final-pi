@@ -17,7 +17,8 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "prettier/prettier": ["warn", { "printWidth": 120 }]
+    "prettier/prettier": ["warn", { "printWidth": 120 }],
+    "react/jsx-key": [false, { "checkFragmentShorthand": false }]
   },
   "settings": {
     "react": {
