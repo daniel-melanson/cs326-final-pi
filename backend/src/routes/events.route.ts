@@ -28,7 +28,7 @@ return JSON OBJECT:
     {
       event: string :
       {
-        name : <optional> string,
+        name : string,
         building : string,
         room : string,
         date: string "dd-mm-yyyy",
