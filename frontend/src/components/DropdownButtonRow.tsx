@@ -1,4 +1,3 @@
-import { RESTfulBuilding } from "#types";
 import Enact from "../Enact";
 import DropdownButton, { DropdownOption } from "./DropdownButton";
 
@@ -12,32 +11,32 @@ export default function DropdownButtonRow() {
     today = new Date(today.setDate(today.getDate() + 1));
   }
 
-  const [buildingList, setBuildingList] = Enact.useState<DropdownOption[]>([]);
-  const [roomList, setRoomList] = Enact.useState<DropdownOption[]>([]);
+  // const [buildingList, setBuildingList] = Enact.useState<DropdownOption[]>([]);
+  // const [roomList, setRoomList] = Enact.useState<DropdownOption[]>([]);
 
-  Enact.useEffect(async () => {
-    const res = await fetch("/api/buildings");
-    const json: RESTfulBuilding[] = await res.json();
+  // Enact.useEffect(async () => {
+  //   const res = await fetch("/api/buildings");
+  //   const json: RESTfulBuilding[] = await res.json();
 
-    setBuildingList(json.map((b) => [b.name, b.url]));
-  }, []);
+  //   setBuildingList(json.map((b) => [b.name, b.url]));
+  // }, []);
 
-  const [building, setBuilding] = Enact.useState<DropdownOption | undefined>(undefined);
-  const [room, setRoom] = Enact.useState<DropdownOption[]>([]);
+  // const [building, setBuilding] = Enact.useState<DropdownOption | undefined>(undefined);
+  // const [room, setRoom] = Enact.useState<DropdownOption[]>([]);
 
-  Enact.useEffect(async () => {
-    if (!building) return;
+  // Enact.useEffect(async () => {
+  //   if (!building) return;
 
-    const res = await fetch(building[1]);
-    const json: RESTfulBuilding = await res.json();
+  //   const res = await fetch(building[1]);
+  //   const json: RESTfulBuilding = await res.json();
 
-    setRoomList(json.rooms.map((r) => [r.number, r.url]));
-  }, [building]);
+  //   setRoomList(json.rooms.map((r) => [r.number, r.url]));
+  // }, [building]);
 
   return (
     <div className="d-flex justify-content-center">
-      <DropdownButton name="Building" icon="building" options={buildingList} />
-      <DropdownButton name="Room" icon="caret-down" options={roomList} />
+      <DropdownButton name="Building" icon="building" options={[]} />
+      <DropdownButton name="Room" icon="caret-down" options={[]} />
       <DropdownButton
         name="Capacity"
         icon="caret-down"
