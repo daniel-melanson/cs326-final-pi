@@ -37,7 +37,11 @@ buildings.get("/:id", (req, res) => {
     .json({
       ...b,
       url: buildingURL(b.id),
-      rooms: ROOM_LIST.filter((r) => r.building_id === b.id).map((r) => ({ id: r.id, url: roomURL(r.id) })),
+      rooms: ROOM_LIST.filter((r) => r.building_id === b.id).map((r) => ({
+        id: r.id,
+        url: roomURL(r.id),
+        number: r.number,
+      })),
     })
     .end();
 });

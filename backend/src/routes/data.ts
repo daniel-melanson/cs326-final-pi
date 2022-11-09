@@ -43,8 +43,8 @@ function generateData() {
     BUILDING_LIST.push(building);
 
     const roomCount = faker.datatype.number({
-      min: 50,
-      max: 150,
+      min: 10,
+      max: 50,
     });
 
     for (let j = 0; j < roomCount; j++) {
@@ -52,7 +52,7 @@ function generateData() {
         building_id: building.id,
         capacity: faker.datatype.number({ min: 10, max: 350 }),
         id: faker.datatype.uuid(),
-        number: String(faker.datatype.number({ min: 100, max: 999 })),
+        number: String(faker.datatype.number({ min: 100, max: 300 })),
       };
       ROOM_LIST.push(room);
 
