@@ -5,7 +5,7 @@ import RoomList from "./RoomList";
 export default function MainContainer() {
   return (
     <div className="container">
-      <DropdownButtonRow />
+      <DropdownButtonRow onChange={(x) => console.log(x)} />
       <RoomList />
     </div>
   );
