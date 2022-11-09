@@ -8,6 +8,7 @@ export interface Room {
   building_id: string;
   number: string;
   capacity: number;
+  description : string;
 }
 
 export interface Event {
