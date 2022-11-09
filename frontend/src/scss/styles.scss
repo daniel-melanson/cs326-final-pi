@@ -9,6 +9,12 @@ $primary: $umass-maroon;
 $secondary: $umass-grey;
 $dark: $umass-black;
 
+.dropdown-menu {
+  height: auto;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
 @import "~bootstrap/scss/bootstrap.scss";
 
 $bootstrap-icons-font-dir: "../../node_modules/bootstrap-icons/font/fonts";
