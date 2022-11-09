@@ -1,33 +1,33 @@
 import Enact from "../Enact";
 
-interface DropDownButtonProps {
+export type DropdownOption = [string, string];
+
+interface DropdownButtonProps {
   name: string;
-  options: string[];
+  options: DropdownOption[];
   icon: string;
 }
 
-export default function DropdownButton(props: DropDownButtonProps) {
+export default function DropdownButton(props: DropdownButtonProps) {
   return (
-    <button
-      type="button"
-      className="col mx-1 btn btn-outline-dark filter-category"
-      data-bs-container="body"
-      data-bs-toggle="popover"
-      data-bs-placement="bottom"
-      data-bs-content={props.name}
-    >
-      <div className="container px-0">
-        <div className="row">
-          <div className="col px-2 text-start">{props.name}</div>
-          <div className="col px-2">
-            <div className="d-flex justify-content-end">
-              <div>
-                <i className={"bi-" + props.icon}></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </button>
+    <div className="dropdown px-1 py-3">
+      <button
+        type="button"
+        disabled={props.options.length === 0}
+        className="btn btn-outline-dark"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        {props.name}
+        <i className={`ps-4 bi-${props.icon}`} />
+      </button>
+      <ul className="dropdown-menu">
+        {props.options.map(([choice, value]) => (
+          <li key={value} className="dropdown-item">
+            {choice}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

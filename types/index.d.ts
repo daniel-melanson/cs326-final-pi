@@ -23,3 +23,13 @@ export interface User {
   name: string;
   id: string;
 }
+
+export interface RESTfulRoom extends Room {
+  url: string;
+  building_url: string;
+}
+
+export interface RESTfulBuilding extends Building {
+  url: string;
+  rooms: RESTfulRoom[];
+}
