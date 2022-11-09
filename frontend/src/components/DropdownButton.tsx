@@ -7,23 +7,30 @@ interface DropdownButtonProps {
   options: DropdownOption[];
   icon: string;
   selected?: number;
-  onSelected: (index: number) => void;
+  onSelected: (index?: number) => void;
 }
 
 export default function DropdownButton(props: DropdownButtonProps) {
+  const selection = props.selected !== undefined && props.options[props.selected];
   return (
     <div className="dropdown px-1 py-3">
       <button
         type="button"
         disabled={props.options.length === 0}
-        className="btn btn-outline-dark"
+        className={selection ? "btn btn-primary" : "btn btn-outline-dark"}
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        {props.key}
+        {selection ? selection[0] : props.key}
         <i className={`ps-4 bi-${props.icon}`} />
       </button>
       <ul className="dropdown-menu">
+        <li
+          className={selection ? "dropdown-item" : "dropdown-item active"}
+          onClick={() => selection && props.onSelected(undefined)}
+        >
+          None
+        </li>
         {props.options.map(([choice, value], index) => {
           const isSelected = index === props.selected;
           return (

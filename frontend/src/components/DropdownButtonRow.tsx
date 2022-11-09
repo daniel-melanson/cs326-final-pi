@@ -30,7 +30,7 @@ export default function DropdownButtonRow() {
   const RoomDropdownBuilder: FilterBuilder = (selected, options) => (
     <DropdownButton
       key="Room"
-      icon="caret-down"
+      icon="r-square"
       options={options ?? []}
       selected={selected}
       onSelected={(i) => {
@@ -42,13 +42,13 @@ export default function DropdownButtonRow() {
   const CapacityDropdownBuilder: FilterBuilder = (selected, options) => (
     <DropdownButton
       key="Capacity"
-      icon="caret-down"
+      icon="box2"
       options={[
-        ["10+", "10"],
-        ["25+", "25"],
-        ["50+", "50"],
-        ["100+", "100"],
-        ["200+", "200"],
+        ["10+ Seats", "10"],
+        ["25+ Seats", "25"],
+        ["50+ Seats", "50"],
+        ["100+ Seats", "100"],
+        ["200+ Seats", "200"],
       ]}
       selected={selected}
       onSelected={(i) => {
@@ -120,13 +120,17 @@ export default function DropdownButtonRow() {
     const replacement = builder(selected, options);
     root.replaceChild(replacement, old);
 
-    if (position === 0 && selected !== undefined && options) {
-      const res = await fetch(options[selected][1]);
-      const json: RESTfulBuilding = await res.json();
-      const roomOptions: DropdownOption[] = json.rooms.map((r) => [r.number, r.url]);
-      roomOptions.sort((a, b) => Number(a[0]) - Number(b[0]));
+    if (position === 0 && options) {
+      if (selected === undefined) {
+        updateList(1, RoomDropdownBuilder, undefined, []);
+      } else {
+        const res = await fetch(options[selected][1]);
+        const json: RESTfulBuilding = await res.json();
+        const roomOptions: DropdownOption[] = json.rooms.map((r) => [r.number, r.url]);
+        roomOptions.sort((a, b) => Number(a[0]) - Number(b[0]));
 
-      updateList(1, RoomDropdownBuilder, undefined, roomOptions);
+        updateList(1, RoomDropdownBuilder, undefined, roomOptions);
+      }
     }
   }
 
