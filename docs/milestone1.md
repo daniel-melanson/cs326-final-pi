@@ -13,7 +13,7 @@ Users will interact with the site through a few means.
 
 ### Initial Wireframe
 
-![Inital Wireframe](../images/wireframe-inital.jpg)
+![Inital Wireframe](./images/wireframe-inital.jpg)
 
 - Initial wire frame called for a collapsible filter menu one one side. Tiles in the center, and a multi use menu on the far right. You would change view from list to calendar in a header icon not shows.
 - Filter would include a searchable building, then room option. Duration and capactity would be sliders.
@@ -27,23 +27,23 @@ Users will interact with the site through a few means.
 - Availability refers to if the filter shows events, exams, or empty spaces.
 - View refers to the sketched "tile view" or a hidden "calendar" view.
 
-![Final Wireframe Screenshot 1](../images/main_tile_page.png)
-![Final Wireframe Screenshot 2](../images/reservation_modal.png)
+![Final Wireframe Screenshot 1](./images/main_tile_page.png)
+![Final Wireframe Screenshot 2](./images/reservation_modal.png)
 
 - Clicking book will generate a modal at a level above the rest of the web. Can exit by escaping or confirming a time block.
 
 ## HTML and CSS
 
-![Nav Bar](../images/navbar.png)
+![Nav Bar](./images/navbar.png)
 
 - Above is our navigation bar - centered - with a logo, search input, and a user icon
 
-![filter](../images/filter-cat.png)
+![filter](./images/filter-cat.png)
 
 - Above is the filter and sorting buttons, when you hover over them they will invert the text and image colors.
 - Users will be able to select buildings, specific rooms in such building, how many seats the room should have, et cetera, using popover elements.
 
-![listing](../images/listing.png)
+![listing](./images/listing.png)
 
 - Above is an availability listing, the design was tweaked from the wireframe made by @AnthonyZalev
 - Room listings are grouped together, with each available time having its own list entry in a sub-table.
@@ -51,9 +51,9 @@ Users will interact with the site through a few means.
 
 - Overall this is what the index page will look like:
 
-![full](../images/full.png)
+![full](./images/full.png)
 
-![calendar](../images/calendar.png)
+![calendar](./images/calendar.png)
 
 - Additionally, we have a template for the calendar pages
 - This template will be used in a server-sided rendering routine when a user navigates to a specific rooms calendar.
