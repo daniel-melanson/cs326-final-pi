@@ -2,7 +2,20 @@ import { RESTfulBuilding } from "#types";
 import Enact from "../Enact";
 import DropdownButton, { DropdownOption } from "./DropdownButton";
 
-export default function DropdownButtonRow() {
+interface AvailabilityConditions {
+  building_id?: string;
+  room_id?: string;
+  capacity?: string;
+  date_iso?: string;
+  duration?: string;
+  sort_by?: string;
+}
+
+interface DropdownButtonRowProps {
+  onChange: (conditions: AvailabilityConditions) => void;
+}
+
+export default function DropdownButtonRow(props: DropdownButtonRowProps) {
   const dateOptions: DropdownOption[] = [];
 
   let today = new Date();
@@ -43,30 +56,26 @@ export default function DropdownButtonRow() {
     <DropdownButton
       key="Capacity"
       icon="box2"
-      options={[
-        ["10+ Seats", "10"],
-        ["25+ Seats", "25"],
-        ["50+ Seats", "50"],
-        ["100+ Seats", "100"],
-        ["200+ Seats", "200"],
-      ]}
+      options={options ?? []}
       selected={selected}
       onSelected={(i) => {
         updateList(2, CapacityDropdownBuilder, i, options);
       }}
     />
   );
+
   const DateDropdownBuilder: FilterBuilder = (selected, options) => (
     <DropdownButton
       key="Date"
       icon="calendar-date"
-      options={dateOptions}
+      options={options ?? []}
       selected={selected}
       onSelected={(i) => {
         updateList(3, DateDropdownBuilder, i, options);
       }}
     />
   );
+
   const DurationDropdownBuilder: FilterBuilder = (selected, options) => (
     <DropdownButton
       key="Duration"
@@ -82,15 +91,12 @@ export default function DropdownButtonRow() {
       }}
     />
   );
+
   const SortByDropdownBuilder: FilterBuilder = (selected, options) => (
     <DropdownButton
       key="Sort By"
       icon="sort-down"
-      options={[
-        ["Duration", "duration"],
-        ["Capacity", "capacity"],
-        ["Availability", "availability"],
-      ]}
+      options={options ?? []}
       selected={selected}
       onSelected={(i) => {
         updateList(5, SortByDropdownBuilder, i, options);
@@ -101,10 +107,26 @@ export default function DropdownButtonRow() {
   root.append(
     BuildingDropdownBuilder(),
     RoomDropdownBuilder(),
-    CapacityDropdownBuilder(),
-    DateDropdownBuilder(),
-    DurationDropdownBuilder(),
-    SortByDropdownBuilder()
+    CapacityDropdownBuilder(undefined, [
+      ["10+ Seats", "10"],
+      ["25+ Seats", "25"],
+      ["50+ Seats", "50"],
+      ["100+ Seats", "100"],
+      ["200+ Seats", "200"],
+    ]),
+    DateDropdownBuilder(undefined, dateOptions),
+    DurationDropdownBuilder(undefined, [
+      ["10+ Seats", "10"],
+      ["25+ Seats", "25"],
+      ["50+ Seats", "50"],
+      ["100+ Seats", "100"],
+      ["200+ Seats", "200"],
+    ]),
+    SortByDropdownBuilder(undefined, [
+      ["Duration", "duration"],
+      ["Capacity", "capacity"],
+      ["Availability", "availability"],
+    ])
   );
 
   (async () => {
@@ -115,10 +137,27 @@ export default function DropdownButtonRow() {
     updateList(0, BuildingDropdownBuilder, undefined, buildingOptions);
   })();
 
+  const conditions: AvailabilityConditions = {};
   async function updateList(position: number, builder: FilterBuilder, selected?: number, options?: DropdownOption[]) {
     const old = root.children.item(position)!;
     const replacement = builder(selected, options);
     root.replaceChild(replacement, old);
+
+    if (selected !== undefined && options) {
+      const conditionKeys: (keyof AvailabilityConditions)[] = [
+        "building_id",
+        "room_id",
+        "capacity",
+        "date_iso",
+        "duration",
+        "sort_by",
+      ];
+
+      const conditionKey = conditionKeys[position];
+
+      conditions[conditionKey] = options[selected][1];
+      props.onChange(conditions);
+    }
 
     if (position === 0 && options) {
       if (selected === undefined) {
