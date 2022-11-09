@@ -14,9 +14,32 @@ export default function DropdownButtonRow() {
 
   const root = <div className="d-flex justify-content-center" />;
 
-  const children = [
-    <DropdownButton key="Building" icon="building" options={[]} />,
-    <DropdownButton key="Room" icon="caret-down" options={[]} />,
+  type FilterBuilder = (selected?: number, options?: DropdownOption[]) => HTMLElement;
+  const BuildingDropdownBuilder: FilterBuilder = (selected, options) => (
+    <DropdownButton
+      key="Building"
+      icon="building"
+      options={options ?? []}
+      selected={selected}
+      onSelected={(i) => {
+        updateList(0, BuildingDropdownBuilder, i, options);
+      }}
+    />
+  );
+
+  const RoomDropdownBuilder: FilterBuilder = (selected, options) => (
+    <DropdownButton
+      key="Room"
+      icon="caret-down"
+      options={options ?? []}
+      selected={selected}
+      onSelected={(i) => {
+        updateList(1, RoomDropdownBuilder, i, options);
+      }}
+    />
+  );
+
+  const CapacityDropdownBuilder: FilterBuilder = (selected, options) => (
     <DropdownButton
       key="Capacity"
       icon="caret-down"
@@ -27,8 +50,24 @@ export default function DropdownButtonRow() {
         ["100+", "100"],
         ["200+", "200"],
       ]}
-    />,
-    <DropdownButton key="Date" icon="calendar-date" options={dateOptions} />,
+      selected={selected}
+      onSelected={(i) => {
+        updateList(2, CapacityDropdownBuilder, i, options);
+      }}
+    />
+  );
+  const DateDropdownBuilder: FilterBuilder = (selected, options) => (
+    <DropdownButton
+      key="Date"
+      icon="calendar-date"
+      options={dateOptions}
+      selected={selected}
+      onSelected={(i) => {
+        updateList(3, DateDropdownBuilder, i, options);
+      }}
+    />
+  );
+  const DurationDropdownBuilder: FilterBuilder = (selected, options) => (
     <DropdownButton
       key="Duration"
       icon="clock"
@@ -37,7 +76,13 @@ export default function DropdownButtonRow() {
         ["1+ Hour", "60"],
         ["2+ Hours", "120"],
       ]}
-    />,
+      selected={selected}
+      onSelected={(i) => {
+        updateList(4, DurationDropdownBuilder, i, options);
+      }}
+    />
+  );
+  const SortByDropdownBuilder: FilterBuilder = (selected, options) => (
     <DropdownButton
       key="Sort By"
       icon="sort-down"
@@ -46,18 +91,44 @@ export default function DropdownButtonRow() {
         ["Capacity", "capacity"],
         ["Availability", "availability"],
       ]}
-    />,
-  ];
-  root.append(...children);
+      selected={selected}
+      onSelected={(i) => {
+        updateList(5, SortByDropdownBuilder, i, options);
+      }}
+    />
+  );
+
+  root.append(
+    BuildingDropdownBuilder(),
+    RoomDropdownBuilder(),
+    CapacityDropdownBuilder(),
+    DateDropdownBuilder(),
+    DurationDropdownBuilder(),
+    SortByDropdownBuilder()
+  );
 
   (async () => {
     const res = await fetch("/api/buildings");
     const json: RESTfulBuilding[] = await res.json();
     const buildingOptions: DropdownOption[] = json.map((b) => [b.name, b.url]);
-    console.log(root.children[0]);
 
-    root.replaceChild(<DropdownButton key="Building" icon="building" options={buildingOptions} />, root.children[0]);
+    updateList(0, BuildingDropdownBuilder, undefined, buildingOptions);
   })();
+
+  async function updateList(position: number, builder: FilterBuilder, selected?: number, options?: DropdownOption[]) {
+    const old = root.children.item(position)!;
+    const replacement = builder(selected, options);
+    root.replaceChild(replacement, old);
+
+    if (position === 0 && selected !== undefined && options) {
+      const res = await fetch(options[selected][1]);
+      const json: RESTfulBuilding = await res.json();
+      const roomOptions: DropdownOption[] = json.rooms.map((r) => [r.number, r.url]);
+      roomOptions.sort((a, b) => Number(a[0]) - Number(b[0]));
+
+      updateList(1, RoomDropdownBuilder, undefined, roomOptions);
+    }
+  }
 
   return root;
 }

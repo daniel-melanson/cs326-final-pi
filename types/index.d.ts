@@ -29,7 +29,13 @@ export interface RESTfulRoom extends Room {
   building_url: string;
 }
 
+export interface RESTfulRoomField {
+  url: string;
+  number: string;
+  id: string;
+}
+
 export interface RESTfulBuilding extends Building {
   url: string;
-  rooms: RESTfulRoom[];
+  rooms: RESTfulRoomField[];
 }

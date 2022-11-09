@@ -6,6 +6,8 @@ interface DropdownButtonProps {
   key: string;
   options: DropdownOption[];
   icon: string;
+  selected?: number;
+  onSelected: (index: number) => void;
 }
 
 export default function DropdownButton(props: DropdownButtonProps) {
@@ -22,11 +24,18 @@ export default function DropdownButton(props: DropdownButtonProps) {
         <i className={`ps-4 bi-${props.icon}`} />
       </button>
       <ul className="dropdown-menu">
-        {props.options.map(([choice, value]) => (
-          <li key={value} className="dropdown-item">
-            {choice}
-          </li>
-        ))}
+        {props.options.map(([choice, value], index) => {
+          const isSelected = index === props.selected;
+          return (
+            <li
+              key={value}
+              className={isSelected ? "dropdown-item active" : "dropdown-item"}
+              onClick={() => !isSelected && props.onSelected(index)}
+            >
+              {choice}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
