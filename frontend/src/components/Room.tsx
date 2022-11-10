@@ -48,7 +48,7 @@ export default function Room(props: RoomProps) {
                 <br />
                 <i className="bi-geo-alt"> {props.address}</i>
                 <br />
-                <i className="bi-box-2"> {props.capacity}</i>
+                <i className="bi-box2"> {props.capacity}</i>
                 <br />
                 <i className="bi-text-paragraph"> {props.description}</i>
               </div>
