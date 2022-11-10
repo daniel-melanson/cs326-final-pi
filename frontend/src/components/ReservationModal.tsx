@@ -1,80 +1,30 @@
 import { Modal } from "bootstrap";
 import Enact from "../Enact";
+import { formatDateAsTime } from "./util";
 
-interface ModalReservationProps {
-  callback?: () => void;
-
-  start_date: string;
-  end_date: string;
-  building: string;
-  room: string;
+interface ReservationModalProps {
+  buildingName: string;
+  roomId: string;
+  roomNumber: string;
+  startDate: Date;
+  endDate: Date;
   date: string;
 }
 
-const modals: Record<string, Modal> = {};
-
-function triggerModal(id: string) {
-  const element = document.getElementById(id) as HTMLElement;
-  const myModal = new Modal(element);
-  modals[id] = myModal;
-  myModal.show();
-}
-
-function closeModal(id: string) {
-  const myModal = modals[id];
-  //myModal.hide();
-  myModal.hide();
-  myModal.toggle();
-}
-
-function confirmEvent(id: string) {
-  console.log(JSON.parse(id));
-  const event_title = document.getElementById(id + "event-name") as HTMLInputElement;
-  const event_description = document.getElementById(id + "message-text") as HTMLInputElement;
-  console.log(event_description?.value, event_title?.value);
-
-  // combine event stuff + user info and send it over.
-  closeModal(id);
-}
-export default function ReservationModal(props: ModalReservationProps) {
-  const id = {
-    room: props.room,
-    building: props.building,
-    start: props.start_date,
-    end: props.end_date,
-    date: props.date,
-  };
-
-  const uniqueid = JSON.stringify(id);
-  setTimeout(() => triggerModal(uniqueid), 100);
-  //setTimeout( () => closeModal(uniqueid), 2000);
-  const closeButtonId = uniqueid + "closeButton";
-  const confirmButtonId = uniqueid + "confirmButton";
-  setTimeout(
-    () => document.getElementById(confirmButtonId)?.addEventListener("click", () => confirmEvent(uniqueid)),
-    200
-  );
-
-  setTimeout(() => document.getElementById(closeButtonId)?.addEventListener("click", () => closeModal(uniqueid)), 200);
-
-  return (
-    <div
-      className="modal fade"
-      id={uniqueid}
-      tabIndex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+export default function ReservationModal(props: ReservationModalProps) {
+  let modal: Modal;
+  const modalElement = (
+    <div className="modal fade" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog" role="document">
         <div className="modal-content">
           <div className="modal-header">
             <div className="container-fluid justify-content-center">
               <h3 className="modal-title " id="exampleModalLabel">
-                Request Room
+                Reserve Room
               </h3>
-              <label id="exampleModalLabel">
-                {props.room}, {props.start_date} - {props.end_date} on {props.date}
+              <label>
+                {props.buildingName} {props.roomNumber}, {formatDateAsTime(props.startDate)} -{" "}
+                {formatDateAsTime(props.endDate)} on {props.date}
               </label>
             </div>
           </div>
@@ -84,21 +34,42 @@ export default function ReservationModal(props: ModalReservationProps) {
                 <label htmlFor="recipient-name" className="col-form-label">
                   Event Title:
                 </label>
-                <input type="text" className="form-control" id={uniqueid + "event-name"}></input>
+                <input type="text" className="form-control title" />
               </div>
               <div className="form-group">
                 <label htmlFor="message-text" className="col-form-label">
                   Description:
                 </label>
-                <textarea className="form-control" id={uniqueid + "message-text"}></textarea>
+                <textarea className="form-control description"></textarea>
               </div>
             </form>
           </div>
           <div className="modal-footer">
-            <button type="button" className="btn btn-primary" id={uniqueid + "confirmButton"}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => {
+                const url = new URL(`${document.URL}api/events`);
+
+                url.searchParams.append("room_id", props.roomId);
+                url.searchParams.append("title", modalElement.querySelector("input.description")?.textContent ?? "");
+                url.searchParams.append("description", modalElement.querySelector("input.title")?.textContent ?? "");
+                url.searchParams.append("start_time", props.startDate.toISOString());
+                url.searchParams.append("end_time", props.endDate.toISOString());
+
+                fetch(url.toString(), { method: "POST" });
+                modal.hide();
+              }}
+            >
               Confirm
             </button>
-            <button type="button" className="btn btn-secondary" id={uniqueid + "closeButton"}>
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={() => {
+                modal.hide();
+              }}
+            >
               Close
             </button>
           </div>
@@ -106,4 +77,9 @@ export default function ReservationModal(props: ModalReservationProps) {
       </div>
     </div>
   );
+
+  modal = new Modal(modalElement);
+  modal.show();
+
+  return modalElement;
 }

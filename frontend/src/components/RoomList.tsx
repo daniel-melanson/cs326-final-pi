@@ -42,6 +42,7 @@ export default function RoomList(props: RoomListProps) {
           capacity={room.capacity}
           number={room.number}
           description={room.description}
+          roomId={room.id}
         />
       );
     })

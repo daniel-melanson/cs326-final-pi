@@ -1,4 +1,6 @@
 import Enact from "../Enact";
+import ReservationModal from "./ReservationModal";
+import { formatDateAsTime } from "./util";
 
 export interface RoomAvailabilities {
   start_date: Date;
@@ -11,15 +13,8 @@ interface RoomProps {
   capacity: string;
   address: string;
   description: string;
+  roomId: string;
   availabilities: RoomAvailabilities[];
-}
-
-function formatDate(d: Date): string {
-  return new Intl.DateTimeFormat("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-    hourCycle: "h12",
-  }).format(d);
 }
 
 export default function Room(props: RoomProps) {
@@ -54,14 +49,32 @@ export default function Room(props: RoomProps) {
               </div>
               <div class="col card p-0">
                 <ul id="room-list" class="list-group list-group-flush">
-                  {props.availabilities.map((avail) => (
-                    <li class="list-group-item d-flex justify-content-around">
-                      {formatDate(avail.start_date)} - {formatDate(avail.end_date)}
-                      <button type="button" class="btn btn-sm btn-primary">
-                        Book
-                      </button>
-                    </li>
-                  ))}
+                  {props.availabilities.map((avail) => {
+                    const start = formatDateAsTime(avail.start_date);
+                    const end = formatDateAsTime(avail.end_date);
+
+                    return (
+                      <li class="list-group-item d-flex justify-content-around">
+                        {start} - {end}
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-primary"
+                          onClick={() => (
+                            <ReservationModal
+                              startDate={avail.start_date}
+                              endDate={avail.end_date}
+                              date={avail.start_date.toLocaleDateString()}
+                              buildingName={props.building}
+                              roomNumber={props.number}
+                              roomId={props.roomId}
+                            />
+                          )}
+                        >
+                          Book
+                        </button>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
               <div class="col pe-0 d-flex justify-content-end">

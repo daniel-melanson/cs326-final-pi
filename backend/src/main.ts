@@ -1,14 +1,15 @@
+import bodyParser from "body-parser";
 import { config } from "dotenv";
 import express from "express";
 import { availabilities } from "./routes/availabilities.route";
 import { buildings } from "./routes/buildings.route";
 import { events } from "./routes/events.route";
 import { rooms } from "./routes/rooms.route";
-
 config();
 
 const app = express();
-app.use(express.json());
+// app.use(express.json());
+app.use(bodyParser.json());
 app.use("/", express.static("../frontend/dist/"));
 
 const api = express.Router();

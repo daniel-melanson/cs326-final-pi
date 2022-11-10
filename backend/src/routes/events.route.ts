@@ -1,7 +1,6 @@
 import { Router } from "express";
 import { EVENT_LIST } from "./data";
 import { urlBuilder } from "./util";
-
 export const events = Router();
 
 /*
@@ -59,4 +58,12 @@ events.get("/:id/", (req, res) => {
       owner_url: userURL(event.owner_id),
     })
     .end();
+});
+
+events.post("/", (req, res) => {
+  const { room_id, title, description, start_time, end_time } = req.query;
+
+  console.log("Event put request", room_id, title, description, start_time, end_time);
+  // TODO - Put stuff into database
+  res.status(200).end();
 });
