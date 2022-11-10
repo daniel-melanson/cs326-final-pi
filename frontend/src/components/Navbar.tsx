@@ -2,7 +2,7 @@ import Enact from "../Enact";
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container-fluid justify-content-center">
         <a className="navbar-brand" href="#">
           <i className="bi-image"></i> Campus Meet
