@@ -38,15 +38,15 @@ export default function Room(props: RoomProps) {
           <div class="container">
             <div class="row">
               <div class="col pt-1">
-                <i class="bi bi-building"></i> {props.building}
+                <i className="bi-building"> {props.building}</i>
                 <br />
-                <i class="bi bi-geo-alt"></i> {props.address}
+                <i className="bi-hash"> {props.number}</i>
                 <br />
-                <i class="bi bi-hash"></i> {props.number}
+                <i className="bi-geo-alt"> {props.address}</i>
                 <br />
-                <i class="bi bi-boxes"></i> {props.capacity}
+                <i className="bi-box-2"> {props.capacity}</i>
                 <br />
-                <i class="bi bi-text-paragraph"></i> {props.description}
+                <i className="bi-text-paragraph"> {props.description}</i>
               </div>
               <div class="col card p-0">
                 <ul id="room-list" class="list-group list-group-flush">
