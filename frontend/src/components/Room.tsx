@@ -15,7 +15,11 @@ interface RoomProps {
 }
 
 function formatDate(d: Date): string {
-  return d.toLocaleDateString();
+  return new Intl.DateTimeFormat("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    hourCycle: "h12",
+  }).format(d);
 }
 
 export default function Room(props: RoomProps) {
