@@ -9,6 +9,7 @@ export interface Room {
   number: string;
   capacity: number;
   description: string;
+  address: string;
 }
 
 export interface Event {
@@ -25,9 +26,14 @@ export interface User {
   id: string;
 }
 
-export interface RESTfulRoom extends Room {
+export interface RESTfulRoom {
+  id: string;
   url: string;
-  building_url: string;
+  building: RESTfulBuildingField;
+  number: string;
+  capacity: string;
+  description: string;
+  address: string;
 }
 
 export interface RESTfulRoomField {
@@ -39,6 +45,7 @@ export interface RESTfulRoomField {
 export interface RESTfulBuildingField {
   url: string;
   name: string;
+  id: string;
 }
 
 export interface RESTfulBuilding extends Building {
@@ -47,9 +54,15 @@ export interface RESTfulBuilding extends Building {
   rooms: RESTfulRoomField[];
 }
 
-export interface RESTfulAvailability {
+export interface RESTfulAvailabilityField {
   start: string;
   end: string;
-  room: RESTfulRoomField;
-  building: RESTfulBuildingField;
+  room_id: string;
+}
+
+export interface RESTfulAvailability {
+  rooms: {
+    [key: string]: RESTfulRoom;
+  };
+  availabilities: RESTfulAvailabilityField[];
 }

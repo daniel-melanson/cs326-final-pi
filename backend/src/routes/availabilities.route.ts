@@ -19,7 +19,10 @@ availabilities.get("/", (req, res) => {
   const date = new Date(new Date(date_iso as string).toDateString());
   const buildingURL = urlBuilder("buildings", req);
   const roomURL = urlBuilder("rooms", req);
-  const results: RESTfulAvailability[] = [];
+  const results: RESTfulAvailability = {
+    rooms: {},
+    availabilities: [],
+  };
 
   const scheduleStart = new Date(date.setHours(8));
   const scheduleEnd = new Date(date.setHours(20));
@@ -28,18 +31,25 @@ availabilities.get("/", (req, res) => {
   for (let i = 0; i < count; i++) {
     const b = BUILDING_LIST.find((b) => b.id === building_id) ?? faker.helpers.arrayElement(BUILDING_LIST);
     const r = faker.helpers.arrayElement(ROOM_LIST.filter((r) => r.building_id === b.id));
-
-    const eventStart = faker.date.between(scheduleStart, scheduleEnd);
-    results.push({
-      building: {
-        name: b.name,
-        url: buildingURL(b.id),
-      },
-      room: {
+    if (!(r.id in results.rooms)) {
+      results.rooms[r.id] = {
         id: r.id,
+        address: r.address,
+        building: {
+          id: b.id,
+          name: b.name,
+          url: buildingURL(b.id),
+        },
+        capacity: String(r.capacity),
+        description: r.description,
         number: r.number,
         url: roomURL(r.id),
-      },
+      };
+    }
+
+    const eventStart = faker.date.between(scheduleStart, scheduleEnd);
+    results.availabilities.push({
+      room_id: r.id,
       start: eventStart.toISOString(),
       end: faker.date
         .between(

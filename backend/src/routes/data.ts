@@ -54,6 +54,7 @@ function generateData() {
         capacity: faker.datatype.number({ min: 10, max: 350 }),
         id: faker.datatype.uuid(),
         number: String(faker.datatype.number({ min: 100, max: 300 })),
+        address: `${faker.address.streetAddress()}, ${faker.address.cityName()}`,
       };
       ROOM_LIST.push(room);
 

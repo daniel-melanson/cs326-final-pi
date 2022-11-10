@@ -2,7 +2,7 @@ import { RESTfulBuilding } from "#types";
 import Enact from "../Enact";
 import DropdownButton, { DropdownOption } from "./DropdownButton";
 
-interface AvailabilityConditions {
+export interface AvailabilityConditions {
   building_id?: string;
   room_id?: string;
   capacity?: string;
@@ -132,7 +132,7 @@ export default function DropdownButtonRow(props: DropdownButtonRowProps) {
   (async () => {
     const res = await fetch("/api/buildings");
     const json: RESTfulBuilding[] = await res.json();
-    const buildingOptions: DropdownOption[] = json.map((b) => [b.name, b.url]);
+    const buildingOptions: DropdownOption[] = json.map((b) => [b.name, b.id]);
 
     updateList(0, BuildingDropdownBuilder, undefined, buildingOptions);
   })();
@@ -165,7 +165,7 @@ export default function DropdownButtonRow(props: DropdownButtonRowProps) {
       } else {
         const res = await fetch(options[selected][1]);
         const json: RESTfulBuilding = await res.json();
-        const roomOptions: DropdownOption[] = json.rooms.map((r) => [r.number, r.url]);
+        const roomOptions: DropdownOption[] = json.rooms.map((r) => [r.number, r.id]);
         roomOptions.sort((a, b) => Number(a[0]) - Number(b[0]));
 
         updateList(1, RoomDropdownBuilder, undefined, roomOptions);
