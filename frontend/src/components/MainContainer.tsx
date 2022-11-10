@@ -12,8 +12,8 @@ export default function MainContainer() {
       return;
     }
 
-    const url = new URL(`${document.URL}api/availabilities`);
-
+    const url = new URL("/api/availabilities", document.baseURI);
+    console.log(url.toString());
     for (const [key, value] of Object.entries(x)) {
       url.searchParams.append(key, value);
     }

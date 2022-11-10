@@ -49,11 +49,11 @@ export default function ReservationModal(props: ReservationModalProps) {
               type="button"
               className="btn btn-primary"
               onClick={() => {
-                const url = new URL(`${document.URL}api/events`);
+                const url = new URL("/api/events", document.baseURI);
 
                 url.searchParams.append("room_id", props.roomId);
-                url.searchParams.append("title", modalElement.querySelector("input.description")?.textContent ?? "");
-                url.searchParams.append("description", modalElement.querySelector("input.title")?.textContent ?? "");
+                url.searchParams.append("title", modalElement.querySelector(".description")?.textContent ?? "");
+                url.searchParams.append("description", modalElement.querySelector(".title")?.textContent ?? "");
                 url.searchParams.append("start_time", props.startDate.toISOString());
                 url.searchParams.append("end_time", props.endDate.toISOString());
 
