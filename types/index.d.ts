@@ -28,7 +28,6 @@ export interface User {
 
 export interface RESTfulUserField {
   id: string;
-  string;
   name: string;
 }
 
