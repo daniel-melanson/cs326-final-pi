@@ -19,7 +19,7 @@ export default function MainContainer() {
     }
 
     const res = await fetch(url.toString());
-    const json: RESTfulAvailability[] = await res.json();
+    const json: RESTfulAvailability = await res.json();
 
     root.replaceChild(<RoomList listings={json} />, root.lastChild!);
   }

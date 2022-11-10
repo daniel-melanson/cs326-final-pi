@@ -2,7 +2,7 @@ import { RESTfulAvailability } from "#types";
 import Enact from "../Enact";
 import Room, { RoomAvailabilities } from "./Room";
 
-interface RoomListProps {
+export interface RoomListProps {
   listings?: RESTfulAvailability;
 }
 

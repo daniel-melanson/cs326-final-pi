@@ -163,7 +163,7 @@ export default function DropdownButtonRow(props: DropdownButtonRowProps) {
       if (selected === undefined) {
         updateList(1, RoomDropdownBuilder, undefined, []);
       } else {
-        const res = await fetch(options[selected][1]);
+        const res = await fetch(`/api/buildings/${options[selected][1]}`);
         const json: RESTfulBuilding = await res.json();
         const roomOptions: DropdownOption[] = json.rooms.map((r) => [r.number, r.id]);
         roomOptions.sort((a, b) => Number(a[0]) - Number(b[0]));
