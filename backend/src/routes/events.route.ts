@@ -1,3 +1,4 @@
+import { faker } from "@faker-js/faker";
 import { Router } from "express";
 import { EVENT_LIST } from "./data";
 import { urlBuilder } from "./util";
@@ -55,7 +56,11 @@ events.get("/:id/", (req, res) => {
     .status(200)
     .json({
       ...event,
-      owner_url: userURL(event.owner_id),
+      user: {
+        id: event.owner_id,
+        url: userURL(event.owner_id),
+        name: faker.name.fullName(),
+      },
     })
     .end();
 });

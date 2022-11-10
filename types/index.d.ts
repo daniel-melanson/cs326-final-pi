@@ -26,6 +26,21 @@ export interface User {
   id: string;
 }
 
+export interface RESTfulUserField {
+  id: string;
+  string;
+  name: string;
+}
+
+export interface RESTfulEvent {
+  id: string;
+  room: RESTfulRoomField;
+  title: string;
+  start_time: string;
+  end_time: string;
+  owner: RESTfulUserField;
+}
+
 export interface RESTfulRoom {
   id: string;
   url: string;
