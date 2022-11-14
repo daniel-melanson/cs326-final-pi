@@ -29,6 +29,33 @@ if (fs.existsSync(dataPath)) {
   );
 }
 
+async function updateEvents(){
+  let finaldic = [];
+  let x = "";
+  //Get General Info for Events
+  await fetch(
+  'https://25live.collegenet.com/25live/data/umass/run/list/listdata.json?compsubject=event&end_after=2022-11-13T00:00:00&node_type=E&order=asc&sort=event_name&page=1&page_size=25&obj_cache_accl=0&state=2+1&caller=pro-ListService.getData'
+  ).then( (response) => response.text()).then((data) => x = JSON.parse(data.slice(5))).then(() => x);
+
+  //Get Calendar Info for events.
+  // https://25live.collegenet.com/25live/data/umass/run/home/calendar/calendardata.json?mode=pro&page_size=2500&obj_cache_accl=0&start_dt=2022-10-04&end_dt=2022-10-04&comptype=cal_event&sort=evdates_event_name&compsubject=event&state=0+1+3+4+99&caller=pro-CalendarService.getData
+
+  //Get room information
+  //https://25live.collegenet.com/25live/data/umass/run/list/listdata.json?compsubject=location&order=asc&sort=max_capacity&page=1&page_size=100&obj_cache_accl=0&max_capacity=500&caller=pro-ListService.getData
+  for(let i = 0; i < x['rows'].length; i++){
+    let row = x['rows'][i]['row'];
+    row[0] = row[0]['itemId']; //retain class ID
+    row [3]= row[3]['subject'][0]['itemName']; // simplify to Organization string
+    row[10] = row[10]['subject'][0]['itemName']; //simplify to room string
+    row[11] = "";
+    finaldic.push(row);
+  }
+
+  fs.writeFileSync("data.json", JSON.stringify(finaldic))
+}
+
+
+
 function generateData() {
   const buildingCount = faker.datatype.number({
     min: 30,
