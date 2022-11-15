@@ -1,6 +1,0 @@
-{
-  "scripts": {
-    "postinstall": "cd ./frontend && npm ci --no-fund --production=false && npm run build:prod && cd ../backend && npm ci --no-fund --production=false && npm run build:prod",
-    "start": "cd ./backend && npm run start"
-  }
-}
