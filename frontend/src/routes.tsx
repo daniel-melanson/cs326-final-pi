@@ -3,7 +3,9 @@ import Building from "./pages/Building";
 import Buildings from "./pages/Buildings";
 import Campus from "./pages/Campus";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Room from "./pages/Room";
+import SignUp from "./pages/SignUp";
 
 interface Route {
   path: string;
@@ -20,7 +22,7 @@ const ROUTES: Readonly<Route[]> = [
     createPage: () => <Campus />,
   },
   {
-    path: "/buildings/",
+    path: "/buildings",
     createPage: () => <Buildings />,
   },
   {
@@ -30,6 +32,14 @@ const ROUTES: Readonly<Route[]> = [
   {
     path: "/rooms/:id",
     createPage: () => <Room />,
+  },
+  {
+    path: "/login",
+    createPage: () => <Login />,
+  },
+  {
+    path: "/signup",
+    createPage: () => <SignUp />,
   },
 ];
 
