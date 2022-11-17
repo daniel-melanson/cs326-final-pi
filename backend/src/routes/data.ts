@@ -2,13 +2,15 @@ import { Building, Event, Room, User } from "#types";
 import { faker } from "@faker-js/faker";
 import fs from "fs";
 import path from "path";
+import { stringify } from "querystring";
 
-export let ROOM_LIST: Array<Room> = [];
+export const ROOM_LIST: Array<Room> = [];
 
-export let BUILDING_LIST: Array<Building> = [];
+export const BUILDING_LIST: Array<Building> = [];
 
-export let EVENT_LIST: Array<Event> = [];
+export const EVENT_LIST: Array<Event> = [];
 
+/*
 export const USER_LIST: Array<User> = [];
 const dataPath = path.join(process.cwd(), "./fake_data.json");
 if (fs.existsSync(dataPath)) {
@@ -29,8 +31,9 @@ if (fs.existsSync(dataPath)) {
   );
 }
 
+*/
 
-
+/*
 function generateData() {
   const buildingCount = faker.datatype.number({
     min: 30,
@@ -93,9 +96,9 @@ function generateData() {
   }
 }
 
-async function updateEvents(){
-  const finaldic = [];
- 
+*/
+
+async function updateEvents() {
   //Get General Info for Events
   const rawEvents = await fetch(
     "https://25live.collegenet.com/25live/data/umass/run/list/listdata.json?compsubject=event&end_after=2022-11-13T00:00:00&node_type=E&order=asc&sort=event_name&page=1&page_size=25&obj_cache_accl=0&state=2+1&caller=pro-ListService.getData"
@@ -104,76 +107,117 @@ async function updateEvents(){
     .then((data) => JSON.parse(data.slice(5))["rows"]);
 
   console.log("Events Request Completed");
-  
+
   const calendarInfo = await fetch(
     "https://25live.collegenet.com/25live/data/umass/run/home/calendar/calendardata.json?mode=pro&page_size=2500&obj_cache_accl=0&start_dt=2022-10-04&end_dt=2022-12-04&comptype=cal_event&sort=evdates_event_name&compsubject=event&state=0+1+3+4+99&caller=pro-CalendarService.getData"
   )
     .then((response) => response.text())
     .then((data) => JSON.parse(data.slice(5))["root"]["events"]);
-  
 
   // let calendarInfo = JSON.parse(fs.readFileSync('calendarInfo.json')); -debugging faster.
 
   console.log("Calendar Request Completed");
 
   for (let i = 0; i < rawEvents.length; i++) {
-    const row = rawEvents[i]['row'];
-    const event = {};
+    const row = rawEvents[i]["row"];
+    const startDate = row[6];
+    const calendarTime = calendarInfo.filter((x: any) => x["date"].slice(0, 10) === startDate.slice(0, 10))[0];
 
-    event['eventID'] = row[0]['itemId']; //retain class ID
-    event['eventTitle'] = row[1];
-    event['referenceID'] = row[2];
-    event['organization']= row[3]['subject'][0]['itemName']; // simplify to Organization string
-    event["type"] = row[4];
-    event["categories"] = row[5];
-    event["startDate"] = row[6];
-    event["creationDate"] = row[8];
-
-   
+    const event: Event = {
+      id: row[0]["itemId"],
+      title: row[1],
+      reference_id: row[2],
+      organization: row[3]["subject"][0]["itemName"],
+      type: row[4],
+      categories: row[5],
+      creation_date: row[8],
+      state: row[9],
+      room_id: row[10]["subject"][0]["itemName"],
+      owner_id: 1,
+      start_time: "",
+      end_time: "",
+    };
 
     //Just get cal
-    const calendarTime = calendarInfo.filter((x) => x["date"].slice(0, 10) === event["startDate"].slice(0, 10))[0];
+
     if (calendarTime && calendarTime["rsrv"]) {
-      const reservationTime = calendarTime["rsrv"].filter((x) => x["event_id"] === event["eventID"])[0];
+      const reservationTime = calendarTime["rsrv"].filter((x: any) => x["event_id"] === row[0]["itemId"])[0];
       if (reservationTime && reservationTime["rsrv_start_dt"]) {
-        event["startTime"] = reservationTime["rsrv_start_dt"];
-        event["endTime"] = reservationTime["rsrv_end_dt"];
+        event["start_time"] = reservationTime["rsrv_start_dt"];
+        event["end_time"] = reservationTime["rsrv_end_dt"];
       }
     }
-    event["state"] = row[9];
-    event["room_id"] = row[10]["subject"][0]["itemName"]; //simplify to room string
-    event["scheduler"] = row[12];
-    event["requester"] = row[13];
-    finaldic.push(event);
+    EVENT_LIST.push(event);
   }
-  
-  fs.writeFileSync("data.json", JSON.stringify(finaldic))
 
-  console.log("Update Complete")
+  fs.writeFileSync("data.json", JSON.stringify(EVENT_LIST));
+
+  console.log("Update Complete");
 }
 
-async function updateRooms(){
-
-let finalRooms = []; // Try to get the Room interface implemented
-
-let rawRooms = await fetch (
-   'https://25live.collegenet.com/25live/data/umass/run/list/listdata.json?compsubject=location&order=asc&sort=max_capacity&page=1&page_size=10000&obj_cache_accl=0&max_capacity=500&caller=pro-ListService.getData'
-).then( (response) => response.text()).then((data) => JSON.parse(data.slice(5))['rows'])
-for(let index = 0; index < rawRooms.length; index++){
-  rawRooms[index]['row'][0] = rawRooms[index]['row'][0]['itemName']
-  rawRooms[index] =  rawRooms[index]['row']
-
-  let room = {};
-
-  room['id'] = rawRooms[index][0];
-  room['title'] = rawRooms[index][1];
-  room['category'] = rawRooms[index][2];
-  room['description'] = rawRooms[index][3];
-  room['layout'] = rawRooms[index][4];
-  room['capacity'] = rawRooms[index][5];
-
-  finalRooms.push(room);
-}
-fs.writeFileSync("data.json", JSON.stringify(finalRooms))
+async function getBuildingAddress(building: string){
+  const param = "https://spire-api.melanson.dev/buildings/?search=" + building.replace(" ", "+");
+  //console.log(param);
+  const address = await fetch(param)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data["results"][0])
+      return data["results"][0]["address"]
+    });
+  return address;
 }
 
+
+async function updateRooms() {
+
+  const rawRooms = await fetch(
+    "https://25live.collegenet.com/25live/data/umass/run/list/listdata.json?compsubject=location&order=asc&sort=max_capacity&page=1&page_size=10000&obj_cache_accl=0&max_capacity=500&caller=pro-ListService.getData"
+  )
+    .then((response) => response.text())
+    .then((data) => JSON.parse(data.slice(5))["rows"]);
+
+  const buildings = new Map<string, string>();
+
+  for (let index = 0; index < rawRooms.length; index++) {
+    rawRooms[index]["row"][0] = rawRooms[index]["row"][0]["itemName"];
+    rawRooms[index] = rawRooms[index]["row"];
+
+    const room: Room = {
+      id: rawRooms[index][0],
+      building_id: "",
+      number: "",
+      capacity: rawRooms[index][5],
+      description: rawRooms[index][3],
+      layout: rawRooms[index][4],
+      address: "",
+      title: rawRooms[index][1],
+      category: rawRooms[index][2],
+    };
+
+    const roomIndex = room["title"].indexOf(" room");
+
+    if (roomIndex > 0) {
+      room["building_id"] = room["title"].slice(0, roomIndex);
+      room["number"] = room["title"].slice(roomIndex + " room".length).trim();
+
+      if (buildings.has(room["building_id"])) {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        room["address"] = buildings.get(room["building_id"])!;
+      } else {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        getBuildingAddress(room["building_id"])
+          .then((address) => {
+            console.log(address);
+            buildings.set(room["building_id"], address);
+          })
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          .then(() => (room["address"] = buildings.get(room["building_id"])!));
+      }
+    }
+
+    ROOM_LIST.push(room);
+  }
+  fs.writeFileSync("data.json", JSON.stringify(ROOM_LIST));
+}
+
+updateRooms();
