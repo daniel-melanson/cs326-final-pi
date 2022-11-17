@@ -53,6 +53,4 @@ for (const route of ROUTES) {
   });
 }
 
-router.resolve();
-
 export default router;
