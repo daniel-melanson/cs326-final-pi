@@ -1,7 +1,9 @@
 import Enact from "../Enact";
 
-export default function Building() {
-  return (
-    <div>Building</div>
-  )
+interface BuildingParams {
+  parameters: { id: string };
+}
+
+export default function Building(props: BuildingParams) {
+  return <div>Building: {props.parameters.id}</div>;
 }
