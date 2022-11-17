@@ -1,4 +1,3 @@
-import Enact from "Enact";
 import Building from "./pages/Building";
 import Buildings from "./pages/Buildings";
 import Campus from "./pages/Campus";
@@ -9,37 +8,37 @@ import SignUp from "./pages/SignUp";
 
 interface Route {
   path: string;
-  createPage: () => HTMLElement;
+  page: (props: any) => HTMLElement;
 }
 
 const ROUTES: Readonly<Route[]> = [
   {
     path: "/",
-    createPage: () => <Home />,
+    page: Home,
   },
   {
     path: "/campus",
-    createPage: () => <Campus />,
+    page: Campus,
   },
   {
     path: "/buildings",
-    createPage: () => <Buildings />,
+    page: Buildings,
   },
   {
     path: "/buildings/:id",
-    createPage: () => <Building />,
+    page: Building,
   },
   {
     path: "/rooms/:id",
-    createPage: () => <Room />,
+    page: Room,
   },
   {
     path: "/login",
-    createPage: () => <Login />,
+    page: Login,
   },
   {
     path: "/signup",
-    createPage: () => <SignUp />,
+    page: SignUp,
   },
 ];
 
