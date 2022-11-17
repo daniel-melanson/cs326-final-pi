@@ -1,64 +1,58 @@
+import Navigo from "navigo";
+import Room from "./components/Room";
 import Enact from "./Enact";
-import NotFound from "./pages/NotFound";
-import ROUTES from "./routes";
+import Building from "./pages/Building";
+import Buildings from "./pages/Buildings";
+import Campus from "./pages/Campus";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 
-interface NavigationOptions {
-  path: string[];
-  search?: URLSearchParams;
-}
+const router = new Navigo("/");
 
 interface Route {
-  segments: Readonly<string[]>;
+  path: string;
   page: (props: any) => HTMLElement;
 }
 
-export function segmentPath(path: string) {
-  return path
-    .split("/")
-    .map(s => s.trim())
-    .filter(s => s.length > 0)
-    .map(s => s.replace(/^[\/]*|[\/-]*$/g, ""));
-}
+const ROUTES: Readonly<Route[]> = [
+  {
+    path: "/",
+    page: Home,
+  },
+  {
+    path: "/campus",
+    page: Campus,
+  },
+  {
+    path: "/buildings",
+    page: Buildings,
+  },
+  {
+    path: "/buildings/:id",
+    page: Building,
+  },
+  {
+    path: "/rooms/:id",
+    page: Room,
+  },
+  {
+    path: "/login",
+    page: Login,
+  },
+  {
+    path: "/signup",
+    page: SignUp,
+  },
+];
 
-class Router {
-  private readonly routes: Route[];
-
-  constructor() {
-    this.routes = ROUTES.map(r => ({
-      segments: segmentPath(r.path),
-      page: r.page,
-    }));
-
-    console.dir(`Loaded routes:`, this.routes);
-  }
-
-  navigateTo(options: NavigationOptions) {
-    const { path, search } = options;
-
-    const route = this.routes.find(
-      r => r.segments.length === path.length && r.segments.every((x, i) => x === path[i] || x.startsWith(":"))
-    );
-
-    if (!route) return this._renderPage(NotFound);
-
-    const params: Record<string, string> = {};
-
-    for (const i in route.segments) {
-      const segment = route.segments[i];
-      const given = path[i];
-
-      if (segment.startsWith(":")) {
-        params[segment.substring(1)] = given;
-      }
-    }
-
-    this._renderPage(route.page, params, search);
-  }
-
-  private _renderPage(Page: (props: any) => HTMLElement, params?: Record<string, string>, search?: URLSearchParams) {
+for (const route of ROUTES) {
+  router.on(route.path, match => {
     document.body.innerHTML = "";
-    document.body.appendChild(<Page parameters={params} search={search} />);
-  }
+    document.body.appendChild(<route.page parameters={match?.data} search={match?.queryString} />);
+  });
 }
 
-export default new Router();
+router.resolve();
+
+export default router;
