@@ -94,53 +94,56 @@ function generateData() {
 }
 
 async function updateEvents(){
-  let finaldic = [];
+  const finaldic = [];
  
   //Get General Info for Events
-  let rawEvents = await fetch(
-  'https://25live.collegenet.com/25live/data/umass/run/list/listdata.json?compsubject=event&end_after=2022-11-13T00:00:00&node_type=E&order=asc&sort=event_name&page=1&page_size=25&obj_cache_accl=0&state=2+1&caller=pro-ListService.getData'
-  ).then( (response) => response.text()).then((data) =>  JSON.parse(data.slice(5))['rows']);
+  const rawEvents = await fetch(
+    "https://25live.collegenet.com/25live/data/umass/run/list/listdata.json?compsubject=event&end_after=2022-11-13T00:00:00&node_type=E&order=asc&sort=event_name&page=1&page_size=25&obj_cache_accl=0&state=2+1&caller=pro-ListService.getData"
+  )
+    .then((response) => response.text())
+    .then((data) => JSON.parse(data.slice(5))["rows"]);
 
-  console.log("Events Request Completed")
-
+  console.log("Events Request Completed");
   
-  let calendarInfo = await fetch(
-    'https://25live.collegenet.com/25live/data/umass/run/home/calendar/calendardata.json?mode=pro&page_size=2500&obj_cache_accl=0&start_dt=2022-10-04&end_dt=2022-12-04&comptype=cal_event&sort=evdates_event_name&compsubject=event&state=0+1+3+4+99&caller=pro-CalendarService.getData'
-  ).then( (response) => response.text()).then((data) =>  JSON.parse(data.slice(5))['root']['events']);
+  const calendarInfo = await fetch(
+    "https://25live.collegenet.com/25live/data/umass/run/home/calendar/calendardata.json?mode=pro&page_size=2500&obj_cache_accl=0&start_dt=2022-10-04&end_dt=2022-12-04&comptype=cal_event&sort=evdates_event_name&compsubject=event&state=0+1+3+4+99&caller=pro-CalendarService.getData"
+  )
+    .then((response) => response.text())
+    .then((data) => JSON.parse(data.slice(5))["root"]["events"]);
   
 
   // let calendarInfo = JSON.parse(fs.readFileSync('calendarInfo.json')); -debugging faster.
 
-  console.log("Calendar Request Completed")
+  console.log("Calendar Request Completed");
 
-  for(let i = 0; i < rawEvents.length; i++){
-    let row = rawEvents[i]['row'];
-    let event = {}
+  for (let i = 0; i < rawEvents.length; i++) {
+    const row = rawEvents[i]['row'];
+    const event = {};
 
     event['eventID'] = row[0]['itemId']; //retain class ID
     event['eventTitle'] = row[1];
     event['referenceID'] = row[2];
     event['organization']= row[3]['subject'][0]['itemName']; // simplify to Organization string
-    event['type'] = row[4];
-    event['categories'] = row[5];
-    event['startDate'] = row[6];
-    event['creationDate'] = row[8];
+    event["type"] = row[4];
+    event["categories"] = row[5];
+    event["startDate"] = row[6];
+    event["creationDate"] = row[8];
 
-    let x = event['startDate'].slice(0,10);
+   
 
     //Just get cal
-    let calendarTime = calendarInfo.filter((x) => x['date'].slice(0,10) === event['startDate'].slice(0,10))[0];
-    if(calendarTime && calendarTime['rsrv']){
-      let reservationTime = calendarTime['rsrv'].filter((x) => x['event_id'] === event['eventID'])[0];
-      if(reservationTime && reservationTime['rsrv_start_dt']) {
-      event['startTime'] = reservationTime['rsrv_start_dt'];
-      event['endTime'] = reservationTime['rsrv_end_dt'];
+    const calendarTime = calendarInfo.filter((x) => x["date"].slice(0, 10) === event["startDate"].slice(0, 10))[0];
+    if (calendarTime && calendarTime["rsrv"]) {
+      const reservationTime = calendarTime["rsrv"].filter((x) => x["event_id"] === event["eventID"])[0];
+      if (reservationTime && reservationTime["rsrv_start_dt"]) {
+        event["startTime"] = reservationTime["rsrv_start_dt"];
+        event["endTime"] = reservationTime["rsrv_end_dt"];
       }
     }
-    event['state'] = row[9];
-    event['room_id'] = row[10]['subject'][0]['itemName']; //simplify to room string
-    event['scheduler'] = row[12];
-    event['requester'] = row[13];
+    event["state"] = row[9];
+    event["room_id"] = row[10]["subject"][0]["itemName"]; //simplify to room string
+    event["scheduler"] = row[12];
+    event["requester"] = row[13];
     finaldic.push(event);
   }
   
