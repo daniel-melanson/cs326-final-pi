@@ -16,6 +16,6 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "prettier/prettier": ["warn", { "printWidth": 120 }]
+    "prettier/prettier": ["warn", { "printWidth": 120, "endOfLine": "auto" }]
   }
 }
