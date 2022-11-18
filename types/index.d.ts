@@ -6,19 +6,28 @@ export interface Building {
 export interface Room {
   id: string;
   building_id: string;
+  title: string;
   number: string;
   capacity: number;
   description: string;
   address: string;
+  layout: string;
+  category: string;
 }
 
 export interface Event {
-  id: string;
-  room_id: string;
-  title: string;
-  start_time: string;
+  id: string;  // eventID
+  room_id: string; // roomName
+  title: string; // Event Title
+  start_time: string; 
+  reference_id: string;
+  organization: string;
+  type: string;
+  categories: string;
+  creation_date: string;
+  state:string;
   end_time: string;
-  owner_id: string;
+  owner_id: number;
 }
 
 export interface User {
