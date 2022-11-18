@@ -204,6 +204,7 @@ async function updateRooms() {
     
   }
   fs.writeFileSync("rooms.json", JSON.stringify(ROOM_LIST));
+  fs.writeFileSync("building.json", JSON.stringify(list));
 }
 updateEvents();
 updateRooms();
