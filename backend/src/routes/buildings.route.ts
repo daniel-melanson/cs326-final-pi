@@ -25,9 +25,6 @@ buildings.get("/:id", async (req, res) => {
       return res.status(404).end();
     }
   } catch (e) {
-    return res
-      .status(500)
-      .json({ errors: [e] })
-      .end();
+    return res.status(500).end();
   }
 });
