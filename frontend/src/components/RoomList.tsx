@@ -10,7 +10,7 @@ export default function RoomList(props: RoomListProps) {
   const listings = props.listings;
 
   if (!listings) {
-    return <div>Please select a date.</div>;
+    return <div class="text-center">Select a date to view listings.</div>;
   }
 
   const roomAvailabilityMap = listings.availabilities.reduce((acc, listing) => {

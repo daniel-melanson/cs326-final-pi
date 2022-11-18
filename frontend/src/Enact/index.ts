@@ -8,6 +8,8 @@ function createElement(tag: JSX.Tag | JSX.Component, attributes: { [key: string]
   const element = document.createElement(tag);
   if (attributes) {
     for (const key of Object.keys(attributes)) {
+      if (key.startsWith("__")) continue;
+
       if (key.startsWith("on") && "A".charCodeAt(0) <= key.charCodeAt(2)) {
         element.addEventListener(key.substring(2).toLowerCase(), attributes[key]);
       } else if ((element as any)[key] === undefined) {

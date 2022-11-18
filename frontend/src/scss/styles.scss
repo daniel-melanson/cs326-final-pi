@@ -37,3 +37,12 @@ $bootstrap-icons-font-dir: "../../node_modules/bootstrap-icons/font/fonts";
 .reservationModalFooterButtonConfirm {
   text-align: left;
 }
+
+.umass-background {
+  background-image: url("https://www.umass.edu/education/sites/default/files/styles/16_9_1080p_hd_landscape/public/hero-header/campus_aerial.jpg");
+  background-size: cover;
+}
+
+.blurred-backdrop {
+  backdrop-filter: blur(10px);
+}
