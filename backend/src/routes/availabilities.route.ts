@@ -1,7 +1,7 @@
 import { RESTfulAvailability } from "#types";
 import { faker } from "@faker-js/faker";
 import { Router } from "express";
-import { BUILDING_LIST, ROOM_LIST } from "./data";
+import { BUILDING_LIST, ROOM_LIST } from "../data/data";
 import { urlBuilder } from "./util";
 
 export const availabilities = Router();
