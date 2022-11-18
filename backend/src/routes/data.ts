@@ -2,7 +2,7 @@ import { Building, Event, Room, User } from "#types";
 import { faker } from "@faker-js/faker";
 import fs from "fs";
 import path from "path";
-import { stringify } from "querystring";
+//import { stringify } from "querystring";
 
 export const ROOM_LIST: Array<Room> = [];
 
@@ -101,7 +101,7 @@ function generateData() {
 async function updateEvents() {
   //Get General Info for Events
   const rawEvents = await fetch(
-    "https://25live.collegenet.com/25live/data/umass/run/list/listdata.json?compsubject=event&end_after=2022-11-13T00:00:00&node_type=E&order=asc&sort=event_name&page=1&page_size=25&obj_cache_accl=0&state=2+1&caller=pro-ListService.getData"
+    "https://25live.collegenet.com/25live/data/umass/run/list/listdata.json?compsubject=event&end_after=2022-11-13T00:00:00&node_type=E&order=asc&sort=event_name&page=1&page_size=10000&obj_cache_accl=0&state=2+1&caller=pro-ListService.getData"
   )
     .then((response) => response.text())
     .then((data) => JSON.parse(data.slice(5))["rows"]);
@@ -109,7 +109,7 @@ async function updateEvents() {
   console.log("Events Request Completed");
 
   const calendarInfo = await fetch(
-    "https://25live.collegenet.com/25live/data/umass/run/home/calendar/calendardata.json?mode=pro&page_size=2500&obj_cache_accl=0&start_dt=2022-10-04&end_dt=2022-12-04&comptype=cal_event&sort=evdates_event_name&compsubject=event&state=0+1+3+4+99&caller=pro-CalendarService.getData"
+    "https://25live.collegenet.com/25live/data/umass/run/home/calendar/calendardata.json?mode=pro&page_size=10000&obj_cache_accl=0&start_dt=2022-10-04&end_dt=2023-12-04&comptype=cal_event&sort=evdates_event_name&compsubject=event&state=0+1+3+4+99&caller=pro-CalendarService.getData"
   )
     .then((response) => response.text())
     .then((data) => JSON.parse(data.slice(5))["root"]["events"]);
@@ -122,17 +122,16 @@ async function updateEvents() {
     const row = rawEvents[i]["row"];
     const startDate = row[6];
     const calendarTime = calendarInfo.filter((x: any) => x["date"].slice(0, 10) === startDate.slice(0, 10))[0];
-
     const event: Event = {
-      id: row[0]["itemId"],
+      id: row[0]?.itemId,
       title: row[1],
       reference_id: row[2],
-      organization: row[3]["subject"][0]["itemName"],
+      organization: row[3]?.subject?.[0].itemName,
       type: row[4],
       categories: row[5],
       creation_date: row[8],
       state: row[9],
-      room_id: row[10]["subject"][0]["itemName"],
+      room_id: row[10]?.subject?.[0].itemName,
       owner_id: 1,
       start_time: "",
       end_time: "",
@@ -150,21 +149,9 @@ async function updateEvents() {
     EVENT_LIST.push(event);
   }
 
-  fs.writeFileSync("data.json", JSON.stringify(EVENT_LIST));
+  fs.writeFileSync("events.json", JSON.stringify(EVENT_LIST));
 
   console.log("Update Complete");
-}
-
-async function getBuildingAddress(building: string){
-  const param = "https://spire-api.melanson.dev/buildings/?search=" + building.replace(" ", "+");
-  //console.log(param);
-  const address = await fetch(param)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data["results"][0])
-      return data["results"][0]["address"]
-    });
-  return address;
 }
 
 
@@ -177,6 +164,8 @@ async function updateRooms() {
     .then((data) => JSON.parse(data.slice(5))["rows"]);
 
   const buildings = new Map<string, string>();
+
+  const list = [];
 
   for (let index = 0; index < rawRooms.length; index++) {
     rawRooms[index]["row"][0] = rawRooms[index]["row"][0]["itemName"];
@@ -200,24 +189,22 @@ async function updateRooms() {
       room["building_id"] = room["title"].slice(0, roomIndex);
       room["number"] = room["title"].slice(roomIndex + " room".length).trim();
 
-      if (buildings.has(room["building_id"])) {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        room["address"] = buildings.get(room["building_id"])!;
-      } else {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        getBuildingAddress(room["building_id"])
-          .then((address) => {
-            console.log(address);
-            buildings.set(room["building_id"], address);
-          })
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          .then(() => (room["address"] = buildings.get(room["building_id"])!));
+      if(list.indexOf(room["building_id"]) < 0){
+        list.push(room["building_id"]);
       }
+
+      const address_beg = "https://maps.google.com/maps?q=UMass%20Amherst%20"
+      const building_param =  room["building_id"].replace(" ", "%20")
+      const address_end = "&t=&z=16&ie=UTF8&iwloc=&output=embed"
+
+      room["address"] = address_beg.concat(building_param, address_end)
     }
 
     ROOM_LIST.push(room);
+    
   }
-  fs.writeFileSync("data.json", JSON.stringify(ROOM_LIST));
+  fs.writeFileSync("rooms.json", JSON.stringify(ROOM_LIST));
+  fs.writeFileSync("building.json", JSON.stringify(list));
 }
-
+updateEvents();
 updateRooms();
