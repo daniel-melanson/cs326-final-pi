@@ -41,7 +41,7 @@ export default function SignUp() {
                         </button>
                       </div>
                       <p class="text-center text-muted mt-5 mb-0">
-                        Have already an account?{" "}
+                        Already have an account?{" "}
                         <a href="login" class="fw-bold text-body">
                           <u class="text-primary">Login here</u>
                         </a>
