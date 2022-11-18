@@ -11,28 +11,38 @@ datasource db {
 }
 
 model Building {
-  id    String @id
-  name  String @unique @db.VarChar(255)
-  Rooms Room[]
+  id      String @id
+  name    String @unique @db.VarChar(255)
+  address String
+  Rooms   Room[]
 }
 
 model Room {
-  id         Int      @id @default(autoincrement())
-  building   Building @relation(fields: [buildingId], references: [id])
-  buildingId String
-  number     String
-  Event      Event[]
+  id          Int      @id @default(autoincrement())
+  building    Building @relation(fields: [buildingId], references: [id])
+  buildingId  String
+  number      String
+  Event       Event[]
+  capacity    Int
+  description String
+  layout      String
+  category    String
 }
 
 model Event {
-  id        Int      @id @default(autoincrement())
-  room      Room     @relation(fields: [roomId], references: [id])
-  roomId    Int
-  title     String   @db.VarChar(255)
-  startTime DateTime
-  endTime   DateTime
-  owner     User     @relation(fields: [userId], references: [id])
-  userId    Int
+  id           Int      @id @default(autoincrement())
+  room         Room     @relation(fields: [roomId], references: [id])
+  roomId       Int
+  title        String   @db.VarChar(255)
+  startTime    DateTime
+  endTime      DateTime
+  owner        User     @relation(fields: [ownerId], references: [id])
+  ownerId      Int
+  organization String
+  type         String
+  categories   String
+  creationDate DateTime
+  state        String
 }
 
 model User {
