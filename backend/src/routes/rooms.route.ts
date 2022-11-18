@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { BUILDING_LIST, EVENT_LIST, ROOM_LIST } from "./data";
+import { BUILDING_LIST, EVENT_LIST, ROOM_LIST } from "../data/data";
 import { urlBuilder } from "./util";
 
 export const rooms = Router();

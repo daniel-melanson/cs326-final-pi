@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { Router } from "express";
-import { EVENT_LIST } from "./data";
+import { EVENT_LIST } from "../data/data";
 import { urlBuilder } from "./util";
 export const events = Router();
 
