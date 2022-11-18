@@ -14,7 +14,7 @@ model Building {
   id      String @id
   name    String @unique @db.VarChar(255)
   address String
-  Rooms   Room[]
+  rooms   Room[]
 }
 
 model Room {
