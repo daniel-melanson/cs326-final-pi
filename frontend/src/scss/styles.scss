@@ -38,22 +38,11 @@ $bootstrap-icons-font-dir: "../../node_modules/bootstrap-icons/font/fonts";
   text-align: left;
 }
 
-#home {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-  main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    place-items: center;
-    justify-content: center;
-  }
+.umass-background {
+  background-image: url("https://www.umass.edu/education/sites/default/files/styles/16_9_1080p_hd_landscape/public/hero-header/campus_aerial.jpg");
+  background-size: cover;
 }
 
-#login {
-  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.umass.edu%2Feducation%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F16_9_1080p_hd_landscape%2Fpublic%2Fhero-header%2Fcampus_aerial.jpg%3Fitok%3D3_eMIHMH%26c%3Ddd60801e98e7bce53d142a04840dd0a7&f=1&nofb=1&ipt=480ca194e51776cad9abae7df7db8f9f0a15e3477789b1ed51a2742de951b4a6&ipo=images");
-  background-size: cover;
+.blurred-backdrop {
+  backdrop-filter: blur(10px);
 }

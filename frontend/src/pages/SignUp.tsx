@@ -3,8 +3,8 @@ import Enact from "../Enact";
 export default function SignUp() {
   return (
     <div>
-      <section id="login" class="vh-100 bg-image">
-        <div class="d-flex align-items-center h-100">
+      <section id="login" class="vh-100 umass-background">
+        <div class="d-flex align-items-center h-100 blurred-backdrop">
           <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
               <div class="col-12 col-md-9 col-lg-7 col-xl-6">
