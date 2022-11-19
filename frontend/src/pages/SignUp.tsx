@@ -17,30 +17,43 @@ export default function SignUp() {
                       </div>
                     </div>
                     <form>
-                      <div class="form-outline mb-4">
-                        <input type="email" id="email" class="form-control form-control-lg" />
-                        <label class="form-label" for="email">
-                          Email
-                        </label>
+                      <div class="row g-2 mb-3">
+                        <div class="col-md">
+                          <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <label for="floatingInput">First Name</label>
+                          </div>
+                        </div>
+                        <div class="col-md">
+                          <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Last Name" />
+                            <label for="floatingInput">Last Name</label>
+                          </div>
+                        </div>
                       </div>
-                      <div class="form-outline mb-4">
-                        <input type="password" id="password" class="form-control form-control-lg" />
-                        <label class="form-label" for="password">
-                          Password
-                        </label>
+                      <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                        <label for="floatingInput">Email address</label>
                       </div>
-                      <div class="form-outline mb-4">
-                        <input type="password" id="repeat" class="form-control form-control-lg" />
-                        <label class="form-label" for="repeat">
-                          Repeat your password
-                        </label>
+                      <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="password" placeholder="Password" />
+                        <label for="floatingPassword">Password</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="confirmPassword"
+                          placeholder="Confirm Password"
+                        />
+                        <label for="confirmPassword">Confirm Password</label>
                       </div>
                       <div class="d-flex justify-content-center">
                         <button type="button" class="btn btn-primary btn-block btn-lg">
                           Register
                         </button>
                       </div>
-                      <p class="text-center text-muted mt-5 mb-0">
+                      <p class="text-center text-muted mt-3 mb-0">
                         Already have an account?{" "}
                         <a href="login" class="fw-bold text-body">
                           <u class="text-primary">Login here</u>
