@@ -1,13 +1,13 @@
-import { Router } from "express";
-import prisma from "../db";
+import { Router } from 'express';
+import prisma from '../db';
 
 export const buildings = Router();
 
-buildings.get("/", (req, res) => {
+buildings.get('/', (req, res) => {
   res.status(404).end();
 });
 
-buildings.get("/:id", async (req, res) => {
+buildings.get('/:id', async (req, res) => {
   const id = req.params.id;
 
   if (!id) {
