@@ -54,7 +54,7 @@ async function updateEvents() {
       organization: row[3]?.subject?.[0].itemName,
       type: row[4],
       categories: row[5],
-      creationDate: row[8],
+      creationDate: new Date(row[8]),
       state: row[9],
       startTime: '',
       endTime: '',
@@ -72,8 +72,8 @@ async function updateEvents() {
         (x: any) => x['event_id'] === row[0]['itemId'],
       )[0];
       if (reservationTime && reservationTime['rsrv_start_dt']) {
-        event['startTime'] = reservationTime['rsrv_start_dt'];
-        event['endTime'] = reservationTime['rsrv_end_dt'];
+        event['startTime'] = new Date(reservationTime['rsrv_start_dt']);
+        event['endTime'] = new Date(reservationTime['rsrv_end_dt']);
       }
     }
 
@@ -85,6 +85,7 @@ async function updateEvents() {
 }
 
 async function updateRooms() {
+
   const rawRooms = await fetch(
     'https://25live.collegenet.com/25live/data/umass/run/list/listdata.json?compsubject=location&order=asc&sort=max_capacity&page=1&page_size=10000&obj_cache_accl=0&max_capacity=500&caller=pro-ListService.getData',
   )
@@ -96,44 +97,62 @@ async function updateRooms() {
   const roomList = [];
 
   for (let index = 0; index < rawRooms.length; index++) {
+
     rawRooms[index]['row'][0] = rawRooms[index]['row'][0]['itemName'];
     rawRooms[index] = rawRooms[index]['row'];
 
-    const room = {
+ 
+    const roomIndex = rawRooms[index][1].indexOf(' room');
+
+    let address = '';
+    let room_number = '';
+    const title = rawRooms[index][1].slice(0, roomIndex);
+    if (roomIndex > 0) {
+      console.log(title);
+      const building_id = title;
+      room_number = title?.slice(roomIndex + ' room'.length).trim();
+
+      const address_beg = 'https://maps.google.com/maps?q=UMass%20Amherst%20';
+      const building_param = building_id.replace(' ', '%20');
+      const address_end = '&t=&z=16&ie=UTF8&iwloc=&output=embed';
+
+      address = address_beg.concat(building_param, address_end);
+
+
+      
+    const event: Prisma.RoomCreateInput = {
       id: rawRooms[index][0],
-      building_id: '',
-      number: '',
+      building: {
+        connectOrCreate: {
+          where: {
+            name: title
+          },
+          create: {
+            id: title,
+            name:  title,
+            address: address
+          }
+        },
+      },
+      number: room_number,
       capacity: rawRooms[index][5],
       description: rawRooms[index][3],
       layout: rawRooms[index][4],
-      address: '',
-      title: rawRooms[index][1],
-      category: rawRooms[index][2],
-    };
-
-    const roomIndex = room['title'].indexOf(' room');
-
-    if (roomIndex > 0) {
-      room['building_id'] = room['title'].slice(0, roomIndex);
-      room['number'] = room['title'].slice(roomIndex + ' room'.length).trim();
-
-      if (list.indexOf(room['building_id']) < 0) {
-        list.push(room['building_id']);
-      }
-
-      const address_beg = 'https://maps.google.com/maps?q=UMass%20Amherst%20';
-      const building_param = room['building_id'].replace(' ', '%20');
-      const address_end = '&t=&z=16&ie=UTF8&iwloc=&output=embed';
-
-      room['address'] = address_beg.concat(building_param, address_end);
+      category: rawRooms[index][2]
     }
 
-    roomList.push(room);
+    console.log(event);
+    const user = await prisma.room.create({ data: event });
+
+    } else {
+      console.log(rawRooms[index])
+    }
+
   }
   fs.writeFileSync('rooms.json', JSON.stringify(roomList));
   fs.writeFileSync('building.json', JSON.stringify(list));
 }
 
-updateEvents();
+//updateEvents();
 
-///updateRooms();
+updateRooms();
