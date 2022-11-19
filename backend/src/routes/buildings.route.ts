@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import prisma from '../db';
+import prisma from '../db/index.js';
 
 export const buildings = Router();
 
-buildings.get('/', (req, res) => {
-  res.status(404).end();
+buildings.get('/', async (req, res) => {
+  res.status(200).json(await prisma.building.findMany());
 });
 
 buildings.get('/:id', async (req, res) => {
