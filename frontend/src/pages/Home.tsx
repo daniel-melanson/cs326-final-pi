@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div class="d-flex vh-100 justify-content-center">
+      <div class="container-fluid vertical-center justify-content-center">
         <div class="d-flex justify-content-center align-items-center flex-column text-center">
           <h1 class="display-5 fw-bold">Campus Meet</h1>
           <div class="col-8">
