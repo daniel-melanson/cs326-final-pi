@@ -4,7 +4,8 @@
     "@prisma/client": "^4.6.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "express-validator": "^6.14.2"
+    "express-validator": "^6.14.2",
+    "node-fetch": "^3.3.0"
   },
   "description": "",
   "devDependencies": {
@@ -34,5 +35,6 @@
     "start": "node ./dist/main.js",
     "watch": "nodemon ./src/main.ts"
   },
+  "type": "module",
   "version": "1.0.0"
 }

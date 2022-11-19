@@ -1,5 +1,4 @@
 import { Router } from "express";
-
 export const rooms = Router();
 
 rooms.get("/:id/", (req, res) => {
