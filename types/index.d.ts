@@ -1,6 +1,7 @@
 export interface Building {
   id: string;
   name: string;
+  room : string[];
 }
 
 export interface Room {
@@ -16,7 +17,7 @@ export interface Room {
 }
 
 export interface Event {
-  id: string;  // eventID
+  id: number;  // eventID
   room_id: string; // roomName
   title: string; // Event Title
   start_time: string; 
