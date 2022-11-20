@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { config } from 'dotenv';
 
 config();
 
-export const PORT = process.env['PORT']!;
+export const PORT = process.env['PORT'] ?? 8000;
 
-export const SECRET = process.env['SECRET']!;
+export const SECRET = process.env['SECRET'] ?? 'shhh';
