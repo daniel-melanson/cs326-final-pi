@@ -91,4 +91,6 @@ We have switch from Heroku to render because our client and server are decoupled
   - Connecting RESTful endpoints to DB
   - Authentication and sessions
 - [Anthony Zalev](https://github.com/AnthonyZalev)
+  - Database Schema work
+  - Created Routine for scraping 25live and populateing server databse
 - [Veera Sivarajan](https://github.com/veera-sivarajan)
