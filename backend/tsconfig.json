@@ -1,25 +1,11 @@
 {
+  "extends": "@tsconfig/node-lts-strictest-esm/tsconfig.json",
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "Node16",
-    "lib": ["ES2022"],
     "baseUrl": "./src",
-    "moduleResolution": "Node16",
-    "rootDir": ".",
-    "outDir": "build",
-    "allowSyntheticDefaultImports": true,
-    "importHelpers": true,
-    "alwaysStrict": true,
-    "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    // "noImplicitReturns": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    "noImplicitAny": false,
-    "noImplicitThis": false,
-    "strictNullChecks": false,
-    "types": ["@types/node"]
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
   },
   "include": ["src/**/*"],
   "ts-node": {

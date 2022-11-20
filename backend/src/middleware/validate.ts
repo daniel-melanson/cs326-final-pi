@@ -1,4 +1,4 @@
-import express from 'express';
+import type express from 'express';
 import { ValidationChain, validationResult } from 'express-validator';
 
 export default function validate(validations: ValidationChain[]) {

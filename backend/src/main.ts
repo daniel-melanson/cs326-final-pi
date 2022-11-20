@@ -20,5 +20,5 @@ api.use('/availabilities', availabilities);
 
 app.use('/api', api);
 
-const PORT = process.env.PORT;
+const PORT = process.env['PORT'];
 app.listen(PORT, () => console.log('Server listening on port ' + PORT));

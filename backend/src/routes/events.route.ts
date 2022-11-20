@@ -41,31 +41,30 @@ events.post(
     const { roomId, title, startTime, endTime } = req.body;
 
     try {
-      const event = await prisma.event.create({
-        data: {
-          id: 1,
-          room: {
-            connect: {
-              id: roomId,
-            },
-          },
-          title: title,
-          startTime: new Date(startTime),
-          endTime: new Date(endTime),
-          owner: {
-            connect: {
-              id: 0, // TODO: use authenticated user
-            },
-          },
-          organization: '', // TODO: Drop, make optional, or use defaults
-          type: '',
-          categories: '',
-          creationDate: new Date(),
-          state: '',
-        },
-      });
+      // const event = await prisma.event.create({
+      //   data: {
+      //     room: {
+      //       connect: {
+      //         id: roomId,
+      //       },
+      //     },
+      //     title: title,
+      //     startTime: new Date(startTime),
+      //     endTime: new Date(endTime),
+      //     owner: {
+      //       connect: {
+      //         id: 0, // TODO: use authenticated user
+      //       },
+      //     },
+      //     organization: '', // TODO: Drop, make optional, or use defaults
+      //     type: '',
+      //     categories: '',
+      //     creationDate: new Date(),
+      //     state: '',
+      //   },
+      // });
 
-      return res.status(200).json(event).end();
+      return res.status(200).json({}).end();
     } catch (e) {
       return res.status(500).end();
     }
