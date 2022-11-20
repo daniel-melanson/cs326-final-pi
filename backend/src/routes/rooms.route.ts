@@ -1,5 +1,5 @@
-import prisma from 'db/index.js';
 import { Router } from 'express';
+import prisma from '../db/index.js';
 
 export const rooms = Router();
 

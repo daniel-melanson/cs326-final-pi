@@ -1,8 +1,8 @@
 import bcrypt from 'bcryptjs';
-import prisma from 'db';
 import type { NextFunction, Request, Response } from 'express';
 import passport from 'passport';
 import type { VerifyFunction } from 'passport-local';
+import prisma from '../db/index.js';
 
 export function checkIsAuthenticated(req: Request, res: Response, next: NextFunction): void {
   if (req.isAuthenticated()) {
@@ -15,12 +15,11 @@ export function checkIsAuthenticated(req: Request, res: Response, next: NextFunc
 export function passportLoginCallback(req: Request, res: Response, next: NextFunction): void {
   passport.authenticate('local', (err, user, info) => {
     if (err) {
-      return res.status(500).send(err);
-    }
-    if (user) {
+      res.status(500).send(err);
+    } else if (user) {
       req.logIn(user, (err) => {
         if (err) {
-          return res.status(401).json(err);
+          res.status(401).json(err);
         } else {
           delete user.hash;
 

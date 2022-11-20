@@ -1,6 +1,6 @@
 import type { Prisma } from '@prisma/client';
-import fs from 'fs';
 import fetch from 'node-fetch';
+import fs from 'node:fs';
 import prisma from '../db/index.js';
 
 async function updateEvents() {

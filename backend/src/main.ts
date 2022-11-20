@@ -1,17 +1,17 @@
 import { PrismaClient } from '@prisma/client';
 import { PrismaSessionStore } from '@quixo3/prisma-session-store';
-import { authUser } from 'controllers/auth';
-import prisma from 'db';
-import { PORT, SECRET } from 'env';
 import express from 'express';
 import session from 'express-session';
 import passport from 'passport';
 import { Strategy } from 'passport-local';
-import { availabilities } from 'routes/availabilities.route';
-import { buildings } from 'routes/buildings.route';
-import { events } from 'routes/events.route';
+import { authUser } from './controllers/auth.js';
+import prisma from './db/index.js';
+import { PORT, SECRET } from './env.js';
+import { availabilities } from './routes/availabilities.route.js';
+import { buildings } from './routes/buildings.route.js';
+import { events } from './routes/events.route.js';
+import { rooms } from './routes/rooms.route.js';
 
-import { rooms } from 'routes/rooms.route';
 const app = express();
 app.use('/', express.static('../frontend/dist/'));
 app.use(express.json());

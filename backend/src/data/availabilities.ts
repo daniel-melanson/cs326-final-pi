@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import fs from 'fs';
+import fs from 'node:fs';
 import prisma from '../db/index.js';
 async function testPrisma() {
   const prisma = new PrismaClient();
@@ -10,7 +10,6 @@ async function testPrisma() {
       lastName: 'Mass',
       email: 'umass@umass.edu',
       hash: 'ertferfrg',
-      salt: 'dfgfbrbr',
     },
   });
 }

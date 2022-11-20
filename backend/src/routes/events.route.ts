@@ -1,7 +1,7 @@
-import prisma from 'db/index.js';
 import { Router } from 'express';
 import { body } from 'express-validator';
-import validate from 'middleware/validate.js';
+import prisma from '../db/index.js';
+import validate from '../middleware/validate.js';
 
 export const events = Router();
 
