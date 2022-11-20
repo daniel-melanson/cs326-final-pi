@@ -18,9 +18,7 @@ async function updateEvents() {
 
   */
 
-  const rawEvents = JSON.parse(
-    fs.readFileSync('src\\data\\rawEvents.json').toString(),
-  );
+  const rawEvents = JSON.parse(fs.readFileSync('src\\data\\rawEvents.json').toString());
 
   /*
   const calendarInfo = await fetch(
@@ -32,9 +30,7 @@ async function updateEvents() {
   fs.writeFileSync('src\\data\\calendarInfo.json', JSON.stringify(calendarInfo))
   */
 
-  const calendarInfo = JSON.parse(
-    fs.readFileSync('src\\data\\calendarInfo.json').toString(),
-  );
+  const calendarInfo = JSON.parse(fs.readFileSync('src\\data\\calendarInfo.json').toString());
 
   console.log('Calendar Request Completed');
 
@@ -43,9 +39,7 @@ async function updateEvents() {
     //Isolate row
     const row = rawEvents[i]['row'];
     const startDate = row[6];
-    const calendarTime = calendarInfo.filter(
-      (x: any) => x['date'].slice(0, 10) === startDate.slice(0, 10),
-    )[0];
+    const calendarTime = calendarInfo.filter((x: any) => x['date'].slice(0, 10) === startDate.slice(0, 10))[0];
 
     //Get room relation
     console.log(row[10]?.subject?.[0].itemName, addedEvents);
@@ -61,9 +55,7 @@ async function updateEvents() {
     });
 
     if (owner && room && calendarTime && calendarTime['rsrv']) {
-      const reservationTime = calendarTime['rsrv'].filter(
-        (x: any) => x['event_id'] === row[0]['itemId'],
-      )[0];
+      const reservationTime = calendarTime['rsrv'].filter((x: any) => x['event_id'] === row[0]['itemId'])[0];
 
       if (reservationTime && reservationTime['rsrv_start_dt']) {
         const startTime = new Date(reservationTime['rsrv_start_dt']);
@@ -147,9 +139,7 @@ async function updateRooms() {
     } else {
       //Example Arnold House room 120
       const building_id = rawRooms[index][1].slice(0, roomIndex);
-      const room_number = rawRooms[index][1]
-        ?.slice(roomIndex + ' room'.length)
-        .trim();
+      const room_number = rawRooms[index][1]?.slice(roomIndex + ' room'.length).trim();
 
       const address_beg = 'https://maps.google.com/maps?q=UMass%20Amherst%20';
       const building_param = building_id.replace(' ', '%20');
@@ -202,12 +192,7 @@ async function updateRooms() {
   }
   console.log(invalidSplits);
 
-  console.log(
-    'Added, ',
-    addedRooms,
-    ' out of a total raw Rooms count of: ',
-    rawRooms.length,
-  );
+  console.log('Added, ', addedRooms, ' out of a total raw Rooms count of: ', rawRooms.length);
 }
 
 //updateRooms();

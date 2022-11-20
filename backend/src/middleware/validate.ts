@@ -2,11 +2,7 @@ import type express from 'express';
 import { ValidationChain, validationResult } from 'express-validator';
 
 export default function validate(validations: ValidationChain[]) {
-  return async (
-    req: express.Request,
-    res: express.Response,
-    next: express.NextFunction,
-  ): Promise<void> => {
+  return async (req: express.Request, res: express.Response, next: express.NextFunction): Promise<void> => {
     await Promise.all(validations.map((validation) => validation.run(req)));
 
     const errors = validationResult(req);
