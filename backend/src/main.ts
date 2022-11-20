@@ -1,11 +1,9 @@
-import { config } from 'dotenv';
+import { PORT } from 'env';
 import express from 'express';
 import { availabilities } from 'routes/availabilities.route';
 import { buildings } from 'routes/buildings.route';
 import { events } from 'routes/events.route';
 import { rooms } from 'routes/rooms.route';
-
-config();
 
 const app = express();
 app.use('/', express.static('../frontend/dist/'));
@@ -20,5 +18,4 @@ api.use('/availabilities', availabilities);
 
 app.use('/api', api);
 
-const PORT = process.env['PORT'];
 app.listen(PORT, () => console.log('Server listening on port ' + PORT));

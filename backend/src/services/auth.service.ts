@@ -1,7 +1,7 @@
 import type { Prisma } from '@prisma/client';
 import bcrypt from 'bcryptjs';
-import { SECRET } from 'constants';
 import prisma from 'db';
+import { SECRET } from 'env';
 import jwt from 'jsonwebtoken';
 
 export async function register(data: Prisma.UserCreateInput & { password: string }): Promise<string> {
