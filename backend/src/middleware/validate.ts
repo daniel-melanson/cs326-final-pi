@@ -6,7 +6,7 @@ export default function validate(validations: ValidationChain[]) {
     req: express.Request,
     res: express.Response,
     next: express.NextFunction,
-  ) => {
+  ): Promise<void> => {
     await Promise.all(validations.map((validation) => validation.run(req)));
 
     const errors = validationResult(req);
