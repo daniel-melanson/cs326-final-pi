@@ -52,6 +52,5 @@ model User {
   lastName  String  @db.VarChar(64)
   email     String  @unique
   hash      String
-  salt      String
   Events    Event[]
 }
