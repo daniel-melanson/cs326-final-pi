@@ -1,9 +1,9 @@
 import { config } from 'dotenv';
 import express from 'express';
-import { availabilities } from './routes/availabilities.route';
-import { buildings } from './routes/buildings.route';
-import { events } from './routes/events.route';
-import { rooms } from './routes/rooms.route';
+import { availabilities } from 'routes/availabilities.route';
+import { buildings } from 'routes/buildings.route';
+import { events } from 'routes/events.route';
+import { rooms } from 'routes/rooms.route';
 
 config();
 
