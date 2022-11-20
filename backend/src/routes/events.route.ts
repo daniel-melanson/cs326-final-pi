@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { body } from 'express-validator';
-import validate from 'middleware/validate.js';
 import prisma from '../db/index.js';
+import validate from '../middleware/validate.js';
 
 export const events = Router();
 
@@ -29,12 +29,13 @@ events.get('/:id', async (req, res) => {
 });
 
 // TODO check if user in authenticated
-events.post('/',
+events.post(
+  '/',
   validate([
-    body("roomId").isString().isLength({ min: 5 }),
-    body("title").isString().isLength({ min: 5, max: 64 }),
-    body("startTime").isDate(),
-    body("endTime").isDate(),
+    body('roomId').isString().isLength({ min: 5 }),
+    body('title').isString().isLength({ min: 5, max: 64 }),
+    body('startTime').isDate(),
+    body('endTime').isDate(),
   ]),
   async (req, res) => {
     const { roomId, title, startTime, endTime } = req.body;
@@ -45,8 +46,8 @@ events.post('/',
           id: 1,
           room: {
             connect: {
-              id: roomId
-            }
+              id: roomId,
+            },
           },
           title: title,
           startTime: new Date(startTime),
@@ -54,18 +55,19 @@ events.post('/',
           owner: {
             connect: {
               id: 0, // TODO: use authenticated user
-            }
+            },
           },
-          organization: "", // TODO: Drop, make optional, or use defaults
-          type: "",
-          categories: "",
+          organization: '', // TODO: Drop, make optional, or use defaults
+          type: '',
+          categories: '',
           creationDate: new Date(),
-          state: "",
-        }
+          state: '',
+        },
       });
 
       return res.status(200).json(event).end();
     } catch (e) {
       return res.status(500).end();
     }
-});
+  },
+);
