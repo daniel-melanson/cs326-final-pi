@@ -1,0 +1,312 @@
+EXAMPLE EVENT and what to parse
+
+https: //25live.collegenet.com/25live/data/umass/run/list/listdata.json?compsubject=event&end_after=2022-11-13T00:00:00&node_type=E&order=asc&sort=event_name&page=1&page_size=25&obj_cache_accl=0&state=2+1&caller=pro-ListService.getData
+{
+    "contextId": 481838, -- event ID
+    "row": [
+        {
+            "templateType": 5,
+            "itemId": 481838,
+            "itemName": "CE-ENGIN 672 01 55551 1227", -- Name
+            "itemTypeId": 1
+        },
+        "Physical&ChemTreatment Process", -- Title
+        "2022-ACMAPR", -- Reference
+        {
+            "templateType": 6,
+            "subject": [
+                {
+                    "itemId": 416,
+                    "itemName": "5-CE-ENGIN", -- Organization
+                    "is_hidden": 0,
+                    "itemTypeId": 2
+                }
+            ]
+        },
+        "LEC", -- Type
+        "Session: C1-CPE", -- Categories
+        "2022-09-06 07:45:00.000", -- StartDate
+        "2022-09-06 07:45:00.000", -- StartTime
+        "2022-05-20 15:41:40.983", -- creation date
+        "Confirmed", - state
+        {
+            "templateType": 6,
+            "subject": [
+                {
+                    "itemId": 1772,
+                    "itemName": "RLEARN", -- location
+                    "is_hidden": 0,
+                    "itemTypeId": 4
+                }
+            ]
+        },
+        {
+            "templateType": 6
+        },
+        "SMuratoti Admin", -- schedueler
+        ""
+    ]
+},
+
+Get Details from the following fetch:
+https://25live.collegenet.com/25live/data/umass/run/event/detail/evdetail.json?event_id=489675&caller=pro-EvdetailDao.ge
+
+{
+    "evdetail": {
+        "perm": {
+            "edit": 0,
+            "inlineEdit": 0
+        },
+        "engine": "accl",
+        "occur": {
+            "prof": [
+                {
+                    "profName": "T 1000-1300 09/20",
+                    "rsv": [
+                        {
+                            "startDt": "2022-09-20T10:00",
+                            "endDt": "2022-09-20T13:00",
+                            "state": 1,
+                            "rsvId": 13314710,
+                            "space": [
+                                {
+                                    "itemId": 1772,
+                                    "itemName": "RLEARN",
+                                    "isShare": 1,
+                                    "itemTypeId": 4
+                                }
+                            ]
+                        }
+                    ],
+                    "perm": {
+                        "delete": 0
+                    },
+                    "profId": 646537
+                }
+            ]
+        },
+        "defn": {
+            "panel": [
+                {
+                    "item": [
+                        {
+                            "itemName": "LLCAR 87 01 57245 1227",
+                            "itemTypeId": 1101
+                        },
+                        {
+                            "itemName": "Building Decarbonization",
+                            "itemTypeId": 1102
+                        },
+                        {
+                            "itemId": 78,
+                            "itemName": "LEC",
+                            "itemTypeId": 1103
+                        },
+                        {
+                            "itemName": "2022-ACMWJW",
+                            "itemTypeId": 1104
+                        },
+                        {
+                            "itemName": "LYNX-EV-102-1227-57245",
+                            "itemTypeId": 1105
+                        },
+                        {
+                            "item": [
+                                {
+                                    "itemId": 2,
+                                    "itemName": "Confirmed",
+                                    "itemTypeId": 2
+                                }
+                            ],
+                            "itemTypeId": 1106
+                        },
+                        {
+                            "item": [
+                                {
+                                    "itemId": 513,
+                                    "itemName": "5-LLCAR",
+                                    "itemTypeId": 2
+                                }
+                            ],
+                            "itemTypeId": 1107
+                        },
+                        {
+                            "itemTypeId": 1108
+                        },
+                        {
+                            "itemId": -2,
+                            "item": [
+                                {
+                                    "itemId": 723,
+                                    "itemName": "Admin, SMuratoti",
+                                    "itemTypeId": 3
+                                }
+                            ],
+                            "itemTypeId": 1109,
+                            "itemLabel": "Scheduler"
+                        },
+                        {
+                            "item": [
+                                {
+                                    "itemId": 18,
+                                    "itemName": "Session: C1-CPE"
+                                }
+                            ],
+                            "itemTypeId": 1110
+                        },
+                        {
+                            "item": [
+                                {
+                                    "itemId": 646537,
+                                    "item": [
+                                        {
+                                            "itemTypeId": 1,
+                                            "itemLabel": 50
+                                        },
+                                        {
+                                            "itemTypeId": 2,
+                                            "itemLabel": 0
+                                        }
+                                    ],
+                                    "itemTypeId": 11110
+                                }
+                            ],
+                            "itemTypeId": 1111
+                        }
+                    ],
+                    "typeId": 11
+                },
+                {
+                    "item": [
+                        {
+                            "itemName": "Instructors: Morales, Alberto M",
+                            "itemTypeId": 1201
+                        }
+                    ],
+                    "typeId": 12,
+                    "itemPerm": {
+                        "noEdit": 1
+                    }
+                },
+                {
+                    "item": [
+                        {
+                            "item": [
+                                {
+                                    "itemId": 646537,
+                                    "itemName": "Instructors: Morales, Alberto M" -- detail
+                                }
+                            ],
+                            "itemTypeId": 1301
+                        }
+                    ],
+                    "typeId": 13,
+                    "itemPerm": {
+                        "noEdit": 1
+                    }
+                },
+                {
+                    "item": [
+                        {
+                            "itemTypeId": 1401
+                        }
+                    ],
+                    "typeId": 14,
+                    "itemPerm": ""
+                },
+                {
+                    "item": [
+                        {
+                            "itemTypeId": 1501
+                        }
+                    ],
+                    "typeId": 15,
+                    "itemPerm": {
+                        "noEdit": 1
+                    }
+                },
+                {
+                    "item": [
+                        {
+                            "itemTypeId": 1601
+                        }
+                    ],
+                    "typeId": 16
+                },
+                {
+                    "item": [
+                        {
+                            "itemTypeId": 1701
+                        }
+                    ],
+                    "typeId": 17
+                },
+                {
+                    "item": [
+                        {
+                            "item": [
+                                {
+                                    "itemName": "0/0",
+                                    "itemTypeName": "Approvals",
+                                    "itemTypeId": 1
+                                },
+                                {
+                                    "itemName": "0/0",
+                                    "itemTypeName": "Assignments",
+                                    "itemTypeId": 2
+                                },
+                                {
+                                    "itemName": "0/0",
+                                    "itemTypeName": "To Do's",
+                                    "itemTypeId": 3
+                                }
+                            ],
+                            "itemTypeId": 1801
+                        }
+                    ],
+                    "typeId": 18
+                },
+                {
+                    "item": [
+                        {
+                            "itemTypeId": 1901
+                        }
+                    ],
+                    "typeId": 19
+                },
+                {
+                    "item": [
+                        {
+                            "itemTypeId": 2001
+                        }
+                    ],
+                    "typeId": 20
+                },
+                {
+                    "item": [
+                        {
+                            "item": [
+                                {
+                                    "itemId": 1,
+                                    "itemName": "R25Webviewer",
+                                    "itemTypeId": 3
+                                }
+                            ],
+                            "itemTypeId": 2101,
+                            "itemLabel": "Event Owner"
+                        },
+                        {
+                            "itemName": "2022-09-07T11:56:34-04:00",
+                            "itemTypeId": 2102
+                        }
+                    ],
+                    "typeId": 21
+                }
+            ]
+        },
+        "pref": {
+            "isActive": 0
+        },
+        "pubdate": "2022-11-13T20:56:19-05:00"
+    }
+}
