@@ -32,7 +32,7 @@ export default function Login() {
                       </div>
                       <p class="text-center text-muted mt-3 mb-0">
                         Don't have an account?{" "}
-                        <a href="login" class="fw-bold text-body">
+                        <a href="signup" class="fw-bold text-body">
                           <u class="text-primary">Sign up here</u>
                         </a>
                       </p>
