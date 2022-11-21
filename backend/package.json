@@ -38,13 +38,13 @@
   "main": "./dist/main.js",
   "name": "campus-meet-backend",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "npx tsc -p tsconfig.json",
     "build:prod": "npm run build",
     "build:release": "npm run clean && tsc -p tsconfig.release.json",
-    "build:watch": "tsc -w -p tsconfig.json",
+    "build:watch": "npx tsc -w -p tsconfig.json",
     "clean": "rimraf coverage build tmp",
     "lint": "npx eslint . --ext .ts --ext .mts",
-    "prettier": "prettier --config .prettierrc --write ./src/**/*.ts",
+    "prettier": "npx prettier --config .prettierrc --write ./src/**/*.ts",
     "start": "node ./dist/main.js"
   },
   "type": "module",
