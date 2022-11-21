@@ -94,3 +94,4 @@ We have switch from Heroku to render because our client and server are decoupled
   - Database Schema work
   - Created Routine for scraping 25live and populateing server databse
 - [Veera Sivarajan](https://github.com/veera-sivarajan)
+  - Login page 
