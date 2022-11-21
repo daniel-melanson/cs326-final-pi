@@ -72,7 +72,7 @@ model Session {
 - We are currently in the process of trying to clean that data up so that our end users have a nice experience on the client
 - We have implemented endpoints using our database model and serialization process
 - However, data is not fully present yet so client is less functional than previous milestone
-- But with clean data, and minor changes, we should have
+- But with clean data, and minor changes, we should have full data interactions
 
 ## Deployment
 
