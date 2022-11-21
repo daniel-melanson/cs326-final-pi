@@ -43,7 +43,7 @@
     "build:release": "npm run clean && tsc -p tsconfig.release.json",
     "build:watch": "tsc -w -p tsconfig.json",
     "clean": "rimraf coverage build tmp",
-    "lint": "eslint . --ext .ts --ext .mts",
+    "lint": "npx eslint . --ext .ts --ext .mts",
     "prebuild": "npm run lint",
     "prettier": "prettier --config .prettierrc --write ./src/**/*.ts",
     "start": "node ./dist/main.js"
