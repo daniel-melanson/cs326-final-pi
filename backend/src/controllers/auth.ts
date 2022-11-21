@@ -14,12 +14,13 @@ export function checkIsAuthenticated(req: Request, res: Response, next: NextFunc
 
 export function passportLoginCallback(req: Request, res: Response, next: NextFunction): void {
   passport.authenticate('local', (err, user, info) => {
+    console.log(err, user);
     if (err) {
       res.status(500).send(err);
     } else if (user) {
       req.logIn(user, (err) => {
         if (err) {
-          res.status(401).json(err);
+          res.status(401).json({ errors: ["Bad"]});
         } else {
           delete user.hash;
 
@@ -27,14 +28,14 @@ export function passportLoginCallback(req: Request, res: Response, next: NextFun
         }
       });
     } else {
-      res.status(400).json({ message: 'Invalid email or password.' });
+      res.status(400).json({ errors: ['Invalid email or password.'] });
     }
   })(req, res, next);
 }
 
 export const authUser: VerifyFunction = async (email, password, done) => {
   try {
-    const user = await prisma.user.findUniqueOrThrow({ where: { email } });
+    const user = await prisma.user.findUnique({ where: { email } });
 
     if (user && bcrypt.compareSync(password, user.hash)) {
       return done(null, user);

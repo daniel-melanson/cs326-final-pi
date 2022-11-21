@@ -1,5 +1,7 @@
 {
   "[typescript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  }
+  },
+  "typescript.format.semicolons": "insert",
+  "javascript.preferences.importModuleSpecifier": "relative"
 }

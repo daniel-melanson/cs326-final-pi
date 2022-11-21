@@ -1,6 +1,45 @@
 import Enact from "../Enact";
 
 export default function Login() {
+  (async () => {
+    const res = await fetch("/api/auth");
+
+    if (res.ok) {
+      location.pathname = "/campus";
+    }
+  })();
+
+  async function login() {
+    const emailInput = document.getElementById("emailInput") as HTMLInputElement;
+    const passwordInput = document.getElementById("passwordInput") as HTMLInputElement;
+    const warningContainer = document.getElementById("warningContainer") as HTMLDivElement;
+    const warningContent = document.getElementById("warningContent")!;
+
+    try {
+      const res = await fetch("/api/auth/", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: emailInput.value, password: passwordInput.value }),
+      });
+
+      if (res.status >= 400 && res.status < 500) {
+        const json = await res.json();
+
+        warningContent.innerText = ` Error: ${json.errors[0]}`;
+        warningContainer.classList.remove("visually-hidden");
+      } else if (res.redirected) {
+        location.href = res.url;
+      }
+    } catch (e) {
+      console.log(e);
+      warningContent.innerText = " Unknown error occurred.";
+      warningContainer.classList.remove("visually-hidden");
+    }
+  }
+
   return (
     <div>
       <section id="login" class="vh-100 umass-background">
@@ -11,22 +50,27 @@ export default function Login() {
                 <div class="card">
                   <div class="card-body p-5">
                     <h2 class="text-uppercase text-center mb-5">Login</h2>
-                    <div class="alert alert-danger d-flex align-items-center visually-hidden" role="alert">
-                      <div>
-                        <i class="bi-exclamation-triangle-fill"> Invalid</i>
-                      </div>
+                    <div
+                      id="warningContainer"
+                      class="alert alert-danger d-flex align-items-center visually-hidden"
+                      role="alert"
+                    >
+                      <i id="warningContent" class="bi-exclamation-triangle-fill">
+                        {" "}
+                        Invalid
+                      </i>
                     </div>
                     <form>
                       <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                        <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" />
                         <label for="floatingInput">Email address</label>
                       </div>
                       <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="password" placeholder="Password" />
+                        <input type="password" class="form-control" id="passwordInput" placeholder="Password" />
                         <label for="floatingPassword">Password</label>
                       </div>
                       <div class="d-flex justify-content-center">
-                        <button type="button" class="btn btn-primary btn-block btn-lg">
+                        <button type="button" class="btn btn-primary btn-block btn-lg" onClick={login}>
                           Login
                         </button>
                       </div>
