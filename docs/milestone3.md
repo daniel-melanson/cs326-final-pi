@@ -76,7 +76,9 @@ model Session {
 
 ## Deployment
 
-We have switch from Heroku to render because our client and server are decoupled and Heroku was annoying to try and subvert that
+We have switch from Heroku to render because our client and server are decoupled and Heroku was annoying to try and subvert that.
+
+Our app is now deployed at <https://campus-meet.melanson.dev>
 
 ## Additional Workings
 
