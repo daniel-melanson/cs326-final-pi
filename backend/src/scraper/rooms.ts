@@ -68,19 +68,31 @@ async function fetchRawRooms(): Promise<RawRoom[]> {
   return entries;
 }
 
+function readJSON(path: string) {
+  return JSON.parse(fs.readFileSync(path, { encoding: 'utf-8' }));
+}
+
+function writeJSON(path: string, content: object) {
+  fs.writeFileSync(path, JSON.stringify(content));
+}
+
 export async function syncRooms() {
-  let rawRooms: RawRoom[];
-  const filePath = path.join('.', 'NORMALIZED_BUILDINGS.json');
-  if (!fs.statSync(filePath, { throwIfNoEntry: false })) {
-    fs.writeFileSync(filePath, JSON.stringify(await fetchNormalizedBuildings()));
+  const normalizedBuildingsJSONPath = path.join('.', 'NORMALIZED_BUILDINGS.json');
+  const rawRoomsJSONPath = path.join('.', 'RAW_BUILDINGS.json');
+  const normalizedRoomsJSONPath = path.join('.', 'NORMALIZED_ROOMS.json');
+
+  if (!fs.statSync(normalizedBuildingsJSONPath, { throwIfNoEntry: false })) {
+    writeJSON(normalizedBuildingsJSONPath, await fetchNormalizedBuildings());
   }
 
   const rawRooms = await fetchRawRooms();
-  rawRooms = JSON.parse(fs.readFileSync(filePath, { encoding: 'utf-8' }));
-  rawRooms = await fetchRawRooms();
   rawRooms.sort((a, b) => a.name.localeCompare(b.name));
-  
+  writeJSON(
+    rawRoomsJSONPath,
+    rawRooms.filter((r) => r.name.length > 0),
+  );
 
-  const classrooms = rawRooms.filter((r) => r.name.length > 0);
-  execSync('python3 ./normalize_');
+  execSync('python3 ./normalize_rooms.py'); // lol
+
+  const normalizedRooms: NomalizedRoom[] = readJSON(normalizedRoomsJSONPath);
 }
