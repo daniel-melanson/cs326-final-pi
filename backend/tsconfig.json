@@ -4,7 +4,8 @@
     "baseUrl": "./src",
     "outDir": "dist",
     "noUnusedLocals": false,
-    "noUnusedParameters": false
+    "noUnusedParameters": false,
+    "resolveJsonModule": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"],

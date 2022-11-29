@@ -12,7 +12,7 @@ datasource db {
 
 model Building {
   id      String @id
-  name    String @db.VarChar(255)
+  name    String @unique @db.VarChar(255)
   address String
   rooms   Room[]
 }
@@ -21,6 +21,7 @@ model Room {
   id          String   @id @unique
   building    Building @relation(fields: [buildingId], references: [id])
   buildingId  String
+  liveId      Int @unique
   number      String
   Event       Event[]
   capacity    Int
@@ -30,8 +31,8 @@ model Room {
 }
 
 model Event {
-  id           Int     @id @default(autoincrement())
-  liveId      Int
+  id           Int      @id @default(autoincrement())
+  liveId       Int @unique
   room         Room     @relation(fields: [roomId], references: [id])
   roomId       String
   title        String   @db.VarChar(255)
@@ -59,5 +60,5 @@ model Session {
   id        String   @id
   sid       String   @unique
   data      String
-  expiresAt   DateTime
+  expiresAt DateTime
 }
