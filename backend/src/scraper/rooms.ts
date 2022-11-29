@@ -76,9 +76,13 @@ function writeJSON(path: string, content: object) {
   fs.writeFileSync(path, JSON.stringify(content));
 }
 
+interface NormalizedRoom {
+
+}
+
 export async function syncRooms() {
-  const normalizedBuildingsJSONPath = path.join('.', 'NORMALIZED_BUILDINGS.json');
-  const rawRoomsJSONPath = path.join('.', 'RAW_BUILDINGS.json');
+  const normalizedBuildingsJSONPath = path.join('.', 'json', 'NORMALIZED_BUILDINGS.json');
+  const rawRoomsJSONPath = path.join('.', 'json', 'RAW_ROOMS.json');
   const normalizedRoomsJSONPath = path.join('.', 'NORMALIZED_ROOMS.json');
 
   if (!fs.statSync(normalizedBuildingsJSONPath, { throwIfNoEntry: false })) {
@@ -92,7 +96,9 @@ export async function syncRooms() {
     rawRooms.filter((r) => r.name.length > 0),
   );
 
-  execSync('python3 ./normalize_rooms.py'); // lol
+  const result = execSync('python3 ./src/scraper/normalize_rooms.py'); // lol
+  console.log(result.toString())
 
-  const normalizedRooms: NomalizedRoom[] = readJSON(normalizedRoomsJSONPath);
+
+  const normalizedRooms: NormalizedRoom[] = readJSON(normalizedRoomsJSONPath);
 }
