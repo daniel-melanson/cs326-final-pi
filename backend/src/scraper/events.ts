@@ -35,11 +35,16 @@ const ROOM_EVENTS_SEARCH_PARAMS = new URLSearchParams([
       console.log(`Error for room: ${room?.toString()}`)
     }
     else {
-    
+      const currentDate = new Date();
+      const endDate = new Date();
+      endDate.setDate(currentDate.getDate() + 7);
+      const string_end = endDate.toISOString()
+      const string_currentDate = currentDate.toISOString();
+
       const ROOM_EVENTS_SEARCH_PARAMS = new URLSearchParams([
         ['compsubject', 'rm_rsrv'],
-        ['start_dt', '2022-11-28T00:00:00'],
-        ['end_dt', '2022-11-28T23:59:59'],
+        ['start_dt', string_currentDate],
+        ['end_dt', string_end],
         ['order', 'asc'],
         ['sort', 'event_name'],
         ['page', '1'],
@@ -76,11 +81,11 @@ const ROOM_EVENTS_SEARCH_PARAMS = new URLSearchParams([
           const data = row.row;
           const event: Prisma.EventCreateInput =  {
             liveId: data[0]?.itemId,
-            room: {connect: room.id},
+            room: {connect: {id: room.id}},
             title: data[1],
             startTime: new Date(data[8]?.startDate),
             endTime: new Date(data[8]?.endDate),
-            owner: {connect : owner.id},
+            owner: {connect : {id: owner.id}},
             organization: data[4],
             type: "",
             categories: "",
@@ -88,7 +93,13 @@ const ROOM_EVENTS_SEARCH_PARAMS = new URLSearchParams([
             state: ""
           };
           //console.log(event)
+          try{
           const user = await prisma.event.create({ data: event });
+          } catch (e){
+            console.log(e)
+            console.log(data)
+            console.log(event)
+          }
         }
       }
     }
@@ -104,6 +115,9 @@ export async function syncEvents(){
       {capacity : {gt: 200,}}
     },
     );
+  const cleared = await prisma.event.deleteMany(
+    { where : {ownerId : 1}},
+  );
   const owner = await prisma.user.findFirst(
     {where : 
       {hash : "123"}
