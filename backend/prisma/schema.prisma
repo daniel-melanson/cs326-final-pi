@@ -11,30 +11,28 @@ datasource db {
 }
 
 model Building {
-  id      String @id
+  id      Int    @id @default(autoincrement())
   name    String @unique @db.VarChar(255)
   address String
   rooms   Room[]
 }
 
 model Room {
-  id          String   @id @unique
+  id          Int   @id @default(autoincrement())
   building    Building @relation(fields: [buildingId], references: [id])
-  buildingId  String
-  liveId      Int @unique
+  buildingId  Int
+  liveId      Int      @unique
   number      String
   Event       Event[]
   capacity    Int
-  description String
-  layout      String
-  category    String
+  features    String
 }
 
 model Event {
   id           Int      @id @default(autoincrement())
-  liveId       Int @unique
+  liveId       Int      
   room         Room     @relation(fields: [roomId], references: [id])
-  roomId       String
+  roomId       Int
   title        String   @db.VarChar(255)
   startTime    DateTime
   endTime      DateTime

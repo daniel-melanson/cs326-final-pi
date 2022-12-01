@@ -1,0 +1,5308 @@
+{
+    "Agricultural Engineering Building": {
+        "url": "http://spire-api.melanson.dev/buildings/14/",
+        "id": 14,
+        "name": "Agricultural Engineering Building",
+        "address": "250 Natural Resources Rd, Amherst, MA 01003-9295",
+        "rooms": [
+            {
+                "id": 686,
+                "url": "http://spire-api.melanson.dev/building-rooms/686/",
+                "number": "102",
+                "alt": "Agricultural Engineering Building Room 102"
+            },
+            {
+                "id": 609,
+                "url": "http://spire-api.melanson.dev/building-rooms/609/",
+                "number": "110",
+                "alt": "Agricultural Engineering Building Annex A Room 110"
+            },
+            {
+                "id": 723,
+                "url": "http://spire-api.melanson.dev/building-rooms/723/",
+                "number": "114",
+                "alt": "Agricultural Engineering Building Room 114"
+            },
+            {
+                "id": 401,
+                "url": "http://spire-api.melanson.dev/building-rooms/401/",
+                "number": "115",
+                "alt": "Agricultural Engineering Room 115"
+            },
+            {
+                "id": 291,
+                "url": "http://spire-api.melanson.dev/building-rooms/291/",
+                "number": "119",
+                "alt": "Agricultural Engineering Building Room 119"
+            },
+            {
+                "id": 667,
+                "url": "http://spire-api.melanson.dev/building-rooms/667/",
+                "number": "120",
+                "alt": "Agricultural Engineering Building Room 120"
+            },
+            {
+                "id": 59,
+                "url": "http://spire-api.melanson.dev/building-rooms/59/",
+                "number": "140",
+                "alt": "Agricultural Engineering Building Annex B Room 140"
+            },
+            {
+                "id": 41,
+                "url": "http://spire-api.melanson.dev/building-rooms/41/",
+                "number": "150",
+                "alt": "Agricultural Engineering Building Annex B Room 150"
+            },
+            {
+                "id": 544,
+                "url": "http://spire-api.melanson.dev/building-rooms/544/",
+                "number": "302",
+                "alt": "Agricultural Engineering Building Room 302"
+            },
+            {
+                "id": 313,
+                "url": "http://spire-api.melanson.dev/building-rooms/313/",
+                "number": "308",
+                "alt": "Agricultural Engineering Central Room 308"
+            }
+        ]
+    },
+    "Alumnae Hall @ Mount Ida": {
+        "url": "http://spire-api.melanson.dev/buildings/90/",
+        "id": 90,
+        "name": "Alumnae Hall @ Mount Ida",
+        "address": null,
+        "rooms": [
+            {
+                "id": 776,
+                "url": "http://spire-api.melanson.dev/building-rooms/776/",
+                "number": "140",
+                "alt": "Alumnae Hall @ Mount Ida Room 140"
+            }
+        ]
+    },
+    "Arnold House": {
+        "url": "http://spire-api.melanson.dev/buildings/39/",
+        "id": 39,
+        "name": "Arnold House",
+        "address": "715 N Pleasant, Amherst, MA 01003-9304",
+        "rooms": [
+            {
+                "id": 644,
+                "url": "http://spire-api.melanson.dev/building-rooms/644/",
+                "number": "101",
+                "alt": "Arnold Room 101"
+            },
+            {
+                "id": 257,
+                "url": "http://spire-api.melanson.dev/building-rooms/257/",
+                "number": "103",
+                "alt": "Arnold Room 103"
+            },
+            {
+                "id": 654,
+                "url": "http://spire-api.melanson.dev/building-rooms/654/",
+                "number": "104",
+                "alt": "Arnold Room 104"
+            },
+            {
+                "id": 655,
+                "url": "http://spire-api.melanson.dev/building-rooms/655/",
+                "number": "108",
+                "alt": "Arnold Room 108"
+            },
+            {
+                "id": 260,
+                "url": "http://spire-api.melanson.dev/building-rooms/260/",
+                "number": "109",
+                "alt": "Arnold Room 109"
+            },
+            {
+                "id": 190,
+                "url": "http://spire-api.melanson.dev/building-rooms/190/",
+                "number": "120",
+                "alt": "Arnold Room 120"
+            },
+            {
+                "id": 187,
+                "url": "http://spire-api.melanson.dev/building-rooms/187/",
+                "number": "136",
+                "alt": "Arnold Room 136"
+            },
+            {
+                "id": 657,
+                "url": "http://spire-api.melanson.dev/building-rooms/657/",
+                "number": "140",
+                "alt": "Arnold Room 140"
+            },
+            {
+                "id": 764,
+                "url": "http://spire-api.melanson.dev/building-rooms/764/",
+                "number": "15",
+                "alt": "Arnold House Room 15"
+            },
+            {
+                "id": 258,
+                "url": "http://spire-api.melanson.dev/building-rooms/258/",
+                "number": "20",
+                "alt": "Arnold Room 20"
+            },
+            {
+                "id": 827,
+                "url": "http://spire-api.melanson.dev/building-rooms/827/",
+                "number": "330",
+                "alt": "Arnold Room 330"
+            },
+            {
+                "id": 656,
+                "url": "http://spire-api.melanson.dev/building-rooms/656/",
+                "number": "40",
+                "alt": "Arnold Room 40"
+            },
+            {
+                "id": 754,
+                "url": "http://spire-api.melanson.dev/building-rooms/754/",
+                "number": "428",
+                "alt": "Arnold House Room 428"
+            },
+            {
+                "id": 717,
+                "url": "http://spire-api.melanson.dev/building-rooms/717/",
+                "number": "9",
+                "alt": "Arnold Room 9"
+            }
+        ]
+    },
+    "Bartlett Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/32/",
+        "id": 32,
+        "name": "Bartlett Hall",
+        "address": "130 Hicks Way, Amherst, MA 01003-9269",
+        "rooms": [
+            {
+                "id": 132,
+                "url": "http://spire-api.melanson.dev/building-rooms/132/",
+                "number": "109",
+                "alt": "Bartlett Hall Room 109"
+            },
+            {
+                "id": 133,
+                "url": "http://spire-api.melanson.dev/building-rooms/133/",
+                "number": "119",
+                "alt": "Bartlett Hall Room 119"
+            },
+            {
+                "id": 390,
+                "url": "http://spire-api.melanson.dev/building-rooms/390/",
+                "number": "121",
+                "alt": "Bartlett Hall Room 121"
+            },
+            {
+                "id": 306,
+                "url": "http://spire-api.melanson.dev/building-rooms/306/",
+                "number": "125",
+                "alt": "Bartlett Hall Room 125"
+            },
+            {
+                "id": 268,
+                "url": "http://spire-api.melanson.dev/building-rooms/268/",
+                "number": "127",
+                "alt": "Bartlett Hall Room 127"
+            },
+            {
+                "id": 269,
+                "url": "http://spire-api.melanson.dev/building-rooms/269/",
+                "number": "131",
+                "alt": "Bartlett Hall Room 131"
+            },
+            {
+                "id": 611,
+                "url": "http://spire-api.melanson.dev/building-rooms/611/",
+                "number": "201",
+                "alt": "Bartlett Hall Room 201"
+            },
+            {
+                "id": 600,
+                "url": "http://spire-api.melanson.dev/building-rooms/600/",
+                "number": "202",
+                "alt": "Bartlett Hall Room 202"
+            },
+            {
+                "id": 578,
+                "url": "http://spire-api.melanson.dev/building-rooms/578/",
+                "number": "205",
+                "alt": "Bartlett Hall Room 205"
+            },
+            {
+                "id": 147,
+                "url": "http://spire-api.melanson.dev/building-rooms/147/",
+                "number": "206",
+                "alt": "Bartlett Hall Room 206"
+            },
+            {
+                "id": 633,
+                "url": "http://spire-api.melanson.dev/building-rooms/633/",
+                "number": "207",
+                "alt": "Bartlett Hall Room 207"
+            },
+            {
+                "id": 608,
+                "url": "http://spire-api.melanson.dev/building-rooms/608/",
+                "number": "209",
+                "alt": "Bartlett Hall Room 209"
+            },
+            {
+                "id": 796,
+                "url": "http://spire-api.melanson.dev/building-rooms/796/",
+                "number": "256",
+                "alt": "Bartlett Hall Room 256"
+            },
+            {
+                "id": 307,
+                "url": "http://spire-api.melanson.dev/building-rooms/307/",
+                "number": "3",
+                "alt": "Bartlett Hall Room 3"
+            },
+            {
+                "id": 607,
+                "url": "http://spire-api.melanson.dev/building-rooms/607/",
+                "number": "310",
+                "alt": "Bartlett Hall Room 310"
+            },
+            {
+                "id": 606,
+                "url": "http://spire-api.melanson.dev/building-rooms/606/",
+                "number": "312",
+                "alt": "Bartlett Hall Room 312"
+            },
+            {
+                "id": 598,
+                "url": "http://spire-api.melanson.dev/building-rooms/598/",
+                "number": "319",
+                "alt": "Bartlett Hall Room 319"
+            },
+            {
+                "id": 778,
+                "url": "http://spire-api.melanson.dev/building-rooms/778/",
+                "number": "35",
+                "alt": "Bartlett Hall Room 35"
+            },
+            {
+                "id": 387,
+                "url": "http://spire-api.melanson.dev/building-rooms/387/",
+                "number": "356",
+                "alt": "Bartlett Room 356"
+            },
+            {
+                "id": 386,
+                "url": "http://spire-api.melanson.dev/building-rooms/386/",
+                "number": "374",
+                "alt": "Bartlett Hall Room 374"
+            },
+            {
+                "id": 748,
+                "url": "http://spire-api.melanson.dev/building-rooms/748/",
+                "number": "456",
+                "alt": "Bartlett Hall Room 456"
+            },
+            {
+                "id": 751,
+                "url": "http://spire-api.melanson.dev/building-rooms/751/",
+                "number": "474",
+                "alt": "Bartlett Room 474"
+            },
+            {
+                "id": 259,
+                "url": "http://spire-api.melanson.dev/building-rooms/259/",
+                "number": "61",
+                "alt": "Bartlett Hall Room 61"
+            },
+            {
+                "id": 302,
+                "url": "http://spire-api.melanson.dev/building-rooms/302/",
+                "number": "65",
+                "alt": "Bartlett Hall Room 65"
+            }
+        ]
+    },
+    "Bowditch Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/62/",
+        "id": 62,
+        "name": "Bowditch Hall",
+        "address": "201 Natural Resources Rd, Amherst, MA 01003-9294",
+        "rooms": [
+            {
+                "id": 548,
+                "url": "http://spire-api.melanson.dev/building-rooms/548/",
+                "number": "109",
+                "alt": "Bowditch Hall Room 109"
+            },
+            {
+                "id": 692,
+                "url": "http://spire-api.melanson.dev/building-rooms/692/",
+                "number": "205",
+                "alt": "Bowditch Hall Room 205"
+            },
+            {
+                "id": 383,
+                "url": "http://spire-api.melanson.dev/building-rooms/383/",
+                "number": "209",
+                "alt": "Bowditch Hall Room 209"
+            }
+        ]
+    },
+    "Boyden Gym": {
+        "url": "http://spire-api.melanson.dev/buildings/6/",
+        "id": 6,
+        "name": "Boyden Gym",
+        "address": "131 Commonwealth Ave, Amherst, MA 01003-9253",
+        "rooms": [
+            {
+                "id": 462,
+                "url": "http://spire-api.melanson.dev/building-rooms/462/",
+                "number": "20",
+                "alt": "Boyden Gym Room 20"
+            },
+            {
+                "id": 575,
+                "url": "http://spire-api.melanson.dev/building-rooms/575/",
+                "number": "269",
+                "alt": "Boyden Room 269"
+            },
+            {
+                "id": 23,
+                "url": "http://spire-api.melanson.dev/building-rooms/23/",
+                "number": "51",
+                "alt": "Boyden Room 51"
+            }
+        ]
+    },
+    "Bromery Center for Art": {
+        "url": "http://spire-api.melanson.dev/buildings/29/",
+        "id": 29,
+        "name": "Bromery Center for Art",
+        "address": "151 Presidents, Amherst, MA 01003-9330",
+        "rooms": [
+            {
+                "id": 466,
+                "url": "http://spire-api.melanson.dev/building-rooms/466/",
+                "number": "00",
+                "alt": "Bromery Center for Art For Arts Room 00"
+            },
+            {
+                "id": 636,
+                "url": "http://spire-api.melanson.dev/building-rooms/636/",
+                "number": "11",
+                "alt": "Bromery Center for Art For Arts Room 11"
+            },
+            {
+                "id": 557,
+                "url": "http://spire-api.melanson.dev/building-rooms/557/",
+                "number": "112",
+                "alt": "Bromery Center for Art For Arts Room 112"
+            },
+            {
+                "id": 565,
+                "url": "http://spire-api.melanson.dev/building-rooms/565/",
+                "number": "117",
+                "alt": "Bromery Center for Art For Arts Room 117"
+            },
+            {
+                "id": 758,
+                "url": "http://spire-api.melanson.dev/building-rooms/758/",
+                "number": "149",
+                "alt": "Bromery Center for Art For Arts Room 149"
+            },
+            {
+                "id": 496,
+                "url": "http://spire-api.melanson.dev/building-rooms/496/",
+                "number": "150",
+                "alt": "Bromery Center for Art For Arts Room 150"
+            },
+            {
+                "id": 491,
+                "url": "http://spire-api.melanson.dev/building-rooms/491/",
+                "number": "151",
+                "alt": "Bromery Center for Art For Arts Room 151"
+            },
+            {
+                "id": 494,
+                "url": "http://spire-api.melanson.dev/building-rooms/494/",
+                "number": "152",
+                "alt": "Bromery Center for Art For Arts Room 152"
+            },
+            {
+                "id": 493,
+                "url": "http://spire-api.melanson.dev/building-rooms/493/",
+                "number": "154",
+                "alt": "Bromery Center for Art For Arts Room 154"
+            },
+            {
+                "id": 495,
+                "url": "http://spire-api.melanson.dev/building-rooms/495/",
+                "number": "155",
+                "alt": "Bromery Center for Art For Arts Room 155"
+            },
+            {
+                "id": 498,
+                "url": "http://spire-api.melanson.dev/building-rooms/498/",
+                "number": "157",
+                "alt": "Bromery Center for Art For Arts Room 157"
+            },
+            {
+                "id": 560,
+                "url": "http://spire-api.melanson.dev/building-rooms/560/",
+                "number": "2",
+                "alt": "Bromery Center for Art For Arts Room 2"
+            },
+            {
+                "id": 559,
+                "url": "http://spire-api.melanson.dev/building-rooms/559/",
+                "number": "203",
+                "alt": "Bromery Center for Art For Arts Room 203"
+            },
+            {
+                "id": 556,
+                "url": "http://spire-api.melanson.dev/building-rooms/556/",
+                "number": "204",
+                "alt": "Bromery Center for Art For Arts Room 204"
+            },
+            {
+                "id": 553,
+                "url": "http://spire-api.melanson.dev/building-rooms/553/",
+                "number": "206",
+                "alt": "Bromery Center for Art For Arts Room 206"
+            },
+            {
+                "id": 564,
+                "url": "http://spire-api.melanson.dev/building-rooms/564/",
+                "number": "226",
+                "alt": "Bromery Center for Art For Arts Room 226"
+            },
+            {
+                "id": 693,
+                "url": "http://spire-api.melanson.dev/building-rooms/693/",
+                "number": "24",
+                "alt": "Bromery Center for Art For Arts Room 24"
+            },
+            {
+                "id": 685,
+                "url": "http://spire-api.melanson.dev/building-rooms/685/",
+                "number": "253",
+                "alt": "Bromery Center for Art For Arts Room 253"
+            },
+            {
+                "id": 759,
+                "url": "http://spire-api.melanson.dev/building-rooms/759/",
+                "number": "259",
+                "alt": "Bromery Center for Art For Arts Room 259"
+            },
+            {
+                "id": 719,
+                "url": "http://spire-api.melanson.dev/building-rooms/719/",
+                "number": "25A",
+                "alt": "Bromery Center for Art For Arts Room 25A"
+            },
+            {
+                "id": 499,
+                "url": "http://spire-api.melanson.dev/building-rooms/499/",
+                "number": "262",
+                "alt": "Bromery Center for Art For Arts Room 262"
+            },
+            {
+                "id": 562,
+                "url": "http://spire-api.melanson.dev/building-rooms/562/",
+                "number": "27",
+                "alt": "Bromery Center for Art For Arts Room 27"
+            },
+            {
+                "id": 783,
+                "url": "http://spire-api.melanson.dev/building-rooms/783/",
+                "number": "273",
+                "alt": "Bromery Center for Art For Arts Room 273"
+            },
+            {
+                "id": 497,
+                "url": "http://spire-api.melanson.dev/building-rooms/497/",
+                "number": "36",
+                "alt": "Bromery Center for Art For Arts Room 36"
+            },
+            {
+                "id": 713,
+                "url": "http://spire-api.melanson.dev/building-rooms/713/",
+                "number": "363",
+                "alt": "Bromery Center for Art For Arts Room 363"
+            },
+            {
+                "id": 490,
+                "url": "http://spire-api.melanson.dev/building-rooms/490/",
+                "number": "365",
+                "alt": "Bromery Center for Art For Arts Room 365"
+            },
+            {
+                "id": 760,
+                "url": "http://spire-api.melanson.dev/building-rooms/760/",
+                "number": "368",
+                "alt": "Bromery Center for Art For Arts Room 368"
+            },
+            {
+                "id": 552,
+                "url": "http://spire-api.melanson.dev/building-rooms/552/",
+                "number": "4",
+                "alt": "Bromery Center for Art For Arts Room 4"
+            },
+            {
+                "id": 806,
+                "url": "http://spire-api.melanson.dev/building-rooms/806/",
+                "number": "410",
+                "alt": "Bromery Center for Art For Arts Room 410"
+            },
+            {
+                "id": 805,
+                "url": "http://spire-api.melanson.dev/building-rooms/805/",
+                "number": "413",
+                "alt": "Bromery Center for Art For Arts Room 413"
+            },
+            {
+                "id": 807,
+                "url": "http://spire-api.melanson.dev/building-rooms/807/",
+                "number": "417",
+                "alt": "Bromery Center for Art For Arts Room 417"
+            },
+            {
+                "id": 786,
+                "url": "http://spire-api.melanson.dev/building-rooms/786/",
+                "number": "419",
+                "alt": "Bromery Center for Art For Arts Room 419"
+            },
+            {
+                "id": 785,
+                "url": "http://spire-api.melanson.dev/building-rooms/785/",
+                "number": "421",
+                "alt": "Bromery Center for Art For Arts Room 421"
+            },
+            {
+                "id": 774,
+                "url": "http://spire-api.melanson.dev/building-rooms/774/",
+                "number": "423",
+                "alt": "Bromery Center for Art For Arts Room 423"
+            },
+            {
+                "id": 773,
+                "url": "http://spire-api.melanson.dev/building-rooms/773/",
+                "number": "427",
+                "alt": "Bromery Center for Art For Arts Room 427"
+            },
+            {
+                "id": 108,
+                "url": "http://spire-api.melanson.dev/building-rooms/108/",
+                "number": "429",
+                "alt": "Bromery Center for Art For Arts Room 429"
+            },
+            {
+                "id": 109,
+                "url": "http://spire-api.melanson.dev/building-rooms/109/",
+                "number": "430",
+                "alt": "Bromery Center for Art For Arts Room 430"
+            },
+            {
+                "id": 110,
+                "url": "http://spire-api.melanson.dev/building-rooms/110/",
+                "number": "431",
+                "alt": "Bromery Center for Art For Arts Room 431"
+            },
+            {
+                "id": 111,
+                "url": "http://spire-api.melanson.dev/building-rooms/111/",
+                "number": "432",
+                "alt": "Bromery Center for Art For Arts Room 432"
+            },
+            {
+                "id": 772,
+                "url": "http://spire-api.melanson.dev/building-rooms/772/",
+                "number": "435",
+                "alt": "Bromery Center for Art For Arts Room 435"
+            },
+            {
+                "id": 771,
+                "url": "http://spire-api.melanson.dev/building-rooms/771/",
+                "number": "439",
+                "alt": "Bromery Center for Art For Arts Room 439"
+            },
+            {
+                "id": 489,
+                "url": "http://spire-api.melanson.dev/building-rooms/489/",
+                "number": "44",
+                "alt": "Bromery Center for Art For Arts Room 44"
+            },
+            {
+                "id": 775,
+                "url": "http://spire-api.melanson.dev/building-rooms/775/",
+                "number": "441",
+                "alt": "Bromery Center for Art For Arts Room 441"
+            },
+            {
+                "id": 104,
+                "url": "http://spire-api.melanson.dev/building-rooms/104/",
+                "number": "444",
+                "alt": "Bromery Center for Art For Arts Room 444"
+            },
+            {
+                "id": 125,
+                "url": "http://spire-api.melanson.dev/building-rooms/125/",
+                "number": "445",
+                "alt": "Bromery Center for Art For Arts Room 445"
+            },
+            {
+                "id": 119,
+                "url": "http://spire-api.melanson.dev/building-rooms/119/",
+                "number": "447",
+                "alt": "Bromery Center for Art For Arts Room 447"
+            },
+            {
+                "id": 828,
+                "url": "http://spire-api.melanson.dev/building-rooms/828/",
+                "number": "450",
+                "alt": "Bromery Center for Art of Arts 450"
+            },
+            {
+                "id": 122,
+                "url": "http://spire-api.melanson.dev/building-rooms/122/",
+                "number": "465",
+                "alt": "Bromery Center for Art For Arts Room 465"
+            },
+            {
+                "id": 561,
+                "url": "http://spire-api.melanson.dev/building-rooms/561/",
+                "number": "8",
+                "alt": "Bromery Center for Art For Arts Room 8"
+            },
+            {
+                "id": 563,
+                "url": "http://spire-api.melanson.dev/building-rooms/563/",
+                "number": null,
+                "alt": "Bromery Center for Art Green Room"
+            }
+        ]
+    },
+    "Bunker Hill Community College": {
+        "url": "http://spire-api.melanson.dev/buildings/68/",
+        "id": 68,
+        "name": "Bunker Hill Community College",
+        "address": null,
+        "rooms": [
+            {
+                "id": 436,
+                "url": "http://spire-api.melanson.dev/building-rooms/436/",
+                "number": null,
+                "alt": "Bunker Hill Community College"
+            }
+        ]
+    },
+    "Butterfield Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/56/",
+        "id": 56,
+        "name": "Butterfield Hall",
+        "address": "171 Clark Hill Rd, Amherst, MA 01003-9206",
+        "rooms": [
+            {
+                "id": 321,
+                "url": "http://spire-api.melanson.dev/building-rooms/321/",
+                "number": "7",
+                "alt": "Butterfield House Room 7"
+            }
+        ]
+    },
+    "Campus Center": {
+        "url": "http://spire-api.melanson.dev/buildings/71/",
+        "id": 71,
+        "name": "Campus Center",
+        "address": "1 Campus Center Way, Amherst, MA 01003-9243",
+        "rooms": [
+            {
+                "id": 626,
+                "url": "http://spire-api.melanson.dev/building-rooms/626/",
+                "number": "1101",
+                "alt": "Campus Center Room 1101"
+            },
+            {
+                "id": 440,
+                "url": "http://spire-api.melanson.dev/building-rooms/440/",
+                "number": "1102",
+                "alt": "Campus Center Room 1102"
+            },
+            {
+                "id": 441,
+                "url": "http://spire-api.melanson.dev/building-rooms/441/",
+                "number": "1106",
+                "alt": "Campus Center Room 1106"
+            },
+            {
+                "id": 671,
+                "url": "http://spire-api.melanson.dev/building-rooms/671/",
+                "number": "803",
+                "alt": "Campus Center Room 803"
+            },
+            {
+                "id": 810,
+                "url": "http://spire-api.melanson.dev/building-rooms/810/",
+                "number": "922",
+                "alt": "Campus Center Room 922"
+            }
+        ]
+    },
+    "Chenoweth Laboratory": {
+        "url": "http://spire-api.melanson.dev/buildings/55/",
+        "id": 55,
+        "name": "Chenoweth Laboratory",
+        "address": "100 Holdsworth Way, Amherst, MA 01003-9282",
+        "rooms": [
+            {
+                "id": 314,
+                "url": "http://spire-api.melanson.dev/building-rooms/314/",
+                "number": "108",
+                "alt": "Chenoweth Laboratory Room 108"
+            },
+            {
+                "id": 324,
+                "url": "http://spire-api.melanson.dev/building-rooms/324/",
+                "number": "113",
+                "alt": "Chenoweth Laboratory Room 113"
+            },
+            {
+                "id": 761,
+                "url": "http://spire-api.melanson.dev/building-rooms/761/",
+                "number": "210A",
+                "alt": "Chenoweth Laboratory Room 210A"
+            },
+            {
+                "id": 415,
+                "url": "http://spire-api.melanson.dev/building-rooms/415/",
+                "number": "325",
+                "alt": "Chenoweth Laboratory Addition Room 325"
+            },
+            {
+                "id": 315,
+                "url": "http://spire-api.melanson.dev/building-rooms/315/",
+                "number": "329",
+                "alt": "Chenoweth Laboratory Addition Room 329"
+            }
+        ]
+    },
+    "Commonwealth Honors College": {
+        "url": "http://spire-api.melanson.dev/buildings/70/",
+        "id": 70,
+        "name": "Commonwealth Honors College",
+        "address": "157 Commonwealth Ave, Amherst, MA 01003-9253",
+        "rooms": [
+            {
+                "id": 438,
+                "url": "http://spire-api.melanson.dev/building-rooms/438/",
+                "number": "160",
+                "alt": "Honors College Building Room 160"
+            }
+        ]
+    },
+    "Communication Disorders Building": {
+        "url": "http://spire-api.melanson.dev/buildings/48/",
+        "id": 48,
+        "name": "Communication Disorders Building",
+        "address": "358 N Pleasant St, Amherst, MA 01003-9296",
+        "rooms": [
+            {
+                "id": 262,
+                "url": "http://spire-api.melanson.dev/building-rooms/262/",
+                "number": null,
+                "alt": "358 North Pleasant Street"
+            }
+        ]
+    },
+    "Computer Science Building": {
+        "url": "http://spire-api.melanson.dev/buildings/45/",
+        "id": 45,
+        "name": "Computer Science Building",
+        "address": "140 Governors Dr, Amherst, MA 01003-9264",
+        "rooms": [
+            {
+                "id": 281,
+                "url": "http://spire-api.melanson.dev/building-rooms/281/",
+                "number": "140",
+                "alt": "Computer Science Building Room 140"
+            },
+            {
+                "id": 238,
+                "url": "http://spire-api.melanson.dev/building-rooms/238/",
+                "number": "142",
+                "alt": "Computer Science Building Room 142"
+            },
+            {
+                "id": 597,
+                "url": "http://spire-api.melanson.dev/building-rooms/597/",
+                "number": "150",
+                "alt": "Computer Science Building Room 150"
+            },
+            {
+                "id": 296,
+                "url": "http://spire-api.melanson.dev/building-rooms/296/",
+                "number": "151",
+                "alt": "Computer Science Building Room 151"
+            },
+            {
+                "id": 596,
+                "url": "http://spire-api.melanson.dev/building-rooms/596/",
+                "number": "303",
+                "alt": "Computer Science Building Room 303"
+            },
+            {
+                "id": 702,
+                "url": "http://spire-api.melanson.dev/building-rooms/702/",
+                "number": "338",
+                "alt": "Computer Science Building Room 338"
+            },
+            {
+                "id": 282,
+                "url": "http://spire-api.melanson.dev/building-rooms/282/",
+                "number": "342",
+                "alt": "Computer Science Building Room 342"
+            }
+        ]
+    },
+    "Conte Polymer Center": {
+        "url": "http://spire-api.melanson.dev/buildings/76/",
+        "id": 76,
+        "name": "Conte Polymer Center",
+        "address": "120 Governors Dr, Amherst, MA 01003-9263",
+        "rooms": [
+            {
+                "id": 629,
+                "url": "http://spire-api.melanson.dev/building-rooms/629/",
+                "number": "41",
+                "alt": "Conte Polymer Research Center Room 41"
+            },
+            {
+                "id": 524,
+                "url": "http://spire-api.melanson.dev/building-rooms/524/",
+                "number": "A110",
+                "alt": "Conte Polymer Research Center Room A110"
+            },
+            {
+                "id": 525,
+                "url": "http://spire-api.melanson.dev/building-rooms/525/",
+                "number": "A111",
+                "alt": "Conte Polymer Research Center Room A111"
+            },
+            {
+                "id": 529,
+                "url": "http://spire-api.melanson.dev/building-rooms/529/",
+                "number": "A209",
+                "alt": "Conte Polymer Research Center Room A209"
+            },
+            {
+                "id": 630,
+                "url": "http://spire-api.melanson.dev/building-rooms/630/",
+                "number": "A309",
+                "alt": "Conte Polymer Research Center Room A309"
+            },
+            {
+                "id": 530,
+                "url": "http://spire-api.melanson.dev/building-rooms/530/",
+                "number": "A409",
+                "alt": "Conte Polymer Research Center Room A409"
+            },
+            {
+                "id": 687,
+                "url": "http://spire-api.melanson.dev/building-rooms/687/",
+                "number": "A509",
+                "alt": "Conte Polymer Research Center Room A509"
+            },
+            {
+                "id": 528,
+                "url": "http://spire-api.melanson.dev/building-rooms/528/",
+                "number": "A524",
+                "alt": "Conte Polymer Research Center Room A524"
+            },
+            {
+                "id": 816,
+                "url": "http://spire-api.melanson.dev/building-rooms/816/",
+                "number": "A609",
+                "alt": "Conte Polymer Research Center Room A609"
+            },
+            {
+                "id": 526,
+                "url": "http://spire-api.melanson.dev/building-rooms/526/",
+                "number": "A624",
+                "alt": "Conte Polymer Research Center Room A624"
+            },
+            {
+                "id": 788,
+                "url": "http://spire-api.melanson.dev/building-rooms/788/",
+                "number": "B263",
+                "alt": "Conte Polymer Research Center Room B263"
+            },
+            {
+                "id": 527,
+                "url": "http://spire-api.melanson.dev/building-rooms/527/",
+                "number": null,
+                "alt": "Conte Polymer Research Center"
+            }
+        ]
+    },
+    "Crotty Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/57/",
+        "id": 57,
+        "name": "Crotty Hall",
+        "address": "412 N Pleasant St, Amherst, MA 01002-2900",
+        "rooms": [
+            {
+                "id": 663,
+                "url": "http://spire-api.melanson.dev/building-rooms/663/",
+                "number": "114",
+                "alt": "Crotty Hall Room 114"
+            },
+            {
+                "id": 599,
+                "url": "http://spire-api.melanson.dev/building-rooms/599/",
+                "number": "209",
+                "alt": "Crotty Hall Room 209"
+            },
+            {
+                "id": 330,
+                "url": "http://spire-api.melanson.dev/building-rooms/330/",
+                "number": "309",
+                "alt": "Crotty Hall Room 309"
+            }
+        ]
+    },
+    "Curry Hicks Gym": {
+        "url": "http://spire-api.melanson.dev/buildings/84/",
+        "id": 84,
+        "name": "Curry Hicks Gym",
+        "address": "100 Hicks Way, Amherst, MA 01003-9267",
+        "rooms": [
+            {
+                "id": 624,
+                "url": "http://spire-api.melanson.dev/building-rooms/624/",
+                "number": null,
+                "alt": "Curry Hicks Gym Pool"
+            }
+        ]
+    },
+    "Design Building @ Mount Ida": {
+        "url": "http://spire-api.melanson.dev/buildings/94/",
+        "id": 94,
+        "name": "Design Building @ Mount Ida",
+        "address": null,
+        "rooms": [
+            {
+                "id": 832,
+                "url": "http://spire-api.melanson.dev/building-rooms/832/",
+                "number": "125",
+                "alt": "Design Building @ Mount Ida Room 125"
+            }
+        ]
+    },
+    "Dickinson Dorm": {
+        "url": "http://spire-api.melanson.dev/buildings/60/",
+        "id": 60,
+        "name": "Dickinson Dorm",
+        "address": "151 Orchard Hill Dr, Amherst, MA 01003-9222",
+        "rooms": [
+            {
+                "id": 637,
+                "url": "http://spire-api.melanson.dev/building-rooms/637/",
+                "number": "10",
+                "alt": "Dickinson Room 10"
+            },
+            {
+                "id": 343,
+                "url": "http://spire-api.melanson.dev/building-rooms/343/",
+                "number": "109B",
+                "alt": "Dickinson Dorm 109B"
+            }
+        ]
+    },
+    "Dickinson Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/5/",
+        "id": 5,
+        "name": "Dickinson Hall",
+        "address": "155 Hicks Way, Amherst, MA 01003-9363",
+        "rooms": [
+            {
+                "id": 78,
+                "url": "http://spire-api.melanson.dev/building-rooms/78/",
+                "number": "109",
+                "alt": "Dickinson Hall Room 109"
+            },
+            {
+                "id": 68,
+                "url": "http://spire-api.melanson.dev/building-rooms/68/",
+                "number": "110",
+                "alt": "Dickinson Hall Room 110"
+            },
+            {
+                "id": 322,
+                "url": "http://spire-api.melanson.dev/building-rooms/322/",
+                "number": "112",
+                "alt": "Dickinson Hall Room 112"
+            },
+            {
+                "id": 319,
+                "url": "http://spire-api.melanson.dev/building-rooms/319/",
+                "number": "114",
+                "alt": "Dickinson Hall Room 114"
+            },
+            {
+                "id": 384,
+                "url": "http://spire-api.melanson.dev/building-rooms/384/",
+                "number": "206",
+                "alt": "Dickinson Hall Room 206"
+            },
+            {
+                "id": 323,
+                "url": "http://spire-api.melanson.dev/building-rooms/323/",
+                "number": "209",
+                "alt": "Dickinson Hall Room 209"
+            },
+            {
+                "id": 327,
+                "url": "http://spire-api.melanson.dev/building-rooms/327/",
+                "number": "212",
+                "alt": "Dickinson Hall Room 212"
+            },
+            {
+                "id": 24,
+                "url": "http://spire-api.melanson.dev/building-rooms/24/",
+                "number": "214",
+                "alt": "Dickinson Hall Room 214"
+            },
+            {
+                "id": 22,
+                "url": "http://spire-api.melanson.dev/building-rooms/22/",
+                "number": "216",
+                "alt": "Dickinson Hall Room 216"
+            }
+        ]
+    },
+    "Draper Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/54/",
+        "id": 54,
+        "name": "Draper Hall",
+        "address": "40 Campus Center Way, Amherst, MA 01003-9244",
+        "rooms": [
+            {
+                "id": 308,
+                "url": "http://spire-api.melanson.dev/building-rooms/308/",
+                "number": "124",
+                "alt": "Draper Hall Room 124"
+            }
+        ]
+    },
+    "Dwight Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/44/",
+        "id": 44,
+        "name": "Dwight Hall",
+        "address": "41 Eastman Ln, Amherst, MA 01003-9228",
+        "rooms": [
+            {
+                "id": 237,
+                "url": "http://spire-api.melanson.dev/building-rooms/237/",
+                "number": "132",
+                "alt": "Dwight House Room 132 Lounge"
+            }
+        ]
+    },
+    "Elm Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/24/",
+        "id": 24,
+        "name": "Elm Hall",
+        "address": "145 Commonwealth Ave, Amherst, MA 01003-9253",
+        "rooms": [
+            {
+                "id": 88,
+                "url": "http://spire-api.melanson.dev/building-rooms/88/",
+                "number": "210",
+                "alt": "Elm Room 210"
+            },
+            {
+                "id": 74,
+                "url": "http://spire-api.melanson.dev/building-rooms/74/",
+                "number": "212",
+                "alt": "Elm Room 212"
+            },
+            {
+                "id": 148,
+                "url": "http://spire-api.melanson.dev/building-rooms/148/",
+                "number": "214",
+                "alt": "Elm Room 214"
+            },
+            {
+                "id": 381,
+                "url": "http://spire-api.melanson.dev/building-rooms/381/",
+                "number": "224",
+                "alt": "Elm Room 224"
+            },
+            {
+                "id": 339,
+                "url": "http://spire-api.melanson.dev/building-rooms/339/",
+                "number": "226",
+                "alt": "Elm Room 226"
+            },
+            {
+                "id": 146,
+                "url": "http://spire-api.melanson.dev/building-rooms/146/",
+                "number": "227",
+                "alt": "Elm Room 227"
+            },
+            {
+                "id": 145,
+                "url": "http://spire-api.melanson.dev/building-rooms/145/",
+                "number": "228",
+                "alt": "Elm Room 228"
+            },
+            {
+                "id": 312,
+                "url": "http://spire-api.melanson.dev/building-rooms/312/",
+                "number": "230",
+                "alt": "Elm Room 230"
+            },
+            {
+                "id": 394,
+                "url": "http://spire-api.melanson.dev/building-rooms/394/",
+                "number": "301",
+                "alt": "Elm Room 301"
+            }
+        ]
+    },
+    "Emerson Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/64/",
+        "id": 64,
+        "name": "Emerson Hall",
+        "address": "151 Southwest Cir, Amherst, MA 01003-9237",
+        "rooms": [
+            {
+                "id": 391,
+                "url": "http://spire-api.melanson.dev/building-rooms/391/",
+                "number": "140",
+                "alt": "Emerson Room 140"
+            }
+        ]
+    },
+    "Engineering Laboratory": {
+        "url": "http://spire-api.melanson.dev/buildings/38/",
+        "id": 38,
+        "name": "Engineering Laboratory",
+        "address": "160 Governors Dr, Amherst, MA 01003-9265",
+        "rooms": [
+            {
+                "id": 192,
+                "url": "http://spire-api.melanson.dev/building-rooms/192/",
+                "number": "303",
+                "alt": "Engineering Laboratory Room 303"
+            },
+            {
+                "id": 185,
+                "url": "http://spire-api.melanson.dev/building-rooms/185/",
+                "number": "304",
+                "alt": "Engineering Laboratory Room 304"
+            },
+            {
+                "id": 227,
+                "url": "http://spire-api.melanson.dev/building-rooms/227/",
+                "number": "305",
+                "alt": "Engineering Laboratory Room 305"
+            },
+            {
+                "id": 292,
+                "url": "http://spire-api.melanson.dev/building-rooms/292/",
+                "number": "306",
+                "alt": "Engineering Laboratory Room 306"
+            },
+            {
+                "id": 218,
+                "url": "http://spire-api.melanson.dev/building-rooms/218/",
+                "number": "307",
+                "alt": "Engineering Laboratory Room 307"
+            },
+            {
+                "id": 184,
+                "url": "http://spire-api.melanson.dev/building-rooms/184/",
+                "number": "323",
+                "alt": "Engineering Laboratory Room 323"
+            },
+            {
+                "id": 226,
+                "url": "http://spire-api.melanson.dev/building-rooms/226/",
+                "number": "325",
+                "alt": "Engineering Laboratory Room 325"
+            },
+            {
+                "id": 228,
+                "url": "http://spire-api.melanson.dev/building-rooms/228/",
+                "number": "327",
+                "alt": "Engineering Laboratory Room 327"
+            }
+        ]
+    },
+    "Engineering Laboratory II": {
+        "url": "http://spire-api.melanson.dev/buildings/41/",
+        "id": 41,
+        "name": "Engineering Laboratory II",
+        "address": "101 North Service Rd, Amherst, MA 01003-9345",
+        "rooms": [
+            {
+                "id": 328,
+                "url": "http://spire-api.melanson.dev/building-rooms/328/",
+                "number": "115",
+                "alt": "Engineering Laboratory II Room 115"
+            },
+            {
+                "id": 650,
+                "url": "http://spire-api.melanson.dev/building-rooms/650/",
+                "number": "118",
+                "alt": "Engineering Laboratory II Room 118"
+            },
+            {
+                "id": 216,
+                "url": "http://spire-api.melanson.dev/building-rooms/216/",
+                "number": "119",
+                "alt": "Engineering Laboratory II Room 119"
+            }
+        ]
+    },
+    "Fernald Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/63/",
+        "id": 63,
+        "name": "Fernald Hall",
+        "address": "270 Stockbridge Rd, Amherst, MA 01003-9320",
+        "rooms": [
+            {
+                "id": 545,
+                "url": "http://spire-api.melanson.dev/building-rooms/545/",
+                "number": "107",
+                "alt": "Fernald Hall Room 107"
+            },
+            {
+                "id": 385,
+                "url": "http://spire-api.melanson.dev/building-rooms/385/",
+                "number": "11",
+                "alt": "Fernald Hall Room 11"
+            },
+            {
+                "id": 439,
+                "url": "http://spire-api.melanson.dev/building-rooms/439/",
+                "number": "201",
+                "alt": "Fernald Hall Room 201"
+            },
+            {
+                "id": 543,
+                "url": "http://spire-api.melanson.dev/building-rooms/543/",
+                "number": "202B",
+                "alt": "Fernald Room 202B"
+            },
+            {
+                "id": 549,
+                "url": "http://spire-api.melanson.dev/building-rooms/549/",
+                "number": "202E",
+                "alt": "Fernald Room 202E"
+            }
+        ]
+    },
+    "Flint Laboratory": {
+        "url": "http://spire-api.melanson.dev/buildings/50/",
+        "id": 50,
+        "name": "Flint Laboratory",
+        "address": "90 Campus Center Way, Amherst, MA 01003-9247",
+        "rooms": [
+            {
+                "id": 303,
+                "url": "http://spire-api.melanson.dev/building-rooms/303/",
+                "number": "103",
+                "alt": "Flint Laboratory Room 103"
+            },
+            {
+                "id": 740,
+                "url": "http://spire-api.melanson.dev/building-rooms/740/",
+                "number": "103A",
+                "alt": "Flint Laboratory Room 103A"
+            },
+            {
+                "id": 284,
+                "url": "http://spire-api.melanson.dev/building-rooms/284/",
+                "number": "105",
+                "alt": "Flint Laboratory Room 105"
+            },
+            {
+                "id": 283,
+                "url": "http://spire-api.melanson.dev/building-rooms/283/",
+                "number": "201",
+                "alt": "Flint Laboratory Room 201"
+            },
+            {
+                "id": 614,
+                "url": "http://spire-api.melanson.dev/building-rooms/614/",
+                "number": "203E",
+                "alt": "Flint Laboratory Room 203E"
+            }
+        ]
+    },
+    "French Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/9/",
+        "id": 9,
+        "name": "French Hall",
+        "address": "230 Stockbridge Rd, Amherst, MA 01003-9316",
+        "rooms": [
+            {
+                "id": 30,
+                "url": "http://spire-api.melanson.dev/building-rooms/30/",
+                "number": "102",
+                "alt": "French Hall Room 102"
+            },
+            {
+                "id": 546,
+                "url": "http://spire-api.melanson.dev/building-rooms/546/",
+                "number": "105",
+                "alt": "French Hall Room 105"
+            },
+            {
+                "id": 36,
+                "url": "http://spire-api.melanson.dev/building-rooms/36/",
+                "number": "106",
+                "alt": "French Hall Room 106"
+            },
+            {
+                "id": 181,
+                "url": "http://spire-api.melanson.dev/building-rooms/181/",
+                "number": "205",
+                "alt": "French Hall Room 205"
+            },
+            {
+                "id": 512,
+                "url": "http://spire-api.melanson.dev/building-rooms/512/",
+                "number": "209",
+                "alt": "French Hall Room 209"
+            }
+        ]
+    },
+    "Furcolo Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/58/",
+        "id": 58,
+        "name": "Furcolo Hall",
+        "address": "813 N Pleasant St, Amherst, MA 01003-9308",
+        "rooms": [
+            {
+                "id": 345,
+                "url": "http://spire-api.melanson.dev/building-rooms/345/",
+                "number": "101",
+                "alt": "Furcolo Hall 101"
+            },
+            {
+                "id": 335,
+                "url": "http://spire-api.melanson.dev/building-rooms/335/",
+                "number": "102",
+                "alt": "Furcolo Hall 102"
+            },
+            {
+                "id": 333,
+                "url": "http://spire-api.melanson.dev/building-rooms/333/",
+                "number": "107",
+                "alt": "Furcolo W Room 107"
+            },
+            {
+                "id": 350,
+                "url": "http://spire-api.melanson.dev/building-rooms/350/",
+                "number": "110",
+                "alt": "Furcolo Hall 110"
+            },
+            {
+                "id": 353,
+                "url": "http://spire-api.melanson.dev/building-rooms/353/",
+                "number": "N113",
+                "alt": "Furcolo Room N113"
+            },
+            {
+                "id": 349,
+                "url": "http://spire-api.melanson.dev/building-rooms/349/",
+                "number": "N125",
+                "alt": "Furcolo Hall Room N125"
+            },
+            {
+                "id": 356,
+                "url": "http://spire-api.melanson.dev/building-rooms/356/",
+                "number": "N173",
+                "alt": "Furcolo Room N173"
+            },
+            {
+                "id": 340,
+                "url": "http://spire-api.melanson.dev/building-rooms/340/",
+                "number": "S115",
+                "alt": "Furcolo Room S115"
+            },
+            {
+                "id": 341,
+                "url": "http://spire-api.melanson.dev/building-rooms/341/",
+                "number": "S125",
+                "alt": "Furcolo Room S125"
+            },
+            {
+                "id": 357,
+                "url": "http://spire-api.melanson.dev/building-rooms/357/",
+                "number": "S149",
+                "alt": "Furcolo Room S149"
+            },
+            {
+                "id": 359,
+                "url": "http://spire-api.melanson.dev/building-rooms/359/",
+                "number": "S167",
+                "alt": "Furcolo Room S167"
+            },
+            {
+                "id": 355,
+                "url": "http://spire-api.melanson.dev/building-rooms/355/",
+                "number": "W001",
+                "alt": "Furcolo Room W001"
+            },
+            {
+                "id": 344,
+                "url": "http://spire-api.melanson.dev/building-rooms/344/",
+                "number": "W007",
+                "alt": "Furcolo Room W007"
+            },
+            {
+                "id": 351,
+                "url": "http://spire-api.melanson.dev/building-rooms/351/",
+                "number": "W009",
+                "alt": "Furcolo Room W009"
+            },
+            {
+                "id": 331,
+                "url": "http://spire-api.melanson.dev/building-rooms/331/",
+                "number": "W014",
+                "alt": "Furcolo Room W014"
+            },
+            {
+                "id": 337,
+                "url": "http://spire-api.melanson.dev/building-rooms/337/",
+                "number": "W015",
+                "alt": "Furcolo Room W015"
+            },
+            {
+                "id": 332,
+                "url": "http://spire-api.melanson.dev/building-rooms/332/",
+                "number": "W016",
+                "alt": "Furcolo Room W016"
+            },
+            {
+                "id": 825,
+                "url": "http://spire-api.melanson.dev/building-rooms/825/",
+                "number": "W105",
+                "alt": "Furcolo Hall W105"
+            },
+            {
+                "id": 442,
+                "url": "http://spire-api.melanson.dev/building-rooms/442/",
+                "number": "W163",
+                "alt": "Furcolo Hall Room W163"
+            },
+            {
+                "id": 334,
+                "url": "http://spire-api.melanson.dev/building-rooms/334/",
+                "number": "W201",
+                "alt": "Furcolo Hall W201"
+            },
+            {
+                "id": 602,
+                "url": "http://spire-api.melanson.dev/building-rooms/602/",
+                "number": "W209",
+                "alt": "Furcolo W209"
+            },
+            {
+                "id": 346,
+                "url": "http://spire-api.melanson.dev/building-rooms/346/",
+                "number": "W227",
+                "alt": "Furcolo Hall Room W227"
+            },
+            {
+                "id": 354,
+                "url": "http://spire-api.melanson.dev/building-rooms/354/",
+                "number": "W43",
+                "alt": "Furcolo W43"
+            },
+            {
+                "id": 666,
+                "url": "http://spire-api.melanson.dev/building-rooms/666/",
+                "number": "W47",
+                "alt": "Furcolo Hall Room W47"
+            },
+            {
+                "id": 358,
+                "url": "http://spire-api.melanson.dev/building-rooms/358/",
+                "number": "W59",
+                "alt": "Furcolo Room W59"
+            },
+            {
+                "id": 664,
+                "url": "http://spire-api.melanson.dev/building-rooms/664/",
+                "number": null,
+                "alt": "Furcolo Carney Fam Auditorium"
+            }
+        ]
+    },
+    "Goessmann Laboratory": {
+        "url": "http://spire-api.melanson.dev/buildings/12/",
+        "id": 12,
+        "name": "Goessmann Laboratory",
+        "address": "686 N Pleasant St, Amherst, MA 01003-9303",
+        "rooms": [
+            {
+                "id": 781,
+                "url": "http://spire-api.melanson.dev/building-rooms/781/",
+                "number": "12",
+                "alt": "Goessmann Room 12"
+            },
+            {
+                "id": 403,
+                "url": "http://spire-api.melanson.dev/building-rooms/403/",
+                "number": "128",
+                "alt": "Goessmann Laboratory Addition Room 128"
+            },
+            {
+                "id": 317,
+                "url": "http://spire-api.melanson.dev/building-rooms/317/",
+                "number": "151",
+                "alt": "Goessmann Laboratory Addition Room 151"
+            },
+            {
+                "id": 483,
+                "url": "http://spire-api.melanson.dev/building-rooms/483/",
+                "number": "152",
+                "alt": "Goessmann Laboratory Addition 152"
+            },
+            {
+                "id": 205,
+                "url": "http://spire-api.melanson.dev/building-rooms/205/",
+                "number": "153",
+                "alt": "Goessmann Laboratory Room 153"
+            },
+            {
+                "id": 65,
+                "url": "http://spire-api.melanson.dev/building-rooms/65/",
+                "number": "20",
+                "alt": "Goessmann Laboratory Room 20"
+            },
+            {
+                "id": 698,
+                "url": "http://spire-api.melanson.dev/building-rooms/698/",
+                "number": "223",
+                "alt": "Goessmann Room 223"
+            },
+            {
+                "id": 402,
+                "url": "http://spire-api.melanson.dev/building-rooms/402/",
+                "number": "253",
+                "alt": "Goessmann Laboratory Addition Room 253"
+            },
+            {
+                "id": 198,
+                "url": "http://spire-api.melanson.dev/building-rooms/198/",
+                "number": "261",
+                "alt": "Goessmann Laboratory Addition Room 261"
+            },
+            {
+                "id": 699,
+                "url": "http://spire-api.melanson.dev/building-rooms/699/",
+                "number": "46",
+                "alt": "Goessmann Room 46"
+            },
+            {
+                "id": 295,
+                "url": "http://spire-api.melanson.dev/building-rooms/295/",
+                "number": "51",
+                "alt": "Goessmann Laboratory Addition Room 51"
+            },
+            {
+                "id": 745,
+                "url": "http://spire-api.melanson.dev/building-rooms/745/",
+                "number": "54",
+                "alt": "Goessmann Laboratory Addition Room 54"
+            },
+            {
+                "id": 725,
+                "url": "http://spire-api.melanson.dev/building-rooms/725/",
+                "number": "55",
+                "alt": "Goessmann Room 55"
+            },
+            {
+                "id": 724,
+                "url": "http://spire-api.melanson.dev/building-rooms/724/",
+                "number": "61",
+                "alt": "Goessmann Laboratory Addition Room 61"
+            },
+            {
+                "id": 194,
+                "url": "http://spire-api.melanson.dev/building-rooms/194/",
+                "number": "62",
+                "alt": "Goessmann Laboratory Addition Room 62"
+            },
+            {
+                "id": 35,
+                "url": "http://spire-api.melanson.dev/building-rooms/35/",
+                "number": "64",
+                "alt": "Goessmann Laboratory Addition Room 64"
+            }
+        ]
+    },
+    "Goodell Building": {
+        "url": "http://spire-api.melanson.dev/buildings/36/",
+        "id": 36,
+        "name": "Goodell Building",
+        "address": "140 Hicks Way, Amherst, MA 01003-9272",
+        "rooms": [
+            {
+                "id": 765,
+                "url": "http://spire-api.melanson.dev/building-rooms/765/",
+                "number": "406A",
+                "alt": "Goodell Building Room 406A"
+            },
+            {
+                "id": 808,
+                "url": "http://spire-api.melanson.dev/building-rooms/808/",
+                "number": "416",
+                "alt": "Goodell Room 416"
+            },
+            {
+                "id": 179,
+                "url": "http://spire-api.melanson.dev/building-rooms/179/",
+                "number": "608",
+                "alt": "Goodell Room 608"
+            },
+            {
+                "id": 622,
+                "url": "http://spire-api.melanson.dev/building-rooms/622/",
+                "number": "614",
+                "alt": "Goodell Room 614"
+            }
+        ]
+    },
+    "Gordon Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/92/",
+        "id": 92,
+        "name": "Gordon Hall",
+        "address": "418 N Pleasant St, Amherst, MA 01002-1735",
+        "rooms": [
+            {
+                "id": 797,
+                "url": "http://spire-api.melanson.dev/building-rooms/797/",
+                "number": "201",
+                "alt": "Gordon Hall Room 201"
+            }
+        ]
+    },
+    "Gorman Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/89/",
+        "id": 89,
+        "name": "Gorman Hall",
+        "address": "90 Butterfield Ter, Amherst, MA 01003-9202",
+        "rooms": [
+            {
+                "id": 746,
+                "url": "http://spire-api.melanson.dev/building-rooms/746/",
+                "number": "67",
+                "alt": "Goessman Hall 67"
+            }
+        ]
+    },
+    "Grayson Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/65/",
+        "id": 65,
+        "name": "Grayson Hall",
+        "address": "161 Orchard Hill Dr, Amherst, MA 01003-9221",
+        "rooms": [
+            {
+                "id": 610,
+                "url": "http://spire-api.melanson.dev/building-rooms/610/",
+                "number": "104",
+                "alt": "Grayson Dormitory Room 104"
+            },
+            {
+                "id": 404,
+                "url": "http://spire-api.melanson.dev/building-rooms/404/",
+                "number": "109",
+                "alt": "Grayson Dorm Room 109"
+            }
+        ]
+    },
+    "Grinnell Arena": {
+        "url": "http://spire-api.melanson.dev/buildings/73/",
+        "id": 73,
+        "name": "Grinnell Arena",
+        "address": null,
+        "rooms": [
+            {
+                "id": 501,
+                "url": "http://spire-api.melanson.dev/building-rooms/501/",
+                "number": null,
+                "alt": "Grinnell Arena"
+            }
+        ]
+    },
+    "Gunness Laboratory": {
+        "url": "http://spire-api.melanson.dev/buildings/42/",
+        "id": 42,
+        "name": "Gunness Laboratory",
+        "address": "121 Natural Resources Rd, Amherst, MA 01003",
+        "rooms": [
+            {
+                "id": 217,
+                "url": "http://spire-api.melanson.dev/building-rooms/217/",
+                "number": "18",
+                "alt": "Gunness Laboratory Room 18"
+            },
+            {
+                "id": 484,
+                "url": "http://spire-api.melanson.dev/building-rooms/484/",
+                "number": "19",
+                "alt": "Gunness Laboratory Room 19"
+            },
+            {
+                "id": 485,
+                "url": "http://spire-api.melanson.dev/building-rooms/485/",
+                "number": "5",
+                "alt": "Gunness Laboratory Room 5"
+            }
+        ]
+    },
+    "Hasbrouck Laboratory": {
+        "url": "http://spire-api.melanson.dev/buildings/16/",
+        "id": 16,
+        "name": "Hasbrouck Laboratory",
+        "address": "666 N Pleasant St, Amherst, MA 01003-9300",
+        "rooms": [
+            {
+                "id": 234,
+                "url": "http://spire-api.melanson.dev/building-rooms/234/",
+                "number": "104A",
+                "alt": "Hasbrouck Laboratory Addition Room 104A"
+            },
+            {
+                "id": 235,
+                "url": "http://spire-api.melanson.dev/building-rooms/235/",
+                "number": "104B",
+                "alt": "Hasbrouck Laboratory Addition Room 104B"
+            },
+            {
+                "id": 193,
+                "url": "http://spire-api.melanson.dev/building-rooms/193/",
+                "number": "106",
+                "alt": "Hasbrouck Laboratory Addition Room 106"
+            },
+            {
+                "id": 233,
+                "url": "http://spire-api.melanson.dev/building-rooms/233/",
+                "number": "107",
+                "alt": "Hasbrouck Laboratory Addition Room 107"
+            },
+            {
+                "id": 457,
+                "url": "http://spire-api.melanson.dev/building-rooms/457/",
+                "number": "109",
+                "alt": "Hasbrouck Laboratory Addition Room 109"
+            },
+            {
+                "id": 246,
+                "url": "http://spire-api.melanson.dev/building-rooms/246/",
+                "number": "111",
+                "alt": "Hasbrouck Laboratory Addition Room 111"
+            },
+            {
+                "id": 139,
+                "url": "http://spire-api.melanson.dev/building-rooms/139/",
+                "number": "113",
+                "alt": "Hasbrouck Laboratory Addition Room 113"
+            },
+            {
+                "id": 43,
+                "url": "http://spire-api.melanson.dev/building-rooms/43/",
+                "number": "124",
+                "alt": "Hasbrouck Laboratory Addition Room 124"
+            },
+            {
+                "id": 195,
+                "url": "http://spire-api.melanson.dev/building-rooms/195/",
+                "number": "126",
+                "alt": "Hasbrouck Laboratory Addition Room 126"
+            },
+            {
+                "id": 242,
+                "url": "http://spire-api.melanson.dev/building-rooms/242/",
+                "number": "130",
+                "alt": "Hasbrouck Laboratory Room 130"
+            },
+            {
+                "id": 44,
+                "url": "http://spire-api.melanson.dev/building-rooms/44/",
+                "number": "134",
+                "alt": "Hasbrouck Laboratory Room 134"
+            },
+            {
+                "id": 141,
+                "url": "http://spire-api.melanson.dev/building-rooms/141/",
+                "number": "136",
+                "alt": "Hasbrouck Laboratory Room 136"
+            },
+            {
+                "id": 140,
+                "url": "http://spire-api.melanson.dev/building-rooms/140/",
+                "number": "137",
+                "alt": "Hasbrouck Laboratory Room 137"
+            },
+            {
+                "id": 52,
+                "url": "http://spire-api.melanson.dev/building-rooms/52/",
+                "number": "138",
+                "alt": "Hasbrouck Laboratory Room 138"
+            },
+            {
+                "id": 135,
+                "url": "http://spire-api.melanson.dev/building-rooms/135/",
+                "number": "20",
+                "alt": "Hasbrouck Laboratory Addition Room 20"
+            },
+            {
+                "id": 519,
+                "url": "http://spire-api.melanson.dev/building-rooms/519/",
+                "number": "202",
+                "alt": "Hasbrouck Laboratory Room 202"
+            },
+            {
+                "id": 516,
+                "url": "http://spire-api.melanson.dev/building-rooms/516/",
+                "number": "204",
+                "alt": "Hasbrouck Laboratory Room 204"
+            },
+            {
+                "id": 518,
+                "url": "http://spire-api.melanson.dev/building-rooms/518/",
+                "number": "210",
+                "alt": "Hasbrouck Laboratory Room 210"
+            },
+            {
+                "id": 517,
+                "url": "http://spire-api.melanson.dev/building-rooms/517/",
+                "number": "214",
+                "alt": "Hasbrouck Laboratory Room 214"
+            },
+            {
+                "id": 250,
+                "url": "http://spire-api.melanson.dev/building-rooms/250/",
+                "number": "228",
+                "alt": "Hasbrouck Laboratory Room 228"
+            },
+            {
+                "id": 138,
+                "url": "http://spire-api.melanson.dev/building-rooms/138/",
+                "number": "230",
+                "alt": "Hasbrouck Laboratory Room 230"
+            },
+            {
+                "id": 520,
+                "url": "http://spire-api.melanson.dev/building-rooms/520/",
+                "number": "235",
+                "alt": "Hasbrouck Room 235"
+            },
+            {
+                "id": 419,
+                "url": "http://spire-api.melanson.dev/building-rooms/419/",
+                "number": "236",
+                "alt": "Hasbrouck Room 236"
+            },
+            {
+                "id": 515,
+                "url": "http://spire-api.melanson.dev/building-rooms/515/",
+                "number": "240",
+                "alt": "Hasbrouck Laboratory Room 240"
+            },
+            {
+                "id": 318,
+                "url": "http://spire-api.melanson.dev/building-rooms/318/",
+                "number": "242",
+                "alt": "Hasbrouck Laboratory Room 242"
+            }
+        ]
+    },
+    "Herter Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/4/",
+        "id": 4,
+        "name": "Herter Hall",
+        "address": "161 Presidents Dr, Amherst, MA 01003-9312",
+        "rooms": [
+            {
+                "id": 208,
+                "url": "http://spire-api.melanson.dev/building-rooms/208/",
+                "number": "102",
+                "alt": "Herter Hall Room 102"
+            },
+            {
+                "id": 92,
+                "url": "http://spire-api.melanson.dev/building-rooms/92/",
+                "number": "106",
+                "alt": "Herter Hall Room 106"
+            },
+            {
+                "id": 207,
+                "url": "http://spire-api.melanson.dev/building-rooms/207/",
+                "number": "107",
+                "alt": "Herter Hall Room 107"
+            },
+            {
+                "id": 206,
+                "url": "http://spire-api.melanson.dev/building-rooms/206/",
+                "number": "108",
+                "alt": "Herter Hall Room 108"
+            },
+            {
+                "id": 212,
+                "url": "http://spire-api.melanson.dev/building-rooms/212/",
+                "number": "110",
+                "alt": "Herter Hall Room 110"
+            },
+            {
+                "id": 17,
+                "url": "http://spire-api.melanson.dev/building-rooms/17/",
+                "number": "111",
+                "alt": "Herter Hall Room 111"
+            },
+            {
+                "id": 209,
+                "url": "http://spire-api.melanson.dev/building-rooms/209/",
+                "number": "112",
+                "alt": "Herter Hall Room 112"
+            },
+            {
+                "id": 93,
+                "url": "http://spire-api.melanson.dev/building-rooms/93/",
+                "number": "113",
+                "alt": "Herter Hall Room 113"
+            },
+            {
+                "id": 124,
+                "url": "http://spire-api.melanson.dev/building-rooms/124/",
+                "number": "114",
+                "alt": "Herter Hall Room 114"
+            },
+            {
+                "id": 91,
+                "url": "http://spire-api.melanson.dev/building-rooms/91/",
+                "number": "116",
+                "alt": "Herter Hall Room 116"
+            },
+            {
+                "id": 271,
+                "url": "http://spire-api.melanson.dev/building-rooms/271/",
+                "number": "117",
+                "alt": "Herter Hall Room 117"
+            },
+            {
+                "id": 541,
+                "url": "http://spire-api.melanson.dev/building-rooms/541/",
+                "number": "118",
+                "alt": "Herter Hall Room 118"
+            },
+            {
+                "id": 265,
+                "url": "http://spire-api.melanson.dev/building-rooms/265/",
+                "number": "119",
+                "alt": "Herter Hall Room 119"
+            },
+            {
+                "id": 780,
+                "url": "http://spire-api.melanson.dev/building-rooms/780/",
+                "number": "15",
+                "alt": "Herter Hall Room 15"
+            },
+            {
+                "id": 634,
+                "url": "http://spire-api.melanson.dev/building-rooms/634/",
+                "number": "17",
+                "alt": "Herter Hall Room 17"
+            },
+            {
+                "id": 593,
+                "url": "http://spire-api.melanson.dev/building-rooms/593/",
+                "number": "19G",
+                "alt": "Herter Hall Room 19G"
+            },
+            {
+                "id": 46,
+                "url": "http://spire-api.melanson.dev/building-rooms/46/",
+                "number": "201",
+                "alt": "Herter Hall Room 201"
+            },
+            {
+                "id": 211,
+                "url": "http://spire-api.melanson.dev/building-rooms/211/",
+                "number": "202",
+                "alt": "Herter Hall Room 202"
+            },
+            {
+                "id": 214,
+                "url": "http://spire-api.melanson.dev/building-rooms/214/",
+                "number": "204",
+                "alt": "Herter Hall Room 204"
+            },
+            {
+                "id": 272,
+                "url": "http://spire-api.melanson.dev/building-rooms/272/",
+                "number": "205",
+                "alt": "Herter Hall Room 205"
+            },
+            {
+                "id": 213,
+                "url": "http://spire-api.melanson.dev/building-rooms/213/",
+                "number": "206",
+                "alt": "Herter Hall Room 206"
+            },
+            {
+                "id": 267,
+                "url": "http://spire-api.melanson.dev/building-rooms/267/",
+                "number": "207",
+                "alt": "Herter Hall Room 207"
+            },
+            {
+                "id": 276,
+                "url": "http://spire-api.melanson.dev/building-rooms/276/",
+                "number": "208",
+                "alt": "Herter Hall Room 208"
+            },
+            {
+                "id": 417,
+                "url": "http://spire-api.melanson.dev/building-rooms/417/",
+                "number": "209",
+                "alt": "Herter Hall Room 209"
+            },
+            {
+                "id": 362,
+                "url": "http://spire-api.melanson.dev/building-rooms/362/",
+                "number": "21",
+                "alt": "Herter Hall Room 21"
+            },
+            {
+                "id": 264,
+                "url": "http://spire-api.melanson.dev/building-rooms/264/",
+                "number": "210",
+                "alt": "Herter Hall Room 210"
+            },
+            {
+                "id": 230,
+                "url": "http://spire-api.melanson.dev/building-rooms/230/",
+                "number": "211",
+                "alt": "Herter Hall Room 211"
+            },
+            {
+                "id": 229,
+                "url": "http://spire-api.melanson.dev/building-rooms/229/",
+                "number": "212",
+                "alt": "Herter Hall Room 212"
+            },
+            {
+                "id": 280,
+                "url": "http://spire-api.melanson.dev/building-rooms/280/",
+                "number": "214",
+                "alt": "Herter Hall Room 214"
+            },
+            {
+                "id": 210,
+                "url": "http://spire-api.melanson.dev/building-rooms/210/",
+                "number": "217",
+                "alt": "Herter Hall Room 217"
+            },
+            {
+                "id": 277,
+                "url": "http://spire-api.melanson.dev/building-rooms/277/",
+                "number": "222",
+                "alt": "Herter Hall Room 222"
+            },
+            {
+                "id": 393,
+                "url": "http://spire-api.melanson.dev/building-rooms/393/",
+                "number": "224",
+                "alt": "Herter Hall Room 224"
+            },
+            {
+                "id": 231,
+                "url": "http://spire-api.melanson.dev/building-rooms/231/",
+                "number": "225",
+                "alt": "Herter Hall Room 225"
+            },
+            {
+                "id": 28,
+                "url": "http://spire-api.melanson.dev/building-rooms/28/",
+                "number": "227",
+                "alt": "Herter Hall Room 227"
+            },
+            {
+                "id": 256,
+                "url": "http://spire-api.melanson.dev/building-rooms/256/",
+                "number": "231",
+                "alt": "Herter Hall Room 231"
+            },
+            {
+                "id": 749,
+                "url": "http://spire-api.melanson.dev/building-rooms/749/",
+                "number": "23A",
+                "alt": "Herter Hall Room 23A"
+            },
+            {
+                "id": 750,
+                "url": "http://spire-api.melanson.dev/building-rooms/750/",
+                "number": "23B",
+                "alt": "Herter Hall Room 23B"
+            },
+            {
+                "id": 279,
+                "url": "http://spire-api.melanson.dev/building-rooms/279/",
+                "number": "301",
+                "alt": "Herter Room 301"
+            },
+            {
+                "id": 215,
+                "url": "http://spire-api.melanson.dev/building-rooms/215/",
+                "number": "342",
+                "alt": "Herter Hall Room 342"
+            },
+            {
+                "id": 191,
+                "url": "http://spire-api.melanson.dev/building-rooms/191/",
+                "number": "400",
+                "alt": "Herter Hall Room 400"
+            },
+            {
+                "id": 270,
+                "url": "http://spire-api.melanson.dev/building-rooms/270/",
+                "number": "444",
+                "alt": "Herter Hall Room 444"
+            },
+            {
+                "id": 431,
+                "url": "http://spire-api.melanson.dev/building-rooms/431/",
+                "number": "503",
+                "alt": "Herter Hall Room 503"
+            },
+            {
+                "id": 273,
+                "url": "http://spire-api.melanson.dev/building-rooms/273/",
+                "number": "546",
+                "alt": "Herter Hall Room 546"
+            },
+            {
+                "id": 674,
+                "url": "http://spire-api.melanson.dev/building-rooms/674/",
+                "number": "601",
+                "alt": "Herter Room 601"
+            },
+            {
+                "id": 278,
+                "url": "http://spire-api.melanson.dev/building-rooms/278/",
+                "number": "640",
+                "alt": "Herter Hall Room 640"
+            },
+            {
+                "id": 382,
+                "url": "http://spire-api.melanson.dev/building-rooms/382/",
+                "number": "746",
+                "alt": "Herter Hall Room 746"
+            }
+        ]
+    },
+    "Holdsworth Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/53/",
+        "id": 53,
+        "name": "Holdsworth Hall",
+        "address": "160 Holdsworth Way, Amherst, MA 01003-9285",
+        "rooms": [
+            {
+                "id": 502,
+                "url": "http://spire-api.melanson.dev/building-rooms/502/",
+                "number": "103A",
+                "alt": "Holdsworth Hall Room 103A"
+            },
+            {
+                "id": 406,
+                "url": "http://spire-api.melanson.dev/building-rooms/406/",
+                "number": "105",
+                "alt": "Holdsworth Hall Room 105"
+            },
+            {
+                "id": 310,
+                "url": "http://spire-api.melanson.dev/building-rooms/310/",
+                "number": "202",
+                "alt": "Holdsworth Hall Room 202"
+            },
+            {
+                "id": 320,
+                "url": "http://spire-api.melanson.dev/building-rooms/320/",
+                "number": "203",
+                "alt": "Holdsworth Hall Room 203"
+            },
+            {
+                "id": 399,
+                "url": "http://spire-api.melanson.dev/building-rooms/399/",
+                "number": "211",
+                "alt": "Holdsworth Hall Room 211"
+            },
+            {
+                "id": 396,
+                "url": "http://spire-api.melanson.dev/building-rooms/396/",
+                "number": "301",
+                "alt": "Holdsworth 301"
+            },
+            {
+                "id": 503,
+                "url": "http://spire-api.melanson.dev/building-rooms/503/",
+                "number": "302",
+                "alt": "Holdsworth Hall Room 302"
+            },
+            {
+                "id": 304,
+                "url": "http://spire-api.melanson.dev/building-rooms/304/",
+                "number": "305",
+                "alt": "Holdsworth Hall Room 305"
+            },
+            {
+                "id": 400,
+                "url": "http://spire-api.melanson.dev/building-rooms/400/",
+                "number": "306",
+                "alt": "Holdsworth Hall Room 306"
+            },
+            {
+                "id": 395,
+                "url": "http://spire-api.melanson.dev/building-rooms/395/",
+                "number": "308",
+                "alt": "Holdsworth Hall Room 308"
+            },
+            {
+                "id": 398,
+                "url": "http://spire-api.melanson.dev/building-rooms/398/",
+                "number": "312A",
+                "alt": "Holdsworth Hall Room 312A"
+            }
+        ]
+    },
+    "Integrated Sciences Building": {
+        "url": "http://spire-api.melanson.dev/buildings/13/",
+        "id": 13,
+        "name": "Integrated Sciences Building",
+        "address": "661 N Pleasant St, Amherst, MA 01003-9301",
+        "rooms": [
+            {
+                "id": 162,
+                "url": "http://spire-api.melanson.dev/building-rooms/162/",
+                "number": "135",
+                "alt": "Integrated Sciences Building 135"
+            },
+            {
+                "id": 64,
+                "url": "http://spire-api.melanson.dev/building-rooms/64/",
+                "number": "221",
+                "alt": "Integrated Sciences Building 221"
+            },
+            {
+                "id": 40,
+                "url": "http://spire-api.melanson.dev/building-rooms/40/",
+                "number": "241H",
+                "alt": "Integrated Sciences Building 241H"
+            },
+            {
+                "id": 647,
+                "url": "http://spire-api.melanson.dev/building-rooms/647/",
+                "number": "26",
+                "alt": "Integrated Sciences Building Room 26"
+            },
+            {
+                "id": 154,
+                "url": "http://spire-api.melanson.dev/building-rooms/154/",
+                "number": "260",
+                "alt": "Integrated Science Building 260"
+            },
+            {
+                "id": 169,
+                "url": "http://spire-api.melanson.dev/building-rooms/169/",
+                "number": "264",
+                "alt": "Integrated Science Building 264"
+            },
+            {
+                "id": 151,
+                "url": "http://spire-api.melanson.dev/building-rooms/151/",
+                "number": "268",
+                "alt": "Integrated Science Building 268"
+            },
+            {
+                "id": 155,
+                "url": "http://spire-api.melanson.dev/building-rooms/155/",
+                "number": "321",
+                "alt": "Integrated Sciences Room 321"
+            },
+            {
+                "id": 150,
+                "url": "http://spire-api.melanson.dev/building-rooms/150/",
+                "number": "329",
+                "alt": "Integrated Sciences Building 329"
+            },
+            {
+                "id": 625,
+                "url": "http://spire-api.melanson.dev/building-rooms/625/",
+                "number": "355",
+                "alt": "Integrated Sciences Laboratory 355"
+            },
+            {
+                "id": 173,
+                "url": "http://spire-api.melanson.dev/building-rooms/173/",
+                "number": "360",
+                "alt": "Integrated Science Building 360"
+            },
+            {
+                "id": 58,
+                "url": "http://spire-api.melanson.dev/building-rooms/58/",
+                "number": "363A",
+                "alt": "Integrated Sciences Building 363A"
+            },
+            {
+                "id": 45,
+                "url": "http://spire-api.melanson.dev/building-rooms/45/",
+                "number": "364",
+                "alt": "Integrated Science Building 364"
+            },
+            {
+                "id": 53,
+                "url": "http://spire-api.melanson.dev/building-rooms/53/",
+                "number": "368",
+                "alt": "Integrated Sciences Building 368"
+            },
+            {
+                "id": 57,
+                "url": "http://spire-api.melanson.dev/building-rooms/57/",
+                "number": "427L",
+                "alt": "Integrated Sciences Building 427L"
+            },
+            {
+                "id": 61,
+                "url": "http://spire-api.melanson.dev/building-rooms/61/",
+                "number": "427R",
+                "alt": "Integrated Sciences Building 427R"
+            }
+        ]
+    },
+    "Integrative Learning Center": {
+        "url": "http://spire-api.melanson.dev/buildings/8/",
+        "id": 8,
+        "name": "Integrative Learning Center",
+        "address": "650 N Pleasant St, Amherst, MA 01003-1100",
+        "rooms": [
+            {
+                "id": 472,
+                "url": "http://spire-api.melanson.dev/building-rooms/472/",
+                "number": "417",
+                "alt": "Integrative Learning Center 417"
+            },
+            {
+                "id": 712,
+                "url": "http://spire-api.melanson.dev/building-rooms/712/",
+                "number": "458",
+                "alt": "Integrative Learning Center 458"
+            },
+            {
+                "id": 26,
+                "url": "http://spire-api.melanson.dev/building-rooms/26/",
+                "number": "N101",
+                "alt": "Integrative Learning Center N101"
+            },
+            {
+                "id": 177,
+                "url": "http://spire-api.melanson.dev/building-rooms/177/",
+                "number": "N111",
+                "alt": "Integrative Learning Center N111"
+            },
+            {
+                "id": 75,
+                "url": "http://spire-api.melanson.dev/building-rooms/75/",
+                "number": "N151",
+                "alt": "Integrative Learning Center N151"
+            },
+            {
+                "id": 33,
+                "url": "http://spire-api.melanson.dev/building-rooms/33/",
+                "number": "N155",
+                "alt": "Integrative Learning Center N155"
+            },
+            {
+                "id": 178,
+                "url": "http://spire-api.melanson.dev/building-rooms/178/",
+                "number": "N211",
+                "alt": "Integr Learning Center N211"
+            },
+            {
+                "id": 244,
+                "url": "http://spire-api.melanson.dev/building-rooms/244/",
+                "number": "N255",
+                "alt": "Integrative Learning Center N255"
+            },
+            {
+                "id": 726,
+                "url": "http://spire-api.melanson.dev/building-rooms/726/",
+                "number": "N301",
+                "alt": "Integrative Learning Center N301"
+            },
+            {
+                "id": 247,
+                "url": "http://spire-api.melanson.dev/building-rooms/247/",
+                "number": "N317",
+                "alt": "Integrative Learning Center N317"
+            },
+            {
+                "id": 700,
+                "url": "http://spire-api.melanson.dev/building-rooms/700/",
+                "number": "N321",
+                "alt": "Integrative Learning Center N321"
+            },
+            {
+                "id": 243,
+                "url": "http://spire-api.melanson.dev/building-rooms/243/",
+                "number": "N345",
+                "alt": "Integrative Learning Center N345"
+            },
+            {
+                "id": 590,
+                "url": "http://spire-api.melanson.dev/building-rooms/590/",
+                "number": "N371",
+                "alt": "Integrative Learning Center N371"
+            },
+            {
+                "id": 477,
+                "url": "http://spire-api.melanson.dev/building-rooms/477/",
+                "number": "N400",
+                "alt": "Integrative Learning Center N400"
+            },
+            {
+                "id": 474,
+                "url": "http://spire-api.melanson.dev/building-rooms/474/",
+                "number": "N417",
+                "alt": "Integrative Learning Center N417"
+            },
+            {
+                "id": 443,
+                "url": "http://spire-api.melanson.dev/building-rooms/443/",
+                "number": "N451",
+                "alt": "Integrative Learning Center N451"
+            },
+            {
+                "id": 475,
+                "url": "http://spire-api.melanson.dev/building-rooms/475/",
+                "number": "N458",
+                "alt": "Integrative Learning Center N458"
+            },
+            {
+                "id": 476,
+                "url": "http://spire-api.melanson.dev/building-rooms/476/",
+                "number": "N470",
+                "alt": "Integrative Learning Center N470"
+            },
+            {
+                "id": 152,
+                "url": "http://spire-api.melanson.dev/building-rooms/152/",
+                "number": "S110",
+                "alt": "Integrative Learning Center S110"
+            },
+            {
+                "id": 153,
+                "url": "http://spire-api.melanson.dev/building-rooms/153/",
+                "number": "S120",
+                "alt": "Integrative Learning Center S120"
+            },
+            {
+                "id": 29,
+                "url": "http://spire-api.melanson.dev/building-rooms/29/",
+                "number": "S131",
+                "alt": "Integrative Learning Center S131"
+            },
+            {
+                "id": 364,
+                "url": "http://spire-api.melanson.dev/building-rooms/364/",
+                "number": "S140",
+                "alt": "Integrative Learning Center S140"
+            },
+            {
+                "id": 241,
+                "url": "http://spire-api.melanson.dev/building-rooms/241/",
+                "number": "S211",
+                "alt": "Integrative Learning Center S211"
+            },
+            {
+                "id": 136,
+                "url": "http://spire-api.melanson.dev/building-rooms/136/",
+                "number": "S220",
+                "alt": "Integrative Learning Center S220"
+            },
+            {
+                "id": 129,
+                "url": "http://spire-api.melanson.dev/building-rooms/129/",
+                "number": "S231",
+                "alt": "Integrative Learning Center S231"
+            },
+            {
+                "id": 168,
+                "url": "http://spire-api.melanson.dev/building-rooms/168/",
+                "number": "S240",
+                "alt": "Integrative Learning Center S240"
+            },
+            {
+                "id": 455,
+                "url": "http://spire-api.melanson.dev/building-rooms/455/",
+                "number": "S308",
+                "alt": "Integrative Learning Center S308"
+            },
+            {
+                "id": 464,
+                "url": "http://spire-api.melanson.dev/building-rooms/464/",
+                "number": "S311",
+                "alt": "Integrative Learning Center S311"
+            },
+            {
+                "id": 591,
+                "url": "http://spire-api.melanson.dev/building-rooms/591/",
+                "number": "S312",
+                "alt": "Integrative Learning Center TVStudio S312"
+            },
+            {
+                "id": 592,
+                "url": "http://spire-api.melanson.dev/building-rooms/592/",
+                "number": "S330",
+                "alt": "Integrative Learning Center S330"
+            },
+            {
+                "id": 51,
+                "url": "http://spire-api.melanson.dev/building-rooms/51/",
+                "number": "S331",
+                "alt": "Integrative Learning Center S331"
+            },
+            {
+                "id": 249,
+                "url": "http://spire-api.melanson.dev/building-rooms/249/",
+                "number": "S350",
+                "alt": "Integrative Learning Center S350"
+            },
+            {
+                "id": 274,
+                "url": "http://spire-api.melanson.dev/building-rooms/274/",
+                "number": "S404",
+                "alt": "Integrative Learning Center S404"
+            },
+            {
+                "id": 454,
+                "url": "http://spire-api.melanson.dev/building-rooms/454/",
+                "number": "S405",
+                "alt": "Integrative Learning Center S405"
+            },
+            {
+                "id": 410,
+                "url": "http://spire-api.melanson.dev/building-rooms/410/",
+                "number": "S407",
+                "alt": "Integrative Learning Center S407"
+            },
+            {
+                "id": 459,
+                "url": "http://spire-api.melanson.dev/building-rooms/459/",
+                "number": "S412",
+                "alt": "Integrative Learning Center S412"
+            },
+            {
+                "id": 456,
+                "url": "http://spire-api.melanson.dev/building-rooms/456/",
+                "number": "S413",
+                "alt": "Integrative Learning Center S413"
+            },
+            {
+                "id": 458,
+                "url": "http://spire-api.melanson.dev/building-rooms/458/",
+                "number": "S414",
+                "alt": "Integrative Learning Center S414"
+            },
+            {
+                "id": 619,
+                "url": "http://spire-api.melanson.dev/building-rooms/619/",
+                "number": "S415",
+                "alt": "Integrative Learning Center S415"
+            },
+            {
+                "id": 252,
+                "url": "http://spire-api.melanson.dev/building-rooms/252/",
+                "number": "S416",
+                "alt": "Integrative Learning Center S416"
+            },
+            {
+                "id": 255,
+                "url": "http://spire-api.melanson.dev/building-rooms/255/",
+                "number": "S418",
+                "alt": "Integrative Learning Center S418"
+            },
+            {
+                "id": 409,
+                "url": "http://spire-api.melanson.dev/building-rooms/409/",
+                "number": "S44",
+                "alt": "Integrative Learning Center Room S44"
+            }
+        ]
+    },
+    "Isenberg School of Management": {
+        "url": "http://spire-api.melanson.dev/buildings/1/",
+        "id": 1,
+        "name": "Isenberg School of Management",
+        "address": "121 Presidents Dr, Amherst, MA 01003-9310",
+        "rooms": [
+            {
+                "id": 18,
+                "url": "http://spire-api.melanson.dev/building-rooms/18/",
+                "number": "106",
+                "alt": "School of Management 106"
+            },
+            {
+                "id": 13,
+                "url": "http://spire-api.melanson.dev/building-rooms/13/",
+                "number": "108",
+                "alt": "School of Management 108"
+            },
+            {
+                "id": 801,
+                "url": "http://spire-api.melanson.dev/building-rooms/801/",
+                "number": "111",
+                "alt": "School of Management 111"
+            },
+            {
+                "id": 21,
+                "url": "http://spire-api.melanson.dev/building-rooms/21/",
+                "number": "112",
+                "alt": "School of Management 112"
+            },
+            {
+                "id": 12,
+                "url": "http://spire-api.melanson.dev/building-rooms/12/",
+                "number": "117",
+                "alt": "School of Management 117"
+            },
+            {
+                "id": 7,
+                "url": "http://spire-api.melanson.dev/building-rooms/7/",
+                "number": "118",
+                "alt": "School of Management 118"
+            },
+            {
+                "id": 14,
+                "url": "http://spire-api.melanson.dev/building-rooms/14/",
+                "number": "119",
+                "alt": "School of Management 119"
+            },
+            {
+                "id": 617,
+                "url": "http://spire-api.melanson.dev/building-rooms/617/",
+                "number": "12",
+                "alt": "School of Management 12"
+            },
+            {
+                "id": 8,
+                "url": "http://spire-api.melanson.dev/building-rooms/8/",
+                "number": "120",
+                "alt": "School of Management 120"
+            },
+            {
+                "id": 6,
+                "url": "http://spire-api.melanson.dev/building-rooms/6/",
+                "number": "122",
+                "alt": "School of Management 122"
+            },
+            {
+                "id": 5,
+                "url": "http://spire-api.melanson.dev/building-rooms/5/",
+                "number": "123",
+                "alt": "School of Management 123"
+            },
+            {
+                "id": 20,
+                "url": "http://spire-api.melanson.dev/building-rooms/20/",
+                "number": "124",
+                "alt": "School of Management 124"
+            },
+            {
+                "id": 9,
+                "url": "http://spire-api.melanson.dev/building-rooms/9/",
+                "number": "125",
+                "alt": "School of Management 125"
+            },
+            {
+                "id": 16,
+                "url": "http://spire-api.melanson.dev/building-rooms/16/",
+                "number": "126",
+                "alt": "School of Management 126"
+            },
+            {
+                "id": 11,
+                "url": "http://spire-api.melanson.dev/building-rooms/11/",
+                "number": "127",
+                "alt": "School of Management 127"
+            },
+            {
+                "id": 446,
+                "url": "http://spire-api.melanson.dev/building-rooms/446/",
+                "number": "128",
+                "alt": "School of Management 128"
+            },
+            {
+                "id": 19,
+                "url": "http://spire-api.melanson.dev/building-rooms/19/",
+                "number": "129",
+                "alt": "School of Management 129"
+            },
+            {
+                "id": 70,
+                "url": "http://spire-api.melanson.dev/building-rooms/70/",
+                "number": "137",
+                "alt": "School of Management 137"
+            },
+            {
+                "id": 448,
+                "url": "http://spire-api.melanson.dev/building-rooms/448/",
+                "number": "210",
+                "alt": "School of Management 210"
+            },
+            {
+                "id": 680,
+                "url": "http://spire-api.melanson.dev/building-rooms/680/",
+                "number": "219",
+                "alt": "School of Management 219"
+            },
+            {
+                "id": 618,
+                "url": "http://spire-api.melanson.dev/building-rooms/618/",
+                "number": "226",
+                "alt": "School of Management 226"
+            },
+            {
+                "id": 1,
+                "url": "http://spire-api.melanson.dev/building-rooms/1/",
+                "number": "237",
+                "alt": "School of Management 237"
+            },
+            {
+                "id": 451,
+                "url": "http://spire-api.melanson.dev/building-rooms/451/",
+                "number": "306",
+                "alt": "School of Management 306"
+            },
+            {
+                "id": 413,
+                "url": "http://spire-api.melanson.dev/building-rooms/413/",
+                "number": "336",
+                "alt": "School of Management 336"
+            },
+            {
+                "id": 800,
+                "url": "http://spire-api.melanson.dev/building-rooms/800/",
+                "number": "8",
+                "alt": "School of Management 8"
+            },
+            {
+                "id": 411,
+                "url": "http://spire-api.melanson.dev/building-rooms/411/",
+                "number": "G20",
+                "alt": "School of Management G20"
+            },
+            {
+                "id": 574,
+                "url": "http://spire-api.melanson.dev/building-rooms/574/",
+                "number": "G22",
+                "alt": "School of Management G22"
+            },
+            {
+                "id": 445,
+                "url": "http://spire-api.melanson.dev/building-rooms/445/",
+                "number": "G23",
+                "alt": "School of Management G23"
+            },
+            {
+                "id": 311,
+                "url": "http://spire-api.melanson.dev/building-rooms/311/",
+                "number": "G26",
+                "alt": "School of Management G26"
+            },
+            {
+                "id": 447,
+                "url": "http://spire-api.melanson.dev/building-rooms/447/",
+                "number": "G27",
+                "alt": "School of Management G27"
+            },
+            {
+                "id": 10,
+                "url": "http://spire-api.melanson.dev/building-rooms/10/",
+                "number": "G31",
+                "alt": "School of Management G31"
+            },
+            {
+                "id": 305,
+                "url": "http://spire-api.melanson.dev/building-rooms/305/",
+                "number": "G35",
+                "alt": "School of Management G35"
+            },
+            {
+                "id": 412,
+                "url": "http://spire-api.melanson.dev/building-rooms/412/",
+                "number": "G8",
+                "alt": "School of Management G8"
+            },
+            {
+                "id": 677,
+                "url": "http://spire-api.melanson.dev/building-rooms/677/",
+                "number": "N125",
+                "alt": "School of Management N125"
+            },
+            {
+                "id": 640,
+                "url": "http://spire-api.melanson.dev/building-rooms/640/",
+                "number": "N135",
+                "alt": "School of Management N135"
+            },
+            {
+                "id": 641,
+                "url": "http://spire-api.melanson.dev/building-rooms/641/",
+                "number": "N145",
+                "alt": "School of Management N145"
+            },
+            {
+                "id": 676,
+                "url": "http://spire-api.melanson.dev/building-rooms/676/",
+                "number": "N220",
+                "alt": "School of Management N220"
+            },
+            {
+                "id": 682,
+                "url": "http://spire-api.melanson.dev/building-rooms/682/",
+                "number": "N306",
+                "alt": "School of Management N306"
+            },
+            {
+                "id": 830,
+                "url": "http://spire-api.melanson.dev/building-rooms/830/",
+                "number": "N327",
+                "alt": "School of Management N327"
+            },
+            {
+                "id": 681,
+                "url": "http://spire-api.melanson.dev/building-rooms/681/",
+                "number": "N330",
+                "alt": "School of Management N330"
+            },
+            {
+                "id": 683,
+                "url": "http://spire-api.melanson.dev/building-rooms/683/",
+                "number": "N390",
+                "alt": "School of Management N390"
+            }
+        ]
+    },
+    "James Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/35/",
+        "id": 35,
+        "name": "James Hall",
+        "address": "660 Massachusetts Ave, Amherst, MA 01003-9217",
+        "rooms": [
+            {
+                "id": 342,
+                "url": "http://spire-api.melanson.dev/building-rooms/342/",
+                "number": "102",
+                "alt": "James House Room 102"
+            },
+            {
+                "id": 166,
+                "url": "http://spire-api.melanson.dev/building-rooms/166/",
+                "number": null,
+                "alt": "James House"
+            }
+        ]
+    },
+    "Kennedy Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/66/",
+        "id": 66,
+        "name": "Kennedy Hall",
+        "address": "620 Massachusetts Ave, Amherst, MA 01003-9238",
+        "rooms": [
+            {
+                "id": 405,
+                "url": "http://spire-api.melanson.dev/building-rooms/405/",
+                "number": "508",
+                "alt": "Kennedy House Room 508"
+            },
+            {
+                "id": 665,
+                "url": "http://spire-api.melanson.dev/building-rooms/665/",
+                "number": "510",
+                "alt": "Kennedy House Room 510"
+            },
+            {
+                "id": 504,
+                "url": "http://spire-api.melanson.dev/building-rooms/504/",
+                "number": null,
+                "alt": "Kennedy House"
+            }
+        ]
+    },
+    "Lederle Grad Research Center": {
+        "url": "http://spire-api.melanson.dev/buildings/27/",
+        "id": 27,
+        "name": "Lederle Grad Research Center",
+        "address": "740 N Pleasant St, Amherst, MA 01003-9306",
+        "rooms": [
+            {
+                "id": 652,
+                "url": "http://spire-api.melanson.dev/building-rooms/652/",
+                "number": "104",
+                "alt": "Lederle Grad Research Center Room 104"
+            },
+            {
+                "id": 595,
+                "url": "http://spire-api.melanson.dev/building-rooms/595/",
+                "number": "353B",
+                "alt": "Lederle Grad Research Center 353B"
+            },
+            {
+                "id": 824,
+                "url": "http://spire-api.melanson.dev/building-rooms/824/",
+                "number": "A104A",
+                "alt": "Lederle Grad Research Center A104A"
+            },
+            {
+                "id": 478,
+                "url": "http://spire-api.melanson.dev/building-rooms/478/",
+                "number": "A201",
+                "alt": "Lederle Grad Research Center Room A201"
+            },
+            {
+                "id": 289,
+                "url": "http://spire-api.melanson.dev/building-rooms/289/",
+                "number": "A203",
+                "alt": "Lederle Grad Research Center Room A203"
+            },
+            {
+                "id": 90,
+                "url": "http://spire-api.melanson.dev/building-rooms/90/",
+                "number": "A210",
+                "alt": "Lederle Grad Research Center Room A210"
+            },
+            {
+                "id": 703,
+                "url": "http://spire-api.melanson.dev/building-rooms/703/",
+                "number": "A255",
+                "alt": "Lederle Grad Research Center Room A255"
+            },
+            {
+                "id": 290,
+                "url": "http://spire-api.melanson.dev/building-rooms/290/",
+                "number": "A301",
+                "alt": "Lederle Grad Research Center Room A301"
+            },
+            {
+                "id": 823,
+                "url": "http://spire-api.melanson.dev/building-rooms/823/",
+                "number": "A302",
+                "alt": "Lederle Grad Research Center A302"
+            },
+            {
+                "id": 293,
+                "url": "http://spire-api.melanson.dev/building-rooms/293/",
+                "number": "A310",
+                "alt": "Lederle Grad Research Center Room A310"
+            },
+            {
+                "id": 660,
+                "url": "http://spire-api.melanson.dev/building-rooms/660/",
+                "number": "A311",
+                "alt": "Lederle Grad Research Center Room A311"
+            }
+        ]
+    },
+    "Lederle Grad Research Tower": {
+        "url": "http://spire-api.melanson.dev/buildings/26/",
+        "id": 26,
+        "name": "Lederle Grad Research Tower",
+        "address": "710 N Pleasant St, Amherst, MA 01003-9305",
+        "rooms": [
+            {
+                "id": 144,
+                "url": "http://spire-api.melanson.dev/building-rooms/144/",
+                "number": "1033",
+                "alt": "Lederle Grad Research Tower Room 1033"
+            },
+            {
+                "id": 142,
+                "url": "http://spire-api.melanson.dev/building-rooms/142/",
+                "number": "1114",
+                "alt": "Lederle Grad Research Tower Room 1114"
+            },
+            {
+                "id": 481,
+                "url": "http://spire-api.melanson.dev/building-rooms/481/",
+                "number": "121",
+                "alt": "Lederle Grad Research Tower Room 121"
+            },
+            {
+                "id": 263,
+                "url": "http://spire-api.melanson.dev/building-rooms/263/",
+                "number": "123",
+                "alt": "Lederle Grad Research Tower Room 123"
+            },
+            {
+                "id": 199,
+                "url": "http://spire-api.melanson.dev/building-rooms/199/",
+                "number": "1234",
+                "alt": "Lederle Grad Research Tower Room 1234"
+            },
+            {
+                "id": 157,
+                "url": "http://spire-api.melanson.dev/building-rooms/157/",
+                "number": "1322",
+                "alt": "Lederle Grad Research Tower Room 1322"
+            },
+            {
+                "id": 299,
+                "url": "http://spire-api.melanson.dev/building-rooms/299/",
+                "number": "1334",
+                "alt": "Lederle Grad Research Tower Room 1334"
+            },
+            {
+                "id": 189,
+                "url": "http://spire-api.melanson.dev/building-rooms/189/",
+                "number": "141",
+                "alt": "Lederle Grad Research Tower Room 141"
+            },
+            {
+                "id": 482,
+                "url": "http://spire-api.melanson.dev/building-rooms/482/",
+                "number": "143",
+                "alt": "Lederle Grad Research Tower Room 143"
+            },
+            {
+                "id": 188,
+                "url": "http://spire-api.melanson.dev/building-rooms/188/",
+                "number": "145",
+                "alt": "Lederle Grad Research Tower Room 145"
+            },
+            {
+                "id": 86,
+                "url": "http://spire-api.melanson.dev/building-rooms/86/",
+                "number": "147",
+                "alt": "Lederle Grad Research Tower Room 147"
+            },
+            {
+                "id": 691,
+                "url": "http://spire-api.melanson.dev/building-rooms/691/",
+                "number": "1528",
+                "alt": "Lederle Research Tower Room 1528"
+            },
+            {
+                "id": 488,
+                "url": "http://spire-api.melanson.dev/building-rooms/488/",
+                "number": "1634",
+                "alt": "Lederle Grad Research Tower Room 1634"
+            },
+            {
+                "id": 473,
+                "url": "http://spire-api.melanson.dev/building-rooms/473/",
+                "number": "171",
+                "alt": "Lederle Grad Research Tower Room 171"
+            },
+            {
+                "id": 432,
+                "url": "http://spire-api.melanson.dev/building-rooms/432/",
+                "number": "173",
+                "alt": "Lederle Grad Research Tower Room 173"
+            },
+            {
+                "id": 479,
+                "url": "http://spire-api.melanson.dev/building-rooms/479/",
+                "number": "177",
+                "alt": "Lederle Grad Research Tower Room 177"
+            },
+            {
+                "id": 196,
+                "url": "http://spire-api.melanson.dev/building-rooms/196/",
+                "number": "201",
+                "alt": "Lederle Grad Research Tower Room 201"
+            },
+            {
+                "id": 204,
+                "url": "http://spire-api.melanson.dev/building-rooms/204/",
+                "number": "202",
+                "alt": "Lederle Grad Research Tower Room 202"
+            },
+            {
+                "id": 285,
+                "url": "http://spire-api.melanson.dev/building-rooms/285/",
+                "number": "204",
+                "alt": "Lederle Grad Research Tower Room 204"
+            },
+            {
+                "id": 219,
+                "url": "http://spire-api.melanson.dev/building-rooms/219/",
+                "number": "206",
+                "alt": "Lederle Grad Research Tower Room 206"
+            },
+            {
+                "id": 480,
+                "url": "http://spire-api.melanson.dev/building-rooms/480/",
+                "number": "219",
+                "alt": "Lederle Grad Research Tower Room 219"
+            },
+            {
+                "id": 286,
+                "url": "http://spire-api.melanson.dev/building-rooms/286/",
+                "number": "223",
+                "alt": "Lederle Grad Research Tower 223"
+            },
+            {
+                "id": 594,
+                "url": "http://spire-api.melanson.dev/building-rooms/594/",
+                "number": "224",
+                "alt": "Lederle Grad Tower 224"
+            },
+            {
+                "id": 287,
+                "url": "http://spire-api.melanson.dev/building-rooms/287/",
+                "number": "225",
+                "alt": "Lederle Grad Tower Room 225"
+            },
+            {
+                "id": 521,
+                "url": "http://spire-api.melanson.dev/building-rooms/521/",
+                "number": "419B",
+                "alt": "Lederle Grad Research Tower Room 419B"
+            },
+            {
+                "id": 743,
+                "url": "http://spire-api.melanson.dev/building-rooms/743/",
+                "number": "533",
+                "alt": "Lederle Grad Tower Room 533"
+            },
+            {
+                "id": 143,
+                "url": "http://spire-api.melanson.dev/building-rooms/143/",
+                "number": "637",
+                "alt": "Lederle Grad Research Tower Room 637"
+            },
+            {
+                "id": 643,
+                "url": "http://spire-api.melanson.dev/building-rooms/643/",
+                "number": "644",
+                "alt": "Lederle Grad Research Tower Room 644"
+            }
+        ]
+    },
+    "Lewis Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/33/",
+        "id": 33,
+        "name": "Lewis Hall",
+        "address": "340 Thatcher Rd, Amherst, MA 01003-9359",
+        "rooms": [
+            {
+                "id": 134,
+                "url": "http://spire-api.melanson.dev/building-rooms/134/",
+                "number": "124",
+                "alt": "Lewis Room 124"
+            }
+        ]
+    },
+    "Library @ Mount Ida Computer Laboratory": {
+        "url": "http://spire-api.melanson.dev/buildings/82/",
+        "id": 82,
+        "name": "Library @ Mount Ida Computer Laboratory",
+        "address": null,
+        "rooms": [
+            {
+                "id": 571,
+                "url": "http://spire-api.melanson.dev/building-rooms/571/",
+                "number": "101",
+                "alt": "Library @ Mount Ida Computer Laboratory 101"
+            }
+        ]
+    },
+    "Life Science Laboratories": {
+        "url": "http://spire-api.melanson.dev/buildings/19/",
+        "id": 19,
+        "name": "Life Science Laboratories",
+        "address": "240 Thatcher Rd, Amherst, MA 01003-9364",
+        "rooms": [
+            {
+                "id": 646,
+                "url": "http://spire-api.melanson.dev/building-rooms/646/",
+                "number": "215",
+                "alt": "Life Sciences Laboratory Room 215"
+            },
+            {
+                "id": 586,
+                "url": "http://spire-api.melanson.dev/building-rooms/586/",
+                "number": "410",
+                "alt": "Life Sciences Laboratory Room 410"
+            },
+            {
+                "id": 200,
+                "url": "http://spire-api.melanson.dev/building-rooms/200/",
+                "number": "415",
+                "alt": "Life Sciences Laboratory Room 415"
+            },
+            {
+                "id": 757,
+                "url": "http://spire-api.melanson.dev/building-rooms/757/",
+                "number": "515",
+                "alt": "Life Sciences Laboratory Room 515"
+            },
+            {
+                "id": 55,
+                "url": "http://spire-api.melanson.dev/building-rooms/55/",
+                "number": "540D",
+                "alt": "Life Sciences Laboratory Room 540D"
+            },
+            {
+                "id": 579,
+                "url": "http://spire-api.melanson.dev/building-rooms/579/",
+                "number": "N210",
+                "alt": "Life Sciences Laboratory Room N210"
+            },
+            {
+                "id": 585,
+                "url": "http://spire-api.melanson.dev/building-rooms/585/",
+                "number": "N410",
+                "alt": "Life Sciences Laboratory Room N410"
+            },
+            {
+                "id": 770,
+                "url": "http://spire-api.melanson.dev/building-rooms/770/",
+                "number": "N529",
+                "alt": "Life Sciences Laboratory Room N529"
+            },
+            {
+                "id": 587,
+                "url": "http://spire-api.melanson.dev/building-rooms/587/",
+                "number": "N615",
+                "alt": "Life Sciences Laboratory Room N615"
+            }
+        ]
+    },
+    "Machmer Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/20/",
+        "id": 20,
+        "name": "Machmer Hall",
+        "address": "240 Hicks Way, Amherst, MA 01003-9278",
+        "rooms": [
+            {
+                "id": 689,
+                "url": "http://spire-api.melanson.dev/building-rooms/689/",
+                "number": "304",
+                "alt": "Machmer Room 304"
+            },
+            {
+                "id": 85,
+                "url": "http://spire-api.melanson.dev/building-rooms/85/",
+                "number": "317",
+                "alt": "Machmer Hall Room 317"
+            },
+            {
+                "id": 627,
+                "url": "http://spire-api.melanson.dev/building-rooms/627/",
+                "number": "413",
+                "alt": "Machmer Hall Room 413"
+            },
+            {
+                "id": 77,
+                "url": "http://spire-api.melanson.dev/building-rooms/77/",
+                "number": "E-10",
+                "alt": "Machmer Hall Room E-10"
+            },
+            {
+                "id": 82,
+                "url": "http://spire-api.melanson.dev/building-rooms/82/",
+                "number": "E-14",
+                "alt": "Machmer Hall Room E-14"
+            },
+            {
+                "id": 833,
+                "url": "http://spire-api.melanson.dev/building-rooms/833/",
+                "number": "E-15",
+                "alt": "Machmer Hall Room E-15"
+            },
+            {
+                "id": 76,
+                "url": "http://spire-api.melanson.dev/building-rooms/76/",
+                "number": "E-16",
+                "alt": "Machmer Hall Room E-16"
+            },
+            {
+                "id": 576,
+                "url": "http://spire-api.melanson.dev/building-rooms/576/",
+                "number": "E-17",
+                "alt": "Machmer Hall Room E-17"
+            },
+            {
+                "id": 84,
+                "url": "http://spire-api.melanson.dev/building-rooms/84/",
+                "number": "E21",
+                "alt": "Machmer E21"
+            },
+            {
+                "id": 329,
+                "url": "http://spire-api.melanson.dev/building-rooms/329/",
+                "number": "E-23",
+                "alt": "Machmer Hall room E-23"
+            },
+            {
+                "id": 87,
+                "url": "http://spire-api.melanson.dev/building-rooms/87/",
+                "number": "E-24",
+                "alt": "Machmer E-24"
+            },
+            {
+                "id": 538,
+                "url": "http://spire-api.melanson.dev/building-rooms/538/",
+                "number": "E-32",
+                "alt": "Machmer E-32"
+            },
+            {
+                "id": 245,
+                "url": "http://spire-api.melanson.dev/building-rooms/245/",
+                "number": "E-33",
+                "alt": "Machmer Hall Room E-33"
+            },
+            {
+                "id": 248,
+                "url": "http://spire-api.melanson.dev/building-rooms/248/",
+                "number": "E-35",
+                "alt": "Machmer Hall Room E-35"
+            },
+            {
+                "id": 325,
+                "url": "http://spire-api.melanson.dev/building-rooms/325/",
+                "number": "E-37",
+                "alt": "Machmer Hall Room E-37"
+            },
+            {
+                "id": 471,
+                "url": "http://spire-api.melanson.dev/building-rooms/471/",
+                "number": "W-11",
+                "alt": "Machmer Hall Room W-11"
+            },
+            {
+                "id": 639,
+                "url": "http://spire-api.melanson.dev/building-rooms/639/",
+                "number": "W-12",
+                "alt": "Machmer Hall Room W-12"
+            },
+            {
+                "id": 326,
+                "url": "http://spire-api.melanson.dev/building-rooms/326/",
+                "number": "W-13",
+                "alt": "Machmer Hall Room W-13"
+            },
+            {
+                "id": 66,
+                "url": "http://spire-api.melanson.dev/building-rooms/66/",
+                "number": "W-15",
+                "alt": "Machmer Hall Room W-15"
+            },
+            {
+                "id": 696,
+                "url": "http://spire-api.melanson.dev/building-rooms/696/",
+                "number": "W-16",
+                "alt": "Machmer Hall Room W-16"
+            },
+            {
+                "id": 71,
+                "url": "http://spire-api.melanson.dev/building-rooms/71/",
+                "number": "W-17",
+                "alt": "Machmer Hall Room W-17"
+            },
+            {
+                "id": 522,
+                "url": "http://spire-api.melanson.dev/building-rooms/522/",
+                "number": "W-21",
+                "alt": "Machmer Hall Room W-21"
+            },
+            {
+                "id": 67,
+                "url": "http://spire-api.melanson.dev/building-rooms/67/",
+                "number": "W-22",
+                "alt": "Machmer Hall Room W-22"
+            },
+            {
+                "id": 309,
+                "url": "http://spire-api.melanson.dev/building-rooms/309/",
+                "number": "W-23",
+                "alt": "Machmer Hall Room W-23"
+            },
+            {
+                "id": 253,
+                "url": "http://spire-api.melanson.dev/building-rooms/253/",
+                "number": "W-24",
+                "alt": "Machmer Hall Room W-24"
+            },
+            {
+                "id": 251,
+                "url": "http://spire-api.melanson.dev/building-rooms/251/",
+                "number": "W-25",
+                "alt": "Machmer Hall Room W-25"
+            },
+            {
+                "id": 81,
+                "url": "http://spire-api.melanson.dev/building-rooms/81/",
+                "number": "W-26",
+                "alt": "Machmer Hall Room W-26"
+            },
+            {
+                "id": 79,
+                "url": "http://spire-api.melanson.dev/building-rooms/79/",
+                "number": "W-27",
+                "alt": "Machmer Hall Room W-27"
+            },
+            {
+                "id": 89,
+                "url": "http://spire-api.melanson.dev/building-rooms/89/",
+                "number": "W-32",
+                "alt": "Machmer Hall Room W-32"
+            }
+        ]
+    },
+    "Mahar Auditorium": {
+        "url": "http://spire-api.melanson.dev/buildings/2/",
+        "id": 2,
+        "name": "Mahar Auditorium",
+        "address": "119 Presidents Dr, Amherst, MA 01002",
+        "rooms": [
+            {
+                "id": 4,
+                "url": "http://spire-api.melanson.dev/building-rooms/4/",
+                "number": "108",
+                "alt": "Mahar Room 108"
+            }
+        ]
+    },
+    "Marcus Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/51/",
+        "id": 51,
+        "name": "Marcus Hall",
+        "address": "100 Natural Resources Rd, Amherst, MA 01003-9292",
+        "rooms": [
+            {
+                "id": 727,
+                "url": "http://spire-api.melanson.dev/building-rooms/727/",
+                "number": "10",
+                "alt": "Marcus Hall Room 10"
+            },
+            {
+                "id": 623,
+                "url": "http://spire-api.melanson.dev/building-rooms/623/",
+                "number": "106",
+                "alt": "Marcus Hall Room 106"
+            },
+            {
+                "id": 728,
+                "url": "http://spire-api.melanson.dev/building-rooms/728/",
+                "number": "12",
+                "alt": "Marcus Hall Room 12"
+            },
+            {
+                "id": 714,
+                "url": "http://spire-api.melanson.dev/building-rooms/714/",
+                "number": "128C",
+                "alt": "Marcus Hall Room 128C"
+            },
+            {
+                "id": 288,
+                "url": "http://spire-api.melanson.dev/building-rooms/288/",
+                "number": "131",
+                "alt": "Marcus Hall Room 131"
+            },
+            {
+                "id": 649,
+                "url": "http://spire-api.melanson.dev/building-rooms/649/",
+                "number": "137",
+                "alt": "Marcus Hall Room 137"
+            },
+            {
+                "id": 604,
+                "url": "http://spire-api.melanson.dev/building-rooms/604/",
+                "number": "15A",
+                "alt": "Marcus Hall Room 15A"
+            },
+            {
+                "id": 603,
+                "url": "http://spire-api.melanson.dev/building-rooms/603/",
+                "number": "221",
+                "alt": "Marcus Hall Room 221"
+            },
+            {
+                "id": 361,
+                "url": "http://spire-api.melanson.dev/building-rooms/361/",
+                "number": "5",
+                "alt": "Marcus Room 5"
+            },
+            {
+                "id": 363,
+                "url": "http://spire-api.melanson.dev/building-rooms/363/",
+                "number": "6",
+                "alt": "Marcus Hall Room 6"
+            }
+        ]
+    },
+    "Marston Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/40/",
+        "id": 40,
+        "name": "Marston Hall",
+        "address": "130 Natural Resources Rd, Amherst, MA 01003-9293",
+        "rooms": [
+            {
+                "id": 221,
+                "url": "http://spire-api.melanson.dev/building-rooms/221/",
+                "number": "132",
+                "alt": "Marston Hall Room 132"
+            },
+            {
+                "id": 222,
+                "url": "http://spire-api.melanson.dev/building-rooms/222/",
+                "number": "15",
+                "alt": "Marston Hall Room 15"
+            },
+            {
+                "id": 793,
+                "url": "http://spire-api.melanson.dev/building-rooms/793/",
+                "number": "18A",
+                "alt": "Marston Room 18A"
+            },
+            {
+                "id": 224,
+                "url": "http://spire-api.melanson.dev/building-rooms/224/",
+                "number": "211",
+                "alt": "Marston Hall Room 211"
+            },
+            {
+                "id": 197,
+                "url": "http://spire-api.melanson.dev/building-rooms/197/",
+                "number": "220",
+                "alt": "Marston Hall Room 220"
+            },
+            {
+                "id": 360,
+                "url": "http://spire-api.melanson.dev/building-rooms/360/",
+                "number": "221",
+                "alt": "Marston Hall Room 221"
+            },
+            {
+                "id": 225,
+                "url": "http://spire-api.melanson.dev/building-rooms/225/",
+                "number": "23",
+                "alt": "Marston Hall Room 23"
+            },
+            {
+                "id": 589,
+                "url": "http://spire-api.melanson.dev/building-rooms/589/",
+                "number": "234",
+                "alt": "Marston Hall Room 234"
+            },
+            {
+                "id": 651,
+                "url": "http://spire-api.melanson.dev/building-rooms/651/",
+                "number": "235",
+                "alt": "Marston Hall Room 235"
+            },
+            {
+                "id": 223,
+                "url": "http://spire-api.melanson.dev/building-rooms/223/",
+                "number": "24",
+                "alt": "Marston Hall Room 24"
+            },
+            {
+                "id": 220,
+                "url": "http://spire-api.melanson.dev/building-rooms/220/",
+                "number": "32",
+                "alt": "Marston Hall Room 32"
+            },
+            {
+                "id": 588,
+                "url": "http://spire-api.melanson.dev/building-rooms/588/",
+                "number": "33",
+                "alt": "Marston Hall Room 33"
+            },
+            {
+                "id": 747,
+                "url": "http://spire-api.melanson.dev/building-rooms/747/",
+                "number": "34",
+                "alt": "Marston Hall Room 34"
+            }
+        ]
+    },
+    "Mary Lyon Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/15/",
+        "id": 15,
+        "name": "Mary Lyon Hall",
+        "address": "43 Eastman Ln, Amherst, MA 01003-9208",
+        "rooms": [
+            {
+                "id": 701,
+                "url": "http://spire-api.melanson.dev/building-rooms/701/",
+                "number": "101",
+                "alt": "Mary Lyon House Room 101"
+            },
+            {
+                "id": 42,
+                "url": "http://spire-api.melanson.dev/building-rooms/42/",
+                "number": "119",
+                "alt": "Mary Lyon House Room 119 Lounge"
+            }
+        ]
+    },
+    "Melville Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/11/",
+        "id": 11,
+        "name": "Melville Hall",
+        "address": "650 Massachusetts Ave, Amherst, MA 01003-9241",
+        "rooms": [
+            {
+                "id": 32,
+                "url": "http://spire-api.melanson.dev/building-rooms/32/",
+                "number": "130",
+                "alt": "Melville Room 130"
+            }
+        ]
+    },
+    "Montague House": {
+        "url": "http://spire-api.melanson.dev/buildings/61/",
+        "id": 61,
+        "name": "Montague House",
+        "address": "809 N Pleasant St, Amherst, MA 01003-9307",
+        "rooms": [
+            {
+                "id": 352,
+                "url": "http://spire-api.melanson.dev/building-rooms/352/",
+                "number": "120",
+                "alt": "Montague House Room 120"
+            }
+        ]
+    },
+    "Moore Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/23/",
+        "id": 23,
+        "name": "Moore Hall",
+        "address": "111 Southwest Cir, Amherst, MA 01003-9216",
+        "rooms": [
+            {
+                "id": 73,
+                "url": "http://spire-api.melanson.dev/building-rooms/73/",
+                "number": "108",
+                "alt": "Moore House Room 108"
+            }
+        ]
+    },
+    "Morrill Science Center 1": {
+        "url": "http://spire-api.melanson.dev/buildings/17/",
+        "id": 17,
+        "name": "Morrill Science Center 1",
+        "address": "637 N Pleasant St, Amherst, MA 01003-9298",
+        "rooms": [
+            {
+                "id": 180,
+                "url": "http://spire-api.melanson.dev/building-rooms/180/",
+                "number": "311",
+                "alt": "Morrill Science Room 311"
+            },
+            {
+                "id": 60,
+                "url": "http://spire-api.melanson.dev/building-rooms/60/",
+                "number": "444",
+                "alt": "Morrill Science Center 1 Room 444"
+            },
+            {
+                "id": 582,
+                "url": "http://spire-api.melanson.dev/building-rooms/582/",
+                "number": "448",
+                "alt": "Morrill Science Center 1 North 448"
+            },
+            {
+                "id": 706,
+                "url": "http://spire-api.melanson.dev/building-rooms/706/",
+                "number": "N303",
+                "alt": "Morrill Science Center 1 Room N303"
+            },
+            {
+                "id": 580,
+                "url": "http://spire-api.melanson.dev/building-rooms/580/",
+                "number": "N317",
+                "alt": "Morrill Science Center 1 Room N317"
+            },
+            {
+                "id": 581,
+                "url": "http://spire-api.melanson.dev/building-rooms/581/",
+                "number": "N319",
+                "alt": "Morrill Science Center 1 Room N319"
+            },
+            {
+                "id": 583,
+                "url": "http://spire-api.melanson.dev/building-rooms/583/",
+                "number": "N321",
+                "alt": "Morrill Science Center 1 Room N321"
+            },
+            {
+                "id": 50,
+                "url": "http://spire-api.melanson.dev/building-rooms/50/",
+                "number": "N326",
+                "alt": "Morrill Science Center 1 Room N326"
+            },
+            {
+                "id": 392,
+                "url": "http://spire-api.melanson.dev/building-rooms/392/",
+                "number": "N336",
+                "alt": "Morrill Science Center 1 Room N336"
+            },
+            {
+                "id": 380,
+                "url": "http://spire-api.melanson.dev/building-rooms/380/",
+                "number": "N338",
+                "alt": "Morrill Science Center 1 Room N338"
+            },
+            {
+                "id": 158,
+                "url": "http://spire-api.melanson.dev/building-rooms/158/",
+                "number": "N345",
+                "alt": "Morrill Science Center 1 Room N345"
+            },
+            {
+                "id": 49,
+                "url": "http://spire-api.melanson.dev/building-rooms/49/",
+                "number": "N347",
+                "alt": "Morrill Science Center 1 N347"
+            },
+            {
+                "id": 56,
+                "url": "http://spire-api.melanson.dev/building-rooms/56/",
+                "number": "N349",
+                "alt": "Morrill Science Center 1 N349"
+            },
+            {
+                "id": 163,
+                "url": "http://spire-api.melanson.dev/building-rooms/163/",
+                "number": "N375",
+                "alt": "Morrill Science Center 1 Room N375"
+            }
+        ]
+    },
+    "Morrill Science Center 2": {
+        "url": "http://spire-api.melanson.dev/buildings/22/",
+        "id": 22,
+        "name": "Morrill Science Center 2",
+        "address": "627 N Pleasant St, Amherst, MA 01003-9354",
+        "rooms": [
+            {
+                "id": 421,
+                "url": "http://spire-api.melanson.dev/building-rooms/421/",
+                "number": "129",
+                "alt": "Morrill Science Center 2 Room 129"
+            },
+            {
+                "id": 72,
+                "url": "http://spire-api.melanson.dev/building-rooms/72/",
+                "number": "131",
+                "alt": "Morrill Science Center 2 Room 131"
+            },
+            {
+                "id": 707,
+                "url": "http://spire-api.melanson.dev/building-rooms/707/",
+                "number": "132",
+                "alt": "Morrill Science Center 2 Room 132"
+            },
+            {
+                "id": 429,
+                "url": "http://spire-api.melanson.dev/building-rooms/429/",
+                "number": "134",
+                "alt": "Morrill Science Center 2 Room 134"
+            },
+            {
+                "id": 612,
+                "url": "http://spire-api.melanson.dev/building-rooms/612/",
+                "number": "159",
+                "alt": "Morrill Science Center 2 Room 159"
+            },
+            {
+                "id": 673,
+                "url": "http://spire-api.melanson.dev/building-rooms/673/",
+                "number": "212",
+                "alt": "Morrill Science Center 2 Room 212"
+            },
+            {
+                "id": 167,
+                "url": "http://spire-api.melanson.dev/building-rooms/167/",
+                "number": "222",
+                "alt": "Morrill Science Center 2 Room 222"
+            },
+            {
+                "id": 423,
+                "url": "http://spire-api.melanson.dev/building-rooms/423/",
+                "number": "225",
+                "alt": "Morrill Science Center 2 Room 225"
+            },
+            {
+                "id": 425,
+                "url": "http://spire-api.melanson.dev/building-rooms/425/",
+                "number": "243A",
+                "alt": "Morrill Science Center 2 Room 243A"
+            },
+            {
+                "id": 428,
+                "url": "http://spire-api.melanson.dev/building-rooms/428/",
+                "number": "245",
+                "alt": "Morrill Science Center 2 Room 245"
+            },
+            {
+                "id": 762,
+                "url": "http://spire-api.melanson.dev/building-rooms/762/",
+                "number": "301",
+                "alt": "Morrill Science Center 2 Room 301"
+            },
+            {
+                "id": 165,
+                "url": "http://spire-api.melanson.dev/building-rooms/165/",
+                "number": "319",
+                "alt": "Morrill Science Center 2 Room 319"
+            },
+            {
+                "id": 697,
+                "url": "http://spire-api.melanson.dev/building-rooms/697/",
+                "number": "337",
+                "alt": "Morrill Science Center 2 Room 337"
+            },
+            {
+                "id": 176,
+                "url": "http://spire-api.melanson.dev/building-rooms/176/",
+                "number": "339",
+                "alt": "Morrill Science Center 2 Room 339"
+            },
+            {
+                "id": 174,
+                "url": "http://spire-api.melanson.dev/building-rooms/174/",
+                "number": "343",
+                "alt": "Morrill Science Center 2 Room 343"
+            }
+        ]
+    },
+    "Morrill Science Center 3": {
+        "url": "http://spire-api.melanson.dev/buildings/34/",
+        "id": 34,
+        "name": "Morrill Science Center 3",
+        "address": "611 N Pleasant St, Amherst, MA 01003-9297",
+        "rooms": [
+            {
+                "id": 426,
+                "url": "http://spire-api.melanson.dev/building-rooms/426/",
+                "number": "108",
+                "alt": "Morrill Science Center 3 Room 108"
+            },
+            {
+                "id": 171,
+                "url": "http://spire-api.melanson.dev/building-rooms/171/",
+                "number": "203",
+                "alt": "Morrill Science Center 3 Room 203"
+            },
+            {
+                "id": 172,
+                "url": "http://spire-api.melanson.dev/building-rooms/172/",
+                "number": "204",
+                "alt": "Morrill Science Center 3 Room 204"
+            },
+            {
+                "id": 175,
+                "url": "http://spire-api.melanson.dev/building-rooms/175/",
+                "number": "206",
+                "alt": "Morrill Science Center 3 Room 206"
+            },
+            {
+                "id": 424,
+                "url": "http://spire-api.melanson.dev/building-rooms/424/",
+                "number": "212",
+                "alt": "Morrill Science Center 3 Room 212"
+            },
+            {
+                "id": 159,
+                "url": "http://spire-api.melanson.dev/building-rooms/159/",
+                "number": "301",
+                "alt": "Morrill Science Center 3 Room 301"
+            },
+            {
+                "id": 160,
+                "url": "http://spire-api.melanson.dev/building-rooms/160/",
+                "number": "302",
+                "alt": "Morrill Science Center 3 Room 302"
+            },
+            {
+                "id": 164,
+                "url": "http://spire-api.melanson.dev/building-rooms/164/",
+                "number": "303",
+                "alt": "Morrill Science Center 3 Room 303"
+            },
+            {
+                "id": 161,
+                "url": "http://spire-api.melanson.dev/building-rooms/161/",
+                "number": "304",
+                "alt": "Morrill Science Center 3 Room 304"
+            },
+            {
+                "id": 170,
+                "url": "http://spire-api.melanson.dev/building-rooms/170/",
+                "number": "316",
+                "alt": "Morrill Science Center 3 Room 316"
+            },
+            {
+                "id": 156,
+                "url": "http://spire-api.melanson.dev/building-rooms/156/",
+                "number": "317",
+                "alt": "Morrill Science Center 3 Room 317"
+            },
+            {
+                "id": 831,
+                "url": "http://spire-api.melanson.dev/building-rooms/831/",
+                "number": "N31",
+                "alt": "Morrill Science Center 3 Room N31"
+            }
+        ]
+    },
+    "Morrill Science Center 4": {
+        "url": "http://spire-api.melanson.dev/buildings/67/",
+        "id": 67,
+        "name": "Morrill Science Center 4",
+        "address": "639 N Pleasant St, Amherst, MA 01003-9298",
+        "rooms": [
+            {
+                "id": 427,
+                "url": "http://spire-api.melanson.dev/building-rooms/427/",
+                "number": "159",
+                "alt": "Morrill Science Center 4 Room 159"
+            },
+            {
+                "id": 420,
+                "url": "http://spire-api.melanson.dev/building-rooms/420/",
+                "number": "271",
+                "alt": "Morrill Science Center 4 Room 271"
+            },
+            {
+                "id": 487,
+                "url": "http://spire-api.melanson.dev/building-rooms/487/",
+                "number": "N116",
+                "alt": "Morrill Science Center 4 Room N116"
+            },
+            {
+                "id": 804,
+                "url": "http://spire-api.melanson.dev/building-rooms/804/",
+                "number": "N236",
+                "alt": "Morrill Science Center 4 Room N236"
+            },
+            {
+                "id": 416,
+                "url": "http://spire-api.melanson.dev/building-rooms/416/",
+                "number": "N301",
+                "alt": "Morrill Science Center 4 Room N301"
+            },
+            {
+                "id": 486,
+                "url": "http://spire-api.melanson.dev/building-rooms/486/",
+                "number": "N303",
+                "alt": "Morrill Science Center 4 Room N303"
+            },
+            {
+                "id": 430,
+                "url": "http://spire-api.melanson.dev/building-rooms/430/",
+                "number": "S159",
+                "alt": "Morrill Science Center 4 Room S159"
+            },
+            {
+                "id": 422,
+                "url": "http://spire-api.melanson.dev/building-rooms/422/",
+                "number": "S271",
+                "alt": "Morrill Science Center 4 Room S271"
+            }
+        ]
+    },
+    "Mount Ida": {
+        "url": "http://spire-api.melanson.dev/buildings/86/",
+        "id": 86,
+        "name": "Mount Ida",
+        "address": null,
+        "rooms": [
+            {
+                "id": 648,
+                "url": "http://spire-api.melanson.dev/building-rooms/648/",
+                "number": null,
+                "alt": "Mount Ida Room"
+            }
+        ]
+    },
+    "Nelson House": {
+        "url": "http://spire-api.melanson.dev/buildings/75/",
+        "id": 75,
+        "name": "Nelson House",
+        "address": "513 East Pleasant St, Amherst, MA 01003-9260",
+        "rooms": [
+            {
+                "id": 513,
+                "url": "http://spire-api.melanson.dev/building-rooms/513/",
+                "number": null,
+                "alt": "Emerson House"
+            }
+        ]
+    },
+    "New Africa House": {
+        "url": "http://spire-api.melanson.dev/buildings/7/",
+        "id": 7,
+        "name": "New Africa House",
+        "address": "180 Infirmary Way, Amherst, MA 01003-9289",
+        "rooms": [
+            {
+                "id": 27,
+                "url": "http://spire-api.melanson.dev/building-rooms/27/",
+                "number": "21",
+                "alt": "New Africa House Room 21"
+            },
+            {
+                "id": 379,
+                "url": "http://spire-api.melanson.dev/building-rooms/379/",
+                "number": "26",
+                "alt": "New Africa House Room 26"
+            },
+            {
+                "id": 642,
+                "url": "http://spire-api.melanson.dev/building-rooms/642/",
+                "number": "3",
+                "alt": "New Africa House Room 3"
+            },
+            {
+                "id": 39,
+                "url": "http://spire-api.melanson.dev/building-rooms/39/",
+                "number": "302",
+                "alt": "New Africa House Room 302"
+            },
+            {
+                "id": 37,
+                "url": "http://spire-api.melanson.dev/building-rooms/37/",
+                "number": "309",
+                "alt": "New Africa House Room 309"
+            },
+            {
+                "id": 25,
+                "url": "http://spire-api.melanson.dev/building-rooms/25/",
+                "number": "311",
+                "alt": "New Africa House Room 311"
+            },
+            {
+                "id": 779,
+                "url": "http://spire-api.melanson.dev/building-rooms/779/",
+                "number": "401",
+                "alt": "New Africa House Room 401"
+            },
+            {
+                "id": 38,
+                "url": "http://spire-api.melanson.dev/building-rooms/38/",
+                "number": "402",
+                "alt": "New Arica House Room 402"
+            }
+        ]
+    },
+    "Olver Design Building": {
+        "url": "http://spire-api.melanson.dev/buildings/28/",
+        "id": 28,
+        "name": "Olver Design Building",
+        "address": "551 N Pleasant St, Amherst, MA 01003-2901",
+        "rooms": [
+            {
+                "id": 469,
+                "url": "http://spire-api.melanson.dev/building-rooms/469/",
+                "number": "101",
+                "alt": "John Olver Design Building Room 101"
+            },
+            {
+                "id": 470,
+                "url": "http://spire-api.melanson.dev/building-rooms/470/",
+                "number": "130",
+                "alt": "John Olver Design Building Room 130"
+            },
+            {
+                "id": 102,
+                "url": "http://spire-api.melanson.dev/building-rooms/102/",
+                "number": "162",
+                "alt": "John Olver Design Building Room 162"
+            },
+            {
+                "id": 397,
+                "url": "http://spire-api.melanson.dev/building-rooms/397/",
+                "number": "170",
+                "alt": "John Olver Design Building Room 170"
+            },
+            {
+                "id": 98,
+                "url": "http://spire-api.melanson.dev/building-rooms/98/",
+                "number": "221",
+                "alt": "John Olver Design Building Room 221"
+            },
+            {
+                "id": 106,
+                "url": "http://spire-api.melanson.dev/building-rooms/106/",
+                "number": "225",
+                "alt": "John Olver Design Building Room 225"
+            },
+            {
+                "id": 790,
+                "url": "http://spire-api.melanson.dev/building-rooms/790/",
+                "number": "235",
+                "alt": "John Olver Design Building Room 235"
+            },
+            {
+                "id": 103,
+                "url": "http://spire-api.melanson.dev/building-rooms/103/",
+                "number": "260",
+                "alt": "John Olver Design Building Room 260"
+            },
+            {
+                "id": 96,
+                "url": "http://spire-api.melanson.dev/building-rooms/96/",
+                "number": "270",
+                "alt": "Design Building Room 270"
+            },
+            {
+                "id": 94,
+                "url": "http://spire-api.melanson.dev/building-rooms/94/",
+                "number": "280",
+                "alt": "Design Building Room 280"
+            },
+            {
+                "id": 97,
+                "url": "http://spire-api.melanson.dev/building-rooms/97/",
+                "number": "312",
+                "alt": "Design Building Room 312"
+            },
+            {
+                "id": 99,
+                "url": "http://spire-api.melanson.dev/building-rooms/99/",
+                "number": "314",
+                "alt": "Design Building Room 314"
+            },
+            {
+                "id": 819,
+                "url": "http://spire-api.melanson.dev/building-rooms/819/",
+                "number": "362",
+                "alt": "John Olver Design Building Room 362"
+            },
+            {
+                "id": 468,
+                "url": "http://spire-api.melanson.dev/building-rooms/468/",
+                "number": "370",
+                "alt": "Design Building Room 370"
+            },
+            {
+                "id": 95,
+                "url": "http://spire-api.melanson.dev/building-rooms/95/",
+                "number": "380",
+                "alt": "Design Building Room 380"
+            },
+            {
+                "id": 101,
+                "url": "http://spire-api.melanson.dev/building-rooms/101/",
+                "number": "480",
+                "alt": "Design Building Room 480"
+            }
+        ]
+    },
+    "Paige Laboratory": {
+        "url": "http://spire-api.melanson.dev/buildings/78/",
+        "id": 78,
+        "name": "Paige Laboratory",
+        "address": "161 Holdsworth Way, Amherst, MA 01003-9286",
+        "rooms": [
+            {
+                "id": 551,
+                "url": "http://spire-api.melanson.dev/building-rooms/551/",
+                "number": "202",
+                "alt": "Paige Laboratory Room 202"
+            },
+            {
+                "id": 718,
+                "url": "http://spire-api.melanson.dev/building-rooms/718/",
+                "number": "301",
+                "alt": "Paige Laboratory Room 301"
+            },
+            {
+                "id": 767,
+                "url": "http://spire-api.melanson.dev/building-rooms/767/",
+                "number": "319",
+                "alt": "Paige Laboratory Room 319"
+            }
+        ]
+    },
+    "Parks Marching Band Building": {
+        "url": "http://spire-api.melanson.dev/buildings/72/",
+        "id": 72,
+        "name": "Parks Marching Band Building",
+        "address": "110 Grinnell Way, Amherst, MA 01003-9365",
+        "rooms": [
+            {
+                "id": 500,
+                "url": "http://spire-api.melanson.dev/building-rooms/500/",
+                "number": "101",
+                "alt": "George Parks Building Room 101"
+            }
+        ]
+    },
+    "Physical Sciences Building": {
+        "url": "http://spire-api.melanson.dev/buildings/91/",
+        "id": 91,
+        "name": "Physical Sciences Building",
+        "address": "690 N Pleasant St, Amherst, MA 01003-9303",
+        "rooms": [
+            {
+                "id": 792,
+                "url": "http://spire-api.melanson.dev/building-rooms/792/",
+                "number": "290",
+                "alt": "Physical Sciences Building Room 290"
+            }
+        ]
+    },
+    "Pierpont Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/46/",
+        "id": 46,
+        "name": "Pierpont Hall",
+        "address": "201 Fearing St, Amherst, MA 01003-9215",
+        "rooms": [
+            {
+                "id": 240,
+                "url": "http://spire-api.melanson.dev/building-rooms/240/",
+                "number": "101",
+                "alt": "Pierpont House Room 101"
+            },
+            {
+                "id": 653,
+                "url": "http://spire-api.melanson.dev/building-rooms/653/",
+                "number": null,
+                "alt": "Pierpont House"
+            }
+        ]
+    },
+    "Research and Education Greenhouse": {
+        "url": "http://spire-api.melanson.dev/buildings/77/",
+        "id": 77,
+        "name": "Research and Education Greenhouse",
+        "address": "246 Natural Resources Rd, Amherst, MA 01003",
+        "rooms": [
+            {
+                "id": 547,
+                "url": "http://spire-api.melanson.dev/building-rooms/547/",
+                "number": "103",
+                "alt": "Research and Education Greenhouse 103"
+            }
+        ]
+    },
+    "Roxbury Community College": {
+        "url": "http://spire-api.melanson.dev/buildings/69/",
+        "id": 69,
+        "name": "Roxbury Community College",
+        "address": null,
+        "rooms": [
+            {
+                "id": 437,
+                "url": "http://spire-api.melanson.dev/building-rooms/437/",
+                "number": null,
+                "alt": "Roxbury Community College"
+            }
+        ]
+    },
+    "School Applied Science @ Mount Ida": {
+        "url": "http://spire-api.melanson.dev/buildings/37/",
+        "id": 37,
+        "name": "School Applied Science @ Mount Ida",
+        "address": null,
+        "rooms": [
+            {
+                "id": 570,
+                "url": "http://spire-api.melanson.dev/building-rooms/570/",
+                "number": "104",
+                "alt": "School Applied Science @ Mount Ida Room 104"
+            },
+            {
+                "id": 183,
+                "url": "http://spire-api.melanson.dev/building-rooms/183/",
+                "number": "105",
+                "alt": "School Applied Science @ Mount Ida Room 105"
+            },
+            {
+                "id": 537,
+                "url": "http://spire-api.melanson.dev/building-rooms/537/",
+                "number": "107",
+                "alt": "School Applied Science @ Mount Ida Room 107"
+            },
+            {
+                "id": 182,
+                "url": "http://spire-api.melanson.dev/building-rooms/182/",
+                "number": "109",
+                "alt": "School Applied Science @ Mount Ida Room 109"
+            },
+            {
+                "id": 232,
+                "url": "http://spire-api.melanson.dev/building-rooms/232/",
+                "number": "18",
+                "alt": "School Applied Science @ Mount Ida Room 18"
+            }
+        ]
+    },
+    "School of Design @ Mount Ida": {
+        "url": "http://spire-api.melanson.dev/buildings/85/",
+        "id": 85,
+        "name": "School of Design @ Mount Ida",
+        "address": null,
+        "rooms": [
+            {
+                "id": 756,
+                "url": "http://spire-api.melanson.dev/building-rooms/756/",
+                "number": "101",
+                "alt": "School of Design @ Mount Ida Room 101"
+            },
+            {
+                "id": 645,
+                "url": "http://spire-api.melanson.dev/building-rooms/645/",
+                "number": "102",
+                "alt": "School of Design @ Mount Ida Room 102"
+            },
+            {
+                "id": 690,
+                "url": "http://spire-api.melanson.dev/building-rooms/690/",
+                "number": "105",
+                "alt": "School of Design @ Mount Ida Room 105"
+            },
+            {
+                "id": 679,
+                "url": "http://spire-api.melanson.dev/building-rooms/679/",
+                "number": "106",
+                "alt": "School of Design @ Mount Ida Room 106"
+            },
+            {
+                "id": 715,
+                "url": "http://spire-api.melanson.dev/building-rooms/715/",
+                "number": "110",
+                "alt": "School of Design @ Mount Ida Room 110"
+            },
+            {
+                "id": 798,
+                "url": "http://spire-api.melanson.dev/building-rooms/798/",
+                "number": "140",
+                "alt": "School of Design @ Mount Ida Room 140"
+            },
+            {
+                "id": 672,
+                "url": "http://spire-api.melanson.dev/building-rooms/672/",
+                "number": "6",
+                "alt": "School of Design @ Mount Ida Room 6"
+            }
+        ]
+    },
+    "Shaw Hall Seminar Room @ Mount Ida": {
+        "url": "http://spire-api.melanson.dev/buildings/88/",
+        "id": 88,
+        "name": "Shaw Hall Seminar Room @ Mount Ida",
+        "address": null,
+        "rooms": [
+            {
+                "id": 742,
+                "url": "http://spire-api.melanson.dev/building-rooms/742/",
+                "number": null,
+                "alt": "Shaw Hall Seminar Room @ Mount Ida"
+            }
+        ]
+    },
+    "Shaw Solarium @ Mount Ida": {
+        "url": "http://spire-api.melanson.dev/buildings/87/",
+        "id": 87,
+        "name": "Shaw Solarium @ Mount Ida",
+        "address": null,
+        "rooms": [
+            {
+                "id": 716,
+                "url": "http://spire-api.melanson.dev/building-rooms/716/",
+                "number": null,
+                "alt": "Shaw Solarium @ Mount Ida"
+            }
+        ]
+    },
+    "Skinner Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/47/",
+        "id": 47,
+        "name": "Skinner Hall",
+        "address": "651 N Pleasant St, Amherst, MA 01003-9299",
+        "rooms": [
+            {
+                "id": 511,
+                "url": "http://spire-api.melanson.dev/building-rooms/511/",
+                "number": "10",
+                "alt": "Skinner Hall Room 10"
+            },
+            {
+                "id": 316,
+                "url": "http://spire-api.melanson.dev/building-rooms/316/",
+                "number": "106",
+                "alt": "Skinner Room 106"
+            },
+            {
+                "id": 505,
+                "url": "http://spire-api.melanson.dev/building-rooms/505/",
+                "number": "112",
+                "alt": "Skinner Room 112"
+            },
+            {
+                "id": 506,
+                "url": "http://spire-api.melanson.dev/building-rooms/506/",
+                "number": "12",
+                "alt": "Skinner Room 12"
+            },
+            {
+                "id": 787,
+                "url": "http://spire-api.melanson.dev/building-rooms/787/",
+                "number": "20",
+                "alt": "Skinner Hall Room 20"
+            },
+            {
+                "id": 254,
+                "url": "http://spire-api.melanson.dev/building-rooms/254/",
+                "number": "201",
+                "alt": "Skinner Room 201"
+            },
+            {
+                "id": 508,
+                "url": "http://spire-api.melanson.dev/building-rooms/508/",
+                "number": "211",
+                "alt": "Skinner Room 211"
+            },
+            {
+                "id": 829,
+                "url": "http://spire-api.melanson.dev/building-rooms/829/",
+                "number": "211A",
+                "alt": "Skinner Hall Room 211A"
+            },
+            {
+                "id": 509,
+                "url": "http://spire-api.melanson.dev/building-rooms/509/",
+                "number": "6",
+                "alt": "Skinner Hall Room 6"
+            },
+            {
+                "id": 510,
+                "url": "http://spire-api.melanson.dev/building-rooms/510/",
+                "number": "8",
+                "alt": "Skinner Room 8"
+            }
+        ]
+    },
+    "South College": {
+        "url": "http://spire-api.melanson.dev/buildings/25/",
+        "id": 25,
+        "name": "South College",
+        "address": "150 Hicks Way, Amherst, MA 01003-9274",
+        "rooms": [
+            {
+                "id": 444,
+                "url": "http://spire-api.melanson.dev/building-rooms/444/",
+                "number": "E205",
+                "alt": "South College Room E205"
+            },
+            {
+                "id": 365,
+                "url": "http://spire-api.melanson.dev/building-rooms/365/",
+                "number": "E241",
+                "alt": "South College Room E241"
+            },
+            {
+                "id": 128,
+                "url": "http://spire-api.melanson.dev/building-rooms/128/",
+                "number": "E245",
+                "alt": "South College Room E245"
+            },
+            {
+                "id": 371,
+                "url": "http://spire-api.melanson.dev/building-rooms/371/",
+                "number": "E250",
+                "alt": "South College Room E250"
+            },
+            {
+                "id": 514,
+                "url": "http://spire-api.melanson.dev/building-rooms/514/",
+                "number": "E301",
+                "alt": "South College Room E301"
+            },
+            {
+                "id": 373,
+                "url": "http://spire-api.melanson.dev/building-rooms/373/",
+                "number": "E370",
+                "alt": "South College Room E370"
+            },
+            {
+                "id": 369,
+                "url": "http://spire-api.melanson.dev/building-rooms/369/",
+                "number": "E470",
+                "alt": "South College Room E470"
+            },
+            {
+                "id": 127,
+                "url": "http://spire-api.melanson.dev/building-rooms/127/",
+                "number": "E480",
+                "alt": "South College Room E480"
+            },
+            {
+                "id": 366,
+                "url": "http://spire-api.melanson.dev/building-rooms/366/",
+                "number": "W101",
+                "alt": "South College Room W101"
+            },
+            {
+                "id": 367,
+                "url": "http://spire-api.melanson.dev/building-rooms/367/",
+                "number": "W201",
+                "alt": "South College Room W201"
+            },
+            {
+                "id": 370,
+                "url": "http://spire-api.melanson.dev/building-rooms/370/",
+                "number": "W205",
+                "alt": "South College Room W205"
+            },
+            {
+                "id": 368,
+                "url": "http://spire-api.melanson.dev/building-rooms/368/",
+                "number": "W211",
+                "alt": "South College Room W211"
+            },
+            {
+                "id": 275,
+                "url": "http://spire-api.melanson.dev/building-rooms/275/",
+                "number": "W219",
+                "alt": "South College Room W219"
+            },
+            {
+                "id": 80,
+                "url": "http://spire-api.melanson.dev/building-rooms/80/",
+                "number": "W245",
+                "alt": "South College Room W245"
+            },
+            {
+                "id": 372,
+                "url": "http://spire-api.melanson.dev/building-rooms/372/",
+                "number": "W365",
+                "alt": "South College Room W365"
+            },
+            {
+                "id": 130,
+                "url": "http://spire-api.melanson.dev/building-rooms/130/",
+                "number": "W369",
+                "alt": "South College W369"
+            },
+            {
+                "id": 573,
+                "url": "http://spire-api.melanson.dev/building-rooms/573/",
+                "number": "W465",
+                "alt": "South College Room W465"
+            }
+        ]
+    },
+    "Stockbridge Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/18/",
+        "id": 18,
+        "name": "Stockbridge Hall",
+        "address": "80 Campus Center Way, Amherst, MA 01003-9246",
+        "rooms": [
+            {
+                "id": 408,
+                "url": "http://spire-api.melanson.dev/building-rooms/408/",
+                "number": "124",
+                "alt": "Stockbridge Hall Room 124"
+            },
+            {
+                "id": 54,
+                "url": "http://spire-api.melanson.dev/building-rooms/54/",
+                "number": "301",
+                "alt": "Stockbridge Hall Room 301"
+            },
+            {
+                "id": 536,
+                "url": "http://spire-api.melanson.dev/building-rooms/536/",
+                "number": "303",
+                "alt": "Stockbridge Hall Room 303"
+            },
+            {
+                "id": 632,
+                "url": "http://spire-api.melanson.dev/building-rooms/632/",
+                "number": "306",
+                "alt": "Stockbridge Hall Room 306"
+            },
+            {
+                "id": 542,
+                "url": "http://spire-api.melanson.dev/building-rooms/542/",
+                "number": "7B",
+                "alt": "Stockbridge Hall Room 7B"
+            }
+        ]
+    },
+    "Studio Arts Building": {
+        "url": "http://spire-api.melanson.dev/buildings/30/",
+        "id": 30,
+        "name": "Studio Arts Building",
+        "address": "110 Thatcher Rd, Amherst, MA 01003-9356",
+        "rooms": [
+            {
+                "id": 117,
+                "url": "http://spire-api.melanson.dev/building-rooms/117/",
+                "number": "10",
+                "alt": "Studio Arts Building Room 10"
+            },
+            {
+                "id": 113,
+                "url": "http://spire-api.melanson.dev/building-rooms/113/",
+                "number": "101",
+                "alt": "Studio Arts Building Room 101"
+            },
+            {
+                "id": 114,
+                "url": "http://spire-api.melanson.dev/building-rooms/114/",
+                "number": "110",
+                "alt": "Studio Arts Building Room 110"
+            },
+            {
+                "id": 577,
+                "url": "http://spire-api.melanson.dev/building-rooms/577/",
+                "number": "142",
+                "alt": "Studio Arts Building Room 142"
+            },
+            {
+                "id": 118,
+                "url": "http://spire-api.melanson.dev/building-rooms/118/",
+                "number": "142C",
+                "alt": "Studio Arts Building Room 142C"
+            },
+            {
+                "id": 121,
+                "url": "http://spire-api.melanson.dev/building-rooms/121/",
+                "number": "155",
+                "alt": "Studio Arts Building Room 155"
+            },
+            {
+                "id": 120,
+                "url": "http://spire-api.melanson.dev/building-rooms/120/",
+                "number": "156",
+                "alt": "Studio Arts Building Room 156"
+            },
+            {
+                "id": 123,
+                "url": "http://spire-api.melanson.dev/building-rooms/123/",
+                "number": "157",
+                "alt": "Studio Arts Building Room 157"
+            },
+            {
+                "id": 115,
+                "url": "http://spire-api.melanson.dev/building-rooms/115/",
+                "number": "16",
+                "alt": "Studio Arts Building Room 16"
+            },
+            {
+                "id": 820,
+                "url": "http://spire-api.melanson.dev/building-rooms/820/",
+                "number": "18",
+                "alt": "Studio Arts Building Room 18"
+            },
+            {
+                "id": 116,
+                "url": "http://spire-api.melanson.dev/building-rooms/116/",
+                "number": "240",
+                "alt": "Studio Arts Building Room 240"
+            },
+            {
+                "id": 112,
+                "url": "http://spire-api.melanson.dev/building-rooms/112/",
+                "number": "247",
+                "alt": "Studio Arts Building Room 247"
+            }
+        ]
+    },
+    "Thatcher Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/93/",
+        "id": 93,
+        "name": "Thatcher Hall",
+        "address": "300 Thatcher Rd, Amherst, MA 01003-9359",
+        "rooms": [
+            {
+                "id": 799,
+                "url": "http://spire-api.melanson.dev/building-rooms/799/",
+                "number": "101",
+                "alt": "Thatcher House Room 101"
+            }
+        ]
+    },
+    "Thompson Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/31/",
+        "id": 31,
+        "name": "Thompson Hall",
+        "address": "200 Hicks Way, Amherst, MA 01003-9277",
+        "rooms": [
+            {
+                "id": 126,
+                "url": "http://spire-api.melanson.dev/building-rooms/126/",
+                "number": "102",
+                "alt": "Thompson Hall Room 102"
+            },
+            {
+                "id": 540,
+                "url": "http://spire-api.melanson.dev/building-rooms/540/",
+                "number": "1028",
+                "alt": "Thompson Hall Room 1028"
+            },
+            {
+                "id": 149,
+                "url": "http://spire-api.melanson.dev/building-rooms/149/",
+                "number": "104",
+                "alt": "Thompson Hall Room 104"
+            },
+            {
+                "id": 239,
+                "url": "http://spire-api.melanson.dev/building-rooms/239/",
+                "number": "106",
+                "alt": "Thompson Hall Room 106"
+            },
+            {
+                "id": 766,
+                "url": "http://spire-api.melanson.dev/building-rooms/766/",
+                "number": "236",
+                "alt": "Thompson Hall Room 236"
+            },
+            {
+                "id": 523,
+                "url": "http://spire-api.melanson.dev/building-rooms/523/",
+                "number": "420",
+                "alt": "Thompson Hall Room 420"
+            },
+            {
+                "id": 628,
+                "url": "http://spire-api.melanson.dev/building-rooms/628/",
+                "number": "519",
+                "alt": "Thompson Hall Room 519"
+            },
+            {
+                "id": 467,
+                "url": "http://spire-api.melanson.dev/building-rooms/467/",
+                "number": "620",
+                "alt": "Thompson Hall Room 620"
+            },
+            {
+                "id": 539,
+                "url": "http://spire-api.melanson.dev/building-rooms/539/",
+                "number": "819",
+                "alt": "Thompson Hall Room 819"
+            },
+            {
+                "id": 533,
+                "url": "http://spire-api.melanson.dev/building-rooms/533/",
+                "number": "919",
+                "alt": "Thompson Hall Room 919"
+            }
+        ]
+    },
+    "Tobin Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/10/",
+        "id": 10,
+        "name": "Tobin Hall",
+        "address": "135 Hicks Way, Amherst, MA 01003-9271",
+        "rooms": [
+            {
+                "id": 631,
+                "url": "http://spire-api.melanson.dev/building-rooms/631/",
+                "number": "129",
+                "alt": "Tobin Hall Room 129"
+            },
+            {
+                "id": 294,
+                "url": "http://spire-api.melanson.dev/building-rooms/294/",
+                "number": "204",
+                "alt": "Tobin Hall Room 204"
+            },
+            {
+                "id": 531,
+                "url": "http://spire-api.melanson.dev/building-rooms/531/",
+                "number": "207",
+                "alt": "Tobin Hall Room 207"
+            },
+            {
+                "id": 261,
+                "url": "http://spire-api.melanson.dev/building-rooms/261/",
+                "number": "304",
+                "alt": "Tobin Hall Room 304"
+            },
+            {
+                "id": 31,
+                "url": "http://spire-api.melanson.dev/building-rooms/31/",
+                "number": "307",
+                "alt": "Tobin Hall Room 307"
+            },
+            {
+                "id": 763,
+                "url": "http://spire-api.melanson.dev/building-rooms/763/",
+                "number": "422",
+                "alt": "Tobin Hall Room 422"
+            },
+            {
+                "id": 534,
+                "url": "http://spire-api.melanson.dev/building-rooms/534/",
+                "number": "423",
+                "alt": "Tobin Room 423"
+            },
+            {
+                "id": 347,
+                "url": "http://spire-api.melanson.dev/building-rooms/347/",
+                "number": "504",
+                "alt": "Tobin Hall Room 504"
+            },
+            {
+                "id": 83,
+                "url": "http://spire-api.melanson.dev/building-rooms/83/",
+                "number": "520",
+                "alt": "Tobin Hall Room 520"
+            },
+            {
+                "id": 535,
+                "url": "http://spire-api.melanson.dev/building-rooms/535/",
+                "number": "521B",
+                "alt": "Tobin Hall Room 521B"
+            }
+        ]
+    },
+    "Totman Gym": {
+        "url": "http://spire-api.melanson.dev/buildings/52/",
+        "id": 52,
+        "name": "Totman Gym",
+        "address": "30 Eastman Ln, Amherst, MA 01003-9258",
+        "rooms": [
+            {
+                "id": 465,
+                "url": "http://spire-api.melanson.dev/building-rooms/465/",
+                "number": "10",
+                "alt": "Totman Gym Room 10"
+            },
+            {
+                "id": 620,
+                "url": "http://spire-api.melanson.dev/building-rooms/620/",
+                "number": "101",
+                "alt": "Totman Gym Room 101"
+            },
+            {
+                "id": 815,
+                "url": "http://spire-api.melanson.dev/building-rooms/815/",
+                "number": "11",
+                "alt": "Totman Gym Room 11"
+            },
+            {
+                "id": 301,
+                "url": "http://spire-api.melanson.dev/building-rooms/301/",
+                "number": "12",
+                "alt": "Totman Room 12"
+            },
+            {
+                "id": 463,
+                "url": "http://spire-api.melanson.dev/building-rooms/463/",
+                "number": "13",
+                "alt": "Totman Room 13"
+            },
+            {
+                "id": 461,
+                "url": "http://spire-api.melanson.dev/building-rooms/461/",
+                "number": "134A",
+                "alt": "Totman Gym Room 134A"
+            },
+            {
+                "id": 621,
+                "url": "http://spire-api.melanson.dev/building-rooms/621/",
+                "number": "140",
+                "alt": "Totman Room 140"
+            },
+            {
+                "id": 338,
+                "url": "http://spire-api.melanson.dev/building-rooms/338/",
+                "number": "153",
+                "alt": "Totman Gym Room 153"
+            },
+            {
+                "id": 300,
+                "url": "http://spire-api.melanson.dev/building-rooms/300/",
+                "number": "156",
+                "alt": "Totman Gym Room 156"
+            },
+            {
+                "id": 662,
+                "url": "http://spire-api.melanson.dev/building-rooms/662/",
+                "number": "202",
+                "alt": "Totman Gym Room 202"
+            },
+            {
+                "id": 298,
+                "url": "http://spire-api.melanson.dev/building-rooms/298/",
+                "number": "204",
+                "alt": "Totman Gym Room 204"
+            },
+            {
+                "id": 711,
+                "url": "http://spire-api.melanson.dev/building-rooms/711/",
+                "number": "23",
+                "alt": "Totman Gym Room 23"
+            },
+            {
+                "id": 802,
+                "url": "http://spire-api.melanson.dev/building-rooms/802/",
+                "number": "24A",
+                "alt": "Totman Gym Room 24A"
+            },
+            {
+                "id": 709,
+                "url": "http://spire-api.melanson.dev/building-rooms/709/",
+                "number": "28",
+                "alt": "Totman Gym Room 28"
+            },
+            {
+                "id": 710,
+                "url": "http://spire-api.melanson.dev/building-rooms/710/",
+                "number": "3",
+                "alt": "Totman Gym Room 3"
+            },
+            {
+                "id": 708,
+                "url": "http://spire-api.melanson.dev/building-rooms/708/",
+                "number": "8",
+                "alt": "Totman Gym Room 8"
+            },
+            {
+                "id": 460,
+                "url": "http://spire-api.melanson.dev/building-rooms/460/",
+                "number": "8A",
+                "alt": "Totman Gym Room 8A"
+            },
+            {
+                "id": 297,
+                "url": "http://spire-api.melanson.dev/building-rooms/297/",
+                "number": null,
+                "alt": "Totman Gym Gym"
+            }
+        ]
+    },
+    "UMass Amherst Center at Springfield": {
+        "url": "http://spire-api.melanson.dev/buildings/74/",
+        "id": 74,
+        "name": "UMass Amherst Center at Springfield",
+        "address": "1500 Main St, Springfield, MA 01115",
+        "rooms": [
+            {
+                "id": 695,
+                "url": "http://spire-api.melanson.dev/building-rooms/695/",
+                "number": "002",
+                "alt": "UMass Center @ Springfield Room 002"
+            },
+            {
+                "id": 694,
+                "url": "http://spire-api.melanson.dev/building-rooms/694/",
+                "number": "003",
+                "alt": "UMass Center @ Springfield Room 003"
+            },
+            {
+                "id": 615,
+                "url": "http://spire-api.melanson.dev/building-rooms/615/",
+                "number": "004",
+                "alt": "UMass Center @ Springfield Room 004"
+            },
+            {
+                "id": 616,
+                "url": "http://spire-api.melanson.dev/building-rooms/616/",
+                "number": "005",
+                "alt": "UMass Center @ Springfield Room 005"
+            },
+            {
+                "id": 507,
+                "url": "http://spire-api.melanson.dev/building-rooms/507/",
+                "number": "014",
+                "alt": "UMass Center @ Springfield Room 014"
+            },
+            {
+                "id": 768,
+                "url": "http://spire-api.melanson.dev/building-rooms/768/",
+                "number": "28",
+                "alt": "UMass Center @ Springfield Room 28"
+            }
+        ]
+    },
+    "Van Meter Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/43/",
+        "id": 43,
+        "name": "Van Meter Hall",
+        "address": "180 Clark Hill Rd, Amherst, MA 01003-9223",
+        "rooms": [
+            {
+                "id": 236,
+                "url": "http://spire-api.melanson.dev/building-rooms/236/",
+                "number": "115",
+                "alt": "Van Meter House Room 115"
+            }
+        ]
+    },
+    "Vet Tech @ Mount Ida": {
+        "url": "http://spire-api.melanson.dev/buildings/79/",
+        "id": 79,
+        "name": "Vet Tech @ Mount Ida",
+        "address": null,
+        "rooms": [
+            {
+                "id": 567,
+                "url": "http://spire-api.melanson.dev/building-rooms/567/",
+                "number": "102",
+                "alt": "Vet Tech @ Mount Ida Room 102"
+            }
+        ]
+    },
+    "Vet Tech @ Mount Ida Microscopy": {
+        "url": "http://spire-api.melanson.dev/buildings/81/",
+        "id": 81,
+        "name": "Vet Tech @ Mount Ida Microscopy",
+        "address": null,
+        "rooms": [
+            {
+                "id": 569,
+                "url": "http://spire-api.melanson.dev/building-rooms/569/",
+                "number": "121",
+                "alt": "Vet Tech @ Mount Ida Microscopy Room 121"
+            }
+        ]
+    },
+    "Vet Tech @ Mount Ida Teaching Laboratory": {
+        "url": "http://spire-api.melanson.dev/buildings/80/",
+        "id": 80,
+        "name": "Vet Tech @ Mount Ida Teaching Laboratory",
+        "address": null,
+        "rooms": [
+            {
+                "id": 572,
+                "url": "http://spire-api.melanson.dev/building-rooms/572/",
+                "number": "1",
+                "alt": "Vet Tech @ Mount Ida Teaching Laboratory 1"
+            },
+            {
+                "id": 789,
+                "url": "http://spire-api.melanson.dev/building-rooms/789/",
+                "number": "139",
+                "alt": "Vet Tech @ Mount Ida Teaching Laboratory 139"
+            },
+            {
+                "id": 568,
+                "url": "http://spire-api.melanson.dev/building-rooms/568/",
+                "number": "3",
+                "alt": "Vet Tech @ Mount Ida Teaching Laboratory 3"
+            }
+        ]
+    },
+    "W.E.B. Du Bois Library": {
+        "url": "http://spire-api.melanson.dev/buildings/3/",
+        "id": 3,
+        "name": "W.E.B. Du Bois Library",
+        "address": "154 Hicks Way, Amherst, MA 01003-9275",
+        "rooms": [
+            {
+                "id": 670,
+                "url": "http://spire-api.melanson.dev/building-rooms/670/",
+                "number": "1201",
+                "alt": "Du Bois Library Room 1201"
+            },
+            {
+                "id": 752,
+                "url": "http://spire-api.melanson.dev/building-rooms/752/",
+                "number": "1202",
+                "alt": "W E B Du Bois Library Room 1202"
+            },
+            {
+                "id": 388,
+                "url": "http://spire-api.melanson.dev/building-rooms/388/",
+                "number": "1203",
+                "alt": "Du Bois Library Room 1203"
+            },
+            {
+                "id": 753,
+                "url": "http://spire-api.melanson.dev/building-rooms/753/",
+                "number": "1205",
+                "alt": "W E B Du Bois Library Room 1205"
+            },
+            {
+                "id": 389,
+                "url": "http://spire-api.melanson.dev/building-rooms/389/",
+                "number": "1206",
+                "alt": "Du Bois Library Room 1206"
+            },
+            {
+                "id": 374,
+                "url": "http://spire-api.melanson.dev/building-rooms/374/",
+                "number": "1301",
+                "alt": "Du Bois Library Room 1301"
+            },
+            {
+                "id": 378,
+                "url": "http://spire-api.melanson.dev/building-rooms/378/",
+                "number": "1302",
+                "alt": "Du Bois Library Room 1302"
+            },
+            {
+                "id": 605,
+                "url": "http://spire-api.melanson.dev/building-rooms/605/",
+                "number": "1320",
+                "alt": "Library Tower Room 1320"
+            },
+            {
+                "id": 375,
+                "url": "http://spire-api.melanson.dev/building-rooms/375/",
+                "number": "1321",
+                "alt": "Du Bois Library 1321"
+            },
+            {
+                "id": 376,
+                "url": "http://spire-api.melanson.dev/building-rooms/376/",
+                "number": "1327",
+                "alt": "Du Bois Library Room 1327"
+            },
+            {
+                "id": 739,
+                "url": "http://spire-api.melanson.dev/building-rooms/739/",
+                "number": "1649",
+                "alt": "Library Tower Room 1649"
+            },
+            {
+                "id": 532,
+                "url": "http://spire-api.melanson.dev/building-rooms/532/",
+                "number": "1667",
+                "alt": "Library Tower Room 1667"
+            },
+            {
+                "id": 453,
+                "url": "http://spire-api.melanson.dev/building-rooms/453/",
+                "number": "2267",
+                "alt": "Du Bois Library Room 2267"
+            },
+            {
+                "id": 15,
+                "url": "http://spire-api.melanson.dev/building-rooms/15/",
+                "number": "25",
+                "alt": "Library Lower Level Room 25"
+            },
+            {
+                "id": 131,
+                "url": "http://spire-api.melanson.dev/building-rooms/131/",
+                "number": "2566",
+                "alt": "Library Tower Room 2566"
+            },
+            {
+                "id": 741,
+                "url": "http://spire-api.melanson.dev/building-rooms/741/",
+                "number": "622",
+                "alt": "Du Bois Library Room 622"
+            },
+            {
+                "id": 407,
+                "url": "http://spire-api.melanson.dev/building-rooms/407/",
+                "number": "720",
+                "alt": "Library Tower Room 720"
+            },
+            {
+                "id": 818,
+                "url": "http://spire-api.melanson.dev/building-rooms/818/",
+                "number": "750",
+                "alt": "Library Tower Room 750"
+            }
+        ]
+    },
+    "Webster Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/49/",
+        "id": 49,
+        "name": "Webster Hall",
+        "address": "141 Orchard Hill Dr, Amherst, MA 01003-9204",
+        "rooms": [
+            {
+                "id": 266,
+                "url": "http://spire-api.melanson.dev/building-rooms/266/",
+                "number": "104",
+                "alt": "Noah Webster House Room 104"
+            }
+        ]
+    },
+    "Wheeler Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/21/",
+        "id": 21,
+        "name": "Wheeler Hall",
+        "address": "171 Infirmary Way, Amherst, MA 01003-9201",
+        "rooms": [
+            {
+                "id": 69,
+                "url": "http://spire-api.melanson.dev/building-rooms/69/",
+                "number": "B05",
+                "alt": "Wheeler Hall Room B05"
+            }
+        ]
+    },
+    "Whitmore Building": {
+        "url": "http://spire-api.melanson.dev/buildings/83/",
+        "id": 83,
+        "name": "Whitmore Building",
+        "address": "181 Presidents Dr, Amherst, MA 01003-9313",
+        "rooms": [
+            {
+                "id": 601,
+                "url": "http://spire-api.melanson.dev/building-rooms/601/",
+                "number": "233",
+                "alt": "Whitmore Admin Building Room 233"
+            },
+            {
+                "id": 826,
+                "url": "http://spire-api.melanson.dev/building-rooms/826/",
+                "number": "319",
+                "alt": "Whitmore Admin Building Room 319"
+            },
+            {
+                "id": 613,
+                "url": "http://spire-api.melanson.dev/building-rooms/613/",
+                "number": "370",
+                "alt": "Whitmore Admin Building Room 370"
+            }
+        ]
+    },
+    "Wilder Hall": {
+        "url": "http://spire-api.melanson.dev/buildings/59/",
+        "id": 59,
+        "name": "Wilder Hall",
+        "address": "221 Stockbridge Rd, Amherst, MA 01003-9315",
+        "rooms": [
+            {
+                "id": 809,
+                "url": "http://spire-api.melanson.dev/building-rooms/809/",
+                "number": "102",
+                "alt": "Wilder Hall Room 102"
+            },
+            {
+                "id": 688,
+                "url": "http://spire-api.melanson.dev/building-rooms/688/",
+                "number": "201",
+                "alt": "Wilder Hall Room 201"
+            },
+            {
+                "id": 336,
+                "url": "http://spire-api.melanson.dev/building-rooms/336/",
+                "number": null,
+                "alt": "Wilder Hall"
+            }
+        ]
+    }
+}

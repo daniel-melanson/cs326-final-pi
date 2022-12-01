@@ -1,30 +1,19 @@
 import { PrismaClient } from '@prisma/client';
 import fs from 'node:fs';
 import prisma from '../db/index.js';
-async function testPrisma() {
-  const prisma = new PrismaClient();
 
-  const user = await prisma.user.create({
-    data: {
-      firstName: 'U',
-      lastName: 'Mass',
-      email: 'umass@umass.edu',
-      hash: 'ertferfrg',
-    },
-  });
-}
 
 async function testPrisma2() {
   const prisma = new PrismaClient();
 
-  const user = await prisma.room.findMany();
+  const user = await prisma.event.findMany();
 
-  console.log(user);
+  console.log(user.length);
 }
 
 async function checkRooms() {
-  //const rooms = await prisma.event.Many()
-  //console.log(rooms)
+  const rooms = await prisma.user.findMany()
+  console.log(rooms.length)
 }
 async function addBuildings() {
   const buildings = JSON.parse(fs.readFileSync('building.json').toString());
@@ -47,8 +36,5 @@ async function addBuildings() {
     });
   }
 }
-//addBuildings();
 
-//checkRooms()
-
-testPrisma2();
+testPrisma2() 

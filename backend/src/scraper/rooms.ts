@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import type { Prisma } from '@prisma/client';
 import assert from 'node:assert';
 import { execSync } from 'node:child_process';
-import fs from 'node:fs';
-import path from 'node:path';
+import prisma from '../db/index.js';
 import { fetchNormalizedBuildings } from './buildings.js';
 import { fetchJSON } from './fetchJSON.js';
+import { exists, partition, readJSON, writeJSON } from './util.js';
 
 const ROOMS_URL_PARAMS = new URLSearchParams([
   ['compsubject', 'location'],
@@ -37,6 +38,16 @@ interface RawRoom {
   defaultCapacity: number;
 }
 
+interface NormalizedRoom {
+  raw: RawRoom;
+  building: {
+    name: string;
+    address: string;
+  } | null;
+  number: string | null;
+  alt: string;
+}
+
 async function fetchRawRooms(): Promise<RawRoom[]> {
   const json = await fetchJSON(ROOMS_URL);
 
@@ -53,7 +64,7 @@ async function fetchRawRooms(): Promise<RawRoom[]> {
   ];
   assert(expectedFields.every((prefname, i) => columnMeta[i].prefname === prefname));
 
-  const entries = rows.map((row: any) => {
+  return rows.map((row: any) => {
     return {
       details: row[0],
       name: String(row[1]).trim(),
@@ -64,35 +75,68 @@ async function fetchRawRooms(): Promise<RawRoom[]> {
       defaultCapacity: row[6],
     } as RawRoom;
   });
-
-  return entries;
-}
-
-function readJSON(path: string) {
-  return JSON.parse(fs.readFileSync(path, { encoding: 'utf-8' }));
-}
-
-function writeJSON(path: string, content: object) {
-  fs.writeFileSync(path, JSON.stringify(content));
 }
 
 export async function syncRooms() {
-  const normalizedBuildingsJSONPath = path.join('.', 'NORMALIZED_BUILDINGS.json');
-  const rawRoomsJSONPath = path.join('.', 'RAW_BUILDINGS.json');
-  const normalizedRoomsJSONPath = path.join('.', 'NORMALIZED_ROOMS.json');
-
-  if (!fs.statSync(normalizedBuildingsJSONPath, { throwIfNoEntry: false })) {
-    writeJSON(normalizedBuildingsJSONPath, await fetchNormalizedBuildings());
+  if (!exists('NORMALIZED_BUILDINGS')) {
+    writeJSON('NORMALIZED_BUILDINGS', await fetchNormalizedBuildings());
   }
 
-  const rawRooms = await fetchRawRooms();
-  rawRooms.sort((a, b) => a.name.localeCompare(b.name));
-  writeJSON(
-    rawRoomsJSONPath,
-    rawRooms.filter((r) => r.name.length > 0),
-  );
+  let rawRooms: RawRoom[];
+  if (exists('RAW_ROOMS')) {
+    rawRooms = readJSON('RAW_ROOMS');
+  } else {
+    rawRooms = await fetchRawRooms();
+    rawRooms.sort((a, b) => a.name.localeCompare(b.name));
+    writeJSON(
+      'RAW_ROOMS',
+      rawRooms.filter((r) => r.name.length > 0),
+    );
+  }
 
-  execSync('python3 ./normalize_rooms.py'); // lol
+  execSync('python3 ./src/scraper/normalize_rooms.py'); // lol
+  const normalizedRooms: NormalizedRoom[] = readJSON('NORMALIZED_ROOMS');
 
-  const normalizedRooms: NomalizedRoom[] = readJSON(normalizedRoomsJSONPath);
+  const [passed, failed] = partition(normalizedRooms, (r) => {
+    const buildingName = r.building?.name;
+
+    return r.building && r.number && r.building.address && buildingName && !buildingName.includes('Mount Ida');
+  });
+
+  writeJSON('IGNORED', failed);
+
+  for (const normRoom of passed) {
+    const building = await prisma.building.upsert({
+      where: {
+        name: normRoom.building!.name,
+      },
+      update: {
+        address: normRoom.building!.address,
+      },
+      create: {
+        name: normRoom.building!.name,
+        address: normRoom.building!.address,
+      },
+    });
+
+    const roomFields: Prisma.RoomCreateInput = {
+      building: {
+        connect: {
+          id: building.id,
+        },
+      },
+      liveId: normRoom.raw.details.itemId,
+      number: normRoom.number!,
+      capacity: normRoom.raw.maxCapacity,
+      features: normRoom.raw.features,
+    };
+
+    const room = await prisma.room.upsert({
+      where: {
+        liveId: normRoom.raw.details.itemId,
+      },
+      update: roomFields,
+      create: roomFields,
+    });
+  }
 }

@@ -1,41 +1,13 @@
 import { Router } from 'express';
-import prisma from '../db/index.js';
+import { serializeEvent, serializeEventField } from '../db/serializers.js';
+import { ensureObjectId } from '../middleware/ensureObjectId.js';
+import { injectObject } from '../middleware/injectObject.js';
+import { objectGETHandler } from './util.js';
 
 export const rooms = Router();
 
-rooms.get('/:id/', async (req, res) => {
-  const { id } = req.params;
+rooms.get('/:id/', ensureObjectId, injectObject('room', { building: true }), objectGETHandler('room'));
 
-  try {
-    const room = await prisma.room.findFirst({ where: { id } });
-
-    if (room) {
-      return res.status(200).json(room).end();
-    } else {
-      return res.status(404).end();
-    }
-  } catch (e) {
-    return res.status(500).end();
-  }
-});
-
-rooms.get('/:id/events', async (req, res) => {
-  const { id } = req.params;
-
-  try {
-    const room = await prisma.room.findFirst({ where: { id } });
-    if (room) {
-      const events = await prisma.event.findMany({
-        where: {
-          roomId: room.id,
-        },
-      });
-
-      return res.status(200).json(events).end();
-    } else {
-      return res.status(404).end();
-    }
-  } catch (e) {
-    return res.status(500).end();
-  }
+rooms.get('/:id/events', ensureObjectId, injectObject('room', { Event: true }), async (req, res) => {
+  res.status(200).json((req.room as any).Event.map((e: any) => serializeEventField(req, e)));
 });

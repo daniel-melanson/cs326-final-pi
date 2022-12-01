@@ -1,3 +1,4 @@
+import json
 import re
 from difflib import get_close_matches
 from typing import Any, Callable, Optional
@@ -476,4 +477,25 @@ def get_raw_building_room(s: str):
 
 
 if __name__ == "__main__":
-    pass
+    raw_room_file = open("./json/RAW_ROOMS.json", "r")
+    normalized_rooms_file = open("./json/NORMALIZED_ROOMS.json", "w")
+
+    raw_rooms = json.load(raw_room_file)
+
+    rooms = []
+    for room in raw_rooms:
+        name = room["name"]
+        building_room = get_raw_building_room(name)
+
+        rooms.append(
+            {
+                "raw": room,
+                "building": {"name": building_room.building.name, "address": building_room.building.address}
+                if building_room.building
+                else None,
+                "number": building_room.number,
+                "alt": building_room.alt,
+            }
+        )
+
+    json.dump(rooms, normalized_rooms_file, indent=4)
