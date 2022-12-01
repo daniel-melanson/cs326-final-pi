@@ -18,8 +18,8 @@ buildings.get('/', async (req, res) => {
       },
     ],
   });
-
-  res.status(200).json(buildings.map((b) => serializeBuilding(req, b)));
+  res.send("Hey this is here")
+  //res.status(200).json(buildings.map((b) => serializeBuilding(req, b)));
 });
 
 buildings.get('/:id', ensureObjectId, injectObject('building', { rooms: true }), objectGETHandler('building'));
