@@ -4,7 +4,8 @@ import prisma from '../db/index.js';
 export const buildings = Router();
 
 buildings.get('/', async (req, res) => {
-  res.status(200).json(await prisma.building.findMany());
+  let buildings = await prisma.building.findMany()
+  res.status(200).json(buildings);
 });
 
 buildings.get('/:id', async (req, res) => {
@@ -16,7 +17,7 @@ buildings.get('/:id', async (req, res) => {
 
   try {
     const building = await prisma.building.findFirst({
-      where: { id },
+      where: { id: id},
     });
 
     if (building) {
