@@ -23,14 +23,14 @@ model Room {
   buildingId  Int
   liveId      Int      @unique
   number      String
-  Event       Event[]
+  events      Event[]
   capacity    Int
   features    String
 }
 
 model Event {
   id           Int      @id @default(autoincrement())
-  liveId       Int      
+  liveId       Int
   room         Room     @relation(fields: [roomId], references: [id])
   roomId       Int
   title        String   @db.VarChar(255)
