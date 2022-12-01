@@ -39,10 +39,7 @@ model Event {
   owner        User     @relation(fields: [ownerId], references: [id])
   ownerId      Int
   organization String
-  type         String
-  categories   String
   creationDate DateTime
-  state        String
 }
 
 model User {

@@ -61,10 +61,7 @@ export const serializeEvent = (req: Request, e: Event & { room: Room }) => {
     startTime: e.startTime,
     endTime: e.endTime,
     organization: e.organization,
-    type: e.type,
-    categories: e.categories,
     creationDate: e.creationDate,
-    state: e.state,
   };
 };
 
@@ -77,12 +74,10 @@ export const serializeEventField = (req: Request, e: Event & { room: Room }) => 
     startTime: e.startTime,
     endTime: e.endTime,
     organization: e.organization,
-    type: e.type,
-    categories: e.categories,
     creationDate: e.creationDate,
-    state: e.state,
   };
 };
+
 export const SERIALIZERS: Record<TableNames, Serializer<any>> = {
   building: serializeBuilding,
   room: serializeRoom,

@@ -64,10 +64,7 @@ async function addRoomEvents(room: any, owner: any) {
             endTime: new Date(data[8]?.endDate),
             owner: { connect: { id: owner.id } },
             organization: data[4],
-            type: '',
-            categories: '',
             creationDate: new Date(),
-            state: '',
           };
           //console.log(event)
           try {
