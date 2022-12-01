@@ -8,12 +8,12 @@ async function testPrisma2() {
 
   const user = await prisma.event.findMany();
 
-  console.log(user);
+  console.log(user.length);
 }
 
 async function checkRooms() {
   const rooms = await prisma.user.findMany()
-  console.log(rooms)
+  console.log(rooms.length)
 }
 async function addBuildings() {
   const buildings = JSON.parse(fs.readFileSync('building.json').toString());

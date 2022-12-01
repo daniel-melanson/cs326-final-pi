@@ -1,12 +1,8 @@
 
 import Bottleneck from "bottleneck";
 import { Prisma, PrismaClient } from '@prisma/client';
-import assert from 'node:assert';
-import { execSync } from 'node:child_process';
 import prisma from '../db/index.js';
-import { fetchNormalizedBuildings } from './buildings.js';
 import { fetchJSON } from './fetchJSON.js';
-import { exists, partition, readJSON, writeJSON } from './util.js';
 
 const LIVEURL = 'https://25live.collegenet.com/25live/data/umass/run/list/listdata.json';
 
@@ -54,8 +50,9 @@ const ROOM_EVENTS_SEARCH_PARAMS = new URLSearchParams([
         ['caller', 'pro-ListService.getData'],
       ]);
 
+      try{
       const EVENTS_URL = `https://25live.collegenet.com/25live/data/umass/run/list/listdata.json?${ROOM_EVENTS_SEARCH_PARAMS.toString()}`;
-      const json = await fetchJSON(EVENTS_URL);
+      const json = await fetchJSON(EVENTS_URL)
       const columnMeta = json.cols;
       const rows = json.rows;
 
@@ -102,6 +99,9 @@ const ROOM_EVENTS_SEARCH_PARAMS = new URLSearchParams([
           }
         }
       }
+      } catch(e){
+        console.log(e)
+      }
     }
     return true
 }
@@ -110,11 +110,7 @@ const ROOM_EVENTS_SEARCH_PARAMS = new URLSearchParams([
 export async function syncEvents(){
   const prisma = new PrismaClient
 
-  const rooms  = await prisma.room.findMany(
-    {where : 
-      {capacity : {gt: 200,}}
-    },
-    );
+  const rooms  = await prisma.room.findMany();
   const cleared = await prisma.event.deleteMany(
     { where : {ownerId : 1}},
   );
