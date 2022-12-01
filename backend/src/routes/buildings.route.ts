@@ -5,7 +5,7 @@ export const buildings = Router();
 
 buildings.get('/', async (req, res) => {
   let buildings = await prisma.building.findMany()
-  res.status(200).json(buildings);
+  res.status(200).json(buildings).end();
 });
 
 buildings.get('/:id', async (req, res) => {
