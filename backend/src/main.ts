@@ -7,7 +7,7 @@ import { Strategy } from 'passport-local';
 import { authUser } from './controllers/auth.js';
 import prisma from './db/index.js';
 import { PORT, SECRET } from './env.js';
-import auth from './routes/auth.js';
+import auth from './routes/auth.route.js';
 import { availabilities } from './routes/availabilities.route.js';
 import { buildings } from './routes/buildings.route.js';
 import { events } from './routes/events.route.js';

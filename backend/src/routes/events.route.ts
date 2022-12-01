@@ -45,9 +45,9 @@ events.post(
       //   },
       // });
 
-      return res.status(200).json({}).end();
+      return res.status(200).json({});
     } catch (e) {
-      return res.status(500).end();
+      return res.status(500).json({ errors: [] });
     }
   },
 );
