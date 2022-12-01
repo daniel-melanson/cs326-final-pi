@@ -100,100 +100,100 @@ async function updateEvents() {
   console.log('Update Complete');
 }
 
-async function updateRooms() {
-  //clear previous rooms
-  //const clearedEvents = await prisma.event.deleteMany({});
-  //const clearedRooms = await prisma.room.deleteMany({});
-  //const clearedBuildings = await prisma.building.deleteMany({});
+// async function updateRooms() {
+//   //clear previous rooms
+//   //const clearedEvents = await prisma.event.deleteMany({});
+//   //const clearedRooms = await prisma.room.deleteMany({});
+//   //const clearedBuildings = await prisma.building.deleteMany({});
 
-  //console.log("removed rooms", clearedRooms);
-  //console.log("removedBuildings", clearedBuildings);
+//   //console.log("removed rooms", clearedRooms);
+//   //console.log("removedBuildings", clearedBuildings);
 
-  const rawRooms = await fetch(
-    'https://25live.collegenet.com/25live/data/umass/run/list/listdata.json?compsubject=location&order=asc&sort=max_capacity&page=1&page_size=10000&obj_cache_accl=0&max_capacity=500&caller=pro-ListService.getData',
-  )
-    .then((response) => response.text())
-    .then((data) => JSON.parse(data.slice(5))['rows']);
+//   const rawRooms = await fetch(
+//     'https://25live.collegenet.com/25live/data/umass/run/list/listdata.json?compsubject=location&order=asc&sort=max_capacity&page=1&page_size=10000&obj_cache_accl=0&max_capacity=500&caller=pro-ListService.getData',
+//   )
+//     .then((response) => response.text())
+//     .then((data) => JSON.parse(data.slice(5))['rows']);
 
-  console.log('Fetched New Data');
-  const invalidSplits = [];
-  let addedRooms = 0;
-  for (let index = 0; index < rawRooms.length; index++) {
-    //Simplify Object Structure
-    rawRooms[index]['row'][0] = rawRooms[index]['row'][0]['itemName'];
-    rawRooms[index] = rawRooms[index]['row'];
+//   console.log('Fetched New Data');
+//   const invalidSplits = [];
+//   let addedRooms = 0;
+//   for (let index = 0; index < rawRooms.length; index++) {
+//     //Simplify Object Structure
+//     rawRooms[index]['row'][0] = rawRooms[index]['row'][0]['itemName'];
+//     rawRooms[index] = rawRooms[index]['row'];
 
-    //Try a couple different common splits
-    const roomIndex = Math.max(
-      rawRooms[index][1].indexOf(' room'),
-      rawRooms[index][1].indexOf(' Room'),
-      rawRooms[index][1].indexOf(' rm'),
-      rawRooms[index][1].indexOf(' Rm'),
-      rawRooms[index][1].indexOf(' Lab '),
-      rawRooms[index][1].indexOf(' - '),
-    );
+//     //Try a couple different common splits
+//     const roomIndex = Math.max(
+//       rawRooms[index][1].indexOf(' room'),
+//       rawRooms[index][1].indexOf(' Room'),
+//       rawRooms[index][1].indexOf(' rm'),
+//       rawRooms[index][1].indexOf(' Rm'),
+//       rawRooms[index][1].indexOf(' Lab '),
+//       rawRooms[index][1].indexOf(' - '),
+//     );
 
-    //Keep track of invalid splits for future filtering
-    if (roomIndex < 0) {
-      invalidSplits.push(rawRooms[index][1]);
-    } else {
-      //Example Arnold House room 120
-      const building_id = rawRooms[index][1].slice(0, roomIndex);
-      const room_number = rawRooms[index][1]?.slice(roomIndex + ' room'.length).trim();
+//     //Keep track of invalid splits for future filtering
+//     if (roomIndex < 0) {
+//       invalidSplits.push(rawRooms[index][1]);
+//     } else {
+//       //Example Arnold House room 120
+//       const building_id = rawRooms[index][1].slice(0, roomIndex);
+//       const room_number = rawRooms[index][1]?.slice(roomIndex + ' room'.length).trim();
 
-      const address_beg = 'https://maps.google.com/maps?q=UMass%20Amherst%20';
-      const building_param = building_id.replace(' ', '%20');
-      const address_end = '&t=&z=16&ie=UTF8&iwloc=&output=embed';
+//       const address_beg = 'https://maps.google.com/maps?q=UMass%20Amherst%20';
+//       const building_param = building_id.replace(' ', '%20');
+//       const address_end = '&t=&z=16&ie=UTF8&iwloc=&output=embed';
 
-      const building_address = address_beg.concat(building_param, address_end);
+//       const building_address = address_beg.concat(building_param, address_end);
 
-      const event: Prisma.RoomCreateInput = {
-        id: rawRooms[index][0],
-        number: room_number,
-        capacity: rawRooms[index][5],
-        description: rawRooms[index][3],
-        layout: rawRooms[index][4],
-        category: rawRooms[index][2],
-        building: {
-          connectOrCreate: {
-            where: {
-              id: building_id,
-            },
-            create: {
-              id: building_id,
-              name: building_id,
-              address: building_address,
-            },
-          },
-        },
-      };
+//       const event: Prisma.RoomCreateInput = {
+//         id: rawRooms[index][0],
+//         number: room_number,
+//         capacity: rawRooms[index][5],
+//         description: rawRooms[index][3],
+//         layout: rawRooms[index][4],
+//         category: rawRooms[index][2],
+//         building: {
+//           connectOrCreate: {
+//             where: {
+//               id: building_id,
+//             },
+//             create: {
+//               id: building_id,
+//               name: building_id,
+//               address: building_address,
+//             },
+//           },
+//         },
+//       };
 
-      try {
-        /*
-        const user = await prisma.room.upsert(
-          {
-          where: {
-            id : rawRooms[index][0]
-          }, update :{},
-          create:
-          { data: event },
-          });
-          */
-        const user = await prisma.room.create({ data: event });
-        addedRooms += 1;
-        if (addedRooms % 100 === 0) {
-          console.log('Added Rooms: ', addedRooms);
-        }
-      } catch (err) {
-        console.log(err);
-        console.log(event);
-      }
-    }
-  }
-  console.log(invalidSplits);
+//       try {
+//         /*
+//         const user = await prisma.room.upsert(
+//           {
+//           where: {
+//             id : rawRooms[index][0]
+//           }, update :{},
+//           create:
+//           { data: event },
+//           });
+//           */
+//         const user = await prisma.room.create({ data: event });
+//         addedRooms += 1;
+//         if (addedRooms % 100 === 0) {
+//           console.log('Added Rooms: ', addedRooms);
+//         }
+//       } catch (err) {
+//         console.log(err);
+//         console.log(event);
+//       }
+//     }
+//   }
+//   console.log(invalidSplits);
 
-  console.log('Added, ', addedRooms, ' out of a total raw Rooms count of: ', rawRooms.length);
-}
+//   console.log('Added, ', addedRooms, ' out of a total raw Rooms count of: ', rawRooms.length);
+// }
 
 //updateRooms();
 updateEvents();
