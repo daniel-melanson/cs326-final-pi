@@ -6,7 +6,7 @@ import prisma from '../db/index.js';
 
 export function checkIsAuthenticated(req: Request, res: Response, next: NextFunction): void {
   if (req.isAuthenticated()) {
-    res.status(200).json({ message: 'authorized' });
+    res.status(200).json(req.user);
     return next();
   }
   res.status(403).json({ message: 'unauthorized' });

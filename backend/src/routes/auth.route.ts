@@ -16,10 +16,22 @@ auth.post('/logout', logout);
 auth.post(
   '/signup',
   validate([
-    body('firstName').isString(),
-    body('lastName').isString(),
-    body('email').isEmail(),
-    body('password').isStrongPassword(),
+    body('firstName')
+      .isString()
+      .withMessage('First name must be a string')
+      .isLength({ min: 2, max: 26 })
+      .withMessage('First name should be between 2 and 26 characters'),
+    body('lastName')
+      .isString()
+      .withMessage('Last name must be a string')
+      .isLength({ min: 2, max: 26 })
+      .withMessage('Last name should be between 2 and 26 characters'),
+    body('email').isEmail().withMessage('Email should be a valid'),
+    body('password')
+      .isStrongPassword()
+      .withMessage(
+        'That password is not strong enough, try using a combination of uppercase and lowercase characters with symbols and numbers',
+      ),
   ]),
   async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
