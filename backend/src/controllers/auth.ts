@@ -20,7 +20,7 @@ export function passportLoginCallback(req: Request, res: Response, next: NextFun
     } else if (user) {
       req.logIn(user, (err) => {
         if (err) {
-          res.status(401).json({ errors: ["Bad"]});
+          res.status(401).json({ errors: ['Bad'] });
         } else {
           delete user.hash;
 
