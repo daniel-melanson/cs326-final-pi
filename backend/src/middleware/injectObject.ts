@@ -10,13 +10,17 @@ export function injectObject(type: TableNames, include: any): RequestHandler {
         },
         include,
       });
+
+      if (req[type]) {
+        next();
+      } else {
+        res.status(404).send('404 Not Found');
+      }
     } catch (e) {
       res.status(500).json({
         errors: [],
       });
       next(e);
     }
-
-    next();
   };
 }
