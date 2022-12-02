@@ -12,6 +12,7 @@ import { availabilities } from './routes/availabilities.route.js';
 import { buildings } from './routes/buildings.route.js';
 import { events } from './routes/events.route.js';
 import { rooms } from './routes/rooms.route.js';
+import { reservation } from './routes/reservation.route.js'
 
 const app = express();
 app.use(express.static('../frontend/dist/'));
@@ -79,7 +80,7 @@ api.use('/events', events);
 api.use('/rooms', rooms);
 api.use('/availabilities', availabilities);
 api.use('/auth', auth);
-
+api.use('/reservation', reservation)
 app.use('/api', api);
 
 app.get('*', (req, res) => {
