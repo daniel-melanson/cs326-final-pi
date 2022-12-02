@@ -8,7 +8,7 @@ interface APIBuilding {
   url: string;
   name: string;
   address: string;
-  room : APIRoomField[];
+  rooms : APIRoomField[];
 }
 
 interface APIRoomField {
