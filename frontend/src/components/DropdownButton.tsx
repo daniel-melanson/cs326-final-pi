@@ -7,6 +7,7 @@ interface DropdownButtonProps {
   options: DropdownOption[];
   icon: string;
   selected?: number;
+  disabled?: boolean;
   onSelected: (index?: number) => void;
 }
 
@@ -16,7 +17,7 @@ export default function DropdownButton(props: DropdownButtonProps) {
     <div className="dropdown px-1 py-3">
       <button
         type="button"
-        disabled={props.options.length === 0}
+        disabled={props.disabled}
         className={selection ? "btn btn-primary" : "btn btn-outline-dark"}
         data-bs-toggle="dropdown"
         aria-expanded="false"
