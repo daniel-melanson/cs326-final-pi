@@ -19,7 +19,7 @@ model Building {
 
 model Room {
   id          Int   @id @default(autoincrement())
-  building    Building @relation(fields: [buildingId], references: [id])
+  building    Building @relation(fields: [buildingId], references: [id], onDelete: Cascade)
   buildingId  Int
   liveId      Int      @unique
   number      String
@@ -31,12 +31,12 @@ model Room {
 model Event {
   id           Int      @id @default(autoincrement())
   liveId       Int
-  room         Room     @relation(fields: [roomId], references: [id])
+  room         Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
   roomId       Int
   title        String   @db.VarChar(255)
   startTime    DateTime
   endTime      DateTime
-  owner        User     @relation(fields: [ownerId], references: [id])
+  owner        User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
   ownerId      Int
   organization String
   creationDate DateTime

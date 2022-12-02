@@ -100,7 +100,14 @@ export async function syncRooms() {
   const [passed, failed] = partition(normalizedRooms, (r) => {
     const buildingName = r.building?.name;
 
-    return r.building && r.number && r.building.address && buildingName && !buildingName.includes('Mount Ida');
+    return (
+      r.building &&
+      r.number &&
+      r.building.address &&
+      buildingName &&
+      !buildingName.includes('Mount Ida') &&
+      !buildingName.includes('at Springfield')
+    );
   });
 
   writeJSON('IGNORED', failed);
