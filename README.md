@@ -31,7 +31,7 @@
   - So database is populated for grading
   - Drop old ones
 - [ ] Page for events (`frontend/scr/pages/events.tsx`)
-  - UI for displaying information about the event
+  - UI for displaying information about events the currently logged in user created
   - UI for updating information about the event if the logged in user is the event creator
     - Hook with API
 - [ ] Grading rubric
