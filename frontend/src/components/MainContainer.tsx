@@ -12,16 +12,14 @@ export default function MainContainer() {
       return;
     }
 
-    // const url = new URL("/api/availabilities", document.baseURI);
-    // console.log(url.toString());
-    // for (const [key, value] of Object.entries(x)) {
-    //   url.searchParams.append(key, value);
-    // }
+    const url = new URL("/api/availabilities", document.baseURI);
+    for (const [key, value] of Object.entries(x)) {
+      if (value !== undefined) url.searchParams.append(key, value);
+    }
 
-    // const res = await fetch(url.toString());
-    // const json: RESTfulAvailability = await res.json();
-
-    // root.replaceChild(<RoomList listings={json} />, root.lastChild!);
+    const res = await fetch(url.toString());
+    const json: APIAvailability[] = await res.json();
+    root.replaceChild(<RoomList listings={json} />, root.lastChild!);
   }
 
   root.append(<DropdownButtonRow onChange={updateRoomList} />, <RoomList />);

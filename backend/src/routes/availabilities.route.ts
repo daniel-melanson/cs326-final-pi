@@ -37,14 +37,14 @@ export function segmentDate(start: Date, end: Date): string[] {
 availabilities.get(
   '/',
   validate([
-    query('buildingId').optional().isInt({ gt: -1 }),
-    query('roomId').optional().isInt({ gt: -1 }),
+    query('building').optional().isInt({ gt: -1 }),
+    query('room').optional().isInt({ gt: -1 }),
     query('capacity').optional().isIn(['10', '25', '50', '100', '200']),
-    query('date').optional(false).isDate(),
-    query('duration').optional().isIn(['30', '60', '120']),
+    query('date').optional(false).isISO8601(),
+    query('duration').optional().isIn([, '60', '120', '180']),
   ]),
   async (req, res) => {
-    const { buildingId, roomId, capacity, date, duration } = req.query as Record<string, string>;
+    const { building, room, capacity, date, duration } = req.query as Record<string, string>;
     const startDate = new Date(date!);
     startDate.setHours(0, 0, 0, 0);
 
@@ -61,10 +61,10 @@ availabilities.get(
       },
     };
 
-    if (buildingId) {
-      filters.room!.buildingId = Number(buildingId);
-    } else if (roomId) {
-      filters.room!.id = Number(roomId);
+    if (room) {
+      filters.room!.id = Number(room);
+    } else if (building) {
+      filters.room!.buildingId = Number(building);
     }
 
     if (capacity) {
@@ -72,6 +72,8 @@ availabilities.get(
         gt: Number(capacity),
       };
     }
+
+    const minDuration = duration ? Number(duration) : 60;
 
     const events = await prisma.event.findMany({
       where: filters,
@@ -87,7 +89,7 @@ availabilities.get(
     const availabilityStart = new Date(startDate);
     availabilityStart.setHours(7, 0, 0, 0);
     const availabilityEnd = new Date(availabilityStart);
-    availabilityEnd.setHours(19);
+    availabilityEnd.setHours(19, 0, 0, 0);
 
     const availabilityTimes = segmentDate(availabilityStart, availabilityEnd);
     const completeAvailableTime = availabilityTimes.reduce((acc, x) => ({ ...acc, [x]: 5 }), {});
@@ -112,38 +114,52 @@ availabilities.get(
     }
 
     const totalAvailabilities = [];
-    for (const [roomId, availabilities] of roomAvailabilities.entries()) {
-      const a = availabilityTimes.reduce((acc, t, i) => {
-        if (!(t in availabilities)) return acc;
+    for (const [roomId, roomAvailability] of roomAvailabilities.entries()) {
+      const room = rooms.get(roomId)!;
 
-        if (acc.length === 0) {
-          return [{
+      const availabilityResults = availabilityTimes
+        .reduce((acc, t, i) => {
+          if (!(t in roomAvailability)) return acc;
+
+          const newAvailability = {
             startTime: t,
-            endTime: t,
-            index: i,
-          }];
-        } else {
+            duration: roomAvailability[t]!,
+            timeIndex: i,
+          };
+
           const lastIndex = acc.length - 1;
-          const last = acc[lastIndex];
+          if (lastIndex < 0 || !acc[lastIndex]) return [newAvailability];
 
-          if (i - last.index > 1) {
-
+          const lastEntry = acc[lastIndex]!;
+          if (i - lastEntry.timeIndex > 1) {
+            acc.push(newAvailability);
           } else {
-            last.endTime = t;
-            last.index = i;
+            lastEntry.duration += newAvailability.duration;
+            lastEntry.timeIndex = i;
           }
 
           return acc;
-        }
-      }, []);
+        }, [] as { startTime: string; duration: number; timeIndex: number }[])
+        .filter((x) => x.duration >= minDuration)
+        .map((x) => {
+          const startDate = new Date(x.startTime);
+          const endDate = new Date(startDate.setMinutes(startDate.getMinutes() + x.duration));
 
+          return {
+            startDate: x.startTime,
+            endDate: endDate.toISOString(),
+            duration: duration,
+          };
+        });
 
-      const room = rooms.get(roomId)!;
-      totalAvailabilities.push({
-        room: serializeRoom(req, room),
-      });
+      if (availabilityResults.length > 0) {
+        totalAvailabilities.push({
+          room: serializeRoom(req, room),
+          availabilities: availabilityResults,
+        });
+      }
     }
 
-    res.status(200).json(availabilities);
+    res.status(200).json(totalAvailabilities).end();
   },
 );

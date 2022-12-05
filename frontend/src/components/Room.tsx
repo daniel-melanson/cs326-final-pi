@@ -3,17 +3,17 @@ import ReservationModal from "./ReservationModal";
 import { formatDateAsTime } from "./util";
 
 export interface RoomAvailabilities {
-  start_date: Date;
-  end_date: Date;
+  startDate: Date;
+  endDate: Date;
 }
 
 interface RoomProps {
   building: string;
   number: string;
-  capacity: string;
+  capacity: string | number;
   address: string;
   description: string;
-  roomId: string;
+  roomId: string | number;
   availabilities: RoomAvailabilities[];
 }
 
@@ -49,9 +49,9 @@ export default function Room(props: RoomProps) {
               </div>
               <div class="col card p-0">
                 <ul id="room-list" class="list-group list-group-flush">
-                  {props.availabilities.map((avail) => {
-                    const start = formatDateAsTime(avail.start_date);
-                    const end = formatDateAsTime(avail.end_date);
+                  {props.availabilities.map(avail => {
+                    const start = formatDateAsTime(avail.startDate);
+                    const end = formatDateAsTime(avail.endDate);
 
                     return (
                       <li class="list-group-item d-flex justify-content-around">
@@ -61,9 +61,9 @@ export default function Room(props: RoomProps) {
                           class="btn btn-sm btn-primary"
                           onClick={() => (
                             <ReservationModal
-                              startDate={avail.start_date}
-                              endDate={avail.end_date}
-                              date={avail.start_date.toLocaleDateString()}
+                              startDate={avail.startDate}
+                              endDate={avail.endDate}
+                              date={avail.startDate.toLocaleDateString()}
                               buildingName={props.building}
                               roomNumber={props.number}
                               roomId={props.roomId}

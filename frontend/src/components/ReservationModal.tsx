@@ -4,7 +4,7 @@ import { formatDateAsTime } from "./util";
 
 interface ReservationModalProps {
   buildingName: string;
-  roomId: string;
+  roomId: string | number;
   roomNumber: string;
   startDate: Date;
   endDate: Date;
@@ -51,7 +51,7 @@ export default function ReservationModal(props: ReservationModalProps) {
               onClick={() => {
                 const url = new URL("/api/events", document.baseURI);
 
-                url.searchParams.append("room_id", props.roomId);
+                url.searchParams.append("room_id", String(props.roomId));
                 url.searchParams.append("title", modalElement.querySelector(".description")?.textContent ?? "");
                 url.searchParams.append("description", modalElement.querySelector(".title")?.textContent ?? "");
                 url.searchParams.append("start_time", props.startDate.toISOString());

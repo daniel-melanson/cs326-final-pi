@@ -8,7 +8,7 @@ interface APIBuilding {
   url: string;
   name: string;
   address: string;
-  rooms : APIRoomField[];
+  rooms: APIRoomField[];
 }
 
 interface APIRoomField {
@@ -43,4 +43,9 @@ interface APIEventField {
   endTime: string;
   organization: string;
   creationDate: string;
+}
+
+interface APIAvailability {
+  room: APIRoom;
+  availabilities: { startDate: string; endDate: string; duration: number }[];
 }

@@ -23,8 +23,8 @@ function createElement(tag: JSX.Tag | JSX.Component, attributes: { [key: string]
   }
 
   for (const child of children) {
-    if (typeof child === "string") {
-      element.innerText += child;
+    if (typeof child !== "object") {
+      element.innerText += String(child);
     } else if (Array.isArray(child)) {
       element.append(...child);
     } else {

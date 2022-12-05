@@ -56,9 +56,9 @@ export default function DropdownButtonRow(props: DropdownButtonRowProps) {
     },
     duration: {
       options: [
-        ["30+ Minutes", "30"],
         ["1+ Hour", "60"],
         ["2+ Hours", "120"],
+        ["3+ Hours", "180"],
       ],
     },
     sortBy: {

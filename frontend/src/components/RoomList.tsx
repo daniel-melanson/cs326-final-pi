@@ -1,9 +1,8 @@
-import { RESTfulAvailability } from "#types";
 import Enact from "../Enact";
-import Room, { RoomAvailabilities } from "./Room";
+import Room from "./Room";
 
 export interface RoomListProps {
-  listings?: RESTfulAvailability;
+  listings?: APIAvailability[];
 }
 
 export default function RoomList(props: RoomListProps) {
@@ -13,36 +12,22 @@ export default function RoomList(props: RoomListProps) {
     return <div class="text-center">Select a date to view listings.</div>;
   }
 
-  const roomAvailabilityMap = listings.availabilities.reduce((acc, listing) => {
-    const arr = acc.get(listing.room_id) ?? [];
-    if (arr.length === 0) {
-      acc.set(listing.room_id, arr);
-    }
-
-    arr.push({
-      start_date: new Date(listing.start),
-      end_date: new Date(listing.end),
-    });
-
-    return acc;
-  }, new Map<string, RoomAvailabilities[]>());
-
   const root = <div />;
-  const entries = new Array(...roomAvailabilityMap.entries());
 
   root.append(
-    ...entries.map(([room_id, availabilityListings]) => {
-      const room = listings.rooms[room_id];
-
+    ...listings.map(listing => {
       return (
         <Room
-          availabilities={availabilityListings}
-          address={room.address}
-          building={room.building.name}
-          capacity={room.capacity}
-          number={room.number}
-          description={room.description}
-          roomId={room.id}
+          availabilities={listing.availabilities.map(a => ({
+            startDate: new Date(a.startDate),
+            endDate: new Date(a.endDate),
+          }))}
+          address={listing.room.building.address}
+          building={listing.room.building.name}
+          capacity={listing.room.capacity < 5 ? "Unknown" : listing.room.capacity}
+          number={listing.room.number}
+          description={listing.room.features || "No known features."}
+          roomId={listing.room.id}
         />
       );
     })
