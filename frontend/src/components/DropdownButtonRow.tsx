@@ -1,177 +1,218 @@
-import { RESTfulBuilding } from "#types";
 import Enact from "../Enact";
 import DropdownButton, { DropdownOption } from "./DropdownButton";
 
 export interface AvailabilityConditions {
-  building_id?: string;
-  room_id?: string;
+  building?: string;
+  room?: string;
   capacity?: string;
-  date_iso?: string;
+  date?: string;
   duration?: string;
-  sort_by?: string;
+  sortBy?: string;
 }
 
 interface DropdownButtonRowProps {
   onChange: (conditions: AvailabilityConditions) => void;
 }
 
+interface EntryState {
+  element?: HTMLElement;
+  options: DropdownOption[];
+  selected?: number;
+  disabled?: boolean;
+}
+
+interface RowState {
+  building: EntryState;
+  room: EntryState;
+  capacity: EntryState;
+  date: EntryState;
+  duration: EntryState;
+  sortBy: EntryState;
+}
+
 export default function DropdownButtonRow(props: DropdownButtonRowProps) {
-  const dateOptions: DropdownOption[] = [];
+  const root = <div className="d-flex justify-content-center" />;
+
+  const state: RowState = {
+    building: {
+      options: [],
+      disabled: true,
+    },
+    room: {
+      options: [],
+      disabled: true,
+    },
+    capacity: {
+      options: [
+        ["10+ Seats", "10"],
+        ["25+ Seats", "25"],
+        ["50+ Seats", "50"],
+        ["100+ Seats", "100"],
+        ["200+ Seats", "200"],
+      ],
+    },
+    date: {
+      options: [],
+    },
+    duration: {
+      options: [
+        ["30+ Minutes", "30"],
+        ["1+ Hour", "60"],
+        ["2+ Hours", "120"],
+      ],
+    },
+    sortBy: {
+      options: [
+        ["Duration", "duration"],
+        ["Capacity", "capacity"],
+        ["Availability", "availability"],
+      ],
+    },
+  };
 
   let today = new Date();
   for (let i = 0; i < 7; i++) {
-    dateOptions.push([today.toLocaleDateString(), today.toISOString()]);
+    state.date.options.push([today.toLocaleDateString(), today.toISOString()]);
 
     today = new Date(today.setDate(today.getDate() + 1));
   }
 
-  const root = <div className="d-flex justify-content-center" />;
-
-  type FilterBuilder = (selected?: number, options?: DropdownOption[]) => HTMLElement;
-  const BuildingDropdownBuilder: FilterBuilder = (selected, options) => (
+  type FilterBuilder = () => HTMLElement;
+  const BuildingDropdownBuilder: FilterBuilder = () => (
     <DropdownButton
       key="Building"
       icon="building"
-      options={options ?? []}
-      selected={selected}
-      onSelected={(i) => {
-        updateList(0, BuildingDropdownBuilder, i, options);
-      }}
+      options={state.building.options}
+      selected={state.building.selected}
+      disabled={state.building.disabled}
+      onSelected={i => onSelect("building", i)}
     />
   );
 
-  const RoomDropdownBuilder: FilterBuilder = (selected, options) => (
+  const RoomDropdownBuilder: FilterBuilder = () => (
     <DropdownButton
       key="Room"
       icon="r-square"
-      options={options ?? []}
-      selected={selected}
-      onSelected={(i) => {
-        updateList(1, RoomDropdownBuilder, i, options);
-      }}
+      options={state.room.options}
+      selected={state.room.selected}
+      disabled={state.room.disabled}
+      onSelected={i => onSelect("room", i)}
     />
   );
 
-  const CapacityDropdownBuilder: FilterBuilder = (selected, options) => (
+  const CapacityDropdownBuilder: FilterBuilder = () => (
     <DropdownButton
       key="Capacity"
       icon="box2"
-      options={options ?? []}
-      selected={selected}
-      onSelected={(i) => {
-        updateList(2, CapacityDropdownBuilder, i, options);
-      }}
+      options={state.capacity.options}
+      selected={state.capacity.selected}
+      disabled={state.capacity.disabled}
+      onSelected={i => onSelect("capacity", i)}
     />
   );
 
-  const DateDropdownBuilder: FilterBuilder = (selected, options) => (
+  const DateDropdownBuilder: FilterBuilder = () => (
     <DropdownButton
       key="Date"
       icon="calendar-date"
-      options={options ?? []}
-      selected={selected}
-      onSelected={(i) => {
-        updateList(3, DateDropdownBuilder, i, options);
-      }}
+      options={state.date.options}
+      selected={state.date.selected}
+      disabled={state.date.disabled}
+      onSelected={i => onSelect("date", i)}
     />
   );
 
-  const DurationDropdownBuilder: FilterBuilder = (selected, options) => (
+  const DurationDropdownBuilder: FilterBuilder = () => (
     <DropdownButton
       key="Duration"
       icon="clock"
-      options={[
-        ["30+ Minutes", "30"],
-        ["1+ Hour", "60"],
-        ["2+ Hours", "120"],
-      ]}
-      selected={selected}
-      onSelected={(i) => {
-        updateList(4, DurationDropdownBuilder, i, options);
-      }}
+      options={state.duration.options}
+      selected={state.duration.selected}
+      disabled={state.duration.disabled}
+      onSelected={i => onSelect("duration", i)}
     />
   );
 
-  const SortByDropdownBuilder: FilterBuilder = (selected, options) => (
+  const SortByDropdownBuilder: FilterBuilder = () => (
     <DropdownButton
       key="Sort By"
       icon="sort-down"
-      options={options ?? []}
-      selected={selected}
-      onSelected={(i) => {
-        updateList(5, SortByDropdownBuilder, i, options);
-      }}
+      options={state.sortBy.options}
+      selected={state.sortBy.selected}
+      disabled={state.sortBy.disabled}
+      onSelected={i => onSelect("sortBy", i)}
     />
   );
 
-  root.append(
-    BuildingDropdownBuilder(),
-    RoomDropdownBuilder(),
-    CapacityDropdownBuilder(undefined, [
-      ["10+ Seats", "10"],
-      ["25+ Seats", "25"],
-      ["50+ Seats", "50"],
-      ["100+ Seats", "100"],
-      ["200+ Seats", "200"],
-    ]),
-    DateDropdownBuilder(undefined, dateOptions),
-    DurationDropdownBuilder(undefined, [
-      ["10+ Seats", "10"],
-      ["25+ Seats", "25"],
-      ["50+ Seats", "50"],
-      ["100+ Seats", "100"],
-      ["200+ Seats", "200"],
-    ]),
-    SortByDropdownBuilder(undefined, [
-      ["Duration", "duration"],
-      ["Capacity", "capacity"],
-      ["Availability", "availability"],
-    ])
-  );
+  const BUILDERS = {
+    building: BuildingDropdownBuilder,
+    room: RoomDropdownBuilder,
+    capacity: CapacityDropdownBuilder,
+    date: DateDropdownBuilder,
+    duration: DurationDropdownBuilder,
+    sortBy: SortByDropdownBuilder,
+  };
+
+  function onSelect(dropdown: keyof RowState, selectedIndex?: number) {
+    const currentState = state[dropdown];
+    currentState.selected = selectedIndex;
+
+    refreshRow(dropdown);
+
+    if (dropdown === "building") {
+      if (state.building.selected !== undefined) {
+        const url = `/api/buildings/${state.building.options[state.building.selected][1]}`;
+        (async () => {
+          const res = await fetch(url);
+          const json: APIBuilding = await res.json();
+          const roomOptions: DropdownOption[] = json.rooms.map(r => [r.number, String(r.id)]);
+          roomOptions.sort((a, b) => Number(a[0]) - Number(b[0]));
+
+          state.room.options = roomOptions;
+          state.room.disabled = false;
+          refreshRow("room");
+        })();
+      } else {
+        state.room.options = [];
+        state.room.disabled = true;
+        refreshRow("room");
+      }
+    } else if (dropdown === "room" && state.room.selected !== undefined) {
+      state.capacity.selected = undefined;
+      refreshRow("capacity");
+    } else if (dropdown === "capacity" && state.capacity.selected !== undefined) {
+      state.room.selected = undefined;
+      refreshRow("room");
+    }
+
+    props.onChange(
+      Object.entries(state).reduce((acc, [k, v]) => {
+        const value = v.selected !== undefined ? v.options[v.selected][1] : undefined;
+
+        return { ...acc, [k]: value };
+      }, {})
+    );
+  }
+
+  function refreshRow(dropdown: keyof RowState) {
+    const elem = BUILDERS[dropdown]();
+    const current = state[dropdown].element;
+    if (current) root.replaceChild(elem, current);
+    else root.appendChild(elem);
+
+    state[dropdown].element = elem;
+  }
+
+  (Object.keys(state) as (keyof RowState)[]).forEach(refreshRow);
 
   (async () => {
     const res = await fetch("/api/buildings");
-    const json: RESTfulBuilding[] = await res.json();
-    const buildingOptions: DropdownOption[] = json.map((b) => [b.name, b.id]);
+    const json: APIBuilding[] = await res.json();
+    state.building.options = json.map(b => [b.name, String(b.id)]);
+    state.building.disabled = false;
 
-    updateList(0, BuildingDropdownBuilder, undefined, buildingOptions);
+    refreshRow("building");
   })();
-
-  const conditions: AvailabilityConditions = {};
-  async function updateList(position: number, builder: FilterBuilder, selected?: number, options?: DropdownOption[]) {
-    const old = root.children.item(position)!;
-    const replacement = builder(selected, options);
-    root.replaceChild(replacement, old);
-
-    if (selected !== undefined && options) {
-      const conditionKeys: (keyof AvailabilityConditions)[] = [
-        "building_id",
-        "room_id",
-        "capacity",
-        "date_iso",
-        "duration",
-        "sort_by",
-      ];
-
-      const conditionKey = conditionKeys[position];
-
-      conditions[conditionKey] = options[selected][1];
-      props.onChange(conditions);
-    }
-
-    if (position === 0 && options) {
-      if (selected === undefined) {
-        updateList(1, RoomDropdownBuilder, undefined, []);
-      } else {
-        const res = await fetch(`/api/buildings/${options[selected][1]}`);
-        const json: RESTfulBuilding = await res.json();
-        const roomOptions: DropdownOption[] = json.rooms.map((r) => [r.number, r.id]);
-        roomOptions.sort((a, b) => Number(a[0]) - Number(b[0]));
-
-        updateList(1, RoomDropdownBuilder, undefined, roomOptions);
-      }
-    }
-  }
 
   return root;
 }
