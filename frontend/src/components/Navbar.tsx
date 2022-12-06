@@ -7,9 +7,6 @@ export default function Navbar() {
         <a className="navbar-brand" href="/campus">
           <i className="bi-image"></i> Campus Meet
         </a>
-        <form className="col-3 d-flex" role="search">
-          <input type="search" className="form-control me-2" placeholder="Search" />
-        </form>
         <a className="navbar-brand mx-3" href="#">
           <i className="bi-person-circle"></i>
         </a>
