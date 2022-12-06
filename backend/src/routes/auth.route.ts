@@ -39,7 +39,7 @@ const auth = express.Router();
 
 auth.get('/', (req, res) => {
   if (req.isAuthenticated()) res.status(200).json(req.user);
-  else res.status(429);
+  else res.status(429).send();
 });
 
 auth.post('/login', passport.authenticate('local', {

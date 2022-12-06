@@ -6,44 +6,39 @@ function logout(){
                 location.pathname = '/campus'
                 })();
 }
+
+
+
 export default function LoginButton() {
-     let output =  document.createElement('div') as HTMLElement
+     //let output =  document.createElement('div') as HTMLElement
+     const root = <div />
 
      (async () => {
-        const res = await fetch("/api/auth");
-    
-        if (res.ok) {
-          const {email, firstName, id, lastName} = await res.json();
+      const res = await fetch("/api/auth");
+      console.log(res.status)
+      if (res.ok) {
+        const {email, firstName, id, lastName} = await res.json();
+        const button = <a role = "button"
+                          class = "btn btn-primary"
+                        >
+           Hello {firstName} {lastName}!
+        </a>
+        root.appendChild(button);
 
-          output.innerHTML = 
-            `<div>
-              <button
-              class = "btn btn-primary"
-              type="button"
-              href = ''
-              >
-              Hello ${firstName} ${lastName}!
-              </button>
-
-              <button
-              class = "btn btn-primary"
-              type="button"
-              href = '/login'
-              onClick= "someplaceholder cause im stupid"
-              >
-                Log Out
-              </button>
-            </div>`
-            
-          } else {
-            console.log("here");
-            output.innerHTML = 
-              `<button>
-                Log In
-              </button>`
-            
-          }   
+        const logout = <a role = "button"
+                          href = '/login'
+                          class = "btn btn-primary"
+                          onClick = {(async () => { const loggedout = await fetch('/api/auth/logout')})()}>
+          Log Out
+        </a>
+        root.appendChild(logout)
+      } else {
+        const login = <button href = '/login' class = "btn btn-primary">
+        Log In
+      </button>
+      }
      }
      )();
-     return output
+     return root
+
 }
