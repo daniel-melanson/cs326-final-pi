@@ -1,4 +1,6 @@
 import Enact from "../Enact";
+import ReservationModal from "./ReservationModal";
+import { formatDateAsTime } from "./util";
 
 interface BuildingProps {
   details: APIAvailability;
@@ -64,6 +66,34 @@ export default function Building(props: BuildingProps) {
                       <i className="bi-box2"> {avail.room.capacity < 5 ? "Unknown" : avail.room.capacity}</i>
                       <br />
                       <i className="bi-text-paragraph"> {avail.room.features || "No known features."}</i>
+                      <div class="list-group list-group-flush">
+                        {avail.availabilities.map(listing => {
+                          const start = formatDateAsTime(new Date(listing.startDate));
+                          const end = formatDateAsTime(new Date(listing.endDate));
+
+                          return (
+                            <li class="list-group-item d-flex justify-content-around">
+                              {start} - {end}
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-primary"
+                                onClick={() => (
+                                  <ReservationModal
+                                    startDate={new Date(listing.startDate)}
+                                    endDate={new Date(listing.endDate)}
+                                    date={new Date(listing.startDate).toLocaleDateString()}
+                                    buildingName={building.name}
+                                    roomNumber={avail.room.number}
+                                    roomId={avail.room.id}
+                                  />
+                                )}
+                              >
+                                Book
+                              </button>
+                            </li>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
                 </div>

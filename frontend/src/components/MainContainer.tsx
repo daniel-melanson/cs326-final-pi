@@ -1,14 +1,13 @@
 import Enact from "../Enact";
 import Building from "./Building";
 import DropdownButtonRow, { AvailabilityConditions } from "./DropdownButtonRow";
-import RoomList from "./RoomList";
 
 export default function MainContainer() {
   const root = <div className="container" />;
 
   async function updateRoomList(x: AvailabilityConditions) {
     if (!x.date) {
-      root.replaceChild(<RoomList />, root.lastChild!);
+      root.replaceChild(<div class="text-center">No results found.</div>, root.lastChild!);
       return;
     }
 
@@ -32,7 +31,7 @@ export default function MainContainer() {
     );
   }
 
-  root.append(<DropdownButtonRow onChange={updateRoomList} />, <RoomList />);
+  root.append(<DropdownButtonRow onChange={updateRoomList} />, <div class="text-center">No results found.</div>);
 
   return root;
 }
