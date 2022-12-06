@@ -20,7 +20,7 @@
   - Overview and how sections
 - [ ] Fix authentication
   - Anthony said it is broken
-- [ ] Fix UI for availability
+- [x] Fix UI for availability
 - [ ] Add logged in user to navbar
 - [ ] Add logout button to navbar
 - [ ] Remove search bar from navbar
