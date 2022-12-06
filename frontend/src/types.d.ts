@@ -15,6 +15,8 @@ interface APIRoomField {
   id: number;
   url: string;
   number: string;
+  capacity: number;
+  features: string;
 }
 
 interface APIRoom {
@@ -45,7 +47,12 @@ interface APIEventField {
   creationDate: string;
 }
 
+interface APIRoomAvailability {
+  room: APIRoomField;
+  availabilities: { startDate: string; endDate: string }[];
+}
+
 interface APIAvailability {
-  room: APIRoom;
-  availabilities: { startDate: string; endDate: string; duration: number }[];
+  building: APIBuildingField;
+  roomAvailabilities: APIRoomAvailability[];
 }

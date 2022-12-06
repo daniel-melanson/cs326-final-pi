@@ -7,7 +7,6 @@ export interface AvailabilityConditions {
   capacity?: string;
   date?: string;
   duration?: string;
-  sortBy?: string;
 }
 
 interface DropdownButtonRowProps {
@@ -27,7 +26,6 @@ interface RowState {
   capacity: EntryState;
   date: EntryState;
   duration: EntryState;
-  sortBy: EntryState;
 }
 
 export default function DropdownButtonRow(props: DropdownButtonRowProps) {
@@ -59,13 +57,6 @@ export default function DropdownButtonRow(props: DropdownButtonRowProps) {
         ["1+ Hour", "60"],
         ["2+ Hours", "120"],
         ["3+ Hours", "180"],
-      ],
-    },
-    sortBy: {
-      options: [
-        ["Duration", "duration"],
-        ["Capacity", "capacity"],
-        ["Availability", "availability"],
       ],
     },
   };
@@ -133,24 +124,12 @@ export default function DropdownButtonRow(props: DropdownButtonRowProps) {
     />
   );
 
-  const SortByDropdownBuilder: FilterBuilder = () => (
-    <DropdownButton
-      key="Sort By"
-      icon="sort-down"
-      options={state.sortBy.options}
-      selected={state.sortBy.selected}
-      disabled={state.sortBy.disabled}
-      onSelected={i => onSelect("sortBy", i)}
-    />
-  );
-
   const BUILDERS = {
     building: BuildingDropdownBuilder,
     room: RoomDropdownBuilder,
     capacity: CapacityDropdownBuilder,
     date: DateDropdownBuilder,
     duration: DurationDropdownBuilder,
-    sortBy: SortByDropdownBuilder,
   };
 
   function onSelect(dropdown: keyof RowState, selectedIndex?: number) {

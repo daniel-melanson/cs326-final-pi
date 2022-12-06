@@ -1,4 +1,5 @@
 import Enact from "../Enact";
+import Building from "./Building";
 import DropdownButtonRow, { AvailabilityConditions } from "./DropdownButtonRow";
 import RoomList from "./RoomList";
 
@@ -6,7 +7,6 @@ export default function MainContainer() {
   const root = <div className="container" />;
 
   async function updateRoomList(x: AvailabilityConditions) {
-    console.log(x);
     if (!x.date) {
       root.replaceChild(<RoomList />, root.lastChild!);
       return;
@@ -19,7 +19,17 @@ export default function MainContainer() {
 
     const res = await fetch(url.toString());
     const json: APIAvailability[] = await res.json();
-    root.replaceChild(<RoomList listings={json} />, root.lastChild!);
+
+    root.replaceChild(
+      <div class="container">
+        {json.length > 0 ? (
+          json.map(avail => <Building details={avail} />)
+        ) : (
+          <div class="text-center">No results found.</div>
+        )}
+      </div>,
+      root.lastChild!
+    );
   }
 
   root.append(<DropdownButtonRow onChange={updateRoomList} />, <RoomList />);

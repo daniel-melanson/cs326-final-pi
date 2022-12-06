@@ -51,6 +51,17 @@ export const serializeRoom = (req: Request, r: Room & { building: Building }) =>
   };
 };
 
+export const serializeRoomNoBuilding = (req: Request, r: Room) => {
+  return {
+    id: r.id,
+    url: makeURL(req, 'rooms', r.id),
+    number: r.number,
+    liveId: r.liveId,
+    capacity: r.capacity,
+    features: r.features,
+  };
+};
+
 export const serializeEvent = (req: Request, e: Event & { room: Room }) => {
   return {
     id: e.id,

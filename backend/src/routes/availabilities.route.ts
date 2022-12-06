@@ -3,10 +3,33 @@ import { Router } from 'express';
 import { query } from 'express-validator';
 import assert from 'node:assert';
 import prisma from '../db/index.js';
-import { serializeRoom } from '../db/serializers.js';
+import { serializeBuildingField, serializeRoomNoBuilding } from '../db/serializers.js';
 import validate from '../middleware/validate.js';
 
 export const availabilities = Router();
+
+interface APIRoomField {
+  id: number;
+  url: string;
+  number: string;
+}
+
+interface APIBuildingField {
+  id: number;
+  url: string;
+  name: string;
+  address: string;
+}
+
+interface APIRoomAvailability {
+  room: APIRoomField;
+  availabilities: { startDate: string; endDate: string }[];
+}
+
+interface APIAvailability {
+  building: APIBuildingField;
+  roomAvailabilities: APIRoomAvailability[];
+}
 
 export function roundDate(d: Date, direction: 'down' | 'up') {
   d = new Date(d);
@@ -113,7 +136,7 @@ availabilities.get(
       }
     }
 
-    const totalAvailabilities = [];
+    const totalAvailabilities = new Map<number, APIAvailability>();
     for (const [roomId, roomAvailability] of roomAvailabilities.entries()) {
       const room = rooms.get(roomId)!;
 
@@ -148,18 +171,34 @@ availabilities.get(
           return {
             startDate: x.startTime,
             endDate: endDate.toISOString(),
-            duration: duration,
           };
         });
 
-      if (availabilityResults.length > 0) {
-        totalAvailabilities.push({
-          room: serializeRoom(req, room),
-          availabilities: availabilityResults,
-        });
-      }
+      if (availabilityResults.length <= 0) continue;
+
+      const buildingAvailability: APIAvailability = totalAvailabilities.has(room.buildingId)
+        ? totalAvailabilities.get(room.buildingId)!
+        : { building: serializeBuildingField(req, room.building), roomAvailabilities: [] };
+
+      buildingAvailability.roomAvailabilities.push({
+        room: serializeRoomNoBuilding(req, room),
+        availabilities: availabilityResults,
+      });
+
+      totalAvailabilities.set(room.buildingId, buildingAvailability);
     }
 
-    res.status(200).json(totalAvailabilities).end();
+    for (const x of totalAvailabilities.values()) {
+      x.roomAvailabilities.sort((a, b) => {
+        const aNumb = a.room.number;
+        const bNumb = b.room.number;
+
+        if (aNumb.length !== bNumb.length) return aNumb.length - bNumb.length;
+
+        return a.room.number.localeCompare(b.room.number);
+      });
+    }
+
+    res.status(200).json(Array.from(totalAvailabilities.values())).end();
   },
 );
