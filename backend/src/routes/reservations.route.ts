@@ -1,9 +1,9 @@
 import type { Prisma } from '@prisma/client';
 import { Router } from 'express';
 import { body } from 'express-validator';
+import prisma from '../db/index.js';
 import { ensureLoggedIn } from '../middleware/ensureLoggedIn.js';
 import validate from '../middleware/validate.js';
-import prisma from '../db/index.js';
 
 export const reservations = Router();
 
@@ -84,7 +84,7 @@ reservations.delete('/:id', ensureLoggedIn, async (req, res) => {
   const prisma_user = await prisma.user.findFirstOrThrow({
     where : { id: user.id}
   })
-  
+
   if(eventId){
   const event  = await prisma.event.findFirstOrThrow({
     where : {ownerId : user.id, id: parseInt(eventId)}
@@ -93,7 +93,7 @@ reservations.delete('/:id', ensureLoggedIn, async (req, res) => {
   const deleted = await prisma.event.delete({
     where : {id : event.id}
   })
-  
+
   console.log(deleted);
   res.status(200).send(user.id);
 
