@@ -16,7 +16,7 @@ export default function Login() {
     const warningContent = document.getElementById("warningContent")!;
 
     try {
-      const res = await fetch("/api/auth/", {
+      const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -25,11 +25,16 @@ export default function Login() {
         body: JSON.stringify({ email: emailInput.value, password: passwordInput.value }),
       });
 
-      if (res.status >= 400 && res.status < 500) {
-        const json = await res.json();
 
+      if (res.status >= 400 && res.status < 500) {
+        if(res.status === 401){
+          warningContent.innerText = ` Error: Incorrect Password or Username`
+          warningContainer.classList.remove("visually-hidden");
+        } else {
+        const json = await res.json();
         warningContent.innerText = ` Error: ${json.errors[0]}`;
         warningContainer.classList.remove("visually-hidden");
+        }
       } else if (res.redirected) {
         location.href = res.url;
       }

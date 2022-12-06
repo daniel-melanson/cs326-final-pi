@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import express from 'express';
 import { body } from 'express-validator';
-import { ensureLoggedIn } from 'middleware/ensureLoggedIn.js';
+import { ensureLoggedIn } from '../middleware/ensureLoggedIn.js';
 import passport from 'passport';
 import { Strategy } from 'passport-local';
 import prisma from '../db/index.js';
