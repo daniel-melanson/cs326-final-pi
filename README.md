@@ -26,8 +26,9 @@
 - [ ] Remove search bar from navbar
 - [x] Availability endpoint for getting free times
   - Daniel is working on using the availability branch
-- [ ] CRUD endpoints for user created events
+- [x] CRUD endpoints for user created events
   - Anthony is working on using the reservation-api branch
+- [ ] Test crud endpoints
 - [ ] Scrape all events up until the 31st of December
   - So database is populated for grading
   - Drop old ones
