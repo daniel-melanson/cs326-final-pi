@@ -36,6 +36,7 @@
   - UI for displaying information about events the currently logged in user created
   - UI for updating information about the event if the logged in user is the event creator
     - Hook with API
+- [ ] Redirect book link to login if not logged in.
 - [ ] Grading rubric
   - <https://docs.google.com/document/d/1msb8op2QJIyz6Ke4sg6a-yoKexyJVzMfVFwHsX2Fqyc/edit>
 - [ ] `docs/final.md` and `docs/setup`
