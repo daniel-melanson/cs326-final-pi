@@ -3,14 +3,12 @@ import { PrismaSessionStore } from '@quixo3/prisma-session-store';
 import express from 'express';
 import session from 'express-session';
 import passport from 'passport';
-import { Strategy } from 'passport-local';
-import { authUser } from './controllers/auth.js';
-import prisma from './db/index.js';
 import { PORT, SECRET } from './env.js';
 import auth from './routes/auth.route.js';
 import { availabilities } from './routes/availabilities.route.js';
 import { buildings } from './routes/buildings.route.js';
 import { events } from './routes/events.route.js';
+import { reservations } from './routes/reservations.route.js';
 import { rooms } from './routes/rooms.route.js';
 
 const app = express();
@@ -41,37 +39,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(
-  new Strategy(
-    {
-      usernameField: 'email',
-    },
-    authUser,
-  ),
-);
-
-passport.serializeUser((user: any, done) => {
-  console.log("serialize", user);
-  done(undefined, user);
-});
-
-passport.deserializeUser(async (usr: any, done) => {
-  console.log("deserialize", usr);
-  try {
-    const user = await prisma.user.findUnique({
-      where: { email: usr.email },
-    });
-
-    if (user) {
-      done(undefined, user);
-    } else {
-      done(undefined);
-    }
-  } catch (e) {
-    done(e);
-  }
-});
-
 const api = express.Router();
 
 api.use('/buildings', buildings);
@@ -79,12 +46,12 @@ api.use('/events', events);
 api.use('/rooms', rooms);
 api.use('/availabilities', availabilities);
 api.use('/auth', auth);
+api.use('/reservations', reservations);
 
 app.use('/api', api);
 
 app.get('*', (req, res) => {
   res.sendFile('frontend/dist/index.html', { root: '..' });
 });
-
 
 app.listen(PORT, () => console.log('Server listening on port ' + PORT));
