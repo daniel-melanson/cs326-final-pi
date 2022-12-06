@@ -1,8 +1,8 @@
 import type { Prisma } from '@prisma/client';
 import { Router } from 'express';
 import { body } from 'express-validator';
-import { ensureLoggedIn } from 'middleware/ensureLoggedIn.js';
-import validate from 'middleware/validate.js';
+import { ensureLoggedIn } from '../middleware/ensureLoggedIn.js';
+import validate from '../middleware/validate.js';
 import prisma from '../db/index.js';
 
 export const reservations = Router();
