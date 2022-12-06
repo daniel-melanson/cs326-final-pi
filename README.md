@@ -20,10 +20,11 @@
   - Overview and how sections
 - [ ] Fix authentication
   - Anthony said it is broken
+- [ ] Fix UI for availability
 - [ ] Add logged in user to navbar
 - [ ] Add logout button to navbar
 - [ ] Remove search bar from navbar
-- [ ] Availability endpoint for getting free times
+- [x] Availability endpoint for getting free times
   - Daniel is working on using the availability branch
 - [ ] CRUD endpoints for user created events
   - Anthony is working on using the reservation-api branch
