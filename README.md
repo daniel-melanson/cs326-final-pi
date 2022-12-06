@@ -18,7 +18,7 @@
 
 - [ ] Root README.md
   - Overview and how sections
-- [ ] Fix authentication
+- [x] Fix authentication
   - Anthony said it is broken
 - [x] Fix UI for availability
 - [ ] Add logged in user to navbar
