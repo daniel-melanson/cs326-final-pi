@@ -1,4 +1,5 @@
 import Enact from "../Enact";
+import LoginButton from "./LoginButton";
 
 export default function Navbar() {
   return (
@@ -8,7 +9,7 @@ export default function Navbar() {
           <i className="bi-image"></i> Campus Meet
         </a>
         <a className="navbar-brand mx-3" href="#">
-          <i className="bi-person-circle"></i>
+          <LoginButton />
         </a>
       </div>
     </nav>
