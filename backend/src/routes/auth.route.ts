@@ -1,10 +1,10 @@
 import bcrypt from 'bcryptjs';
 import express from 'express';
 import { body } from 'express-validator';
+import { ensureLoggedIn } from 'middleware/ensureLoggedIn.js';
 import passport from 'passport';
 import { Strategy } from 'passport-local';
 import prisma from '../db/index.js';
-import { ensureLoggedIn } from '../middleware/ensureLoggedIn.js';
 import validate from '../middleware/validate.js';
 
 passport.use(
@@ -38,13 +38,14 @@ passport.deserializeUser((user: Express.User, done) => {
 
 const auth = express.Router();
 
-auth.get('/', ensureLoggedIn, (req, res) => {
-  res.status(200).json(req.user);
+auth.get('/', (req, res) => {
+  if (req.isAuthenticated()) res.status(200).json(req.user);
+  else res.status(429);
 });
 
 auth.post('/login', passport.authenticate('local'));
 
-auth.post('/logout', (req, res, next) => {
+auth.post('/logout', ensureLoggedIn, (req, res, next) => {
   req.logout({ keepSessionInfo: false }, (error) => {
     if (error) next(error);
     res.redirect('/');
