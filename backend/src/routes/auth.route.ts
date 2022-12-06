@@ -1,10 +1,10 @@
 import bcrypt from 'bcryptjs';
 import express from 'express';
 import { body } from 'express-validator';
-import { ensureLoggedIn } from '../middleware/ensureLoggedIn.js';
 import passport from 'passport';
 import { Strategy } from 'passport-local';
 import prisma from '../db/index.js';
+import { ensureLoggedIn } from '../middleware/ensureLoggedIn.js';
 import validate from '../middleware/validate.js';
 
 passport.use(
@@ -15,7 +15,6 @@ passport.use(
     async (email, password, done) => {
       try {
         const user = await prisma.user.findUnique({ where: { email } });
-
         if (user && bcrypt.compareSync(password, user.hash)) {
           return done(null, user);
         }
@@ -43,7 +42,10 @@ auth.get('/', (req, res) => {
   else res.status(429);
 });
 
-auth.post('/login', passport.authenticate('local'));
+auth.post('/login', passport.authenticate('local', {
+  successRedirect: '/campus',
+  failureRedirect: '/login',
+}));
 
 auth.post('/logout', ensureLoggedIn, (req, res, next) => {
   req.logout({ keepSessionInfo: false }, (error) => {
