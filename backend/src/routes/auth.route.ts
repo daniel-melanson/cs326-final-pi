@@ -1,17 +1,55 @@
 import bcrypt from 'bcryptjs';
 import express from 'express';
 import { body } from 'express-validator';
-import { checkIsAuthenticated, logout, passportLoginCallback } from '../controllers/auth.js';
+import passport from 'passport';
+import { Strategy } from 'passport-local';
 import prisma from '../db/index.js';
+import { ensureLoggedIn } from '../middleware/ensureLoggedIn.js';
 import validate from '../middleware/validate.js';
+
+passport.use(
+  new Strategy(
+    {
+      usernameField: 'email',
+    },
+    async (email, password, done) => {
+      try {
+        const user = await prisma.user.findUnique({ where: { email } });
+
+        if (user && bcrypt.compareSync(password, user.hash)) {
+          return done(null, user);
+        }
+
+        return done(null, false);
+      } catch (error) {
+        return done(error);
+      }
+    },
+  ),
+);
+
+passport.serializeUser((user: Express.User, done) => {
+  done(null, { id: user.id, email: user.email, firstName: user.firstName, lastName: user.lastName });
+});
+
+passport.deserializeUser((user: Express.User, done) => {
+  done(null, user);
+});
 
 const auth = express.Router();
 
-auth.get('/', checkIsAuthenticated);
+auth.get('/', ensureLoggedIn, (req, res) => {
+  res.status(200).json(req.user);
+});
 
-auth.post('/', passportLoginCallback);
+auth.post('/login', passport.authenticate('local'));
 
-auth.post('/logout', logout);
+auth.post('/logout', (req, res, next) => {
+  req.logout({ keepSessionInfo: false }, (error) => {
+    if (error) next(error);
+    res.redirect('/');
+  });
+});
 
 auth.post(
   '/signup',
@@ -33,14 +71,14 @@ auth.post(
         'That password is not strong enough, try using a combination of uppercase and lowercase characters with symbols and numbers',
       ),
   ]),
-  async (req, res) => {
+  async (req, res, next) => {
     const { firstName, lastName, email, password } = req.body;
 
     try {
       const salt = await bcrypt.genSalt();
       const hash = await bcrypt.hash(password, salt);
 
-      const user = await prisma.user.create({
+      await prisma.user.create({
         data: {
           firstName,
           lastName,
@@ -51,7 +89,7 @@ auth.post(
 
       res.redirect('/login');
     } catch (e) {
-      res.status(500).end();
+      next(e);
     }
   },
 );
