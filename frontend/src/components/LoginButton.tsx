@@ -31,7 +31,7 @@ export default function LoginButton() {
                           onClick = {(async () => { const loggedout = await fetch('/api/auth/logout', {
                             method: "POST"
                            })
-                          })()}
+                          })}
                           > 
                         Log Out
                         </a>

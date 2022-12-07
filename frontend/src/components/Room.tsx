@@ -59,7 +59,14 @@ export default function Room(props: RoomProps) {
                         <button
                           type="button"
                           class="btn btn-sm btn-primary"
-                          onClick={() => (
+                          onClick= {(async () => {
+                            
+                            const res = await fetch("/api/auth");
+                            console.log(res.status);
+                            if(!res.ok){
+                              location.pathname = '/login'
+                            } else {
+                            return (
                             <ReservationModal
                               startDate={avail.startDate}
                               endDate={avail.endDate}
@@ -68,7 +75,9 @@ export default function Room(props: RoomProps) {
                               roomNumber={props.number}
                               roomId={props.roomId}
                             />
-                          )}
+                          )
+                          } 
+                        })}
                         >
                           Book
                         </button>
