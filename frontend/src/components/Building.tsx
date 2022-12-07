@@ -68,32 +68,37 @@ export default function Building(props: BuildingProps) {
                       <i className="bi-text-paragraph"> {avail.room.features || "No known features."}</i>
                       <div class="list-group list-group-flush">
                         {avail.availabilities.map(listing => {
-                          const start = formatDateAsTime(new Date(listing.startDate));
-                          const end = formatDateAsTime(new Date(listing.endDate));
+                          const startDate = new Date(listing.startDate);
+                          const endDate = new Date(listing.endDate);
+                          const start = formatDateAsTime(new Date(startDate));
+                          const end = formatDateAsTime(new Date(endDate));
 
                           return (
-                            <li class="list-group-item d-flex justify-content-around">
-                              {start} - {end}
+                            <li class="list-group-item d-flex justify-content-around text-center">
+                              <div>
+                                {start} - {end}
+                              </div>
                               <button
                                 type="button"
-                                class="btn btn-sm btn-primary"
-                                onClick={(async () => {   
+                                class={"btn btn-sm btn-primary"}
+                                disabled={endDate.getTime() < new Date().getTime()}
+                                onClick={async () => {
                                   const res = await fetch("/api/auth");
-                                  console.log(res.status);
-                                  console.log("I was here")
-                                  if(!res.ok){
-                                    location.pathname = '/login'
+                                  if (!res.ok) {
+                                    location.pathname = "/login";
                                   } else {
                                     return (
-                                    <ReservationModal
-                                      startDate={new Date(listing.startDate)}
-                                      endDate={new Date(listing.endDate)}
-                                      date={new Date(listing.startDate).toLocaleDateString()}
-                                      buildingName={building.name}
-                                      roomNumber={avail.room.number}
-                                      roomId={avail.room.id}
-                                    /> )
-                                }})}
+                                      <ReservationModal
+                                        startDate={startDate}
+                                        endDate={endDate}
+                                        date={new Date(listing.startDate).toLocaleDateString()}
+                                        buildingName={building.name}
+                                        roomNumber={avail.room.number}
+                                        roomId={avail.room.id}
+                                      />
+                                    );
+                                  }
+                                }}
                               >
                                 Book
                               </button>
