@@ -34,7 +34,7 @@
   - Anthony is working on using the reservation-api branch
 - [ ] Test crud endpoints
   - D
-- [ ] Scrape all events up until the 31st of December
+- [X] Scrape all events up until the 31st of December
   - A
   - So database is populated for grading
   - Drop old ones
