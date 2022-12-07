@@ -2,6 +2,7 @@ import Enact from "../Enact";
 
 export default function Login() {
   (async () => {
+    const timer = await new Promise(f => setTimeout(f, 500));
     const res = await fetch("/api/auth");
 
     if (res.ok) {
