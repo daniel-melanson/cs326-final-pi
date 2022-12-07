@@ -34,13 +34,13 @@ export default function ReservationModal(props: ReservationModalProps) {
                 <label htmlFor="recipient-name" className="col-form-label">
                   Event Title:
                 </label>
-                <input type="text" className="form-control title" />
+                <input className="form-control title" id = "res-title" />
               </div>
               <div className="form-group">
                 <label htmlFor="message-text" className="col-form-label">
                   Description:
                 </label>
-                <textarea className="form-control description"></textarea>
+                <textarea className="form-control description" id= "res-description"></textarea>
               </div>
             </form>
           </div>
@@ -48,17 +48,33 @@ export default function ReservationModal(props: ReservationModalProps) {
             <button
               type="button"
               className="btn btn-primary"
-              onClick={() => {
-                const url = new URL("/api/events", document.baseURI);
+              onClick={async () => {
+              
+                try{
+                  const res = await fetch("/api/auth");
+                  const {email, firstName, id, lastName} = await res.json();
 
-                url.searchParams.append("room_id", String(props.roomId));
-                url.searchParams.append("title", modalElement.querySelector(".description")?.textContent ?? "");
-                url.searchParams.append("description", modalElement.querySelector(".title")?.textContent ?? "");
-                url.searchParams.append("start_time", props.startDate.toISOString());
-                url.searchParams.append("end_time", props.endDate.toISOString());
-
-                fetch(url.toString(), { method: "POST" });
+                
+            
+                const created_event = await fetch("/api/reservations", {
+                  method: "POST",
+                  headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({ roomId: props.roomId,
+                                         title : (document.getElementById('res-title') as HTMLInputElement)?.value ?? "",
+                                         description : (document.getElementById('res-description') as HTMLInputElement).value ?? "",
+                                         startTime : props.startDate.toISOString(),
+                                         endTime: props.endDate.toISOString(),
+                                         ownerId : id}),
+                });
+                console.log(created_event.status);
+                } catch(e){
+                  console.log(e);
+                }
                 modal.hide();
+
               }}
             >
               Confirm
