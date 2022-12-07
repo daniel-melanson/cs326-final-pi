@@ -21,11 +21,11 @@
 - [x] Fix authentication
   - Anthony said it is broken
 - [x] Fix UI for availability
-- [ ] Add logged in user to navbar
+- [X] Add logged in user to navbar
   - A
-- [ ] Add logout button to navbar
+- [X] Add logout button to navbar
   - A
-- [ ] Redirect book link to login if not logged in
+- [X] Redirect book link to login if not logged in
   - A
 - [x] Remove search bar from navbar
 - [x] Availability endpoint for getting free times
