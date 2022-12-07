@@ -29,13 +29,14 @@ export default function LoginButton() {
                           href = '/login'
                           class = "btn btn-primary"
                           onClick = {(async () => { const loggedout = await fetch('/api/auth/logout')})()}>
-          Log Out
-        </a>
+                        Log Out
+                        </a>
         root.appendChild(logout)
       } else {
-        const login = <button href = '/login' class = "btn btn-primary">
-        Log In
-      </button>
+        const login = <a role = "button" href = '/login' class = "btn btn-primary">
+                      Log In
+                      </a>
+        root.appendChild(login)
       }
      }
      )();
