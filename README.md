@@ -2,11 +2,47 @@
 
 ## Overview
 
-- TODO
+Have you ever been on campus, the library was closed, and wanted to find an avaiable space for you and a group to do work or activities? 
+This is was we, the developers of Campus-meet, asked ourselves and we set out to find a solution.
+
+At the core of campus-meet, we present all rooms that are potentially empty from occupation and available for use. All in a easy to use interface. 
+Furthermore, we allow users on our platforms to save and reserve available rooms for their own informal events, ensuring that no other user on the platform show up to the room they've chosen.
 
 ## How
 
-- TODO
+### Data collection and storage
+
+School data is scraped from the 25 live umass schedueling service at: https://25live.collegenet.com/pro/umass#!/home/calendar. 
+This data is scraped asynchornously to our database, which provides a much faster response time than this legacy software. 
+
+We then use a PRISMA database to store the information. PRISMA gives us the querying ease of MongoDB while giving the relational safety of SQL.
+We store our data in four main tables: one for users, rooms, buildings, and events.  
+
+
+### API
+
+There is a lot of communication between the client and server. All of which is handled by our API.
+
+#### Authentication
+
+Our authentication API has seperate end points for checking authentication, loging in, loging out, and signing up.
+
+#### Availabilities
+
+Our availabilities API reviews given filters and return a list of available rooms
+at a variety of times to browse through.
+
+#### Buildings and Rooms
+
+Our buildings API at application load returns a list of all buildings. The rooms API then can return a list of rooms in a building, or can return the events that take place in a given room.
+
+#### Reservations
+
+The reservation API has create, read, update, and delete functionality for users as they book and manage their event reservations.
+
+#### Events
+
+The event API returns details of a specific event id.
 
 ## Who
 
