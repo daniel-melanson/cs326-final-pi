@@ -77,16 +77,23 @@ export default function Building(props: BuildingProps) {
                               <button
                                 type="button"
                                 class="btn btn-sm btn-primary"
-                                onClick={() => (
-                                  <ReservationModal
-                                    startDate={new Date(listing.startDate)}
-                                    endDate={new Date(listing.endDate)}
-                                    date={new Date(listing.startDate).toLocaleDateString()}
-                                    buildingName={building.name}
-                                    roomNumber={avail.room.number}
-                                    roomId={avail.room.id}
-                                  />
-                                )}
+                                onClick={(async () => {   
+                                  const res = await fetch("/api/auth");
+                                  console.log(res.status);
+                                  console.log("I was here")
+                                  if(!res.ok){
+                                    location.pathname = '/login'
+                                  } else {
+                                    return (
+                                    <ReservationModal
+                                      startDate={new Date(listing.startDate)}
+                                      endDate={new Date(listing.endDate)}
+                                      date={new Date(listing.startDate).toLocaleDateString()}
+                                      buildingName={building.name}
+                                      roomNumber={avail.room.number}
+                                      roomId={avail.room.id}
+                                    /> )
+                                }})}
                               >
                                 Book
                               </button>

@@ -24,11 +24,15 @@ export default function LoginButton() {
            Hello {firstName} {lastName}!
         </a>
         root.appendChild(button);
-
+       
         const logout = <a role = "button"
                           href = '/login'
                           class = "btn btn-primary"
-                          onClick = {(async () => { const loggedout = await fetch('/api/auth/logout')})()}>
+                          onClick = {(async () => { const loggedout = await fetch('/api/auth/logout', {
+                            method: "POST"
+                           })
+                          })()}
+                          > 
                         Log Out
                         </a>
         root.appendChild(logout)
