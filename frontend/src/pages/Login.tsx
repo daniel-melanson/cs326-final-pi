@@ -85,6 +85,12 @@ export default function Login() {
                           <u className="text-primary">Sign up here</u>
                         </a>
                       </p>
+                      <p class="text-center text-muted mt-3 mb-0">
+                       Or Continue to {" "}
+                        <a href="/campus" class="fw-bold text-body">
+                          <u class="text-primary">Browse as Guest</u>
+                        </a>
+                      </p>
                     </form>
                   </div>
                 </div>
