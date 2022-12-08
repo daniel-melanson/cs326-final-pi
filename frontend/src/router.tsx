@@ -1,5 +1,4 @@
 import Navigo from "navigo";
-import Room from "./components/Room";
 import Enact from "./Enact";
 import Campus from "./pages/Campus";
 import Home from "./pages/Home";
@@ -21,10 +20,6 @@ const ROUTES: Readonly<Route[]> = [
   {
     path: "/campus",
     page: Campus,
-  },
-  {
-    path: "/rooms/:id",
-    page: Room,
   },
   {
     path: "/login",
