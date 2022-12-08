@@ -57,3 +57,16 @@ interface APIAvailability {
   building: APIBuildingField;
   roomAvailabilities: APIRoomAvailability[];
 }
+
+interface APIProfileEvents {
+  id: number;
+  liveId: number;
+  url: string;
+  title: string;
+  startTime: string;
+  endTime: string;
+  organization: string;
+  creationDate: string;
+  room: APIRoom;
+  descritpion: string;
+}
