@@ -9,7 +9,7 @@ export const reservations = Router();
 
 // CREATE
 reservations.post(
-  '/',
+  '/', ensureLoggedIn,
   validate([body('roomId'), body('title'), body('startTime'), body('endTime')]),
   async (req, res) => {
     // TODO: Create a user event
@@ -57,7 +57,7 @@ reservations.get('/', ensureLoggedIn, async (req, res) => {
 });
 
 // UPDATE
-reservations.put('/:id', async (req, res) => {
+reservations.put('/:id', ensureLoggedIn, async (req, res) => {
   // TODO: Update a single user with provided updated values
   validate([body('EventId'), body('title'), body('description')]);
   const { eventId, title, description } = req.body;
@@ -88,7 +88,9 @@ reservations.delete('/:id', ensureLoggedIn, async (req, res) => {
       const event = await prisma.event.findFirstOrThrow({
         where: { ownerId: user.id, id: parseInt(eventId) },
       });
-
+      if(user.id !== event.ownerId){
+        throw(401)
+      }
       const deleted = await prisma.event.delete({
         where: { id: event.id },
       });
