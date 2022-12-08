@@ -147,7 +147,7 @@ if someone tries to reserve a room and is not logged in they will be redirected 
     - Add link to 25live schedule
     - Disable reservation of past availabilities
     - New Availability Listing UI
-  - Formatting, linting, dead-code, and quality checks
+  - Formatting, linting, dead-code, and quality checks/fixes
   - TODO and setup docks
 - [Anthony Zalev](https://github.com/AnthonyZalev)
   - Finalize Web Scraping 25live data (Through DEC 31st, 2022)
