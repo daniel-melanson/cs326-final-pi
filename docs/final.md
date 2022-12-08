@@ -83,13 +83,13 @@ The session table has a unique id, device id, data, and a time to live expiratio
 
 ## URL Routes/Mappings
 
-| Route           | Page         | Description       |
-| :-------------- | :----------- | :---------------- |
-| `/`             | Home         | Home page         |
-| `/campus`       | Campus       | Campus feed page  |
-| `/login`        | Login        | Login Page        |
-| `/signup`       | SignUp       | Sign Up Page      |
-| `/reservations` | Reservations | User Reservations |
+| Route      | Page    | Description                   |
+| :--------- | :------ | :---------------------------- |
+| `/`        | Home    | Home page                     |
+| `/campus`  | Campus  | Campus feed page              |
+| `/login`   | Login   | Login Page                    |
+| `/signup`  | SignUp  | Sign Up Page                  |
+| `/profile` | Profile | User profile and reservations |
 
 ## Authentication/Authorization
 
@@ -140,8 +140,14 @@ if someone tries to reserve a room and is not logged in they will be redirected 
 ### Milestone 4/Final
 
 - [Daniel Melanson](https://github.com/daniel-melanson)
-  - Availabilities routing and integration
-  - Misc Front End Scripting and Integration work
+  - Final availabilities finding and integration
+  - Adding validations to backend endpoints
+  - Building/room scraping from events
+  - Misc frontend enhancements
+    - Add link to 25live schedule
+    - Disable reservation of past availabilities
+    - New Availability Listing UI
+  - Formatting, linting, dead-code, and quality checks
 - [Anthony Zalev](https://github.com/AnthonyZalev)
   - Finalize Web Scraping 25live data (Through DEC 31st, 2022)
   - reservation routing for create, read, update, and delete
