@@ -26,15 +26,14 @@ export default function Login() {
         body: JSON.stringify({ email: emailInput.value, password: passwordInput.value }),
       });
 
-
       if (res.status >= 400 && res.status < 500) {
-        if(res.status === 401){
-          warningContent.innerText = ` Error: Incorrect Password or Username`
+        if (res.status === 401) {
+          warningContent.innerText = ` Error: Incorrect Password or Username`;
           warningContainer.classList.remove("visually-hidden");
         } else {
-        const json = await res.json();
-        warningContent.innerText = ` Error: ${json.errors[0]}`;
-        warningContainer.classList.remove("visually-hidden");
+          const json = await res.json();
+          warningContent.innerText = ` Error: ${json.errors[0]}`;
+          warningContainer.classList.remove("visually-hidden");
         }
       } else if (res.redirected) {
         location.href = res.url;
@@ -48,42 +47,42 @@ export default function Login() {
 
   return (
     <div>
-      <section id="login" class="vh-100 umass-background">
-        <div class="d-flex align-items-center h-100 blurred-backdrop">
-          <div class="container h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-              <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                <div class="card">
-                  <div class="card-body p-5">
-                    <h2 class="text-uppercase text-center mb-5">Login</h2>
+      <section id="login" className="vh-100 umass-background">
+        <div className="d-flex align-items-center h-100 blurred-backdrop">
+          <div className="container h-100">
+            <div className="row d-flex justify-content-center align-items-center h-100">
+              <div className="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div className="card">
+                  <div className="card-body p-5">
+                    <h2 className="text-uppercase text-center mb-5">Login</h2>
                     <div
                       id="warningContainer"
-                      class="alert alert-danger d-flex align-items-center visually-hidden"
+                      className="alert alert-danger d-flex align-items-center visually-hidden"
                       role="alert"
                     >
-                      <i id="warningContent" class="bi-exclamation-triangle-fill">
+                      <i id="warningContent" className="bi-exclamation-triangle-fill">
                         {" "}
                         Invalid
                       </i>
                     </div>
                     <form>
-                      <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" />
-                        <label for="floatingInput">Email address</label>
+                      <div className="form-floating mb-3">
+                        <input type="email" className="form-control" id="emailInput" placeholder="name@example.com" />
+                        <label htmlFor="floatingInput">Email address</label>
                       </div>
-                      <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="passwordInput" placeholder="Password" />
-                        <label for="floatingPassword">Password</label>
+                      <div className="form-floating mb-3">
+                        <input type="password" className="form-control" id="passwordInput" placeholder="Password" />
+                        <label htmlFor="floatingPassword">Password</label>
                       </div>
-                      <div class="d-flex justify-content-center">
-                        <button type="button" class="btn btn-primary btn-block btn-lg" onClick={login}>
+                      <div className="d-flex justify-content-center">
+                        <button type="button" className="btn btn-primary btn-block btn-lg" onClick={login}>
                           Login
                         </button>
                       </div>
-                      <p class="text-center text-muted mt-3 mb-0">
+                      <p className="text-center text-muted mt-3 mb-0">
                         Don't have an account?{" "}
-                        <a href="signup" class="fw-bold text-body">
-                          <u class="text-primary">Sign up here</u>
+                        <a href="signup" className="fw-bold text-body">
+                          <u className="text-primary">Sign up here</u>
                         </a>
                       </p>
                     </form>
