@@ -148,12 +148,13 @@ if someone tries to reserve a room and is not logged in they will be redirected 
     - Disable reservation of past availabilities
     - New Availability Listing UI
   - Formatting, linting, dead-code, and quality checks
+  - TODO and setup docks
 - [Anthony Zalev](https://github.com/AnthonyZalev)
   - Finalize Web Scraping 25live data (Through DEC 31st, 2022)
   - reservation routing for create, read, update, and delete
   - CREATE route integration to reservation modal
   - Misc Front End Scripting and Integration work
-  - documentation
+  - Majority of final documentation
 - [Veera Sivarajan](https://github.com/veera-sivarajan)
   - Nothing
 
