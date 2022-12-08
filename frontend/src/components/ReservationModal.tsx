@@ -12,7 +12,6 @@ interface ReservationModalProps {
 }
 
 export default function ReservationModal(props: ReservationModalProps) {
-  let modal: Modal;
   const modalElement = (
     <div className="modal fade" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog" role="document">
@@ -34,13 +33,13 @@ export default function ReservationModal(props: ReservationModalProps) {
                 <label htmlFor="recipient-name" className="col-form-label">
                   Event Title:
                 </label>
-                <input className="form-control title" id = "res-title" />
+                <input className="form-control title" id="res-title" />
               </div>
               <div className="form-group">
                 <label htmlFor="message-text" className="col-form-label">
                   Description:
                 </label>
-                <textarea className="form-control description" id= "res-description"></textarea>
+                <textarea className="form-control description" id="res-description"></textarea>
               </div>
             </form>
           </div>
@@ -49,32 +48,30 @@ export default function ReservationModal(props: ReservationModalProps) {
               type="button"
               className="btn btn-primary"
               onClick={async () => {
-              
-                try{
+                try {
                   const res = await fetch("/api/auth");
-                  const {email, firstName, id, lastName} = await res.json();
+                  const { email, firstName, id, lastName } = await res.json();
 
-                
-            
-                const created_event = await fetch("/api/reservations", {
-                  method: "POST",
-                  headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({ roomId: props.roomId,
-                                         title : (document.getElementById('res-title') as HTMLInputElement)?.value ?? "",
-                                         description : (document.getElementById('res-description') as HTMLInputElement).value ?? "",
-                                         startTime : props.startDate.toISOString(),
-                                         endTime: props.endDate.toISOString(),
-                                         ownerId : id}),
-                });
-                console.log(created_event.status);
-                } catch(e){
+                  const created_event = await fetch("/api/reservations", {
+                    method: "POST",
+                    headers: {
+                      Accept: "application/json",
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      roomId: props.roomId,
+                      title: (document.getElementById("res-title") as HTMLInputElement)?.value ?? "",
+                      description: (document.getElementById("res-description") as HTMLInputElement).value ?? "",
+                      startTime: props.startDate.toISOString(),
+                      endTime: props.endDate.toISOString(),
+                      ownerId: id,
+                    }),
+                  });
+                  console.log(created_event.status);
+                } catch (e) {
                   console.log(e);
                 }
                 modal.hide();
-
               }}
             >
               Confirm
@@ -94,7 +91,7 @@ export default function ReservationModal(props: ReservationModalProps) {
     </div>
   );
 
-  modal = new Modal(modalElement);
+  const modal = new Modal(modalElement);
   modal.show();
 
   return modalElement;

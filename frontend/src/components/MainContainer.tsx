@@ -7,7 +7,7 @@ export default function MainContainer() {
 
   async function updateRoomList(x: AvailabilityConditions) {
     if (!x.date) {
-      root.replaceChild(<div class="text-center">No results found.</div>, root.lastChild!);
+      root.replaceChild(<div className="text-center">No results found.</div>, root.lastChild!);
       return;
     }
 
@@ -20,18 +20,18 @@ export default function MainContainer() {
     const json: APIAvailability[] = await res.json();
 
     root.replaceChild(
-      <div class="container">
+      <div className="container">
         {json.length > 0 ? (
           json.map(avail => <Building details={avail} />)
         ) : (
-          <div class="text-center">No results found.</div>
+          <div className="text-center">No results found.</div>
         )}
       </div>,
       root.lastChild!
     );
   }
 
-  root.append(<DropdownButtonRow onChange={updateRoomList} />, <div class="text-center">No results found.</div>);
+  root.append(<DropdownButtonRow onChange={updateRoomList} />, <div className="text-center">No results found.</div>);
 
   return root;
 }

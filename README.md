@@ -2,22 +2,17 @@
 
 ## Overview
 
-Have you ever been on campus, the library was closed, and wanted to find an avaiable space for you and a group to do work or activities? 
-This is was we, the developers of Campus-meet, asked ourselves and we set out to find a solution.
+Have you ever been on campus, the library was closed, and wanted to find an available space for you and a group to do work or activities? This is was we, the developers of Campus-meet, asked ourselves and we set out to find a solution.
 
-At the core of campus-meet, we present all rooms that are potentially empty from occupation and available for use. All in a easy to use interface. 
-Furthermore, we allow users on our platforms to save and reserve available rooms for their own informal events, ensuring that no other user on the platform show up to the room they've chosen.
+At the core of campus-meet, we present all rooms that are potentially empty from occupation and available for use. All in a easy to use interface. Furthermore, we allow users on our platforms to save and reserve available rooms for their own informal events, ensuring that no other user on the platform show up to the room they've chosen.
 
 ## How
 
 ### Data collection and storage
 
-School data is scraped from the 25 live umass schedueling service at: https://25live.collegenet.com/pro/umass#!/home/calendar. 
-This data is scraped asynchornously to our database, which provides a much faster response time than this legacy software. 
+School event data is scraped from the 25Live UMass calendar at: <https://25live.collegenet.com/pro/umass#!/home/calendar>. This data is scraped asynchronously to our database, which provides a much faster response time than this legacy software.
 
-We then use a PRISMA database to store the information. PRISMA gives us the querying ease of MongoDB while giving the relational safety of SQL.
-We store our data in four main tables: one for users, rooms, buildings, and events.  
-
+We then use a Prisma-managed PostgreSQL database to store the information. Prisma gives us the querying ease of MongoDB while giving the relational safety of SQL. We store our data in four main tables: one for users, rooms, buildings, and events.
 
 ### API
 
@@ -25,7 +20,7 @@ There is a lot of communication between the client and server. All of which is h
 
 #### Authentication
 
-Our authentication API has seperate end points for checking authentication, loging in, loging out, and signing up.
+Our authentication API has separate end points for checking authentication, logging in, logging out, and signing up.
 
 #### Availabilities
 
@@ -52,16 +47,16 @@ The event API returns details of a specific event id.
 
 ## TODO
 
-- [ ] Root README.md
+- [x] Root README.md
   - Overview and how sections
 - [x] Fix authentication
   - Anthony said it is broken
 - [x] Fix UI for availability
-- [X] Add logged in user to navbar
+- [x] Add logged in user to navbar
   - A
-- [X] Add logout button to navbar
+- [x] Add logout button to navbar
   - A
-- [X] Redirect book link to login if not logged in
+- [x] Redirect book link to login if not logged in
   - A
 - [x] Remove search bar from navbar
 - [x] Availability endpoint for getting free times
@@ -70,7 +65,7 @@ The event API returns details of a specific event id.
   - Anthony is working on using the reservation-api branch
 - [ ] Test crud endpoints
   - D
-- [X] Scrape all events up until the 31st of December
+- [x] Scrape all events up until the 31st of December
   - A
   - So database is populated for grading
   - Drop old ones

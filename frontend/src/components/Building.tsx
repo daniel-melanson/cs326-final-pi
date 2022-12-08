@@ -15,38 +15,38 @@ export default function Building(props: BuildingProps) {
   url.searchParams.set("q", building.address);
   const accordionId = "building-accordion-" + building.id;
   return (
-    <div class="card mb-3">
-      <h5 class="card-header">{building.name}</h5>
-      <div class="card-body row">
+    <div className="card mb-3">
+      <h5 className="card-header">{building.name}</h5>
+      <div className="card-body row">
         <div className="col">
           <i className="bi-geo-alt"> {building.address}</i>
           <br />
           <br />
-          <div class="mapouter">
-            <div class="gmap_canvas">
+          <div className="mapouter">
+            <div className="gmap_canvas">
               <iframe
                 width="255"
                 height="255"
                 src={url.toString()}
-                frameborder="0"
+                frameBorder="0"
                 scrolling="no"
-                marginheight="0"
-                marginwidth="0"
+                marginHeight="0"
+                marginWidth="0"
               ></iframe>
             </div>
           </div>
         </div>
         <div className="col">
-          <div class="accordion" id={accordionId}>
+          <div className="accordion" id={accordionId}>
             {details.roomAvailabilities.map(avail => {
               const headerId = "room-header-" + avail.room.id;
               const bodyId = "room-body" + avail.room.id;
 
               return (
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id={headerId}>
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id={headerId}>
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target={"#" + bodyId}
@@ -58,15 +58,18 @@ export default function Building(props: BuildingProps) {
                   </h2>
                   <div
                     id={bodyId}
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby={headerId}
                     data-bs-parent={accordionId}
                   >
-                    <div class="accordion-body">
-                      <i className="bi-box2"> {avail.room.capacity < 5 ? "Unknown" : avail.room.capacity}</i>
+                    <div className="accordion-body d-flex flex-column">
+                      <i className="bi-box2">
+                        {" "}
+                        {(avail.room.capacity < 5 ? "Unknown" : avail.room.capacity) + " Seats"}
+                      </i>
                       <br />
                       <i className="bi-text-paragraph"> {avail.room.features || "No known features."}</i>
-                      <div class="list-group list-group-flush">
+                      <div className="list-group list-group-flush">
                         {avail.availabilities.map(listing => {
                           const startDate = new Date(listing.startDate);
                           const endDate = new Date(listing.endDate);
@@ -74,13 +77,13 @@ export default function Building(props: BuildingProps) {
                           const end = formatDateAsTime(new Date(endDate));
 
                           return (
-                            <li class="list-group-item d-flex justify-content-around text-center">
+                            <li className="list-group-item d-flex justify-content-around text-center">
                               <div>
                                 {start} - {end}
                               </div>
                               <button
                                 type="button"
-                                class={"btn btn-sm btn-primary"}
+                                className={"btn btn-sm btn-primary"}
                                 disabled={endDate.getTime() < new Date().getTime()}
                                 onClick={async () => {
                                   const res = await fetch("/api/auth");
@@ -106,6 +109,14 @@ export default function Building(props: BuildingProps) {
                           );
                         })}
                       </div>
+                      <a
+                        className="btn btn-sm btn-outline-primary ms-2"
+                        target="_blank"
+                        href={"https://25live.collegenet.com/pro/umass#!/home/location/" + avail.room.liveId + "/list"}
+                        rel="noreferrer"
+                      >
+                        View Calendar
+                      </a>
                     </div>
                   </div>
                 </div>
