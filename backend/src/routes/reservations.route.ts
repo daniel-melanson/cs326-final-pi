@@ -44,7 +44,7 @@ reservations.post(
 
 // READ
 reservations.get('/', ensureLoggedIn, async (req, res) => {
-  const user = req.user!
+  const user = req.user!;
   try {
     const event = await prisma.event.findMany({
       where: { ownerId: user.id },
@@ -59,8 +59,8 @@ reservations.get('/', ensureLoggedIn, async (req, res) => {
 // UPDATE
 reservations.put('/:id', async (req, res) => {
   // TODO: Update a single user with provided updated values
-  validate([body('EventId'), body('title'), body('description')])
-  const {eventId, title, description} = req.body;
+  validate([body('EventId'), body('title'), body('description')]);
+  const { eventId, title, description } = req.body;
   const user = req.user!;
 
   const userid = 0;
@@ -69,41 +69,38 @@ reservations.put('/:id', async (req, res) => {
   });
 
   const update = await prisma.event.update({
-      where: { id: event.id },
-      data: {title : title, description: description},
+    where: { id: event.id },
+    data: { title: title, description: description },
   });
-
 });
 
 // DELETE
 reservations.delete('/:id', ensureLoggedIn, async (req, res) => {
-  const eventId = req.params['id']
+  const eventId = req.params['id'];
   const user = req.user!;
 
-  try{
-  const prisma_user = await prisma.user.findFirstOrThrow({
-    where : { id: user.id}
-  })
+  try {
+    const prisma_user = await prisma.user.findFirstOrThrow({
+      where: { id: user.id },
+    });
 
-  if(eventId){
-  const event  = await prisma.event.findFirstOrThrow({
-    where : {ownerId : user.id, id: parseInt(eventId)}
-  })
+    if (eventId) {
+      const event = await prisma.event.findFirstOrThrow({
+        where: { ownerId: user.id, id: parseInt(eventId) },
+      });
 
-  const deleted = await prisma.event.delete({
-    where : {id : event.id}
-  })
+      const deleted = await prisma.event.delete({
+        where: { id: event.id },
+      });
 
-  console.log(deleted);
-  res.status(200).send(user.id);
-
- } else {
-  throw("EventID Null")
- }
+      console.log(deleted);
+      res.status(200).send(user.id);
+    } else {
+      throw 'EventID Null';
+    }
   } catch (e) {
-    res.status(500).send("Server Error Parsing Command");
+    res.status(500).send('Server Error Parsing Command');
   }
-
 });
 
 /*

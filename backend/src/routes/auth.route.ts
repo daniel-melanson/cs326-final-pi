@@ -42,10 +42,13 @@ auth.get('/', (req, res) => {
   else res.status(401).send();
 });
 
-auth.post('/login', passport.authenticate('local', {
-  successRedirect: '/campus',
-  failureRedirect: '/login',
-}));
+auth.post(
+  '/login',
+  passport.authenticate('local', {
+    successRedirect: '/campus',
+    failureRedirect: '/login',
+  }),
+);
 
 auth.post('/logout', ensureLoggedIn, (req, res, next) => {
   req.logout({ keepSessionInfo: false }, (error) => {

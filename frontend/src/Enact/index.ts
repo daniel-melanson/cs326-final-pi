@@ -1,4 +1,8 @@
-function createElement(tag: JSX.Tag | JSX.Component, attributes: { [key: string]: any } | null, ...children: Node[]) {
+function createElement(
+  tag: JSX.Tag | JSX.Component,
+  attributes: { [key: string]: any } | null,
+  ...children: Node[]
+) {
   // tag is a JSX.Component (user-defined)
   if (typeof tag === "function") {
     return tag(attributes ?? {}, children);
@@ -11,7 +15,10 @@ function createElement(tag: JSX.Tag | JSX.Component, attributes: { [key: string]
       if (key.startsWith("__")) continue;
 
       if (key.startsWith("on") && "A".charCodeAt(0) <= key.charCodeAt(2)) {
-        element.addEventListener(key.substring(2).toLowerCase(), attributes[key]);
+        element.addEventListener(
+          key.substring(2).toLowerCase(),
+          attributes[key]
+        );
       } else if ((element as any)[key] === undefined) {
         // If the key is not an attribute, make it one
         element.setAttribute(key, attributes[key]);
