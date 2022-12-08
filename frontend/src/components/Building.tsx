@@ -62,8 +62,11 @@ export default function Building(props: BuildingProps) {
                     aria-labelledby={headerId}
                     data-bs-parent={accordionId}
                   >
-                    <div className="accordion-body">
-                      <i className="bi-box2"> {avail.room.capacity < 5 ? "Unknown" : avail.room.capacity}</i>
+                    <div className="accordion-body d-flex flex-column">
+                      <i className="bi-box2">
+                        {" "}
+                        {(avail.room.capacity < 5 ? "Unknown" : avail.room.capacity) + " Seats"}
+                      </i>
                       <br />
                       <i className="bi-text-paragraph"> {avail.room.features || "No known features."}</i>
                       <div className="list-group list-group-flush">
@@ -106,6 +109,14 @@ export default function Building(props: BuildingProps) {
                           );
                         })}
                       </div>
+                      <a
+                        className="btn btn-sm btn-outline-primary ms-2"
+                        target="_blank"
+                        href={"https://25live.collegenet.com/pro/umass#!/home/location/" + avail.room.liveId + "/list"}
+                        rel="noreferrer"
+                      >
+                        View Calendar
+                      </a>
                     </div>
                   </div>
                 </div>

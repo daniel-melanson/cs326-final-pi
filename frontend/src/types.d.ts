@@ -14,6 +14,7 @@ interface APIBuilding {
 interface APIRoomField {
   id: number;
   url: string;
+  liveId: number;
   number: string;
   capacity: number;
   features: string;
