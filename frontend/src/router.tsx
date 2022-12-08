@@ -5,6 +5,7 @@ import Campus from "./pages/Campus";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import Profile from "./pages/Profile";
 
 const router = new Navigo("/");
 
@@ -34,6 +35,10 @@ const ROUTES: Readonly<Route[]> = [
     path: "/signup",
     page: SignUp,
   },
+  {
+    path: "/profile",
+    page: Profile,
+  }
 ];
 
 for (const route of ROUTES) {
