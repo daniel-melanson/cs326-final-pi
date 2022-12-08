@@ -17,7 +17,7 @@ export default function LoginButton() {
     if (res.ok) {
       const { email, firstName, id, lastName } = await res.json();
       const button = (
-        <a role="button" className="btn btn-primary">
+        <a href="/profile" role="button" className="btn btn-primary">
           Hello {firstName} {lastName}!
         </a>
       );
