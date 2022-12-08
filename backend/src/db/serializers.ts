@@ -61,14 +61,14 @@ export const serializeRoomNoBuilding = (req: Request, r: Room) => {
     features: r.features,
   };
 };
-
-export const serializeEvent = (req: Request, e: Event & { room: Room }) => {
+export const serializeEvent = (req: Request, e: Event & { room: Room&{building: Building} }) => {
   return {
     id: e.id,
     liveId: e.liveId,
     url: makeURL(req, 'events', e.id),
-    room: serializeRoomField(req, e.room),
+    room: serializeRoom(req, e.room),
     title: e.title,
+    description: e.description,
     startTime: e.startTime,
     endTime: e.endTime,
     organization: e.organization,

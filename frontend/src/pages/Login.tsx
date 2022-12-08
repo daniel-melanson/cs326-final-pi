@@ -26,7 +26,7 @@ export default function Login() {
         body: JSON.stringify({ email: emailInput.value, password: passwordInput.value }),
       });
 
-      if (res.status >= 400 && res.status < 500) {
+      if (res.status !== 200) {
         if (res.status === 401) {
           warningContent.innerText = ` Error: Incorrect Password or Username`;
           warningContainer.classList.remove("visually-hidden");
