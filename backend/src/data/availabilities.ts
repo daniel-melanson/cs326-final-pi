@@ -17,7 +17,7 @@ async function testPrisma() {
 async function testPrisma2() {
   const prisma = new PrismaClient();
 
-  const user = await prisma.event.findMany();
+  const user = await prisma.event.deleteMany({where: {ownerId : 5}});
 
   console.log(user);
 }

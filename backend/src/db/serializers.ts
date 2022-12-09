@@ -73,8 +73,7 @@ export const serializeEvent = (req: Request, e: Event & { room: Room & { buildin
     startTime: e.startTime,
     endTime: e.endTime,
     organization: e.organization,
-    creationDate: e.creationDate,
-    description: e.description
+    creationDate: e.creationDate
   };
 };
 
