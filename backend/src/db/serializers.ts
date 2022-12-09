@@ -69,6 +69,7 @@ export const serializeEvent = (req: Request, e: Event & { room: Room & { buildin
     url: makeURL(req, 'events', e.id),
     room: serializeRoom(req, e.room),
     title: e.title,
+    description: e.description,
     startTime: e.startTime,
     endTime: e.endTime,
     organization: e.organization,
