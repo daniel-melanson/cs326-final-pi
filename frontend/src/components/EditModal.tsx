@@ -2,17 +2,13 @@ import { Modal } from "bootstrap";
 import Enact from "../Enact";
 import { formatDateAsTime } from "./util";
 
-interface ReservationModalProps {
-  buildingName: string;
-  roomId: string | number;
-  roomNumber: string;
-  startDate: Date;
-  endDate: Date;
-  date: string;
-  onBook: () => void;
+interface ReservationModalProps extends APIProfileEvents {
+  onEdit: () => void;
 }
 
-export default function ReservationModal(props: ReservationModalProps) {
+export default function EditModal(props: ReservationModalProps) {
+  console.log(props);
+
   const modalElement = (
     <div className="modal fade" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog" role="document">
@@ -20,11 +16,11 @@ export default function ReservationModal(props: ReservationModalProps) {
           <div className="modal-header">
             <div className="container-fluid justify-content-center">
               <h3 className="modal-title " id="exampleModalLabel">
-                Reserve Room
+                Edit Reservation
               </h3>
               <label>
-                {props.buildingName} {props.roomNumber}, {formatDateAsTime(props.startDate)} -{" "}
-                {formatDateAsTime(props.endDate)} on {props.date}
+                {props.room.building.name} {props.room.number}, {formatDateAsTime(new Date(props.startTime))} -{" "}
+                {formatDateAsTime(new Date(props.endTime))} on {new Date(props.startTime).toLocaleDateString()}
               </label>
             </div>
           </div>
@@ -34,13 +30,15 @@ export default function ReservationModal(props: ReservationModalProps) {
                 <label htmlFor="recipient-name" className="col-form-label">
                   Event Title:
                 </label>
-                <input className="form-control title" id="res-title" />
+                <input className="form-control title" id="res-title" value={props.title} />
               </div>
               <div className="form-group">
                 <label htmlFor="message-text" className="col-form-label">
                   Description:
                 </label>
-                <textarea className="form-control description" id="res-description"></textarea>
+                <textarea className="form-control description" id="res-description">
+                  {props.description}
+                </textarea>
               </div>
             </form>
           </div>
@@ -50,26 +48,19 @@ export default function ReservationModal(props: ReservationModalProps) {
               className="btn btn-primary"
               onClick={async () => {
                 try {
-                  const res = await fetch("/api/auth");
-                  const { email, firstName, id, lastName } = await res.json();
-
-                  const created_event = await fetch("/api/reservations", {
-                    method: "POST",
+                  const created_event = await fetch("/api/reservations/" + props.id, {
+                    method: "PUT",
                     headers: {
                       Accept: "application/json",
                       "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
-                      roomId: props.roomId,
                       title: (document.getElementById("res-title") as HTMLInputElement)?.value ?? "",
                       description: (document.getElementById("res-description") as HTMLInputElement).value ?? "",
-                      startTime: props.startDate.toISOString(),
-                      endTime: props.endDate.toISOString(),
-                      ownerId: id,
                     }),
                   });
 
-                  props.onBook();
+                  props.onEdit();
                 } catch (e) {
                   console.log(e);
                 }
@@ -83,6 +74,8 @@ export default function ReservationModal(props: ReservationModalProps) {
               className="btn btn-secondary"
               onClick={() => {
                 modal.hide();
+
+                setTimeout(() => modal.dispose(), 5000);
               }}
             >
               Close

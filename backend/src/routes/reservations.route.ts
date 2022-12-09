@@ -2,6 +2,7 @@ import type { Prisma } from '@prisma/client';
 import { Router } from 'express';
 import { body } from 'express-validator';
 import prisma from '../db/index.js';
+import { serializeEvent } from '../db/serializers.js';
 import { ensureLoggedIn } from '../middleware/ensureLoggedIn.js';
 import validate from '../middleware/validate.js';
 
@@ -36,8 +37,6 @@ reservations.post(
       res.status(200).send();
     } catch (e) {
       res.status(401).send('Error submitting input to database');
-      console.log(e);
-      console.log(event);
     }
   },
 );
@@ -46,10 +45,18 @@ reservations.post(
 reservations.get('/', ensureLoggedIn, async (req, res) => {
   const user = req.user!;
   try {
-    const event = await prisma.event.findMany({
+    const events = await prisma.event.findMany({
       where: { ownerId: user.id },
+      include: {
+        room: {
+          include: {
+            building: true
+          }
+        }
+      }
     });
-    return res.status(200).json(event).end();
+
+    return res.status(200).json(events.map(e => serializeEvent(req, e)));
   } catch (e) {
     return res.status(500).json([]).end();
   }
@@ -63,15 +70,20 @@ reservations.put('/:id', ensureLoggedIn, async (req, res) => {
   const { eventId, title, description } = req.body;
   const user = req.user!;
 
-  const userid = 0;
-  const event = await prisma.event.findFirstOrThrow({
-    where: { ownerId: user.id, id: eventId },
-  });
+  try {
+    const event = await prisma.event.findFirstOrThrow({
+      where: { ownerId: user.id, id: eventId },
+    });
 
-  const update = await prisma.event.update({
-    where: { id: event.id },
-    data: { title: title, description: description },
-  });
+    const update = await prisma.event.update({
+      where: { id: event.id },
+      data: { title: title, description: description },
+    });
+
+    res.status(200).json(update).end();
+  } catch (e) {
+    res.status(500).end();
+  }
 });
 
 // DELETE
@@ -80,10 +92,6 @@ reservations.delete('/:id', ensureLoggedIn, async (req, res) => {
   const user = req.user!;
 
   try {
-    const prisma_user = await prisma.user.findFirstOrThrow({
-      where: { id: user.id },
-    });
-
     if (eventId) {
       const event = await prisma.event.findFirstOrThrow({
         where: { ownerId: user.id, id: parseInt(eventId) },
@@ -91,14 +99,14 @@ reservations.delete('/:id', ensureLoggedIn, async (req, res) => {
       if(user.id !== event.ownerId){
         throw(401)
       }
+
       const deleted = await prisma.event.delete({
         where: { id: event.id },
       });
 
-      console.log(deleted);
-      res.status(200).send(user.id);
+      res.status(200).json(deleted);
     } else {
-      throw 'EventID Null';
+      throw new Error('EventID Null');
     }
   } catch (e) {
     res.status(500).send('Server Error Parsing Command');

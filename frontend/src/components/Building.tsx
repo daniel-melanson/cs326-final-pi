@@ -75,7 +75,7 @@ export default function Building(props: BuildingProps) {
                           const endDate = new Date(listing.endDate);
                           const start = formatDateAsTime(new Date(startDate));
                           const end = formatDateAsTime(new Date(endDate));
-
+                          const id = avail.room.id + listing.startDate + listing.endDate;
                           return (
                             <li className="list-group-item d-flex justify-content-around text-center">
                               <div>
@@ -83,6 +83,7 @@ export default function Building(props: BuildingProps) {
                               </div>
                               <button
                                 type="button"
+                                id={id}
                                 className={"btn btn-sm btn-primary"}
                                 disabled={endDate.getTime() < new Date().getTime()}
                                 onClick={async () => {
@@ -92,6 +93,10 @@ export default function Building(props: BuildingProps) {
                                   } else {
                                     return (
                                       <ReservationModal
+                                        onBook={() => {
+                                          const btn = document.getElementById(id)!;
+                                          btn.classList.add("disabled");
+                                        }}
                                         startDate={startDate}
                                         endDate={endDate}
                                         date={new Date(listing.startDate).toLocaleDateString()}

@@ -68,5 +68,5 @@ interface APIProfileEvents {
   organization: string;
   creationDate: string;
   room: APIRoom;
-  descritpion: string;
+  description: string;
 }
