@@ -7,7 +7,7 @@ export default function MainContainer() {
 
   async function updateRoomList(x: AvailabilityConditions) {
     if (!x.date) {
-      root.replaceChild(<div className="text-center">No results found.</div>, root.lastChild!);
+      root.replaceChild(<div className="text-center">Please select a date.</div>, root.lastChild!);
       return;
     }
 
@@ -31,7 +31,10 @@ export default function MainContainer() {
     );
   }
 
-  root.append(<DropdownButtonRow onChange={updateRoomList} />, <div className="text-center">No results found.</div>);
+  root.append(
+    <DropdownButtonRow onChange={updateRoomList} />,
+    <div className="text-center">Please select a date.</div>
+  );
 
   return root;
 }

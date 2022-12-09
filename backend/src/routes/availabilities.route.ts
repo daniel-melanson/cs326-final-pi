@@ -34,14 +34,14 @@ interface APIAvailability {
 export function roundDate(d: Date, direction: 'down' | 'up') {
   d = new Date(d);
 
-  const m = d.getMinutes();
+  const m = d.getUTCMinutes();
   const roundedM = Math[direction === 'up' ? 'ceil' : 'floor'](m / 10) * 10;
-  return new Date(d.setMinutes(roundedM));
+  return new Date(d.setUTCMinutes(roundedM));
 }
 
 export function segmentDate(start: Date, end: Date): string[] {
-  start = new Date(start.setSeconds(0, 0));
-  end = new Date(end.setSeconds(0, 0));
+  start = new Date(start.setUTCSeconds(0, 0));
+  end = new Date(end.setUTCSeconds(0, 0));
 
   assert(start.getTime() < end.getTime());
 
@@ -51,7 +51,7 @@ export function segmentDate(start: Date, end: Date): string[] {
   while (current.getTime() < endDate.getTime()) {
     segments.push(current.toISOString());
 
-    current = new Date(current.setMinutes(current.getMinutes() + 5));
+    current = new Date(current.setUTCMinutes(current.getUTCMinutes() + 5));
   }
 
   return segments;
@@ -68,11 +68,15 @@ availabilities.get(
   ]),
   async (req, res) => {
     const { building, room, capacity, date, duration } = req.query as Record<string, string>;
-    const startDate = new Date(date!);
-    startDate.setHours(0, 0, 0, 0);
+    let startDate = new Date(date!); // take time in-sensitive date
+    if (startDate.getUTCHours() < 4) {
+      startDate = new Date(startDate.setUTCDate(startDate.getUTCDate() - 1));
+    }
+    startDate.setUTCHours(4, 0, 0, 0); // 4 UTC (0 EDT)
 
-    const endDate = new Date(startDate);
-    endDate.setHours(23, 59, 59);
+    const t = new Date(startDate);
+    const startHours = t.getUTCHours();
+    const endDate = new Date(t.setUTCHours(startHours + 24)); // 24 hours from startDate
 
     const filters: Prisma.EventWhereInput = {
       room: {},
@@ -80,7 +84,7 @@ availabilities.get(
         gte: startDate,
       },
       endTime: {
-        lte: endDate,
+        lt: endDate,
       },
     };
 
@@ -110,9 +114,9 @@ availabilities.get(
     });
 
     const availabilityStart = new Date(startDate);
-    availabilityStart.setHours(7, 0, 0, 0);
+    availabilityStart.setUTCHours(startHours + 7, 0, 0, 0); // 7 EDT
     const availabilityEnd = new Date(availabilityStart);
-    availabilityEnd.setHours(19, 0, 0, 0);
+    availabilityEnd.setUTCHours(startHours + 7 + 13, 0, 0, 0); // 14 EDT
 
     const availabilityTimes = segmentDate(availabilityStart, availabilityEnd);
     const completeAvailableTime = availabilityTimes.reduce((acc, x) => ({ ...acc, [x]: 5 }), {});
@@ -166,7 +170,7 @@ availabilities.get(
         .filter((x) => x.duration >= minDuration)
         .map((x) => {
           const startDate = new Date(x.startTime);
-          const endDate = new Date(startDate.setMinutes(startDate.getMinutes() + x.duration));
+          const endDate = new Date(startDate.setUTCMinutes(startDate.getUTCMinutes() + x.duration));
 
           return {
             startDate: x.startTime,

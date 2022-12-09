@@ -28,7 +28,7 @@ export default function ProfileContainer() {
           <div className="col-6 d-flex flex-column">
             <h3 className="align-self-center">Your reserved events:</h3>
             {reservations.map(res => (
-              <div className="row-6 align-self-center d-flex flex-column align-items-center">
+              <div className="row-6 align-self-start mb-3">
                 <div className="list-group list-group-flush me-3">
                   <i className="bi-building"> {res.room.building.name}</i>
                   <br />
@@ -45,13 +45,15 @@ export default function ProfileContainer() {
                 <div>
                   <button
                     className="btn btn-primary me-1"
-                    onClick={async () => {
-                      <EditModal
-                        {...res}
-                        onEdit={() => {
-                          updateEvents();
-                        }}
-                      />;
+                    onClick={() => {
+                      return (
+                        <EditModal
+                          {...res}
+                          onEdit={() => {
+                            updateEvents();
+                          }}
+                        />
+                      );
                     }}
                   >
                     Edit
